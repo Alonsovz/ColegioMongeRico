@@ -22,8 +22,42 @@ create table usuario (
     codigoRol int,
     idEliminado int
 );
+
+create table chequeras(
+idChequera int primary key unique auto_increment,
+chequera varchar(50),
+numeroCuenta varchar(100),
+monto double,
+idEliminado int
+);
+
+create table cargosBancarios(
+idCargo int primary key unique auto_increment,
+concepto varchar(500),
+monto double,
+fecha date,
+mes varchar(10),
+anio varchar(10),
+idChequera int,
+idEliminado int
+);
+
+create table remesas(
+idRemesa int primary key unique auto_increment,
+concepto varchar(500),
+monto double,
+fecha date,
+mes varchar(10),
+anio varchar(10),
+idChequera int,
+idEliminado int
+);
  
 alter table usuario add constraint fk_usuario_rol foreign key (codigoRol) references rol(codigoRol);
+
+alter table cargosBancarios add constraint fk_cargosBancarios_chequeras foreign key (idChequera) references chequeras(idChequera);
+
+alter table remesas add constraint fk_remesas_chequeras foreign key (idChequera) references chequeras(idChequera);
 
  insert into rol values(1,'Administrador/a');
 insert into rol values(2,'Maestro/a');
