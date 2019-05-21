@@ -152,6 +152,18 @@ class UsuarioController extends ControladorBase {
 
     }
 
+    public function editarNom()
+    {
+        $dao = new DaoUsuario();
+
+        $id = $_REQUEST["id"];
+        $user = $_REQUEST["user"];
+
+        $dao->objeto->setCodigoUsuario($id);
+        $dao->objeto->setNomUsuario($user);
+        echo $dao->editarUser();
+    }
+
 
     public function getPass()
     {
@@ -428,6 +440,21 @@ class UsuarioController extends ControladorBase {
         $resultado1 = $daoEnvio->reporteFechas();
 
         $reporte->reporteFechas($fecha,$fecha2, $resultado, $resultado1);
+    }
+
+    public static function reporteria() {
+        
+        self::loadMain();    
+
+        
+
+        $daoC = new DaoEgresos();
+        $chequerasCMB = $daoC->mostrarChequerasCMB();
+       
+
+     
+
+        require_once './app/view/Usuario/reporteria.php';
     }
 
 

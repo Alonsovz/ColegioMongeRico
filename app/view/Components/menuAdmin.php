@@ -9,12 +9,7 @@
     <div class="menu">
     
 
-    <div class="item">
-    <a href="?1=NatacionController&2=gestion" class="item menu-it" style="color:black;">
-        <i class="dollar icon"></i>
-        Control de pagos
-    </a>
-    </div>
+    
 
     
 
@@ -41,18 +36,11 @@
     </div>
 
     <div class="menu">
-    <div class="item">
-    <a href="?1=IngresosController&2=nuevoIngreso" class="item menu-it" style="color:black;">
-        <i class="user icon"></i><i class="dollar icon"></i>
-       Gestión de Caja
-    </a>
-
-    </div>
-
+    
     
 
     <div class="item">
-    <a href="?1=EgresosController&2=chequeras" class="item menu-it" style="color:black;">
+    <a href="?1=RemesasController&2=chequeras" class="item menu-it" style="color:black;">
     <i class="id card icon"></i> <i class="dollar icon"></i>
       Cuentas-Chequeras
     </a>
@@ -81,55 +69,193 @@
     </div>
 </div>
 
-
 <br>
-<div class="ui fluid selection dropdown" style="color:black; background-color:#BCF5A9;">
+<div class="ui fluid selection dropdown" style="color:black; background-color:#A9F5F2;">
     <i class="dropdown icon"></i>
-        <div class="default text" style="color:black; background-color:#BCF5A9;">
-                <i class="futbol icon"></i>
-                <b>Escuela de Futbol</b>       
+        <div class="default text" style="color:black; background-color:#A9F5F2;">
+                <i class="dollar icon"></i>
+                <b>Control de pagos</b>       
         </div>
 
         <div class="menu">
 
+        <div class="item" >
+        <a href="?1=EscFutbolController&2=primer" class="item menu-it" style="color:black; background-color:#F6E3CE;  font-weight:bold;"">
+            PreKinder
+        </a>
+
+        </div>
+        <hr>
         <div class="item">
-        <a href="?1=EscFutbolController&2=primer" class="item menu-it" style="color:black;">
-            1er Nivel (6-7 años)
+        <a href="?1=EscFutbolController&2=segundo" class="item menu-it" style="color:black;  background-color:#CEF6CE;  font-weight:bold;"">
+            Kinder
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=segundo" class="item menu-it" style="color:black;">
-            2do Nivel (8-9 años)
+        <a href="?1=EscFutbolController&2=tercer" class="item menu-it" style="color:black;  background-color:#CEF6CE;  font-weight:bold;"">
+           Preparatoria
+        </a>
+
+        </div>
+        <hr>
+        <div class="item">
+        <a href="?1=EscFutbolController&2=cuarto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold;"">
+           1er Grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=tercer" class="item menu-it" style="color:black;">
-            3er Nivel (10-11 años)
+        <a href="?1=EscFutbolController&2=quinto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold;"">
+           2do grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=cuarto" class="item menu-it" style="color:black;">
-            4to Nivel (12-13 años)
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold;"">
+            3er Grado
+        </a>
+
+        </div>
+        <hr>
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold;"">
+            4to Grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=quinto" class="item menu-it" style="color:black;">
-            5to Nivel (14-15 años)
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold;"">
+            5to Grado
+        </a>
+
+        </div>
+        
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold;"">
+            6to Grado
+        </a>
+
+        </div>
+        <hr>
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold;"">
+            7mo Grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black;">
-            6to Nivel (16-17 años)
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold;"">
+            8vo Grado
+        </a>
+
+        </div>
+
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold;"">
+            9no Grado
+        </a>
+
+        </div>
+
+        </div>
+
+    </div>
+<br>
+<div class="ui fluid selection dropdown" style="color:black; background-color:#BCF5A9;">
+    <i class="dropdown icon"></i>
+        <div class="default text" style="color:black; background-color:#BCF5A9;">
+                <i class="book icon"></i>
+                <b>Control de notas</b>       
+        </div>
+
+        <div class="menu">
+
+        <div class="item" >
+        <a href="?1=EscFutbolController&2=primer" class="item menu-it" style="color:black; background-color:#F6E3CE;  font-weight:bold;"">
+            PreKinder
+        </a>
+
+        </div>
+        <hr>
+        <div class="item">
+        <a href="?1=EscFutbolController&2=segundo" class="item menu-it" style="color:black;  background-color:#CEF6CE;  font-weight:bold;"">
+            Kinder
+        </a>
+
+        </div>
+
+        <div class="item">
+        <a href="?1=EscFutbolController&2=tercer" class="item menu-it" style="color:black;  background-color:#CEF6CE;  font-weight:bold;"">
+           Preparatoria
+        </a>
+
+        </div>
+        <hr>
+        <div class="item">
+        <a href="?1=EscFutbolController&2=cuarto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold;"">
+           1er Grado
+        </a>
+
+        </div>
+
+        <div class="item">
+        <a href="?1=EscFutbolController&2=quinto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold;"">
+           2do grado
+        </a>
+
+        </div>
+
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold;"">
+            3er Grado
+        </a>
+
+        </div>
+        <hr>
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold;"">
+            4to Grado
+        </a>
+
+        </div>
+
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold;"">
+            5to Grado
+        </a>
+
+        </div>
+        
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold;"">
+            6to Grado
+        </a>
+
+        </div>
+        <hr>
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold;"">
+            7mo Grado
+        </a>
+
+        </div>
+
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold;"">
+            8vo Grado
+        </a>
+
+        </div>
+
+        <div class="item">
+        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold;"">
+            9no Grado
         </a>
 
         </div>
