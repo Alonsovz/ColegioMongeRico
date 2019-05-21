@@ -3,7 +3,7 @@
         <div class="row">
                 <div class="titulo">
                 <i class="users icon"></i>
-                    Usuarios del Sistema<font color="#210B61" size="20px">.</font>
+                    Usuarios <font color="#210B61" size="20px">.</font>
                 </div>
         </div>
 
