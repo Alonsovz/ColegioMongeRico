@@ -1,4 +1,4 @@
-<br><br>
+
 <div id="app">
         <div class="ui grid">
             <div class="row">
@@ -15,7 +15,7 @@
                     <a href="?1=MateriasOrientadoresController&2=septimoGrado" class="ui black button" id="septimo">7mo Grado</a>
                     <a href="?1=MateriasOrientadoresController&2=octavoGrado" class="ui olive button" id="octavo">8vo Grado</a>
                     <a href="?1=MateriasOrientadoresController&2=novenoGrado" class="ui gray button" id="noveno">9no Grado</a>
-                    <br><br><br>
+                    <br><br>
                     <font color="#B40431" size="6px">
                     <i class="users icon"></i><i class="book icon"></i>
                     Asignación de materias y orientador de primer grado</font>
@@ -23,7 +23,7 @@
                     </div>
             </div>
         </div>
-        <br><br>
+        <br>
         <form class="ui form">
             
             <div class="fields">
@@ -33,9 +33,9 @@
                            
                             <div class="sixteen wide field"><br>
                                 <label style="font-size:20px;"> <i class="user circle icon"></i>Orientador:</label>
-                                <select name="orientador" id="orientador"></select>
+                                <select name="orientador" id="orientador" class="ui search dropdown"></select>
                             </div>
-                            <br><br><br><br><br>
+                            <br><br>
                         </div>
                             <hr><br>
                         <div class="fields" >
@@ -44,7 +44,7 @@
                             </div>
                             <br>
                         </div>
-                        <hr><br><br><br>
+                        <hr><br>
                         <div class="fields">
                             <div class="sixteen wide field">
                                 <label style="font-size:16px;"> <i class="book icon"></i>Materias básicas</label>
@@ -55,11 +55,11 @@
                         <div class="fields">
                             <div class="eight wide field">
                                 <label><i class="plus icon"></i>Matemáticas</label>
-                                <select name="orientadorMa" id="orientadorMa"></select>
+                                <select name="orientadorMa" id="orientadorMa" class="ui search dropdown"></select>
                             </div>
                             <div class="eight wide field">
                                 <label><i class="book icon"></i>Lenguaje</label>
-                                <select name="orientadorLen" id="orientadorLen"></select>
+                                <select name="orientadorLen" id="orientadorLen" class="ui search dropdown"></select>
                             </div>
                             <br><br>
                         </div>
@@ -67,13 +67,29 @@
                         <div class="fields">
                             <div class="eight wide field">
                                 <label><i class="recycle icon"></i>Ciencias</label>
-                                <select name="orientadorCien" id="orientadorCien"></select>
+                                <select name="orientadorCien" id="orientadorCien" class="ui search dropdown"></select>
                             </div>
                             <div class="eight wide field">
                                 <label><i class="globe icon"></i>Sociales</label>
-                                <select name="orientadorSo" id="orientadorSo"></select>
+                                <select name="orientadorSo" id="orientadorSo" class="ui search dropdown"></select>
                             </div>
                             <br> 
+                        </div>
+                            <hr><br>
+                        <div class="fields">
+                            <div class="sixteen wide field">
+                                <label style="font-size:16px;"> <i class="book icon"></i><i class="globe icon"></i>Idiomas</label>
+                            </div>
+                            <br> 
+                        </div>
+                        <hr><br>
+                        <div class="fields">
+                        <div class="ten wide field">
+                                <label><i class="book icon"></i>Íngles:</label>
+                                <select name="orientadorIng" id="orientadorIng" class="ui search dropdown">
+                                   
+                                </select>
+                        </div>
                         </div>
 
                     </form>
@@ -99,11 +115,11 @@
                         <div class="fields">
                         <div class="eight wide field">
                                 <label><i class="pencil icon"></i>Artística:</label>
-                                <select name="orientadorArtis" id="orientadorArtis"></select>
+                                <select name="orientadorArtis" id="orientadorArtis" class="ui search dropdown"></select>
                         </div>
                         <div class="eight wide field">
                                 <label><i class="mars icon"></i><i class="venus icon"></i>Moral:</label>
-                                <select name="orientadorMo" id="orientadorMo"></select>
+                                <select name="orientadorMo" id="orientadorMo" class="ui search dropdown"></select>
                         </div>
 
                         
@@ -112,7 +128,12 @@
                         <div class="fields">
                         <div class="eight wide field">
                                 <label><i class="futbol icon"></i><i class="table tennis icon"></i>Educación física</label>
-                                <select name="orientadorFis" id="orientadorFis"></select>
+                                <select name="orientadorFis" id="orientadorFis" class="ui search dropdown"></select>
+                        </div>
+                        
+                        <div class="eight wide field">
+                                <label><i class="computer icon"></i>Informática</label>
+                                <select name="orientadorInfo" id="orientadorInfo" class="ui search dropdown"></select>
                         </div>
                         </div>
                         <hr>
