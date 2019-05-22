@@ -52,6 +52,21 @@ anio varchar(10),
 idChequera int,
 idEliminado int
 );
+
+create table datosGrados(
+idGrado int primary key unique auto_increment,
+orientador int,
+orientadorMate int,
+orientadorSoc int,
+orientadorCien int,
+orientadorLen int,
+orientadorIng int,
+orientadorArt int,
+orientadorMo int,
+orientadorInfo int,
+orientadorFis int,
+aula varchar(20)
+);
  
 alter table usuario add constraint fk_usuario_rol foreign key (codigoRol) references rol(codigoRol);
 
@@ -63,12 +78,24 @@ alter table remesas add constraint fk_remesas_chequeras foreign key (idChequera)
 insert into rol values(2,'Maestro/a');
 insert into rol values(3,'Secretario/a');
 
-
+insert into usuario values(null,'No','Asignado','no','no','no',sha1('123'),'7912-1241','09237913-1','1997-02-02',2,1);
 insert into usuario values(null,'Fabio','Mejia','fabio','fabiomejiash@gmail.com','San Juan Opico',sha1('123'),'7121-1231','01211242-1','1999-12-02',1,1);
  
- insert into usuario values(null,'Alonso','Velasquez','alonso','mejiaFabio383@gmail.com','Santa Tecla',sha1('123'),'7912-1241','09237913-1','1997-02-02',2,1);
  
+ insert into usuario values(null,'Juan','Perez','juan','juan@gmail.com','Santa Tecla',sha1('123'),'7912-7680','01234324-1','1980-09-04',2,1);
+ insert into usuario values(null,'Alonso','Velasquez','alonso','mejiaFabio383@gmail.com','Santa Tecla',sha1('123'),'7912-1241','09237913-1','1997-02-02',2,1);
+
  insert into usuario values(null,'Juana','Lopez','juana','juan123@gmail.com','San Salvador',sha1('123'),'7912-1241','09237913-1','1997-02-02',3,1);
+ 
+ insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
  delimiter $$
 create procedure login(
 	in user varchar(50),
@@ -88,7 +115,7 @@ begin
 	select u.*, r.descRol
 	from usuario u
 	inner join rol r on r.codigoRol = u.codigoRol
-    where u.idEliminado=1;
+    where u.idEliminado=1 and u.codigoUsuario>1;
 end
 $$
 
@@ -103,4 +130,6 @@ begin
     where u.nomUsuario = nom;
 end
 $$
+
+
 
