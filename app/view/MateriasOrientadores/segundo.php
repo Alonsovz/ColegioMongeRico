@@ -1,4 +1,19 @@
+<?php
+  require_once './vendor/autoload.php';
+  $mysqli = new mysqli("localhost","root","","colegioMongeRico");
+  $query = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query1 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query2 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query3 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query4 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query5 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query6 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query7 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query8 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query9 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
 
+  
+?>
 <div id="app">
         <div class="ui grid">
             <div class="row">
@@ -24,18 +39,27 @@
             </div>
         </div>
         <br>
-        <form class="ui form">
+        <form class="ui form" id="frmIzquierda">
             
-            <div class="fields">
-                <div class="eight wide field" style="text-align:left; border: 2px solid #DF7401; border-radius: 18px 18px 18px 18px;">
-                    <form class="ui form" >
+        <div class="fields">
+                <div class="eight wide field" style="text-align:left; border: 2px solid #B40431; border-radius: 18px 18px 18px 18px;">
+                    
                         <div class="fields">
                            
                             <div class="sixteen wide field"><br>
                                 <label style="font-size:20px;"> <i class="user circle icon"></i>Orientador:</label>
-                                <select name="orientador" id="orientador" class="ui search dropdown"></select>
+                                <select name="orientador" id="orientador">
+
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                             </div>
-                            <br><br><br>
+                            <br><br>
                         </div>
                             <hr><br>
                         <div class="fields" >
@@ -55,11 +79,29 @@
                         <div class="fields">
                             <div class="eight wide field">
                                 <label><i class="plus icon"></i>Matemáticas</label>
-                                <select name="orientadorMa" id="orientadorMa" class="ui search dropdown"></select>
+                                <select name="orientadorMa" id="orientadorMa">
+
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query1)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                             </div>
                             <div class="eight wide field">
                                 <label><i class="book icon"></i>Lenguaje</label>
-                                <select name="orientadorLen" id="orientadorLen" class="ui search dropdown"></select>
+                                <select name="orientadorLen" id="orientadorLen">
+
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query2)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                             </div>
                             <br><br>
                         </div>
@@ -67,15 +109,32 @@
                         <div class="fields">
                             <div class="eight wide field">
                                 <label><i class="recycle icon"></i>Ciencias</label>
-                                <select name="orientadorCien" id="orientadorCien" class="ui search dropdown"></select>
+                                <select name="orientadorCien" id="orientadorCien">
+
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query3)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                             </div>
                             <div class="eight wide field">
                                 <label><i class="globe icon"></i>Sociales</label>
-                                <select name="orientadorSo" id="orientadorSo" class="ui search dropdown"></select>
+                                <select name="orientadorSo" id="orientadorSo">
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query4)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                             </div>
                             <br> 
                         </div>
-                        <hr><br>
+                            <hr><br>
                         <div class="fields">
                             <div class="sixteen wide field">
                                 <label style="font-size:16px;"> <i class="book icon"></i><i class="globe icon"></i>Idiomas</label>
@@ -86,13 +145,20 @@
                         <div class="fields">
                         <div class="ten wide field">
                                 <label><i class="book icon"></i>Íngles:</label>
-                                <select name="orientadorIng" id="orientadorIng" class="ui search dropdown">
+                                <select name="orientadorIng" id="orientadorIng">
+                               
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query5)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
                                    
                                 </select>
                         </div>
                         </div>
 
-                    </form>
+                    
                 </div>
                 
                 <div class="fields">
@@ -103,8 +169,8 @@
                 <div class="eight wide field" style="text-align:left; border: 2px solid #DF7401; border-radius: 18px 18px 18px 18px;">
                 <br>
                 <hr>
-                    <form class="ui form" >
-                        <div class="fields">
+                    
+                <div class="fields">
                             <div class="sixteen wide field">
                                 <br>
                                 <label style="font-size:20px;"> <i class="book icon"></i>Otras:</label>
@@ -115,11 +181,27 @@
                         <div class="fields">
                         <div class="eight wide field">
                                 <label><i class="pencil icon"></i>Artística:</label>
-                                <select name="orientadorArtis" id="orientadorArtis" class="ui search dropdown"></select>
+                                <select name="orientadorArtis" id="orientadorArtis" >
+                               
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query6)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                         </div>
                         <div class="eight wide field">
                                 <label><i class="mars icon"></i><i class="venus icon"></i>Moral:</label>
-                                <select name="orientadorMo" id="orientadorMo" class="ui search dropdown"></select>
+                                <select name="orientadorMo" id="orientadorMo">
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query7)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                         </div>
 
                         
@@ -128,11 +210,28 @@
                         <div class="fields">
                         <div class="eight wide field">
                                 <label><i class="futbol icon"></i><i class="table tennis icon"></i>Educación física</label>
-                                <select name="orientadorFis" id="orientadorFis" class="ui search dropdown"></select>
+                                <select name="orientadorFis" id="orientadorFis">
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query8)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                         </div>
+                        
                         <div class="eight wide field">
                                 <label><i class="computer icon"></i>Informática</label>
-                                <select name="orientadorInfo" id="orientadorInfo" class="ui search dropdown"></select>
+                                <select name="orientadorInfo" id="orientadorInfo">
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query9)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                }
+                                ?>
+                                </select>
                         </div>
                         </div>
                         <hr>
@@ -146,7 +245,7 @@
                         <div class="fields">
                         <div class="ten wide field">
                                 <label><i class="building icon"></i>Aula a asignar:</label>
-                                <select name="aulaAsig" id="aulaAsig" class="ui dropdown">
+                                <select name="aulaAsig" id="aulaAsig" class="ui search dropdown">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -156,7 +255,7 @@
                         </div>
                         </div>
 
-                    </form>
+                    
                 </div>
             </div>
     </form>
@@ -165,10 +264,115 @@
     </center>
 
 </div>
+<script>
+var app = new Vue({
+        el: "#app",
+        data: {
+           
+        },
+        methods: {
 
+            cargarDatos(){
+                
+
+                fetch("?1=MateriasOrientadoresController&2=datosGenerales&grado="+2)
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(dat => {
+
+                        console.log(dat);
+
+                        $('#frmIzquierda select[name="orientador"]').val(dat.orientador);
+                        $('#frmIzquierda select[name="orientadorMa"]').val(dat.orientadorMate);
+                        $('#frmIzquierda select[name="orientadorLen"]').val(dat.orientadorLen);
+                        $('#frmIzquierda select[name="orientadorCien"]').val(dat.orientadorCien);
+                        $('#frmIzquierda select[name="orientadorSo"]').val(dat.orientadorSoc);
+                        $('#frmIzquierda select[name="orientadorIng"]').val(dat.orientadorIng);
+                        $('#frmIzquierda select[name="orientadorInfo"]').val(dat.orientadorInfo);
+                        $('#frmIzquierda select[name="orientadorFis"]').val(dat.orientadorFis);
+                        $('#frmIzquierda select[name="orientadorArtis"]').val(dat.orientadorArt);
+                        $('#frmIzquierda select[name="orientadorMo"]').val(dat.orientadorMo);
+                        
+                      
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            },
+           
+            
+
+        }
+    });
+</script>
 <script>
     $(document).ready(function(){
     $("#segundo").removeClass("ui orange button");
     $("#segundo").addClass("ui orange basic button");
+    app.cargarDatos();
     });
+
+
+    $("#guardarTodo").click(function(){
+        alertify.confirm("¿Desea guardar los datos?",
+            function(){
+           var orientador = $("#orientador").val();
+           var orientadorMate = $("#orientadorMa").val();
+           var orientadorLen = $("#orientadorLen").val();
+           var orientadorCien = $("#orientadorCien").val();
+           var orientadorSoc = $("#orientadorSo").val();
+           var orientadorIng = $("#orientadorIng").val();
+           var orientadorArt = $("#orientadorArtis").val();
+           var orientadorInfo = $("#orientadorInfo").val();
+           var orientadorFis = $("#orientadorFis").val();
+           var orientadorMo = $("#orientadorMo").val();
+           var idGrado= 2;
+          
+
+
+             $.ajax({
+                type: 'POST',
+                url: '?1=MateriasOrientadoresController&2=guardarDatos',
+                data: {
+                    orientador : orientador,
+                    orientadorMate : orientadorMate,
+                    orientadorLen : orientadorLen,
+                    orientadorCien : orientadorCien,
+                    orientadorSoc : orientadorSoc,
+                    orientadorIng : orientadorIng,
+                    orientadorArt : orientadorArt,
+                    orientadorInfo : orientadorInfo,
+                    orientadorFis : orientadorFis,
+                    orientadorMo : orientadorMo,
+                    idGrado : idGrado,
+                    
+                },
+                success: function(r) {
+                    if(r == 1) {
+                        
+                        swal({
+                           
+                            title: 'Datos guardados con éxito',
+                            text: 'Se ha asignado el orientador y los docentes que impartirán las materias de segundo grado',
+                            type: 'success',
+                            showConfirmButton: true,
+
+                        }).then((result) => {
+                            location.href ="?1=MateriasOrientadoresController&2=segundoGrado";
+                        }); 
+                        
+                        
+                    } 
+                }
+
+             });
+            },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+    });
+    
 </script>

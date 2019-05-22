@@ -313,4 +313,23 @@ class DaoUsuario extends DaoBase {
 
     }
 
+    public function mostrarMaestrosCmb(){
+        $_query = "select u.*, r.descRol
+        from usuario u
+        inner join rol r on r.codigoRol = u.codigoRol
+        where u.idEliminado=1 and u.codigoRol=2;";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        $json = '';
+
+        while($fila = $resultado->fetch_assoc()) {
+            $json .= json_encode($fila).',';
+        }
+
+        $json = substr($json,0, strlen($json) - 1);
+
+        return '['.$json.']';
+    }
+
 }
