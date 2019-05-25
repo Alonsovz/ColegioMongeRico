@@ -110,7 +110,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=MatematicaController&2=primerGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática -- 1er Grado
         </a>
@@ -119,7 +119,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=MatematicaController&2=segundoGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática --  2do Grado
         </a>
@@ -128,7 +128,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=MatematicaController&2=tercerGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática -- 3er Grado
         </a>
@@ -137,7 +137,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=MatematicaController&2=cuartoGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática -- 4to Grado
         </a>
@@ -146,7 +146,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=MatematicaController&2=quintoGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática -- 5to Grado
         </a>
@@ -155,7 +155,7 @@
     }
     if($grado==6){
         echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        <a href='?1=MatematicaController&2=sextoGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática -- 6to Grado
         </a>
@@ -164,7 +164,7 @@
     }
     if($grado==7){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=septimoGrado'
+        <a href='?1=MatematicaController&2=septimoGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática -- 7mo Grado
         </a>
@@ -173,7 +173,7 @@
     }
     if($grado==8){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=octavoGrado'
+        <a href='?1=MatematicaController&2=octavoGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática --  8vo Grado
         </a></div>
@@ -182,7 +182,7 @@
     }
     if($grado==9){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=novenoGrado'
+        <a href='?1=MatematicaController&2=novenoGrado'
          class='item menu-it' style='color:black; background-color:#81DAF5;  font-weight:bold;'>
          <i class='plus icon'></i> Matemática --  9no Grado
         </a>
@@ -199,7 +199,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=CienciasController&2=primerGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          <i class='recycle icon'></i>  Ciencias -- 1er Grado
         </a>
@@ -208,7 +208,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=CienciasController&2=segundoGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          <i class='recycle icon'></i> Ciencias --  2do Grado
         </a>
@@ -217,7 +217,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=CienciasController&2=tercerGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          <i class='recycle icon'></i> Ciencias -- 3er Grado
         </a>
@@ -226,7 +226,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=CienciasController&2=cuartoGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          <i class='recycle icon'></i> Ciencias -- 4to Grado
         </a>
@@ -235,7 +235,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=CienciasController&2=quintoGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          Ciencias -- 5to Grado
         </a>
@@ -244,7 +244,7 @@
     }
     if($grado==6){
         echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        <a href='?1=CienciasController&2=sextoGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          <i class='recycle icon'></i> Ciencias -- 6to Grado
         </a>
@@ -253,7 +253,7 @@
     }
     if($grado==7){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=septimoGrado'
+        <a href='?1=CienciasController&2=septimoGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          <i class='recycle icon'></i> Ciencias -- 7mo Grado
         </a>
@@ -262,7 +262,7 @@
     }
     if($grado==8){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=octavoGrado'
+        <a href='?1=CienciasController&2=octavoGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          <i class='recycle icon'></i> Ciencias --  8vo Grado
         </a></div>
@@ -271,7 +271,7 @@
     }
     if($grado==9){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=novenoGrado'
+        <a href='?1=CienciasController&2=novenoGrado'
          class='item menu-it' style='color:black; background-color:#58FA82;  font-weight:bold;'>
          <i class='recycle icon'></i> Ciencias --  9no Grado
         </a>
@@ -288,7 +288,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=LenguajeController&2=primerGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i> Lenguaje -- 1er Grado
         </a>
@@ -297,7 +297,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=LenguajeController&2=segundoGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i> Lenguaje --  2do Grado
         </a>
@@ -306,7 +306,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=LenguajeController&2=tercerGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i> Lenguaje -- 3er Grado
         </a>
@@ -315,7 +315,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=LenguajeController&2=cuartoGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i> Lenguaje -- 4to Grado
         </a>
@@ -324,7 +324,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=LenguajeController&2=quintoGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i> Lenguaje -- 5to Grado
         </a>
@@ -333,7 +333,7 @@
     }
     if($grado==6){
         echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        <a href='?1=LenguajeController&2=sextoGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i> Lenguaje -- 6to Grado
         </a>
@@ -342,7 +342,7 @@
     }
     if($grado==7){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=septimoGrado'
+        <a href='?1=LenguajeController&2=septimoGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i> Lenguaje -- 7mo Grado
         </a>
@@ -351,7 +351,7 @@
     }
     if($grado==8){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=octavoGrado'
+        <a href='?1=LenguajeController&2=octavoGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i>  Lenguaje --  8vo Grado
         </a></div>
@@ -360,7 +360,7 @@
     }
     if($grado==9){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=novenoGrado'
+        <a href='?1=LenguajeController&2=novenoGrado'
          class='item menu-it' style='color:black; background-color:#F7D358;  font-weight:bold;'>
          <i class='book icon'></i> Lenguaje --  9no Grado
         </a>
@@ -377,7 +377,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=SocialesController&2=primerGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales -- 1er Grado
         </a>
@@ -386,7 +386,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=SocialesController&2=segundoGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales --  2do Grado
         </a>
@@ -395,7 +395,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=SocialesController&2=tercerGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales -- 3er Grado
         </a>
@@ -404,7 +404,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=SocialesController&2=cuartoGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales -- 4to Grado
         </a>
@@ -413,7 +413,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=SocialesController&2=quintoGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales -- 5to Grado
         </a>
@@ -422,7 +422,7 @@
     }
     if($grado==6){
         echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        <a href='?1=SocialesController&2=sextoGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales -- 6to Grado
         </a>
@@ -431,7 +431,7 @@
     }
     if($grado==7){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=septimoGrado'
+        <a href='?1=SocialesController&2=septimoGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales -- 7mo Grado
         </a>
@@ -441,7 +441,7 @@
     if($grado==8){
         echo "
         <div class='item'>
-        <a href='?1=GestionGradosController&2=octavoGrado'
+        <a href='?1=SocialesController&2=octavoGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales --  8vo Grado
         </a></div>
@@ -450,7 +450,7 @@
     }
     if($grado==9){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=novenoGrado'
+        <a href='?1=SocialesController&2=novenoGrado'
          class='item menu-it' style='color:black; background-color:#BCA9F5;  font-weight:bold;'>
          <i class='map maker icon'></i>  E. Sociales --  9no Grado
         </a>
@@ -467,7 +467,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=InglesController&2=primerGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i> Íngles -- 1er Grado
         </a>
@@ -476,7 +476,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=InglesController&2=segundoGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i>  Íngles --  2do Grado
         </a>
@@ -485,7 +485,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=InglesController&2=tercerGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i>  Íngles -- 3er Grado
         </a>
@@ -494,7 +494,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=InglesController&2=cuartoGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i> Íngles -- 4to Grado
         </a>
@@ -503,7 +503,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=InglesController&2=quintoGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i> Íngles -- 5to Grado
         </a>
@@ -512,7 +512,7 @@
     }
     if($grado==6){
         echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        <a href='?1=InglesController&2=sextoGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i> Íngles -- 6to Grado
         </a>
@@ -521,7 +521,7 @@
     }
     if($grado==7){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=septimoGrado'
+        <a href='?1=InglesController&2=septimoGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i> Íngles -- 7mo Grado
         </a>
@@ -531,7 +531,7 @@
     if($grado==8){
         echo "
         <div class='item'>
-        <a href='?1=GestionGradosController&2=octavoGrado'
+        <a href='?1=InglesController&2=octavoGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i> Íngles --  8vo Grado
         </a></div>
@@ -540,7 +540,7 @@
     }
     if($grado==9){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=novenoGrado'
+        <a href='?1=InglesController&2=novenoGrado'
          class='item menu-it' style='color:black; background-color:#F3F781;  font-weight:bold;'>
          <i class='globe icon'></i> Íngles --  9no Grado
         </a>
@@ -556,7 +556,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=ArtisticaController&2=primerGrado'
          class='item menu-it' style='color:black; background-color:#F7819F;  font-weight:bold;'>
          <i class='pencil icon'></i> Artística -- 1er Grado
         </a>
@@ -565,7 +565,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=ArtisticaController&2=segundoGrado'
          class='item menu-it' style='color:black; background-color:#F7819F;  font-weight:bold;'>
          <i class='pencil icon'></i> Artística --  2do Grado
         </a>
@@ -574,7 +574,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=ArtisticaController&2=tercerGrado'
          class='item menu-it' style='color:black; background-color:#F7819F;  font-weight:bold;'>
          <i class='globe icon'></i>  Íngles -- 3er Grado
         </a>
@@ -583,7 +583,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=ArtisticaController&2=cuartoGrado'
          class='item menu-it' style='color:black; background-color:#F7819F;  font-weight:bold;'>
          <i class='pencil icon'></i> Artística -- 4to Grado
         </a>
@@ -592,7 +592,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=ArtisticaController&2=quintoGrado'
          class='item menu-it' style='color:black; background-color:#F7819F;  font-weight:bold;'>
          <i class='pencil icon'></i> Artística -- 5to Grado
         </a>
@@ -601,7 +601,7 @@
     }
     if($grado==6){
         echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        <a href='?1=ArtisticaController&2=sextoGrado'
          class='item menu-it' style='color:black; background-color:#F7819F;  font-weight:bold;'>
          <i class='pencil icon'></i> Artística -- 6to Grado
         </a>
@@ -619,7 +619,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=MoralController&2=primerGrado'
          class='item menu-it' style='color:white; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral -- 1er Grado
         </a>
@@ -628,7 +628,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=MoralController&2=segundoGrado'
          class='item menu-it' style='color:white; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral --  2do Grado
         </a>
@@ -637,7 +637,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=MoralController&2=tercerGrado'
          class='item menu-it' style='color:white; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral -- 3er Grado
         </a>
@@ -646,7 +646,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=MoralController&2=cuartoGrado'
          class='item menu-it' style='color:white; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral -- 4to Grado
         </a>
@@ -655,7 +655,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=MoralController&2=quintoGrado'
          class='item menu-it' style='color:white; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral -- 5to Grado
         </a>
@@ -664,7 +664,7 @@
     }
     if($grado==6){
         echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        <a href='?1=MoralController&2=sextoGrado'
          class='item menu-it' style='color:black; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral -- 6to Grado
         </a>
@@ -673,7 +673,7 @@
     }
     if($grado==7){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=septimoGrado'
+        <a href='?1=MoralController&2=septimoGrado'
          class='item menu-it' style='color:white; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral -- 7mo Grado
         </a>
@@ -683,7 +683,7 @@
     if($grado==8){
         echo "
         <div class='item'>
-        <a href='?1=GestionGradosController&2=octavoGrado'
+        <a href='?1=MoralController&2=octavoGrado'
          class='item menu-it' style='color:white; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral --  8vo Grado
         </a></div>
@@ -692,7 +692,7 @@
     }
     if($grado==9){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=novenoGrado'
+        <a href='?1=MoralController&2=novenoGrado'
          class='item menu-it' style='color:white; background-color:#B40431;  font-weight:bold;'>
          <i class='child icon'></i> Moral --  9no Grado
         </a>
@@ -710,7 +710,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=FisicaController&2=primerGrado'
          class='item menu-it' style='color:white; background-color:#088A29;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física -- 1er Grado
         </a>
@@ -719,7 +719,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=FisicaController&2=segundoGrado'
          class='item menu-it' style='color:white; background-color:#088A29;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física --  2do Grado
         </a>
@@ -728,7 +728,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=FisicaController&2=tercerGrado'
          class='item menu-it' style='color:white; background-color:#088A29;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física -- 3er Grado
         </a>
@@ -737,7 +737,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=FisicaController&2=cuartoGrado'
          class='item menu-it' style='color:white; background-color:#088A29;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física -- 4to Grado
         </a>
@@ -746,7 +746,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=FisicaController&2=quintoGrado'
          class='item menu-it' style='color:white; background-color:#088A29;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física -- 5to Grado
         </a>
@@ -755,7 +755,7 @@
     }
     if($grado==6){
         echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        <a href='?1=FisicaController&2=sextoGrado'
          class='item menu-it' style='color:white; background-color:#088A29;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física -- 6to Grado
         </a>
@@ -764,7 +764,7 @@
     }
     if($grado==7){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=septimoGrado'
+        <a href='?1=FisicaController&2=septimoGrado'
          class='item menu-it' style='color:white; background-color:#A3F8C4;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física -- 7mo Grado
         </a>
@@ -774,7 +774,7 @@
     if($grado==8){
         echo "
         <div class='item'>
-        <a href='?1=GestionGradosController&2=octavoGrado'
+        <a href='?1=FisicaController&2=octavoGrado'
          class='item menu-it' style='color:white; background-color:#088A29;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física --  8vo Grado
         </a></div>
@@ -783,7 +783,7 @@
     }
     if($grado==9){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=novenoGrado'
+        <a href='?1=FisicaController&2=novenoGrado'
          class='item menu-it' style='color:white; background-color:#088A29;  font-weight:bold;'>
          <i class='street view icon'></i> E. Física --  9no Grado
         </a>
@@ -799,7 +799,7 @@
 
     if($grado==1){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=primerGrado'
+        <a href='?1=InformaticaController&2=primerGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática -- 1er Grado
         </a>
@@ -808,7 +808,7 @@
     }
     if($grado==2){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=segundoGrado'
+        <a href='?1=InformaticaController&2=segundoGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática --  2do Grado
         </a>
@@ -817,7 +817,7 @@
     }
     if($grado==3){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=tercerGrado'
+        <a href='?1=InformaticaController&2=tercerGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática -- 3er Grado
         </a>
@@ -826,7 +826,7 @@
     }
     if($grado==4){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=cuartoGrado'
+        <a href='?1=InformaticaController&2=cuartoGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática -- 4to Grado
         </a>
@@ -835,7 +835,7 @@
     }
     if($grado==5){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=quintoGrado'
+        <a href='?1=InformaticaController&2=quintoGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática -- 5to Grado
         </a>
@@ -843,8 +843,8 @@
         </div>";
     }
     if($grado==6){
-        echo "<div class='item' style=''>
-        <a href='?1=GestionGradosController&2=sextoGrado'
+        echo "<div class='item'>
+        <a href='?1=InformaticaController&2=sextoGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática-- 6to Grado
         </a>
@@ -853,7 +853,7 @@
     }
     if($grado==7){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=septimoGrado'
+        <a href='?1=InformaticaController&2=septimoGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática -- 7mo Grado
         </a>
@@ -863,7 +863,7 @@
     if($grado==8){
         echo "
         <div class='item'>
-        <a href='?1=GestionGradosController&2=octavoGrado'
+        <a href='?1=InformaticaController&2=octavoGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática --  8vo Grado
         </a></div>
@@ -872,7 +872,7 @@
     }
     if($grado==9){
         echo "<div class='item'>
-        <a href='?1=GestionGradosController&2=novenoGrado'
+        <a href='?1=InformaticaController&2=novenoGrado'
          class='item menu-it' style='color:white; background-color:#0404B4;  font-weight:bold;'>
          <i class='desktop icon'></i> Informática --  9no Grado
         </a>

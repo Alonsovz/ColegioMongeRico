@@ -5,7 +5,7 @@
                    
                     <font color="#08088A" size="6px">
                     <i class="plus icon"></i><i class="book icon"></i>
-                    Notas de Matemática de 3do grado</font>
+                    Notas de Matemática de 2do grado</font>
                     <font color="#210B61" size="20px"> .</font>
                     </div>
             </div>

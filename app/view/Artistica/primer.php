@@ -4,7 +4,7 @@
             <div class="row">
                    
                     <font color="#08088A" size="6px">
-                    <i class="user icon"></i><i class="book icon"></i>
+                    <i class="pencil icon"></i><i class="book icon"></i>
                     Notas de Artística de 1er grado</font>
                     <font color="#210B61" size="20px"> .</font>
                     </div>
