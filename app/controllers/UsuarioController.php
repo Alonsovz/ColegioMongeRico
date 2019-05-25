@@ -56,6 +56,7 @@ class UsuarioController extends ControladorBase {
         $dao->objeto->setPass($datos->pass);
 
         echo $dao->login();
+        
     }
 
     public function logout() {
