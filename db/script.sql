@@ -135,10 +135,4 @@ end
 $$
 
 
-select d.idGrado as grado, d.orientador as orientador from datosGrados  d
-inner join usuario u on u.codigoUsuario 
-and (d.orientador = u.codigoUsuario)
-where u.nomUsuario = 'alonso' and u.pass=sha1('123') and d.idGrado=1;
-
-
 select * from datosGrados
