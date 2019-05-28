@@ -9,7 +9,14 @@
     <div class="menu">
     
 
-    
+    <div class="item">
+
+    <a href="?1=SolicitudController&2=llenar" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
+        <i class="file icon"></i><i class="plus icon"></i>
+        Nueva Solicitud
+    </a>
+
+    </div>
 
     
 
@@ -21,6 +28,8 @@
     </a>
 
     </div>
+
+    
 
     
     </div>
