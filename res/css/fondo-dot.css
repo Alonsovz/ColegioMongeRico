@@ -40,7 +40,7 @@
     transform: translateY(40px);
     transition: all .5s ease; 
      animation: grayA 5s infinite alternate-reverse;
-    animation-timing-function: linear; 
+     animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
 }
 
 @keyframes greenA {

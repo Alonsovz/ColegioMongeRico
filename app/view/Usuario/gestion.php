@@ -9,7 +9,7 @@
 
         <div class="row title-bar">
             <div class="sixteen wide column">
-                <button class="ui right floated green labeled icon button" id="btnModalRegistro">
+                <button class="ui right floated blue labeled icon button" id="btnModalRegistro">
                     <i class="plus icon"></i>
                     Agregar
                 </button>
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-<div class="ui  modal" id="modalAgregarUsuario"  style="overflow: scroll;">
+<div class="ui  modal" id="modalAgregarUsuario"  style="">
 
     <div class="header">
     <i class="users icon"></i><i class="plus icon"></i> Agregar nuevo usuario
@@ -195,7 +195,7 @@
 </div>
 
 
-<div class="ui  modal" id="modalEditarUsuario"  style="overflow: scroll;">
+<div class="ui  modal" id="modalEditarUsuario"  style="">
 
 <div class="header">
 <i class="users icon"></i><i class="pencil icon"></i>

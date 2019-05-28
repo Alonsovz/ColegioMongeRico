@@ -67,6 +67,20 @@ orientadorInfo int,
 orientadorFis int,
 aula varchar(20)
 );
+
+create table inventarioUni(
+id int primary key unique auto_increment,
+talla varchar(10),
+existencia int,
+idEliminado int
+);
+
+create table inventarioCal(
+id int primary key unique auto_increment,
+talla varchar(10),
+existencia int,
+idEliminado int
+);
  
 alter table usuario add constraint fk_usuario_rol foreign key (codigoRol) references rol(codigoRol);
 
@@ -99,6 +113,10 @@ insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+
+insert into inventarioUni values(null,'S',12,1);
+insert into inventarioCal values(null,'12',10,1);
+
  delimiter $$
 create procedure login(
 	in user varchar(50),
@@ -134,5 +152,4 @@ begin
 end
 $$
 
-
-select * from datosGrados
+select * from inventarioCal
