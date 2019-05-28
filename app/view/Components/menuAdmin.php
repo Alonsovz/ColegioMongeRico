@@ -11,9 +11,18 @@
 
     <div class="item">
 
-    <a href="?1=SolicitudController&2=llenar" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
-        <i class="file icon"></i><i class="plus icon"></i>
-        Nueva Solicitud
+    <a href="?1=SolicitudController&2=fichaAlumno" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
+        <i class="file icon"></i>
+        Nueva ficha de alumno
+    </a>
+
+    </div>
+
+    <div class="item">
+
+    <a href="?1=SolicitudController&2=fichaMaestro" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
+        <i class="file icon"></i>
+        Nueva ficha de maestro
     </a>
 
     </div>

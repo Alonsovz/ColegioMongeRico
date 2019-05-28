@@ -1,32 +1,35 @@
 <br>
 <div id="app">
         <div class="ui grid">
-            <div class="row">
+                <div class="row">
                    
                     <font color="#08088A" size="5px">
                     <i class="plus icon"></i><i class="file outline icon"></i>
                     Ficha de Ingreso <a id="year" style="color:#08088A;"></a> .</font>
+
+                    
                     </div>
+                   
+                   
+                
             </div>
-            <br>
+            <div class="ui divider"></div>
             <button class="ui teal button" id="btnDatosAlumno"><i class="child icon"></i>Datos del alumno/a</button>
             <button class="ui blue button" id="btnDatosPadres"><i class="male icon"></i><i class="female icon"></i>
             Datos de los padres</button>
             <button class="ui black button" id="btnDatosRes"><i class="user circle icon"></i>Datos del reponsable</button>
             <button class="ui gray button" id="btnOtrosDatos"><i class="exclamation triangle icon"></i>Otros datos</button>
-            <div class="sixteen wide column">
-                    <button class="ui right floated red labeled icon button" id="btnGuardarTodo">
+            <button class="ui right floated red labeled icon button" id="btnGuardarTodo">
                         <i class="save icon"></i>
                         Guardar todo
                     </button>
-                </div>
+         <div class="ui divider"></div>
            
-            <br><br><br>
 <div class="content" style="text-align:center; border: 1px solid black;border-radius:3%;">
 
 
     
-<form class="ui form" style="font-size:23px;" >
+<form class="ui form" style="font-size:23px;margin-left:20px;margin-right:20px;" >
         <div id="datosAlumnos">
             <h2 style="color:#04B486;"><i class="child icon"></i> Datos del alumno/a</h2>
             <hr><br>
@@ -45,18 +48,19 @@
                             <div class="four wide field" style="font-size:16px;">
                                 <label><i class="chart bar outline icon"></i>Grado a estudiar:</label>
                                 <select name="grado" id="grado" class="ui dropdown">
-                                    <option value="10">PreKinder</option>
-                                    <option value="11">PreKinder</option>
-                                    <option value="12">PreKinder</option>
-                                    <option value="1">PreKinder</option>
-                                    <option value="2">PreKinder</option>
-                                    <option value="3">PreKinder</option>
-                                    <option value="4">PreKinder</option>
-                                    <option value="5">PreKinder</option>
-                                    <option value="6">PreKinder</option>
-                                    <option value="7">PreKinder</option>
-                                    <option value="8">PreKinder</option>
-                                    <option value="9">PreKinder</option>
+                                <option value="10">PreKinder</option>
+                                    <option value="11">Kinder</option>
+                                    <option value="12">Preparatoria</option>
+                                    <option value="1">1er Grado</option>
+                                    <option value="2">2do Grado</option>
+                                    <option value="3">3er Grado</option>
+                                    <option value="4">4to Grado</option>
+                                    <option value="5">5to Grado</option>
+                                    <option value="6">6to Grado</option>
+                                    <option value="7">7mo Grado</option>
+                                    <option value="8">8vo Grado</option>
+                                    <option value="9">9no Grado</option>
+                                   
                                 </select>
                             </div>
                         </div>
@@ -586,58 +590,68 @@
 
                     <div class="ui divider"></div>
 
-                    <div class="field">
-                    <h3 style="color:blue;text-align:left;margin-left:20px;"><i class="heart icon"></i>Hermanos que estudian en el colegio</h3>
-                    <br><div class="fields">
-                            <div class="ten wide field" style="font-size:16px;">
-                                <label><i class="user icon"></i>Nombre:</label>
-                                <input type="text" id="her1" name="her1" placeholder="Nombre completo">
-                            </div>
-
-                            <div class="six wide field" style="font-size:16px;">
-                                <label><i class="chart bar icon"></i>Grado:</label>
-                                <input type="text" id="gradoHer1" name="gradoHer1" placeholder="Grado">
-                            </div>
-
-                            
-                        </div>
-                        
-                    </div>
-                    <div class="field">
+<div class="field">
                         <div class="fields">
-                            <div class="ten wide field" style="font-size:16px;">
-                            <label><i class="user icon"></i>Nombre:</label>
-                                <input type="text" id="her2" name="her2" placeholder="Nombre completo">
-                            </div>
 
-                            <div class="six wide field" style="font-size:16px;">
-                                <label><i class="chart bar icon"></i>Grado:</label>
-                                <input type="text" id="gradoHer2" name="gradoHer2" placeholder="Grado">
-                            </div>
-
-                            
+                        <div class="sixteen wide field" style="font-size:16px;">
+                        <br>
+                        <h2 style="color:blue;text-align:left;margin-left:20px;"><i class="heart icon"></i>Hermanos que estudian en el colegio:</h2>
+                        <span style="float:right;">
+                           <a @click="agregarDetalleHer" class="ui teal circular icon button"><i class="plus icon"></i> Agregar</a>
+                        </span>        <br><br><br>
+                <form action="" class="ui form" id="frmHeramnos" >
+                        <table class="ui selectable very compact celled table" style="width:100%; margin:auto;">
+                                <thead>
+                                    <tr>
+                                        <th style="background-color: #217CD1; color:white;"><i class="building icon"></i>Nombre Completo</th>
+                                        <th style="background-color: #217CD1; color:white;"><i class="chart bar icon"></i>Grado</th>
+                                        <th style="background-color: #217CD1; color:white;"><i class="trash icon"></i>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(hermano, index) in hermanos">
+                                    <td>  
+                                    <input class="requerido" v-model="hermano.nombre" name="hermano" id="hermano" type="text"
+                                     placeholder="Nombre completo">
+                                    </td>
+                                   
+                                    <td>  
+                                    <select v-model="hermano.grado" name="grado" id="grado">
+                                    <option value="10">PreKinder</option>
+                                    <option value="11">Kinder</option>
+                                    <option value="12">Preparatoria</option>
+                                    <option value="1">1er Grado</option>
+                                    <option value="2">2do Grado</option>
+                                    <option value="3">3er Grado</option>
+                                    <option value="4">4to Grado</option>
+                                    <option value="5">5to Grado</option>
+                                    <option value="6">6to Grado</option>
+                                    <option value="7">7mo Grado</option>
+                                    <option value="8">8vo Grado</option>
+                                    <option value="9">9no Grado</option>
+                                    <option value="13">Bachillerato</option>
+                                    </select>
+                                    </td>
+                                    
+                                    <td>
+                                    <center>
+                    </form>
+                              <a  @click="eliminarDetalleHer(index)" class="ui negative mini circular icon button"><i
+                                  class="times icon"></i></a>
+                                  </center>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
                         </div>
                         
-                    </div>
-
-                    <div class="field">
-                        <div class="fields">
-                            <div class="ten wide field" style="font-size:16px;">
-                            <label><i class="user icon"></i>Nombre:</label>
-                                <input type="text" id="her3" name="her3" placeholder="Nombre completo">
-                            </div>
-
-                            <div class="six wide field" style="font-size:16px;">
-                                <label><i class="chart bar icon"></i>Grado:</label>
-                                <input type="text" id="gradoHer3" name="gradoHer3" placeholder="Grado">
-                            </div>
-
-                            
-                        </div>
                         
-                    </div>
+                         </div>
+</div>
+
                         
-                    </div>
+                   
 
                     <br>
                     <div class="ui divider"></div>
@@ -661,7 +675,69 @@
 
 
  </div>
+ <script>
+var clasifiId=0;
+var equipo1Id=0;
+var equipo2Id=0;
 
+var appE = new Vue({
+        el: "#app",
+        data: {
+            hermanos: [{
+                nombre: '',
+                grado: '10',
+               
+               
+            }],
+        },
+        methods: {
+            eliminarDetalleHer(index) {
+                this.hermanos.splice(index, 1);
+            },
+            agregarDetalleHer() {
+                this.hermanos.push({
+                    nombre: '',
+                grado: '10',
+            
+                });
+            
+            },
+            guardarGoleador() {
+                var idTor = $("#idTo").val();
+
+                if (this.envios.length) {
+
+                    $('#frmGoleador').addClass('loading');
+                    $.ajax({
+                        type: 'POST',
+                        data: {
+                            goleos: JSON.stringify(this.envios),
+                            idTor : idTor,
+                        },
+                        url: '?1=TorneosController&2=registrarGoleador',
+                        success: function (r) {
+                            $('#frmGoleador').removeClass('loading');
+                            if (r == 1) {
+                                
+                                        appE.envios = [{
+                                            goleadores: '1',
+                                            goles: ''
+                                        }];
+
+                                       
+                                            
+                            }
+                            
+                        }
+                    });
+                }
+
+                }
+
+
+        }
+    });
+</script>
  <script>
      $(document).ready(function(){
         var d = new Date();
