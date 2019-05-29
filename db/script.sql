@@ -81,6 +81,55 @@ talla varchar(10),
 existencia int,
 idEliminado int
 );
+
+create table maestros(
+idMaestro int primary key unique auto_increment,
+nombre varchar(100),
+fechaNacimiento date,
+lugarNacimiento varchar(100),
+sexo varchar(10),
+direccionResidencia varchar(200),
+telResidencia varchar(12),
+telMovil varchar(12),
+correo varchar(50),
+dui varchar(12),
+nit varchar(12),
+nip varchar(15),
+afp varchar(20),
+numeroPartida varchar(30),
+subnumero varchar(20),
+nivelAcademico varchar(50),
+nivel varchar(30),
+especialidad varchar(20),
+fechaIngreso date,
+habilidades varchar(500),
+usuario varchar(20),
+pass varchar(100),
+idEliminado int
+);
+
+create table titulosObtenidos(
+idTitulo int primary key unique auto_increment,
+nombreTitulo varchar(40),
+idMaestro int
+);
+
+create table capacitaciones(
+idCapacitacion int primary key unique auto_increment,
+nombreCapacitacion varchar(40),
+idMaestro int
+);
+
+create table experienciaLaboral(
+id int primary key unique auto_increment,
+institucion varchar(50),
+cargo varchar(50),
+grado varchar(30),
+asignaturas varchar(300),
+desde date,
+hasta date,
+idMaestro int
+);
  
 alter table usuario add constraint fk_usuario_rol foreign key (codigoRol) references rol(codigoRol);
 
@@ -152,4 +201,3 @@ begin
 end
 $$
 
-select * from inventarioCal

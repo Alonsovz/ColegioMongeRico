@@ -24,13 +24,13 @@
         </div>
 
 <div class="content" style="text-align:center; border: 1px solid black;border-radius:3%;">
-<form class="ui form" style="font-size:23px;  margin-left:20px;margin-right:20px;" >
+<form class="ui form" style="font-size:23px;  margin-left:20px;margin-right:20px;" id="frmMaestro" method="POST" method="POST" enctype="multipart/form-data">
             <h2 style="color:#04B486;"><i class="user circle icon"></i> Datos Personales</h2>
             <hr><br>
 
             <div class="field">
                         <div class="fields">
-                            <div class="six wide field" style="font-size:16px;">
+                            <div class="five wide field" style="font-size:16px;">
                                 <label><i class="user icon"></i>Nombre completo del docente:</label>
                                 <input type="text" id="nombre" name="nombre" placeholder="Nombre completo del docente">
                             </div>
@@ -40,14 +40,14 @@
                                 <input type="date" id="fechaNac" name="fechaNac">
                             </div>
 
-                            <div class="four wide field" style="font-size:16px;">
+                            <div class="five wide field" style="font-size:16px;">
                                 <label><i class="map maker icon"></i> Lugar de Nacimiento:</label>
-                                <input type="text" id="lugarNac" name="lugarNac" placeholder="Lugar de nacimiento">
+                                <textarea rows="2" id="lugarNac" name="lugarNac" placeholder="Lugar de nacimiento"></textarea>
                             </div>
 
                             <div class="one wide field" style="font-size:16px;">
                                 <label><i class="chart bar icon"></i> Edad:</label>
-                                <input type="text" readonly>
+                                <input type="text"  id="edad" name="edad" readonly>
                             </div>
 
                             <div class="two wide field" style="font-size:16px;">
@@ -92,23 +92,23 @@
 
             <div class="field">
                         <div class="fields">
-                        <div class="five wide field" style="font-size:16px;">
+                        <div class="four wide field" style="font-size:16px;">
                             
                             <label><i class="address card outline icon"></i> DUI:</label>
                             <input type="text" id="dui" name="dui" placeholder="N° DUI">
                         </div>
 
-                        <div class="three wide field" style="font-size:16px;">
+                        <div class="four wide field" style="font-size:16px;">
                             <label><i class="address card icon"></i>NIT:</label>
                                 <input type="text" id="nit" name="nit" placeholder="NIT">
                         </div>
 
-                        <div class="three wide field" style="font-size:16px;">
+                        <div class="four wide field" style="font-size:16px;">
                             <label><i class="address card outline icon"></i>NIP:</label>
                                 <input type="text" id="nip" name="nip" placeholder="NIP">
                         </div>
 
-                        <div class="five wide field" style="font-size:16px;">
+                        <div class="four wide field" style="font-size:16px;">
                             <label><i class="address card  icon"></i> AFP:</label>
                                 <input type="text" id="afp" name="afp" placeholder="AFP">
                         </div>
@@ -122,23 +122,23 @@
                         <div class="fields">
                         <div class="three field" style="font-size:16px;">
                                 <label><i class="male icon"></i> ¿Pertenece al sector público?</label>
-                                <input type="radio" name="sectorPublico" value="si"> Si &nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="sectorPublico" value="no"> No 
+                                <input type="radio" name="sectorPublico"  value="si"> Si &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="sectorPublico"  value="no"> No 
                         </div>
 
                         <div class="three wide field" style="font-size:16px;">
                             <label><i class="address card icon"></i>Número de partida:</label>
-                                <input type="text" id="numeroPartida" name="numeroPartida" placeholder="Número de partida">
+                                <input type="text" id="numeroPartida" name="numeroPartida" placeholder="Número de partida" disabled>
                         </div>
 
                         <div class="three wide field" style="font-size:16px;">
                             <label><i class="address card outline icon"></i>Sub-Número:</label>
-                                <input type="text" id="subNumero" name="subNumero" placeholder="Sub-Número">
+                                <input type="text" id="subNumero" name="subNumero" placeholder="Sub-Número" disabled>
                         </div>
 
                         <div class="three wide field" style="font-size:16px;">
                             <label><i class="chart bar  icon"></i> Nivel académico:</label>
-                                        <select id="nivelAcedemico" name="nivelAcedemico" class="ui dropdown">
+                                        <select id="nivelAcademico" name="nivelAcademico" class="ui dropdown">
                                                 <option value="Superior">Superior</option>
                                                 <option value="Media">Media</option>
                                                 <option value="Básica">Básica</option>
@@ -179,7 +179,7 @@
                                 <tbody>
                                     <tr v-for="(maestro, index) in maestros">
                                     <td>  
-                                    <input class="requerido" v-model="maestro.goles" name="titulos" id="titulos" type="text"
+                                    <input class="requerido" v-model="maestro.titulos" name="titulos" id="titulos" type="text"
                                      placeholder="Títulos obtenidos">
                                     </td>
                                     <td>
@@ -205,7 +205,7 @@
                         <span style="float:right;">
                            <a @click="agregarDetalleCapa" class="ui teal circular icon button"><i class="plus icon"></i> Agregar</a>
                         </span>        <br><br><br>
-                <form action="" class="ui form" id="frmCapacitacion" >
+                <form action="" class="ui form" id="frmCapacitaciones" >
                         <table class="ui selectable very compact celled table" style="width:100%; margin:auto;">
                                 <thead>
                                     <tr>
@@ -216,7 +216,7 @@
                                 <tbody>
                                     <tr v-for="(capacitacion, index) in capacitaciones">
                                     <td>  
-                                    <input class="requerido" v-model="capacitacion.nombre" name="capacitacion" id="capacitacion" type="text"
+                                    <input class="requerido" v-model="capacitacion.nombre" name="nombre" id="nombre" type="text"
                                      placeholder="Capacitación">
                                     </td>
                                     <td>
@@ -264,8 +264,8 @@
                                 <tbody>
                                     <tr v-for="(institucion, index) in instituciones">
                                     <td>  
-                                    <input class="requerido" v-model="institucion.nombre" name="institucion" id="institucion" type="text"
-                                     placeholder="Nombre de la institución">
+                                    <textarea class="requerido" rows="2" v-model="institucion.nombre" name="nombre" id="nombre"
+                                     placeholder="Nombre de la institución"></textarea>
                                     </td>
                                     <td>  
                                     <select v-model="institucion.cargo" name="cargo" id="cargo">
@@ -338,6 +338,12 @@
 </div>
 </div>
 <script>
+    $(document).ready(function(){
+    $('#dui').mask("99999999-9");
+    $('#telefonoRes').mask("9999-9999");
+    $('#telefonoMovil').mask("9999-9999");
+    $('#nit').mask("9999-999999-999-9");
+}); 
 var app = new Vue({
         el: "#app",
         data: {
@@ -397,26 +403,23 @@ var app = new Vue({
                 });
             
             },
-            guardarGoleador() {
-                var idTor = $("#idTo").val();
+            guardarTitulos() {
 
-                if (this.envios.length) {
+                if (this.maestros.length) {
 
-                    $('#frmGoleador').addClass('loading');
+                    $('#frmTitulos').addClass('loading');
                     $.ajax({
                         type: 'POST',
                         data: {
-                            goleos: JSON.stringify(this.envios),
-                            idTor : idTor,
+                            lista: JSON.stringify(this.maestros)
                         },
-                        url: '?1=TorneosController&2=registrarGoleador',
+                        url: '?1=SolicitudController&2=guardarTitulos',
                         success: function (r) {
-                            $('#frmGoleador').removeClass('loading');
+                            $('#frmTitulos').removeClass('loading');
                             if (r == 1) {
                                 
-                                        appE.envios = [{
-                                            goleadores: '1',
-                                            goles: ''
+                                        app.maestros = [{
+                                            titulos: '',
                                         }];
 
                                        
@@ -427,9 +430,165 @@ var app = new Vue({
                     });
                 }
 
+                },
+                guardarCapacitaciones() {
+
+            if (this.capacitaciones.length) {
+
+                $('#frmTitulos').addClass('loading');
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        listaCapa: JSON.stringify(this.capacitaciones)
+                    },
+                    url: '?1=SolicitudController&2=guardarCapacitaciones',
+                    success: function (r) {
+                        $('#frmCapacitaciones').removeClass('loading');
+                        if (r == 1) {
+                            
+                                    app.capacitaciones = [{
+                                        nombre: '',
+                                    }];
+
+                                
+                                        
+                        }
+                        
+                    }
+                });
+            }
+
+            },
+            guardarExperiencia() {
+
+                if (this.instituciones.length) {
+
+                    $('#frmTitulos').addClass('loading');
+                    $.ajax({
+                        type: 'POST',
+                        data: {
+                            listaExp: JSON.stringify(this.instituciones)
+                        },
+                        url: '?1=SolicitudController&2=guardarExperiencia',
+                        success: function (r) {
+                            $('#frmExperiencia').removeClass('loading');
+                            if (r == 1) {
+                                
+                                        app.instituciones = [{
+                                            nombre: '',
+                                            cargo: 'Director',
+                                            grado: '10',
+                                            asignaturas: '',
+                                            desde: '',
+                                            hasta: '',
+                                        }];
+
+                                    
+                                            
+                            }
+                            
+                        }
+                    });
                 }
+
+}
 
 
         }
     });
+
+
+$("input[name=sectorPublico]").click(function(){
+    var sector = $(this).val();
+
+    if(sector == "si"){
+        $("#numeroPartida").prop("disabled",false);
+        $("#subNumero").prop("disabled",false);
+    }
+    if(sector == "no"){
+        $("#numeroPartida").prop("disabled",true);
+        $("#subNumero").prop("disabled",true);
+    }
+});
+
+
+function Edad(FechaNacimiento) {
+
+var fechaNace = new Date(FechaNacimiento);
+var fechaActual = new Date()
+
+var mes = fechaActual.getMonth();
+var dia = fechaActual.getDate();
+var año = fechaActual.getFullYear();
+
+fechaActual.setDate(dia);
+fechaActual.setMonth(mes);
+fechaActual.setFullYear(año);
+
+edad = Math.floor(((fechaActual - fechaNace) / (1000 * 60 * 60 * 24) / 365));
+
+return edad;
+}
+
+
+function resultado(){
+    var fecha = document.getElementById('fechaNac').value;
+
+var edad = Edad(fecha);
+$("#edad").val(edad);
+
+}
+
+$('#fechaNac').change(function(){
+    var fecha =  document.getElementById('fechaNac').value;
+
+Edad(fecha);
+resultado();
+});
+
+$("#btnGuardarTodo").click(function(){
+    alertify.confirm("¿Desea guardar los datos del docente?",
+            function(){
+                const form = $('#frmMaestro');
+
+                const datosFormulario = new FormData(form[0]);
+
+
+                $.ajax({
+                enctype: 'multipart/form-data',
+                contentType: false,
+                processData: false,
+                cache: false,
+                type: 'POST',
+                url: '?1=SolicitudController&2=guardarSolicitudMaestro',
+                data: datosFormulario,
+                success: function(r) {
+                    if(r == 1) {
+                       
+                        swal({
+                            title: 'Registrado',
+                            text: 'Datos guardados con éxito',
+                            type: 'success',
+                            showConfirmButton: true,
+
+                        }).then((result) => {
+                            
+                               location.href = '?1=SolicitudController&2=fichaMaestro';
+                        }); 
+                        app.guardarTitulos();
+                        app.guardarCapacitaciones();
+                        app.guardarExperiencia();
+                    } 
+                }
+                });
+            },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+});
+
+
+
 </script>

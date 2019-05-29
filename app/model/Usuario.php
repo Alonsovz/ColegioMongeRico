@@ -230,3 +230,4 @@ class Usuario extends ModeloBase{
 
   
 }
+

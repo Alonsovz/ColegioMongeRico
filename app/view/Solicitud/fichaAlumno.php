@@ -169,7 +169,7 @@
                                 <input type="radio" name="discapacidad" value="no"> No 
                                 <br><br>
                                 Explique:
-                                <input type="text" id="expDiscapacidad" name="expDiscapacidad" placeholder="Describa el tipo de discapacidad">
+                                <input type="text" id="expDiscapacidad" name="expDiscapacidad" placeholder="Describa el tipo de discapacidad" disabled>
                         </div>
 
                         <div class="six wide field" style="font-size:16px;">
@@ -178,7 +178,7 @@
                                 <input type="radio" name="enfermedad" value="no"> No 
                                 <br><br>
                                 Explique:
-                                <input type="text" id="expEnfermedad" name="expEnfermedad" placeholder="Describa el tipo de enfermedad">
+                                <input type="text" id="expEnfermedad" name="expEnfermedad" placeholder="Describa el tipo de enfermedad" disabled>
                         </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                                 <input type="radio" name="alergia" value="no"> No 
                                 <br><br>
                                 Explique:
-                                <input type="text" id="expAlergia" name="expAlergia" placeholder="Describa el tipo de alergia">
+                                <input type="text" id="expAlergia" name="expAlergia" placeholder="Describa el tipo de alergia" disabled>
                         </div>
 
                         <div class="three wide field" style="font-size:16px;">
@@ -357,18 +357,18 @@
                             <div class="two wide field" style="font-size:16px;">
                                 <label><i class="question icon"></i>¿Familiar?</label>
                                 <input type="radio" name="familiar" value="si"> Si &nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="familiar" value="No"> No<br>
+                                <input type="radio" name="familiar" value="no"> No<br>
                             </div>
 
                             <div class="two wide field" style="font-size:16px;">
                                 <label><i class="question icon"></i><i class="user icon"></i>Parentesco:</label>
-                                <select name="parentesco" id="parentesco" class="ui dropdown">
-                                    <option value="dui">Padre</option>
-                                    <option value="nit">Madre</option>
-                                    <option value="nit">Hermano/a</option>
-                                    <option value="nit">Tío/a</option>
-                                    <option value="nit">Primo/a</option>
-                                    <option value="nit">Abuelo/a</option>
+                                <select name="parentesco" id="parentesco" disabled>
+                                    <option value="Padre">Padre</option>
+                                    <option value="Madre">Madre</option>
+                                    <option value="Hermano/a">Hermano/a</option>
+                                    <option value="Tío/a">Tío/a</option>
+                                    <option value="Primo/a">Primo/a</option>
+                                    <option value="Abuelo/a">Abuelo/a</option>
                                 </select>
                             </div>
 
@@ -469,7 +469,7 @@
                                 <input type="radio" name="discapacidadRes" value="no"> No 
                                 <br><br>
                                 Explique:
-                                <input type="text" id="expDiscapacidadRes" name="expDiscapacidadRes" placeholder="Describa el tipo de discapacidad">
+                                <input type="text" id="expDiscapacidadRes" name="expDiscapacidadRes" placeholder="Describa el tipo de discapacidad" disabled>
                         </div>
 
                             <div class="three wide field" style="font-size:16px;">
@@ -879,4 +879,62 @@ var anio = d.getFullYear();
         $("#otrosDatos").show(1000);
      });
  
+
+     $("input[name=discapacidad]").click(function(){
+    var sector = $(this).val();
+
+    if(sector == "si"){
+        $("#expDiscapacidad").prop("disabled",false);
+    }
+    if(sector == "no"){
+        $("#expDiscapacidad").prop("disabled",true);
+    }
+});
+
+
+$("input[name=enfermedad]").click(function(){
+    var sector = $(this).val();
+
+    if(sector == "si"){
+        $("#expEnfermedad").prop("disabled",false);
+    }
+    if(sector == "no"){
+        $("#expEnfermedad").prop("disabled",true);
+    }
+});
+
+$("input[name=alergia]").click(function(){
+    var sector = $(this).val();
+
+    if(sector == "si"){
+        $("#expAlergia").prop("disabled",false);
+    }
+    if(sector == "no"){
+        $("#expAlergia").prop("disabled",true);
+    }
+});
+
+
+$("input[name=discapacidadRes]").click(function(){
+    var sector = $(this).val();
+
+    if(sector == "si"){
+        $("#expDiscapacidadRes").prop("disabled",false);
+    }
+    if(sector == "no"){
+        $("#expDiscapacidadRes").prop("disabled",true);
+    }
+});
+
+$("input[name=familiar]").click(function(){
+    var sector = $(this).val();
+
+    if(sector == "si"){
+       
+        $("#parentesco").removeAttr('disabled');
+    }
+    if(sector == "no"){
+        $("#parentesco").attr('disabled',true);
+    }
+});
 </script>
