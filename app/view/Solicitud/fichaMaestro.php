@@ -508,6 +508,8 @@ $("input[name=sectorPublico]").click(function(){
     if(sector == "no"){
         $("#numeroPartida").prop("disabled",true);
         $("#subNumero").prop("disabled",true);
+        $("#numeroPartida").val('');
+        $("#subNumero").val('');
     }
 });
 

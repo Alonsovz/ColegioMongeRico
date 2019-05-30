@@ -29,7 +29,7 @@
 
 
     
-<form class="ui form" style="font-size:23px;margin-left:20px;margin-right:20px;" >
+<form class="ui form" style="font-size:23px;margin-left:20px;margin-right:20px;" id="frmAlumno" method="POST" method="POST" enctype="multipart/form-data">
         <div id="datosAlumnos">
             <h2 style="color:#04B486;"><i class="child icon"></i> Datos del alumno/a</h2>
             <hr><br>
@@ -331,6 +331,30 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="ui divider"></div>
+                    <div class="field">
+                    <h3 style="text-align:left; color:green;margin-left:20px;">¿Con quien vive el alumno?: </h3><br>
+                        <div class="fields">
+                            <div class="four wide field" style="font-size:16px;">
+                                <input type="radio" name="viveCon" value="Padre"> <i class="male icon"></i> Padre &nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+
+                            <div class="four wide field" style="font-size:16px;">
+                            <input type="radio" name="viveCon" value="Madre"><i class="female icon"></i> Madre &nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+
+                            <div class="four wide field" style="font-size:16px;">
+                            <input type="radio" name="viveCon" value="Ambos"><i class="female icon"></i><i class="male icon"></i> Ambos &nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div class="four wide field" style="font-size:16px;">
+                            <input type="radio" name="viveCon" value="Otro"> Otro &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" id="viveOtro" name="viveOtro" placeholder="Parentesco de la persona con quien vive" disabled>
+                            </div>
+                            
+                        </div>
+                    </div>
         </div>
 
 <div id="datosRespon">
@@ -452,7 +476,7 @@
                             </div>
 
                             <div class="four wide field" style="font-size:16px;">
-                                <label><i class="phone icon"></i><i class="user circle icon"></i>Teléfono:</label>
+                                <label><i class="phone icon"></i><i class="user circle icon"></i>Teléfono de trabajo:</label>
                                 <input type="text" id="telRes" name="telRes" placeholder="Teléfono">
                             </div>
                         
@@ -545,6 +569,8 @@
                         </div>
                         
                     </div>
+                    <br>
+                    <div class="ui divider"></div>
                     <div class="field">
                         <div class="fields">
                             <div class="ten wide field" style="font-size:16px;">
@@ -561,6 +587,55 @@
                         </div>
                         
                     </div>
+
+                    <div class="field">
+                    <h3 style="color:red;text-align:left;margin-left:20px;"><i class="lock icon"></i>Permiso para retirarlo de la escuela:</h3>
+                        <br><div class="fields">
+                            <div class="ten wide field" style="font-size:16px;">
+                                <label><i class="user icon"></i>Nombre completo:</label>
+                                <input type="text" id="auto1" name="auto1" placeholder="Contacto 1">
+                            </div>
+
+                            <div class="six wide field" style="font-size:16px;">
+                            <label><i class="question icon"></i><i class="user icon"></i>Parentesco:</label>
+                                <select name="autoParen1" id="autoParen1" >
+                                    <option value="Padre">Padre</option>
+                                    <option value="Madre">Madre</option>
+                                    <option value="Hermano/a">Hermano/a</option>
+                                    <option value="Tío/a">Tío/a</option>
+                                    <option value="Primo/a">Primo/a</option>
+                                    <option value="Abuelo/a">Abuelo/a</option>
+                                </select>
+                            </div>
+
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="field">
+                        <div class="fields">
+                        <div class="ten wide field" style="font-size:16px;">
+                                <label><i class="user icon"></i>Nombre completo:</label>
+                                <input type="text" id="auto2" name="auto2" placeholder="Contacto 2">
+                            </div>
+
+                            <div class="six wide field" style="font-size:16px;">
+                            <label><i class="question icon"></i><i class="user icon"></i>Parentesco:</label>
+                                <select name="autoParen2" id="autoParen2" >
+                                    <option value="Padre">Padre</option>
+                                    <option value="Madre">Madre</option>
+                                    <option value="Hermano/a">Hermano/a</option>
+                                    <option value="Tío/a">Tío/a</option>
+                                    <option value="Primo/a">Primo/a</option>
+                                    <option value="Abuelo/a">Abuelo/a</option>
+                                </select>
+                            </div>
+
+                            
+                        </div>
+                        
+                    </div>
+                    
                     <br>
                     <div class="ui divider"></div>
 
@@ -575,12 +650,12 @@
 
                             <div class="six wide field" style="font-size:16px;">
                                 <label><i class="bus icon"></i>Viajará en el microbus de:</label>
-                                <input type="text" id="propMicro" name="propMicro" placeholder="Nombre del responsable del microbús">
+                                <input type="text" id="propMicro" name="propMicro" placeholder="Nombre del responsable del microbús" disabled>
                             </div>
 
                             <div class="six wide field" style="font-size:16px;">
                                 <label><i class="phone icon"></i>Telefóno:</label>
-                                <input type="text" id="propMicroTel" name="propMicroTel" placeholder="Telefóno del responsable del microbús">
+                                <input type="text" id="propMicroTel" name="propMicroTel" placeholder="Telefóno del responsable del microbús" disabled>
                             </div>
 
                             
@@ -611,12 +686,12 @@
                                 <tbody>
                                     <tr v-for="(hermano, index) in hermanos">
                                     <td>  
-                                    <input class="requerido" v-model="hermano.nombre" name="hermano" id="hermano" type="text"
+                                    <input class="requerido" v-model="hermano.nombreHer" name="nombreHer" id="nombreHer" type="text"
                                      placeholder="Nombre completo">
                                     </td>
                                    
                                     <td>  
-                                    <select v-model="hermano.grado" name="grado" id="grado">
+                                    <select v-model="hermano.gradoHer" name="gradoHer" id="gradoHer">
                                     <option value="10">PreKinder</option>
                                     <option value="11">Kinder</option>
                                     <option value="12">Preparatoria</option>
@@ -676,16 +751,26 @@
 
  </div>
  <script>
-var clasifiId=0;
-var equipo1Id=0;
-var equipo2Id=0;
-
-var appE = new Vue({
+  $(document).ready(function(){
+    
+    $('#telefono').mask("9999-9999");
+    $('#telMadre').mask("9999-9999");
+    $('#telPadre').mask("9999-9999");
+    $('#telEmer1').mask("9999-9999");
+    $('#telEmer2').mask("9999-9999");
+    $('#propMicroTel').mask("9999-9999");
+    $('#telDiRes1').mask("9999-9999");
+    $('#telDiRes2').mask("9999-9999");
+    $('#telRes').mask("9999-9999");
+    $('#distanciaKM').mask("###0.00 km", {reverse: true});
+    $('#numeroID').mask("99999999-9");
+}); 
+var app = new Vue({
         el: "#app",
         data: {
             hermanos: [{
-                nombre: '',
-                grado: '10',
+                nombreHer: '',
+                gradoHer: '10',
                
                
             }],
@@ -696,43 +781,41 @@ var appE = new Vue({
             },
             agregarDetalleHer() {
                 this.hermanos.push({
-                    nombre: '',
-                grado: '10',
+                    nombreHer: '',
+                    gradoHer: '10',
             
                 });
             
             },
-            guardarGoleador() {
-                var idTor = $("#idTo").val();
+            guardarHermanos() {
 
-                if (this.envios.length) {
+            if (this.hermanos.length) {
 
-                    $('#frmGoleador').addClass('loading');
-                    $.ajax({
-                        type: 'POST',
-                        data: {
-                            goleos: JSON.stringify(this.envios),
-                            idTor : idTor,
-                        },
-                        url: '?1=TorneosController&2=registrarGoleador',
-                        success: function (r) {
-                            $('#frmGoleador').removeClass('loading');
-                            if (r == 1) {
-                                
-                                        appE.envios = [{
-                                            goleadores: '1',
-                                            goles: ''
-                                        }];
-
-                                       
-                                            
-                            }
+                $('#frmHeramnos').addClass('loading');
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        lista: JSON.stringify(this.hermanos)
+                    },
+                    url: '?1=SolicitudController&2=guardarHermanos',
+                    success: function (r) {
+                        $('#frmHeramnos').removeClass('loading');
+                        if (r == 1) {
                             
-                        }
-                    });
-                }
+                                    app.hermanos = [{
+                                        nombreHer: '',
+                                         gradoHer: '10'
+                                    }];
 
-                }
+                                
+                                        
+                        }
+                        
+                    }
+                });
+            }
+
+            },
 
 
         }
@@ -888,6 +971,7 @@ var anio = d.getFullYear();
     }
     if(sector == "no"){
         $("#expDiscapacidad").prop("disabled",true);
+        $("#expDiscapacidad").val('');
     }
 });
 
@@ -900,6 +984,7 @@ $("input[name=enfermedad]").click(function(){
     }
     if(sector == "no"){
         $("#expEnfermedad").prop("disabled",true);
+        $("#expEnfermedad").val('');
     }
 });
 
@@ -911,6 +996,7 @@ $("input[name=alergia]").click(function(){
     }
     if(sector == "no"){
         $("#expAlergia").prop("disabled",true);
+        $("#expAlergia").val('');
     }
 });
 
@@ -923,6 +1009,24 @@ $("input[name=discapacidadRes]").click(function(){
     }
     if(sector == "no"){
         $("#expDiscapacidadRes").prop("disabled",true);
+        $("#expDiscapacidadRes").val('');
+    }
+});
+
+
+$("input[name=viaje]").click(function(){
+    var sector = $(this).val();
+
+    if(sector == "si"){
+        $("#propMicro").prop("disabled",true);
+        $("#propMicroTel").prop("disabled",true);
+        $("#propMicro").val('');
+        $("#propMicroTel").val('');
+        
+    }
+    if(sector == "no"){
+        $("#propMicro").prop("disabled",false);
+        $("#propMicroTel").prop("disabled",false);
     }
 });
 
@@ -937,4 +1041,89 @@ $("input[name=familiar]").click(function(){
         $("#parentesco").attr('disabled',true);
     }
 });
+
+$("input[name=viveCon]").click(function(){
+    var sector = $(this).val();
+
+    if(sector == "Padre"){
+       
+        $("#viveOtro").prop("disabled",true);
+        $("#viveOtro").val('');
+    }
+    if(sector == "Madre"){
+        $("#viveOtro").prop('disabled',true);
+        $("#viveOtro").val('');
+    }
+
+    if(sector == "Ambos"){
+        $("#viveOtro").prop('disabled',true);
+        $("#viveOtro").val('');
+    }
+
+    if(sector == "Otro"){
+        $("#viveOtro").prop('disabled',false);
+       
+    }
+});
+
+$("#tipoIdRes").change(function(){
+    var tipo = $(this).val();
+
+    if(tipo == "dui"){
+        $('#numeroID').val('');
+        $('#numeroID').mask("99999999-9");
+    
+    }
+    if(tipo == "nit"){
+        $('#numeroID').val('');
+        $('#numeroID').mask("9999-999999-999-9");
+    }
+
+   
+});
+
+
+$("#btnGuardarTodo").click(function(){
+    alertify.confirm("¿Desea guardar los datos del alumno?",
+            function(){
+                const form = $('#frmAlumno');
+
+                const datosFormulario = new FormData(form[0]);
+
+
+                $.ajax({
+                enctype: 'multipart/form-data',
+                contentType: false,
+                processData: false,
+                cache: false,
+                type: 'POST',
+                url: '?1=SolicitudController&2=guardarSolicitudAlumno',
+                data: datosFormulario,
+                success: function(r) {
+                    if(r == 1111) {
+                       
+                        swal({
+                            title: 'Registrado',
+                            text: 'Datos guardados con éxito',
+                            type: 'success',
+                            showConfirmButton: true,
+
+                        }).then((result) => {
+                            
+                               location.href = '?1=SolicitudController&2=fichaAlumno';
+                        }); 
+                        app.guardarHermanos();
+                       
+                    } 
+                }
+                });
+            },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+});
+
+
 </script>

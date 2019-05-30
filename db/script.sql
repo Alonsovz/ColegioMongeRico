@@ -130,12 +130,107 @@ desde date,
 hasta date,
 idMaestro int
 );
+
+create table fichaAlumno(
+idAlumno int primary key unique auto_increment,
+nie varchar(50),
+nombre varchar(100),
+grado int,
+sexo varchar(20),
+repiteGrado varchar(50),
+nuevoIngreso varchar(50),
+reingreso varchar(30),
+religion varchar(50),
+insAnterior varchar(50),
+fechaNac date,
+departamentoNac varchar(20),
+municipioNac varchar(30),
+nacionalidad varchar(30),
+naturalizado varchar(10),
+discapacidad varchar(30),
+expDiscapacidad varchar(100),
+enfermedad varchar(20),
+expEnfermedad varchar(100),
+alergia varchar(20),
+expAlergia varchar(100),
+tipoSangre varchar(10),
+direccionRes varchar(100),
+medioTransporte varchar(100),
+distancia varchar(20),
+factoresRiesgo varchar(100),
+ocupacion varchar(50),
+trabaja varchar(10),
+dependenciaEco varchar(100),
+correo varchar(200),
+telefono varchar(30),
+viveCon varchar(50),
+viveOtro varchar(100),
+anio varchar(10),
+fechaIngreso date,
+idEliminado int
+);
+
+
+create table datosPadre(
+nombrePadre varchar(100),
+lugarTrabajoP varchar(100),
+telefonoPadre varchar(20),
+nombreMadre varchar(100),
+lugarTrabajoM varchar(100),
+telefonoMadre varchar(20),
+idAlumno int
+);
+
+create table datosResponsable(
+nombre varchar(100),
+tipoIden varchar(20),
+numeroIden varchar(30),
+familiar varchar(20),
+parentesco varchar(20),
+sexo varchar(10),
+estadoFamiliar varchar(40),
+fechaNac date,
+departamentoNac varchar(20),
+municipioNac varchar(100),
+nacionalidad varchar(30),
+profesion varchar(30),
+escolaridad varchar(50),
+lugarTrabajo varchar(50),
+telTrabajo varchar(50),
+discapcidad varchar(10),
+expDiscapacidad varchar(100),
+tipoSangre varchar(50),
+direccionRes varchar(100),
+telRes1 varchar(30),
+telRes2 varchar(30),
+correo varchar(50),
+factorRiesgo varchar(100),
+idAlumno int
+);
+
+
+create table otrosDatos(
+emergencia1 varchar(100),
+telEmergencia1 varchar(20),
+emergencia2 varchar(100),
+telEmergencia2 varchar(20),
+retiro1 varchar(100),
+parentesco1 varchar(100),
+retiro2 varchar(100),
+parentesco2 varchar(100),
+viajaraSolo varchar(20),
+microbusDe varchar(100),
+telMicro varchar(20),
+idAlumno int
+);
+
+create table hermanosAlum(
+nombre varchar(100),
+grado varchar(10),
+idAlumno int
+);
  
-alter table usuario add constraint fk_usuario_rol foreign key (codigoRol) references rol(codigoRol);
 
-alter table cargosBancarios add constraint fk_cargosBancarios_chequeras foreign key (idChequera) references chequeras(idChequera);
-
-alter table remesas add constraint fk_remesas_chequeras foreign key (idChequera) references chequeras(idChequera);
 
  insert into rol values(1,'Administrador/a');
 insert into rol values(2,'Maestro/a');
@@ -201,3 +296,5 @@ begin
 end
 $$
 
+
+select * from otrosDatos
