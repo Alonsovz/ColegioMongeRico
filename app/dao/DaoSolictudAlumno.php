@@ -20,7 +20,8 @@ class DaoSolictudAlumno extends DaoBase {
         '".$this->objeto->getExpAlergia()."','".$this->objeto->getTipoSangre()."','".$this->objeto->getDireccionRes()."',
         '".$this->objeto->getMedioTransporte()."','".$this->objeto->getDistancia()."','".$this->objeto->getRiesgos()."',
         '".$this->objeto->getOcupacion()."','".$this->objeto->getTrabaja()."','".$this->objeto->getDependenciaEco()."',
-        '".$this->objeto->getEmail()."','".$this->objeto->getTelefono()."','".$this->objeto->getViveCon()."','".$this->objeto->getViveOtro()."',year(CURRENT_DATE()),
+        '".$this->objeto->getEmail()."','".$this->objeto->getTelefono()."',
+        '".$this->objeto->getViveCon()."','".$this->objeto->getViveOtro()."',year(CURRENT_DATE()),
         curdate(),1)";
 
         $resultado = $this->con->ejecutar($_query);
@@ -123,6 +124,35 @@ class DaoSolictudAlumno extends DaoBase {
             return 0;
         }
     }
+
+
+    
+    public function mostrarAlumnosPrimer() {
+        $_query = "select * from fichaAlumno  where grado=1 and anio = year(CURRENT_DATE())  group by nie order by nombre asc";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        $_json = '';
+
+        while($fila = $resultado->fetch_assoc()) {
+
+            $object = json_encode($fila);
+
+            $btnEditar = '<button id=\"'.$fila["idAlumno"].'\"   class=\"ui btnEditar icon blue small button\"><i class=\"edit icon\"></i> Ver Detalles</button>';
+            $btnEliminar = '<button id=\"'.$fila["idAlumno"].'\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+
+            $acciones = ', "Acciones": "'.$btnEditar.' '.$btnEliminar.'"';
+
+            $object = substr_replace($object, $acciones, strlen($object) -1, 0);
+
+            $_json .= $object.',';
+        }
+
+        $_json = substr($_json,0, strlen($_json) - 1);
+
+        return '{"data": ['.$_json .']}';
+    }
+
 
 
 }

@@ -70,6 +70,12 @@ class GestionGradosController extends ControladorBase {
         require_once './app/view/GestionGrados/prepa.php';
     }
 
+    public function mostrarAlumnosPrimer() {
+        $dao = new DaoSolictudAlumno();
+
+        echo $dao->mostrarAlumnosPrimer();
+    }
+
 }
 
 ?>
