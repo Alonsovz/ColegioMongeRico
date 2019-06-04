@@ -136,6 +136,7 @@ class SolicitudController extends ControladorBase {
     public function guardarSolicitudAlumno(){
 
         $dao = new DaoSolictudAlumno();
+        $daoP = new DaoPagos();
 
         $dao->objeto->setNie($_REQUEST["nie"]);
         $dao->objeto->setNombre($_REQUEST["nombre"]);
@@ -271,6 +272,8 @@ class SolicitudController extends ControladorBase {
        echo $dao->registrarDatosPadre();
        echo $dao->registrarDatosResponsable();
         echo $dao->registrarOtrosDatos();
+        echo $daoP->registrarPagos();
+
 
         
     }

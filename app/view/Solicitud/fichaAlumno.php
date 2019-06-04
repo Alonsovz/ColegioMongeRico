@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="eight wide field" style="font-size:16px;">
-                                <label><i class="user icon"></i>Nombre completo del Alumno/a:</label>
+                                <label><i class="user icon"></i>Nombre completo del Alumno/a: (Apellidos-Nombre)</label>
                                 <input type="text" id="nombre" name="nombre" placeholder="Nombre completo del alumno/a">
                             </div>
 
@@ -1100,7 +1100,7 @@ $("#btnGuardarTodo").click(function(){
                 url: '?1=SolicitudController&2=guardarSolicitudAlumno',
                 data: datosFormulario,
                 success: function(r) {
-                    if(r == 1111) {
+                    if(r == 11111) {
                        
                         swal({
                             title: 'Registrado',

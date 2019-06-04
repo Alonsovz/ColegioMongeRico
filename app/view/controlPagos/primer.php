@@ -6,10 +6,7 @@
   inner join fichaAlumno f on f.idAlumno=p.idAlumno
   where f.grado=1 and p.anio = year(CURRENT_DATE()) and p.estado=1 order by f.nombre asc");
  ?>
- <head>
- <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
- </head>
- <body>
+ 
 <div id="app">
         <div class="ui grid">
             <div class="row">
@@ -38,154 +35,649 @@
         <table class="ui selectable very compact celled table" style="width:100%; margin:auto; text-align:center;">
             <thead>
                 <tr>
-                    <th style="background-color: #EB5065; color:white;">Nombre del Alumno/a</th>
-                    <th style="background-color: #EB5065; color:white;">Talonario</th>
-                    <th style="background-color: #EB5065; color:white;">Enero</th>
-                    <th style="background-color: #EB5065; color:white;">Febrero</th>
-                    <th style="background-color: #EB5065; color:white;">Marzo</th>
-                    <th style="background-color: #EB5065; color:white;">Abril</th>
-                    <th style="background-color: #EB5065; color:white;">Mayo</th>
-                    <th style="background-color: #EB5065; color:white;">Junio</th>
-                    <th style="background-color: #EB5065; color:white;">Julio</th>
-                    <th style="background-color: #EB5065; color:white;">Agosto</th>
-                    <th style="background-color: #EB5065; color:white;">Septiembre</th>
-                    <th style="background-color: #EB5065; color:white;">Octubre</th>
+                    <th style="background-color: #C41813; color:white;">Nombre del Alumno/a</th>
+                    <th style="background-color: #C41813; color:white;">Talonario</th>
+                    <th style="background-color: #C41813; color:white;">Enero</th>
+                    <th style="background-color: #C41813; color:white;">Febrero</th>
+                    <th style="background-color: #C41813; color:white;">Marzo</th>
+                    <th style="background-color: #C41813; color:white;">Abril</th>
+                    <th style="background-color: #C41813; color:white;">Mayo</th>
+                    <th style="background-color: #C41813; color:white;">Junio</th>
+                    <th style="background-color: #C41813; color:white;">Julio</th>
+                    <th style="background-color: #C41813; color:white;">Agosto</th>
+                    <th style="background-color: #C41813; color:white;">Septiembre</th>
+                    <th style="background-color: #C41813; color:white;">Octubre</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+               
                 <?php
                     while ($valores = mysqli_fetch_array($listado)) {
                         echo '
-                        <td>'.utf8_encode($valores["nombre"]).'</td>
-                        <td>'.$valores["talonario"].'</td>
-                        ';
-                        if($valores["e"]==''){
-                           echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["e"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrarE(this)" class="ui blue button">C'.$valores["e"].'</button></td>';
+                        <tr>
+                        <td>'.utf8_encode($valores["nombre"]).'</td>';
+
+                        if($valores["talonario"]=='000'){
+                           echo '<td style="background-color:#EFFB59; color:black" id="'.$valores["idAlumno"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="talonario(this)">Definir</td>';
                         }else{
-                           echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["e"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrarE(this)">'.$valores["e"].'</td>';
+                           echo '<td id="'.$valores["idAlumno"].'" actual="'.$valores["talonario"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="talonario(this)">'.$valores["talonario"].'</td>
+                           ';
+                        }
+                        
+                        if($valores["e"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["e"].'" n="1" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["e"].'</button></td>';
+                        }else{
+                           echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["e"].'" n="1" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["e"].'</td>';
                         }
                         if($valores["f"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["f"].'"  nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["f"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["f"].'" n="2"  nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["f"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["f"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["f"].'</td>';
+                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["f"].'" n="2" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["f"].'</td>';
                          }
                          if($valores["m"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["m"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["m"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["m"].'" n="3" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["m"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'"  cuota="'.$valores["m"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["m"].'</td>';
+                            echo '<td id="'.$valores["idAlumno"].'"  cuota="'.$valores["m"].'" n="3" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["m"].'</td>';
                          }
 
                          if($valores["a"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["a"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["a"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["a"].'" n="4" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["a"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["a"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["a"].'</td>';
+                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["a"].'" n="4" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["a"].'</td>';
                          }
 
                          if($valores["ma"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ma"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ma"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ma"].'" n="5" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ma"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ma"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["ma"].'</td>';
+                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ma"].'"  n="5" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["ma"].'</td>';
                          }
 
                          if($valores["ju"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ju"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ju"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ju"].'" n="6" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ju"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ju"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["ju"].'</td>';
+                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ju"].'" n="6" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["ju"].'</td>';
                          }
 
                          if($valores["jul"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["jul"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["jul"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["jul"].'" n="7" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["jul"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["jul"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["jul"].'</td>';
+                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["jul"].'" n="7" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["jul"].'</td>';
                          }
 
                          if($valores["ago"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ago"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ago"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ago"].'" n="8" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ago"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ago"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["ago"].'</td>';
+                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ago"].'" n="8" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["ago"].'</td>';
                          }
 
                          if($valores["sep"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["sep"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["sep"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["sep"].'" n="9" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["sep"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["sep"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["sep"].'</td>';
+                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["sep"].'" n="9" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["sep"].'</td>';
                          }
 
                          if($valores["oc"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["oc"].'</button></td>';
+                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'" n="10" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["oc"].'</button></td>';
                          }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["oc"].'</td>
-                            </tr>
-            ';
+                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'"  n="10" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["oc"].'</td>
+                            </tr>';
                          }
-
                     }
                 ?>
                 </tbody>
         </table>
-                
+</div>               
 <div class="ui tiny modal" id="cobroCuota">
 <div class="header">
-<a style="color: black; font-size:15px;" id="tituloM"></a>
+<a style="color: black; font-size:17px;" id="tituloM"></a>
+<br>
+<a id="name" style="font-size:17px;"></a>
 </div>
-<div class="content">
+<div class="content" style="margin:auto;">
+<center>
 <button id="pagoNormal" class="ui black button"> <i class="close icon"></i> Pago Normal</button>
 <button id="pagoAde" class="ui blue button"> <i class="window close outline icon"></i> Pago adelantado</button>
 <button id="pagoAtra" class="ui red button"> <i class="window close outline icon"></i> Pago atrasado</button>
+<input type="hidden" id="idAlum" name="idAlum">
+<input type="hidden" id="idCuota" name="idCuota">
+</center>
 </div>
 <div class="actions">
 <button class="ui  teal deny button">
 Cancelar
 </button>
-<button class="ui  blue button">
-Cobrar
-</button>
-</button>
 </div>
 </div>
- </div>
- </body>
+
+
+<div class="ui tiny modal" id="modalTalonario">
+   <div class="header">
+   Definir número de talonario para el alumno/a:
+   <br>
+   <a id="nameA" style="font-size:17px;"></a>
+   </div>
+      <div class="content" style="margin:auto;">
+
+      <input type="hidden" id="idATa" name="idATa">
+         <form class="ui form">
+            <div class="field">
+               <div class="fields">
+                  <div class="sixteen wide field">
+                  <label style="font-size:20px;"><i class="address card icon"></i>N° de Talonario</label>
+                  <input type="text" name="nTalonario" id="nTalonario">
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   <div class="actions">
+   <button class="ui  teal deny button">
+   Cancelar
+   </button>
+   <button class="ui  blue button" id="guardarTalonario">
+   Definir
+   </button>
+   </div>
+</div>
+ 
+
  <script>
     $(document).ready(function(){
     $("#primer").removeClass("ui red button");
     $("#primer").addClass("ui red basic button");
     });
 
-    
- var cobrarE=(ele)=>{
+    var talonario=(ele)=>{
        var idA= $(ele).attr("id");
        var nombre =$(ele).attr("nombre");
-       var cu =  $(ele).attr("cuota");
+       var actual =$(ele).attr("actual");
 
-       if(cu==""){
-        $("#tituloM").text("Cobrar cuota del mes de enero al alumno/a: "+nombre);
+       $("#idATa").val(idA);
+       $("#nameA").text(nombre);
+       $("#nTalonario").val(actual);
+
+       $('#modalTalonario').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+    }
+    
+    
+ var cobrar=(ele)=>{
+       var idA= $(ele).attr("id");
+       var nombre =$(ele).attr("nombre");
+       $("#name").text(nombre);
+       
+       
+       var cu =  $(ele).attr("cuota");
+       var nCuo =  $(ele).attr("n");
+
+       $("#idAlum").val(idA);
+       $("#idCuota").val(nCuo);
+
+       if(cu=="" && nCuo=="1"){
+        $("#tituloM").text("Cobrar cuota del mes de enero al alumno/a:");
+        
         $("#pagoNormal").show();
         $("#pagoAde").show();
         $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
 
-       else if(cu=="<i class='close icon' style='font-size:30px;'></i>"){
-        $("#tituloM").text("Modificar cobro de la cuota del mes de enero al alumno/a: "+nombre);
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="1"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de enero al alumno/a: ");
         $("#pagoNormal").hide();
         $("#pagoAde").show();
         $("#pagoAtra").show();
-       }else if(cu=="<i class='window close outilne icon' style='font-size:30px; color:blue;'></i>"){
-        $("#tituloM").text("Modificar cobro de la cuota del mes de enero al alumno/a: "+nombre);
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="1"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de enero al alumno/a: ");
         $("#pagoNormal").show();
         $("#pagoAde").hide();
         $("#pagoAtra").show();
-       }else if(cu=="<i class='window close outilne icon' style='font-size:30px; color:red;'></i>"){
-        $("#tituloM").text("Modificar cobro de la cuota del mes de enero al alumno/a: "+nombre);
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="1"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de enero al alumno/a: ");
         $("#pagoNormal").show();
         $("#pagoAde").show();
         $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+
+
+       if(cu=="" && nCuo=="2"){
+        $("#tituloM").text("Cobrar cuota del mes de febrero al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="2"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de febrero al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="2"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de febrero al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="2"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de febrero al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+
+       if(cu=="" && nCuo=="3"){
+        $("#tituloM").text("Cobrar cuota del mes de marzo al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="3"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de marzo al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="3"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de marzo al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="3"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de marzo al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       if(cu=="" && nCuo=="4"){
+        $("#tituloM").text("Cobrar cuota del mes de abril al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="4"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de abril al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="4"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de abril al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="4"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de abril al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       if(cu=="" && nCuo=="5"){
+        $("#tituloM").text("Cobrar cuota del mes de mayo al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="5"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de mayo al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="4"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de mayo al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="5"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de mayo al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       if(cu=="" && nCuo=="6"){
+        $("#tituloM").text("Cobrar cuota del mes de junio al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="6"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de junio al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="6"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de junio al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="6"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de junio al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       if(cu=="" && nCuo=="7"){
+        $("#tituloM").text("Cobrar cuota del mes de julio al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="7"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de julio al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="7"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de julio al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="7"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de julio al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+
+       if(cu=="" && nCuo=="8"){
+        $("#tituloM").text("Cobrar cuota del mes de agosto al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="8"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de agosto al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="8"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de agosto al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="8"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de agosto al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+
+       if(cu=="" && nCuo=="9"){
+        $("#tituloM").text("Cobrar cuota del mes de septiembre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="9"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de septiembre al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="9"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de septiembre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="9"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de septiembre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       if(cu=="" && nCuo=="10"){
+        $("#tituloM").text("Cobrar cuota del mes de octubre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="10"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de octubre al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="10"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de octubre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="10"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de octubre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
       
-     
-       $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
      }
+
 </script>
+
+<script>
+ $("#pagoNormal").click(function(){
+        var idAl = $("#idAlum").val();
+        var idC = $("#idCuota").val();
+
+        alertify.confirm("¿Desea guardar el cobro al alumno/a : "+$("#name").text()+ "?",
+            function(){
+
+        $.ajax({
+                
+                type: 'POST',
+                url: '?1=PagosController&2=guardarPagoNo',
+                data: {
+                   idAl: idAl,
+                   idC: idC,
+                },
+                success: function(r) {
+                    if(r == 1) {
+                        $('#cobroCuota').modal('hide');
+                        swal({
+                            title: 'Cobro realizado',
+                            text: 'Guardado con éxito',
+                            type: 'success',
+                            showConfirmButton: true,
+                              
+
+                        }).then((result) => {
+                            location.reload();
+                        }); 
+                        
+                    } 
+                }
+            });
+
+         },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+     });
+</script>
+
+
+
+<script>
+ $("#pagoAde").click(function(){
+        var idAl = $("#idAlum").val();
+        var idC = $("#idCuota").val();
+
+        alertify.confirm("¿Desea guardar el cobro de manera adelantada al alumno/a : "+$("#name").text()+ "?",
+            function(){
+
+        $.ajax({
+                
+                type: 'POST',
+                url: '?1=PagosController&2=guardarPagoAde',
+                data: {
+                   idAl: idAl,
+                   idC: idC,
+                },
+                success: function(r) {
+                    if(r == 1) {
+                        $('#cobroCuota').modal('hide');
+                        swal({
+                            title: 'Cobro realizado',
+                            text: 'Guardado con éxito',
+                            type: 'success',
+                            showConfirmButton: true,
+                              
+
+                        }).then((result) => {
+                            location.reload();
+                        }); 
+                        
+                    } 
+                }
+            });
+
+         },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+     });
+</script>
+
+
+<script>
+ $("#pagoAtra").click(function(){
+        var idAl = $("#idAlum").val();
+        var idC = $("#idCuota").val();
+
+        alertify.confirm("¿Desea guardar el cobro de manera atrasada al alumno/a : "+$("#name").text()+ "?",
+            function(){
+
+        $.ajax({
+                
+                type: 'POST',
+                url: '?1=PagosController&2=guardarPagoAtr',
+                data: {
+                   idAl: idAl,
+                   idC: idC,
+                },
+                success: function(r) {
+                    if(r == 1) {
+                        $('#cobroCuota').modal('hide');
+                        swal({
+                            title: 'Cobro realizado',
+                            text: 'Guardado con éxito',
+                            type: 'success',
+                            showConfirmButton: true,
+                              
+
+                        }).then((result) => {
+                            location.reload();
+                        }); 
+                        
+                    } 
+                }
+            });
+
+         },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+     });
+</script>
+
+
+<script>
+ $("#guardarTalonario").click(function(){
+        var idAl = $("#idATa").val();
+        var nT = $("#nTalonario").val();
+
+        alertify.confirm("¿Desea guardar el número de talonario para "+$("#nameA").text()+ "?",
+            function(){
+
+        $.ajax({
+                
+                type: 'POST',
+                url: '?1=PagosController&2=guardarTalonario',
+                data: {
+                   idAl: idAl,
+                   nT: nT,
+                },
+                success: function(r) {
+                    if(r == 1) {
+                        $('#modalTalonario').modal('hide');
+                        swal({
+                            title: 'Guardado!',
+                            text: 'N° talonario definido correctamente',
+                            type: 'success',
+                            showConfirmButton: true,
+                              
+
+                        }).then((result) => {
+                            location.reload();
+                        }); 
+                        
+                    } 
+                }
+            });
+
+         },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+     });
+</script>
+
 
         
 
