@@ -16,6 +16,7 @@ $(function() {
                 {
                     "data": "nombre"
                 },
+                
                 {
                     "data": "Acciones"             
                 }

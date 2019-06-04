@@ -98,84 +98,84 @@
         <div class="menu">
 
         <div class="item" >
-        <a href="?1=EscFutbolController&2=primer" class="item menu-it" style="color:black; background-color:#F6E3CE;font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=prekinder" class="item menu-it" style="color:black; background-color:#F6E3CE;font-weight:bold; font-size:14px;">
             PreKinder
         </a>
 
         </div>
         <hr>
         <div class="item">
-        <a href="?1=EscFutbolController&2=segundo" class="item menu-it" style="color:black;  background-color:#CEF6CE;font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=kinder" class="item menu-it" style="color:black;  background-color:#CEF6CE;font-weight:bold; font-size:14px;">
             Kinder
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=tercer" class="item menu-it" style="color:black;  background-color:#CEF6CE;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=preparatoria" class="item menu-it" style="color:black;  background-color:#CEF6CE;  font-weight:bold; font-size:14px;">
            Preparatoria
         </a>
 
         </div>
         <hr>
         <div class="item">
-        <a href="?1=EscFutbolController&2=cuarto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=primerGrado" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold; font-size:14px;">
            1er Grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=quinto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=segundoGrado" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold; font-size:14px;">
            2do grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=tercerGrado" class="item menu-it" style="color:black; background-color:#CECEF6;  font-weight:bold; font-size:14px;">
             3er Grado
         </a>
 
         </div>
         <hr>
         <div class="item">
-        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=cuartoGrado" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold; font-size:14px;">
             4to Grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=quintoGrado" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold; font-size:14px;">
             5to Grado
         </a>
 
         </div>
         
         <div class="item">
-        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=sextoGrado" class="item menu-it" style="color:black; background-color:#E2A9F3;  font-weight:bold; font-size:14px;">
             6to Grado
         </a>
 
         </div>
         <hr>
         <div class="item">
-        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold;  font-size:14px;">
+        <a href="?1=PagosController&2=septimoGrado" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold;  font-size:14px;">
             7mo Grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=octavoGrado" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold; font-size:14px;">
             8vo Grado
         </a>
 
         </div>
 
         <div class="item">
-        <a href="?1=EscFutbolController&2=sexto" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold; font-size:14px;">
+        <a href="?1=PagosController&2=novenoGrado" class="item menu-it" style="color:black; background-color:#F5DA81;  font-weight:bold; font-size:14px;">
             9no Grado
         </a>
 

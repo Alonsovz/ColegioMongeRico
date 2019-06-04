@@ -68,6 +68,8 @@ orientadorFis int,
 aula varchar(20)
 );
 
+
+
 create table inventarioUni(
 id int primary key unique auto_increment,
 talla varchar(10),
@@ -170,7 +172,22 @@ fechaIngreso date,
 idEliminado int
 );
 
-
+create table pagosAlumnos(
+idAlumno int,
+talonario varchar(50),
+e varchar(100),
+f varchar(100),
+m varchar(100),
+a varchar(100),
+ma varchar(100),
+ju varchar(100),
+jul varchar(100),
+ago varchar(100),
+sep varchar(100),
+oc varchar(100),
+anio varchar(10),
+estado int
+);
 create table datosPadre(
 nombrePadre varchar(100),
 lugarTrabajoP varchar(100),
@@ -297,4 +314,15 @@ end
 $$
 
 
-select * from otrosDatos
+insert into pagosAlumnos values(3,'002','','','','','','','','','','',year(CURRENT_DATE()),1);
+
+
+select p.talonario as talonario,p.*, f.nombre as nombre from pagosAlumnos p
+  inner join fichaAlumno f on f.idAlumno=p.idAlumno
+  where f.grado=1
+
+
+
+update pagosAlumnos set e="<i class='window close outilne icon' style='font-size:30px; color:red;'></i>" where idAlumno=1
+
+select * from pagosAlumnos
