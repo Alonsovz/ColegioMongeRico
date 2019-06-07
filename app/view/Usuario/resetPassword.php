@@ -26,9 +26,9 @@ if(isset($_REQUEST["3"])) {
         <div class="contenedor" style="margin-top:0; height: 100vh; background: none !important; display: flex;
         align-items: center;
         justify-content: center;">
-            <div class="cuadro" style="min-width: 350px">
-                <div class="cuadro-ins">
-                    <img src="./res/img/deloitteNigga.svg" alt="" id="logo-login">
+            <div class="cuadro" style="border: 3px solid #088A68; min-width:350px;">
+                <div class="cuadro-ins" style="border: 3px solid #088A68;">
+                <img src="./res/img/logoMongeRico.jpg" alt="" id="logo-login">
                 </div>
                 <form id="frmNewPass" action="" method="POST" class="ui form">
                     <div class="field">
@@ -50,13 +50,13 @@ if(isset($_REQUEST["3"])) {
                     <a id="label-error" style="display: none; margin: 0; text-align:center;" class="ui red fluid large label"
                         v-if="isError">Datos
                         Incorrectos</a>
-                    <button style="margin-top: 15px;" class="ui green-deloitte fluid button" name="btnEnviar" value="noloc"
+                    <button style="margin-top: 15px; width:100%;" class="ui blue  button" name="btnEnviar" value="noloc"
                         @click="login" id="btnEnviar" type="button" @submit.prevent="">Enviar datos</button>
 
 
                 </form>
-                <div style="text-align:center; margin-top:15px;" class="field">
-                    <a href="?1=UsuarioController&2=loginview" class="ui bottom attached label">Volver a inicio</a>
+                <div style="text-align:center; margin-top:15px; background-color:#81F7BE;" class="field">
+                    <a href="?1=UsuarioController&2=loginview" class="ui teal bottom attached label">Volver a inicio</a>
                 </div>
 
             </div>
