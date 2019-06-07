@@ -23,9 +23,24 @@ body {
 }
 
 #btn-menu:hover {
-    color: #eee !important;
+    color:  #eee !important;
+    background: rgb(17, 170, 170);
 }
 
+#btnHome:hover {
+    color:  #eee !important;
+    background: rgb(17, 170, 170);
+}
+
+#btnCerrarS:hover {
+    color:  #eee !important;
+    background: rgb(17, 170, 170);
+}
+
+#btnCerrarSe:hover {
+    color:  #eee !important;
+    background: rgb(17, 170, 170);
+}
 
 #logo-header {
     padding: 0px 7px !important;
@@ -46,7 +61,7 @@ body {
 
 #barra {
     /* background-color:#2f3542; */
-    background-color: #CEE3F6 !important;
+    background-color: #eee !important;
     /* background-image: linear-gradient(#212F3D, #17202A); */
     min-height: 10px !important;
     color: rgb(17, 3, 80);

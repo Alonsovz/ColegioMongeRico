@@ -1,15 +1,30 @@
-
+<br>
 <div id="app">
         <div class="ui grid">
             <div class="row">
                    
-                    <font color="#08088A" size="6px">
+            <div class="titulo">
+                    <a href="?1=GestionGradosController&2=prekinder" class="ui blue button" id="prekinder">Prekinder</a>
+                    <a href="?1=GestionGradosController&2=kinder" class="ui teal button" id="kinder">Kinder</a>
+                    <a href="?1=GestionGradosController&2=preparatoria" class="ui green button" id="prepa">Preparatoria</a>
+                    <a href="?1=GestionGradosController&2=primerGrado" class="ui red button" id="primer">1er Grado</a>
+                    <a href="?1=GestionGradosController&2=segundoGrado" class="ui orange button" id="segundo">2do Grado</a>
+                    <a href="?1=GestionGradosController&2=tercerGrado" class="ui yellow button" id="tercer">3er Grado</a>
+                    <a href="?1=GestionGradosController&2=cuartoGrado" class="ui purple button" id="cuarto">4to Grado</a>
+                    <a href="?1=GestionGradosController&2=quintoGrado" class="ui violet button" id="quinto">5to Grado</a>
+                    <a href="?1=GestionGradosController&2=sextoGrado" class="ui brown button" id="sexto">6to Grado</a>
+                    <a href="?1=GestionGradosController&2=septimoGrado" class="ui black button" id="septimo">7mo Grado</a>
+                    <a href="?1=GestionGradosController&2=octavoGrado" class="ui olive button" id="octavo">8vo Grado</a>
+                    <a href="?1=GestionGradosController&2=novenoGrado" class="ui gray button" id="noveno">9no Grado</a>
+                     <br><br>
+                    <font color="#B40431" size="6px">
                     <i class="user icon"></i><i class="book icon"></i>
-                    Gestión como orientador de 1er grado</font>
+                    Gestión de 1er Grado</font>
                     <font color="#210B61" size="20px"> .</font>
                     </div>
             </div>
-            <div class="ui divider"></div>
+</div>
+            <br>
             <form class="ui form" style="font-size:16px;">
                 <div class="field">
                         <div class="fields">
@@ -61,10 +76,10 @@
                     <thead>
                         <tr>
                         
-                            <th style="background-color: #E6C404; color:white;">N°</th>
-                            <th style="background-color: #08088A; color:white;">NIE</th>
-                            <th style="background-color: #08088A; color:white;">Nombre</th>
-                            <th style="background-color: #08088A; color:white;">Acciones</th>
+                            <th style="background-color: #B40431; color:white;">N°</th>
+                            <th style="background-color: #B40431; color:white;">NIE</th>
+                            <th style="background-color: #B40431; color:white;">Nombre</th>
+                            <th style="background-color: #B40431; color:white;">Acciones</th>
                            
                         </tr>
                     </thead>
@@ -75,8 +90,19 @@
         </div>
             </div>
  </div>
- <script src="./res/tablas/tablaNominaPrimer.js"></script>
+ <script src="./res/tablas/tablaAlumnos.js"></script>
  <script>
+
+$(document).ready(function(){
+    var idGrado=1;
+    mostrarAlumnos(idGrado);
+});
+
+$(document).ready(function(){
+    $("#primer").removeClass("ui red button");
+    $("#primer").addClass("ui red basic button");
+  
+    });
 
 $("#accion").change(function(){
 var acc = $(this).val();

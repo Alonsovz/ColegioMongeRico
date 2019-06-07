@@ -71,9 +71,11 @@ class GestionGradosController extends ControladorBase {
     }
 
     public function mostrarAlumnosPrimer() {
+        $idGrado = (isset($_REQUEST['idGrado']))? $_REQUEST['idGrado']:0;
+
         $dao = new DaoSolictudAlumno();
 
-        echo $dao->mostrarAlumnosPrimer();
+        echo $dao->mostrarAlumnosPrimer($idGrado);
     }
 
 }

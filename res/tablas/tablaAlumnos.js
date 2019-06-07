@@ -1,10 +1,12 @@
 var tablaNominaPrimer;
 
+function mostrarAlumnos(idGrado) {
+
 $(function() {
     if($('#dtNomina').length) {
         tablaNominaPrimer = $('#dtNomina').DataTable({
             "ajax": {
-                "url": "?1=GestionGradosController&2=mostrarAlumnosPrimer",
+                "url": "?1=GestionGradosController&2=mostrarAlumnosPrimer&idGrado="+idGrado,
                 "type": "POST"
             },
             "columns": [{
@@ -53,4 +55,6 @@ $(function() {
          // Ocultar columna de id de Usuario
          tablaNominaPrimer.column(0).visible(false);
     }
+
 });
+}

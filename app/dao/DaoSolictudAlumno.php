@@ -127,8 +127,8 @@ class DaoSolictudAlumno extends DaoBase {
 
 
     
-    public function mostrarAlumnosPrimer() {
-        $_query = "select * from fichaAlumno  where grado=1 and anio = year(CURRENT_DATE())  group by nie order by nombre asc";
+    public function mostrarAlumnosPrimer($idGrado=0) {
+        $_query = "select * from fichaAlumno  where grado=".$idGrado." and anio = year(CURRENT_DATE())  group by nie order by nombre asc";
 
         $resultado = $this->con->ejecutar($_query);
 

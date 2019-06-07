@@ -257,7 +257,7 @@ class SolicitudController extends ControladorBase {
         $dao->objeto->setAuto2Tel($_REQUEST["autoParen2"]);
         $dao->objeto->setViaje($_REQUEST["viaje"]);
 
-        if($_REQUEST["discapacidadRes"]=='no'){
+        if($_REQUEST["viaje"]=='no'){
             $dao->objeto->setMicroProp($_REQUEST["propMicro"]);
             $dao->objeto->setMicroPropTel($_REQUEST["propMicroTel"]);
         }else{
