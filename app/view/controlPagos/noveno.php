@@ -25,7 +25,11 @@
                         <font color="#948F97" size="6px">
                         <i class="file icon"></i><i class="dollar icon"></i>
                         Control de pagos 9no Grado</font>
-                        <font color="#210B61" size="20px"> .</font>
+                        <font color="#210B61" size="20px"> .</font><br>
+                        <button class="ui right floated black labeled icon button" id="btnReporte">
+                        <i class="file icon"></i>
+                        Ver Reporte
+                    </button>
                 </div>
             </div>
         </div>
@@ -675,6 +679,17 @@ Cancelar
     $("#noveno").removeClass("ui gray button");
     $("#noveno").addClass("ui gray basic button");
     });
+
+    $("#btnReporte").click(function(){
+      var id = 9;
+      var grado= '9no Grado';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+window.open('?1=PagosController&2=reportesPagoCuotas&id='+id+'&grado='+grado+'&anio='+anio,'_blank');
+return false;
+     });
 </script>
         
 

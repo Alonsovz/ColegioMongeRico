@@ -25,7 +25,11 @@
                         <font color="#2DB529" size="6px">
                         <i class="file icon"></i><i class="dollar icon"></i>
                         Control de pagos Preparatoria</font>
-                        <font color="#210B61" size="20px"> .</font>
+                        <font color="#210B61" size="20px"> .</font><br>
+                        <button class="ui right floated black labeled icon button" id="btnReporte">
+                        <i class="file icon"></i>
+                        Ver Reporte
+                    </button>
                 </div>
             </div>
         </div>
@@ -675,6 +679,17 @@ Cancelar
     $("#prepa").removeClass("ui green button");
     $("#prepa").addClass("ui green basic button");
     });
+
+    $("#btnReporte").click(function(){
+      var id = 12;
+      var grado= 'Preparatoria';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+window.open('?1=PagosController&2=reportesPagoCuotas&id='+id+'&grado='+grado+'&anio='+anio,'_blank');
+return false;
+     });
 </script>
         
 

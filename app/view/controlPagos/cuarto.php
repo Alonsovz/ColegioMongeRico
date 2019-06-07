@@ -25,7 +25,11 @@
                                 <font color="#A263BE" size="6px">
                                 <i class="file icon"></i><i class="dollar icon"></i>
                                 Control de pagos 4to Grado</font>
-                                <font color="#210B61" size="20px"> .</font>
+                                <font color="#210B61" size="20px"> .</font><br>
+                                <button class="ui right floated black labeled icon button" id="btnReporte">
+                        <i class="file icon"></i>
+                        Ver Reporte
+                    </button>
                         </div>
             </div>
         </div>
@@ -676,6 +680,17 @@ Cancelar
     $("#cuarto").removeClass("ui purple button");
     $("#cuarto").addClass("ui purple basic button");
     });
+
+    $("#btnReporte").click(function(){
+      var id = 4;
+      var grado= '4to Grado';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+window.open('?1=PagosController&2=reportesPagoCuotas&id='+id+'&grado='+grado+'&anio='+anio,'_blank');
+return false;
+     });
 </script>
         
 

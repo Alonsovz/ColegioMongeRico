@@ -25,7 +25,11 @@
                                 <font color="#7BC1AC" size="6px">
                                 <i class="file icon"></i><i class="dollar icon"></i>
                                 Control de pagos kinder</font>
-                                <font color="#210B61" size="20px"> .</font>
+                                <font color="#210B61" size="20px"> .</font><br>
+                                <button class="ui right floated black labeled icon button" id="btnReporte">
+                        <i class="file icon"></i>
+                        Ver Reporte
+                    </button>
                         </div>
                 </div>
             </div>
@@ -677,6 +681,17 @@ Cancelar
     $("#kinder").removeClass("ui teal button");
     $("#kinder").addClass("ui teal basic button");
     });
+
+    $("#btnReporte").click(function(){
+      var id = 11;
+      var grado= 'kinder';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+window.open('?1=PagosController&2=reportesPagoCuotas&id='+id+'&grado='+grado+'&anio='+anio,'_blank');
+return false;
+     });
 </script>
         
 

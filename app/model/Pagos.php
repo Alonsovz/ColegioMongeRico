@@ -1,6 +1,7 @@
 <?php 
 
 class Pagos extends ModeloBase{
+    private $idGrado;
     private $idAlumno;
     private $cuota;
     private $estado;
@@ -10,6 +11,20 @@ class Pagos extends ModeloBase{
     public function __construct() {
 
     }
+
+    public function getIdGrado()
+    {
+        return $this->idGrado;
+    }
+
+   
+    public function setIdGrado($idGrado)
+    {
+        $this->idGrado = $idGrado;
+
+        return $this;
+    }
+
 
     public function getIdAlumno()
     {

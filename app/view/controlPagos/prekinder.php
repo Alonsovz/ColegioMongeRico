@@ -24,8 +24,12 @@
                         <br><br>
                         <font color="#5A6CC6" size="6px">
                         <i class="file icon"></i><i class="dollar icon"></i>
-                        Control de pagos PreKinder</font>
-                        <font color="#210B61" size="20px"> .</font>
+                        Control de pagos Pre-Kinder</font>
+                        <font color="#210B61" size="20px"> .</font><br>
+                        <button class="ui right floated black labeled icon button" id="btnReporte">
+                        <i class="file icon"></i>
+                        Ver Reporte
+                    </button>
                 </div>
             </div>
         </div>
@@ -675,6 +679,17 @@ Cancelar
     $("#prekinder").removeClass("ui blue button");
     $("#prekinder").addClass("ui blue basic button");
     });
+
+    $("#btnReporte").click(function(){
+      var id = 10;
+      var grado= 'Pre-Kinder';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+window.open('?1=PagosController&2=reportesPagoCuotas&id='+id+'&grado='+grado+'&anio='+anio,'_blank');
+return false;
+     });
 </script>
         
 

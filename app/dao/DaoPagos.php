@@ -498,6 +498,17 @@ class DaoPagos extends DaoBase {
     }
 
 
+    public function reportesPagoCuotas() {
+        $query = "select p.talonario as talonario,p.*, f.nombre as nombre from pagosAlumnos p
+        inner join fichaAlumno f on f.idAlumno=p.idAlumno
+        where f.grado=".$this->objeto->getIdGrado()." and p.anio = year(CURRENT_DATE()) and p.estado=1 order by f.nombre asc";
+
+        $resultado = $this->con->ejecutar($query);
+
+        return $resultado;
+    }
+
+
 
 
 }

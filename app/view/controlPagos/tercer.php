@@ -25,7 +25,11 @@
                         <font color="#E9C607" size="6px">
                         <i class="file icon"></i><i class="dollar icon"></i>
                         Control de pagos 3er Grado</font>
-                        <font color="#210B61" size="20px"> .</font>
+                        <font color="#210B61" size="20px"> .</font><br>
+                        <button class="ui right floated black labeled icon button" id="btnReporte">
+                        <i class="file icon"></i>
+                        Ver Reporte
+                    </button>
                 </div>
             </div>
         </div>
@@ -676,6 +680,17 @@ Cancelar
     $("#tercer").removeClass("ui yellow button");
     $("#tercer").addClass("ui yellow basic button");
     });
+
+    $("#btnReporte").click(function(){
+      var id = 3;
+      var grado= '3er Grado';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+window.open('?1=PagosController&2=reportesPagoCuotas&id='+id+'&grado='+grado+'&anio='+anio,'_blank');
+return false;
+     });
 </script>
         
 

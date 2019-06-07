@@ -26,6 +26,11 @@
                         <i class="file icon"></i><i class="dollar icon"></i>
                         Control de pagos 8vo Grado</font>
                         <font color="#210B61" size="20px"> .</font>
+                        <br>
+                        <button class="ui right floated black labeled icon button" id="btnReporte">
+                        <i class="file icon"></i>
+                        Ver Reporte
+                    </button>
                 </div>
             </div>
         </div>
@@ -675,6 +680,17 @@ $(document).ready(function(){
     $("#octavo").removeClass("ui olive button");
     $("#octavo").addClass("ui olive basic button");
     });
+
+    $("#btnReporte").click(function(){
+      var id = 8;
+      var grado= '8vo Grado';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+window.open('?1=PagosController&2=reportesPagoCuotas&id='+id+'&grado='+grado+'&anio='+anio,'_blank');
+return false;
+     });
 </script>
         
 
