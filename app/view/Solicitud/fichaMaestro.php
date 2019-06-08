@@ -181,7 +181,7 @@
             <div class="field">
                         <div class="fields">
                         <div class="six wide field" style="font-size:16px;">
-                        <label><i class="address card icon"></i>Títulos obtenidos</label>
+                        <label style="font-size:20px;"><i class="address card icon"></i>Títulos obtenidos</label>
                         <span style="float:right;">
                            <a @click="agregarDetalle" class="ui teal circular icon button"><i class="plus icon"></i> Agregar</a>
                         </span>        <br><br><br>
@@ -218,7 +218,7 @@
                         </div>
 
                         <div class="seven wide field" style="font-size:16px;">
-                        <label><i class="street view icon"></i>Capacitaciones</label>
+                        <label style="font-size:20px;"><i class="street view icon"></i>Capacitaciones</label>
                         <span style="float:right;">
                            <a @click="agregarDetalleCapa" class="ui teal circular icon button"><i class="plus icon"></i> Agregar</a>
                         </span>        <br><br><br>
@@ -261,7 +261,7 @@
                         <div class="fields">
 
                         <div class="sixteen wide field" style="font-size:16px;">
-                        <label><i class="street view icon"></i>Experiencia Laboral</label>
+                        <label style="font-size:20px;"><i class="street view icon"></i>Experiencia Laboral</label>
                         <span style="float:right;">
                            <a @click="agregarDetalleIns" class="ui teal circular icon button"><i class="plus icon"></i> Agregar</a>
                         </span>        <br><br><br>

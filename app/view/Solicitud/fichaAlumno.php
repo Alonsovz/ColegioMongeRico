@@ -71,8 +71,8 @@
                         <div class="fields">
                             <div class="three wide field" style="font-size:16px;">
                                 <label><i class="mars icon"></i> <i class="venus icon"></i> Sexo:</label>
-                                <input type="radio" name="sexo" value="F"> Femenino &nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="sexo" value="M"> Masculino<br>
+                                <input type="radio" name="sexo" value="F"> F &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="sexo" value="M"> M<br>
                             </div>
 
                             <div class="three wide field" style="font-size:16px;">
