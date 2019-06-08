@@ -313,6 +313,27 @@ class DaoUsuario extends DaoBase {
 
     }
 
+
+    public function getDui()
+    {
+        $_query="select count(dui) as dui from usuario where dui='".$this->objeto->getDui()."'";
+       
+
+        $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+        return $resultado['dui'];
+
+    }
+
+    public function getEmailM()
+    {
+        $_query="select count(email) as email from usuario where email='".$this->objeto->getEmail()."' ";
+       
+
+        $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+        return $resultado['email'];
+
+    }
+
     public function mostrarMaestrosCmb(){
         $_query = "select u.*, r.descRol
         from usuario u

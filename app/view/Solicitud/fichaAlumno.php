@@ -25,11 +25,11 @@
                     </button>
          <div class="ui divider"></div>
            
-<div class="content" style="text-align:center; border: 1px solid black;border-radius:3%;">
+<div class="content" style="text-align:center; border: 1px solid black;border-radius:3%; background-color: #F3F3F1;">
 
 
     
-<form class="ui form" style="font-size:23px;margin-left:20px;margin-right:20px;" id="frmAlumno" method="POST" method="POST" enctype="multipart/form-data">
+<form class="ui form" style="font-size:23px;margin-left:20px;margin-right:20px; " id="frmAlumno" method="POST" method="POST" enctype="multipart/form-data">
         <div id="datosAlumnos">
             <h2 style="color:#04B486;"><i class="child icon"></i> Datos del alumno/a</h2>
             <hr><br>
@@ -553,7 +553,7 @@
 <h2 style="color:#04B486;"><i class="exclamation icon"></i> Otros datos</h2>
             <hr><br>
                     <div class="field">
-                    <h2 style="color:red;text-align:left;margin-left:20px;"><i class="exclamation triangle icon"></i> En caso de emergencia avisar a:</h2>
+                    <h3 style="color:red;text-align:left;margin-left:20px;"><i class="exclamation triangle icon"></i> En caso de emergencia avisar a:</h3>
                         <br><div class="fields">
                             <div class="ten wide field" style="font-size:16px;">
                                 <label><i class="exclamation triangle icon"></i>Nombre completo Contacto 1:</label>
@@ -670,7 +670,7 @@
 
                         <div class="sixteen wide field" style="font-size:16px;">
                         <br>
-                        <h2 style="color:blue;text-align:left;margin-left:20px;"><i class="heart icon"></i>Hermanos que estudian en el colegio:</h2>
+                        <h3 style="color:blue;text-align:left;margin-left:20px;"><i class="heart icon"></i>Hermanos que estudian en el colegio:</h3>
                         <span style="float:right;">
                            <a @click="agregarDetalleHer" class="ui teal circular icon button"><i class="plus icon"></i> Agregar</a>
                         </span>        <br><br><br>

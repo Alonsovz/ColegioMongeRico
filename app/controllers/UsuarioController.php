@@ -199,6 +199,27 @@ class UsuarioController extends ControladorBase {
         echo $dao->getEmail();
     }
 
+    public function getEmailM(){
+        $dao=new DaoUsuario();
+        $email=$_REQUEST['email'];
+       
+
+        $dao->objeto->setEmail($email);
+      
+        echo $dao->getEmailM();
+    }
+
+
+    public function getDui(){
+        $dao=new DaoUsuario();
+        $dui=$_REQUEST['dui'];
+       
+
+        $dao->objeto->setDui($dui);
+      
+        echo $dao->getDui();
+    }
+
 
     public function reestablecerContra()
     {

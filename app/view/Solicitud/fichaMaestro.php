@@ -23,16 +23,21 @@
         </div>
         </div>
 
-<div class="content" style="text-align:center; border: 1px solid black;border-radius:3%;">
-<form class="ui form" style="font-size:23px;  margin-left:20px;margin-right:20px;" id="frmMaestro" method="POST" method="POST" enctype="multipart/form-data">
+<div class="content" style="text-align:center; border: 1px solid black;border-radius:3%; background-color: #F3F3F1;">
+<form class="ui form" style="font-size:23px;  margin-left:20px;margin-right:20px;" id="frmMaestro"  method="POST" enctype="multipart/form-data">
             <h2 style="color:#04B486;"><i class="user circle icon"></i> Datos Personales</h2>
             <hr><br>
 
             <div class="field">
                         <div class="fields">
                             <div class="five wide field" style="font-size:16px;">
-                                <label><i class="user icon"></i>Nombre completo del docente:</label>
-                                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo del docente">
+                                <label><i class="user icon"></i>Nombre del docente:</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Nombre del docente">
+                            </div>
+
+                            <div class="five wide field" style="font-size:16px;">
+                                <label><i class="user icon"></i>Apellidos del docente:</label>
+                                <input type="text" id="apellido" name="apellido" placeholder="Apellidos del docente">
                             </div>
 
                             <div class="three wide field" style="font-size:16px;">
@@ -82,6 +87,10 @@
                         <div class="five wide field" style="font-size:16px;">
                             <label><i class="envelope icon"></i> Correo Electrónico</label>
                                 <input type="text" id="correo" name="correo" placeholder="Correo Electrónico">
+                                <div class="ui red pointing label"  id="correoC"
+                                    style="display: none; margin: 0; text-align:center; width:100%; font-size: 12px;">
+                                    Correo ya existe
+                                    </div>
                         </div>
 
                         </div>
@@ -96,11 +105,19 @@
                             
                             <label><i class="address card outline icon"></i> DUI:</label>
                             <input type="text" id="dui" name="dui" placeholder="N° DUI">
+                            <div class="ui red pointing label"  id="duiC"
+                                        style="display: none; margin: 0; text-align:center; width:100%; font-size: 12px;">
+                                        Dui ya existe
+                                        </div>
                         </div>
 
                         <div class="four wide field" style="font-size:16px;">
                             <label><i class="address card icon"></i>NIT:</label>
                                 <input type="text" id="nit" name="nit" placeholder="NIT">
+                                <div class="ui red pointing label"  id="nitC"
+                                        style="display: none; margin: 0; text-align:center; width:100%; font-size: 12px;">
+                                        NIT ya existe
+                                        </div>
                         </div>
 
                         <div class="four wide field" style="font-size:16px;">
@@ -334,8 +351,33 @@
                         </div>
                          </div>
             </div>
+            <div class="ui divider"></div><br>
+            <div class="field">
+                <div class="fields">
+                    <div class="eight wide field" style="font-size:16px;">
+                        <label><i class="user icon"></i> Usuario para inicio de sesión:</label>
+                        <input type="text" id="usuarioSesion" name="usuarioSesion" placeholder="Nombre de usuario">
+                        <div class="ui red pointing label"  id="labelUsuarioE"
+                                        style="display: none; margin: 0; text-align:center; width:100%; font-size: 12px;">
+                                        Usuario ya existe
+                                        </div>
+                    </div>
+
+                    <div class="eight wide field" style="font-size:16px;">
+                        <label><i class="dollar icon"></i> Tipo de pago:</label>
+                        <select class="ui dropdown" id="tipoPago" name="tipoPago" >
+                            <option value="Por honorarios">Por honorarios</option>
+                            <option value="Por seguro">Por seguro</option>
+                        </select>
+                    </div>
+                   
+                </div>
+            </div>
 </form>
 </div>
+
+
+
 </div>
 <script>
     $(document).ready(function(){
@@ -490,8 +532,9 @@ var app = new Vue({
                         }
                     });
                 }
+            },
+            
 
-}
 
 
         }
@@ -548,9 +591,13 @@ Edad(fecha);
 resultado();
 });
 
+
 $("#btnGuardarTodo").click(function(){
+   
     alertify.confirm("¿Desea guardar los datos del docente?",
             function(){
+                
+
                 const form = $('#frmMaestro');
 
                 const datosFormulario = new FormData(form[0]);
@@ -565,11 +612,11 @@ $("#btnGuardarTodo").click(function(){
                 url: '?1=SolicitudController&2=guardarSolicitudMaestro',
                 data: datosFormulario,
                 success: function(r) {
-                    if(r == 1) {
+                    if(r == 11) {
                        
                         swal({
                             title: 'Registrado',
-                            text: 'Datos guardados con éxito',
+                            text: 'Datos guardados con éxito... Recuerde que la contraseña por defecto es 123, luego puede ser modificada',
                             type: 'success',
                             showConfirmButton: true,
 
@@ -577,9 +624,11 @@ $("#btnGuardarTodo").click(function(){
                             
                                location.href = '?1=SolicitudController&2=fichaMaestro';
                         }); 
+                    
                         app.guardarTitulos();
                         app.guardarCapacitaciones();
                         app.guardarExperiencia();
+                       
                     } 
                 }
                 });
@@ -590,6 +639,96 @@ $("#btnGuardarTodo").click(function(){
                 
             }); 
 });
+
+
+$("#correo").keyup(function(){
+
+var email=$("#correo").val();
+
+     $.ajax({
+     type: 'POST',
+     url: '?1=UsuarioController&2=getEmailM',
+     data:{email},
+     success: function(r) {
+
+             if(r==1)
+             {
+                 
+                 $("#btnGuardarTodo").attr("disabled", true);
+                 $("#correoC").css("display","block");
+             }    
+             
+     }
+         });
+
+});
+$("#correo").keyup(function(){
+
+$("#btnGuardarTodo").attr("disabled", false);
+ $("#correoC").css("display","none");
+});
+
+
+$("#usuarioSesion").keyup(function(){
+
+var user=$("#usuarioSesion").val();
+
+     $.ajax({
+     type: 'POST',
+     url: '?1=UsuarioController&2=getUserName',
+     data:{user},
+     success: function(r) {
+
+             if(r==1)
+             {
+                 
+                 $("#btnGuardarTodo").attr("disabled", true);
+                 $("#labelUsuarioE").css("display","block");
+             }    
+             else{
+
+                 $("#btnRegistrar").attr("disabled", false);
+             }  
+     }
+         });
+
+});
+
+$("#usuarioSesion").keyup(function(){
+
+ $("#btnGuardarTodo").attr("disabled", false);
+  $("#labelUsuarioE").css("display","none");
+});
+
+
+$("#dui").keyup(function(){
+
+var dui=$("#dui").val();
+
+     $.ajax({
+     type: 'POST',
+     url: '?1=UsuarioController&2=getDui',
+     data:{dui},
+     success: function(r) {
+
+             if(r==1)
+             {
+                 
+                 $("#btnGuardarTodo").attr("disabled", true);
+                 $("#duiC").css("display","block");
+             }    
+              
+     }
+         });
+
+});
+
+$("#dui").keyup(function(){
+
+$("#btnGuardarTodo").attr("disabled", false);
+ $("#duiC").css("display","none");
+});
+
 
 
 

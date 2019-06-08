@@ -8,7 +8,8 @@ class DaoSolicitudMaestro extends DaoBase {
     }
 
     public function registrarDatos() {
-        $_query = "insert into maestros values(null,'".$this->objeto->getNombre()."', '".$this->objeto->getFechaNac()."',
+        $_query = "insert into maestros values(null,'".$this->objeto->getNombre()."','".$this->objeto->getApellido()."',
+         '".$this->objeto->getFechaNac()."',
         '".$this->objeto->getLugarNacimiento()."', '".$this->objeto->getSexo()."','".$this->objeto->getDireccionRes()."',
         '".$this->objeto->getTelRes()."','".$this->objeto->getTelMovil()."',
          '".$this->objeto->getEmail()."','".$this->objeto->getDui()."',
@@ -16,8 +17,7 @@ class DaoSolicitudMaestro extends DaoBase {
         '".$this->objeto->getNumeroPartida()."','".$this->objeto->getSubNumero()."',
         '".$this->objeto->getNivelAcademico()."','".$this->objeto->getNivel()."',
         '".$this->objeto->getEspecialidad()."','".$this->objeto->getFechaIngreso()."',
-        '".$this->objeto->getHabilidades()."','".$this->objeto->getNomUsuario()."',
-        '".sha1($this->objeto->getPass())."',1)";
+        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."',1)";
 
         $resultado = $this->con->ejecutar($_query);
 

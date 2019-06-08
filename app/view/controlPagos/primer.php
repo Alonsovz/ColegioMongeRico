@@ -170,6 +170,7 @@ Cancelar
                   <div class="sixteen wide field">
                   <label style="font-size:20px;"><i class="address card icon"></i>N° de Talonario</label>
                   <input type="text" name="nTalonario" id="nTalonario">
+                
                   </div>
                </div>
             </div>
@@ -641,6 +642,8 @@ Cancelar
 
 
 <script>
+
+
  $("#guardarTalonario").click(function(){
         var idAl = $("#idATa").val();
         var nT = $("#nTalonario").val();

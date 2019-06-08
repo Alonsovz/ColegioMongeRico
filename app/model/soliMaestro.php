@@ -30,8 +30,7 @@ class soliMaestro extends ModeloBase{
     private $hasta;
     private $fechaIngreso;
     private $habilidades;
-    private $nomUsuario;
-    private $pass;
+    private $tipoPago;
 
     public function __construct() {
 
@@ -64,6 +63,22 @@ class soliMaestro extends ModeloBase{
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
+
+        return $this;
+    }
+    public function getApellido()
+    {
+        return $this->apellido;
+    }
+
+    /**
+     * Set the value of apellido
+     *
+     * @return  self
+     */ 
+    public function setApellido($apellido)
+    {
+        $this->apellido = $apellido;
 
         return $this;
     }
@@ -418,30 +433,19 @@ class soliMaestro extends ModeloBase{
         return $this;
     }
 
-    public function getNomUsuario()
+    public function getTipoPago()
     {
-        return $this->nomUsuario;
+        return $this->tipoPago;
     }
 
-    public function setNomUsuario($nomUsuario)
+    public function setTipoPago($tipoPago)
     {
-        $this->nomUsuario = $nomUsuario;
+        $this->tipoPago = $tipoPago;
 
         return $this;
     }
 
-    public function getPass()
-    {
-        return $this->pass;
-    }
-
-    
-    public function setPass($pass)
-    {
-        $this->pass = $pass;
-
-        return $this;
-    }
+  
 
 
     

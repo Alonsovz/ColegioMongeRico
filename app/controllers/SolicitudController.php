@@ -22,6 +22,7 @@ class SolicitudController extends ControladorBase {
         $dao = new DaoSolicitudMaestro();
 
         $dao->objeto->setNombre($_REQUEST["nombre"]);
+        $dao->objeto->setApellido($_REQUEST["apellido"]);
         $dao->objeto->setFechaNac($_REQUEST["fechaNac"]);
         $dao->objeto->setLugarNacimiento($_REQUEST["lugarNac"]);
         $dao->objeto->setSexo($_REQUEST["sexo"]);
@@ -33,18 +34,37 @@ class SolicitudController extends ControladorBase {
         $dao->objeto->setNit($_REQUEST["nit"]);
         $dao->objeto->setNip($_REQUEST["nip"]);
         $dao->objeto->setAfp($_REQUEST["afp"]);
+
+        if($_REQUEST["sectorPublico"]=='si'){
         $dao->objeto->setNumeroPartida($_REQUEST["numeroPartida"]);
         $dao->objeto->setSubNumero($_REQUEST["subNumero"]);
+        }
+        else{
+            $dao->objeto->setNumeroPartida("No definido");
+            $dao->objeto->setSubNumero("No definido");
+        }
         $dao->objeto->setNivelAcademico($_REQUEST["nivelAcademico"]);
         $dao->objeto->setNivel($_REQUEST["nivel"]);
         $dao->objeto->setEspecialidad($_REQUEST["especialidad"]);
         $dao->objeto->setFechaIngreso($_REQUEST["fechaIngre"]);
         $dao->objeto->setHabilidades($_REQUEST["habilidades"]);
+        $dao->objeto->setTipoPago($_REQUEST["tipoPago"]);
 
-        $words=str_word_count($_REQUEST["nombre"], 1);
+        $daoU = new DaoUsuario();
 
-        $dao->objeto->setNomUsuario($words[0]);
-        $dao->objeto->setPass(123);
+        $daoU->objeto->setNombre($_REQUEST["nombre"]);
+        $daoU->objeto->setApellido($_REQUEST["apellido"]);
+        $daoU->objeto->setNomUsuario($_REQUEST["usuarioSesion"]);
+        $daoU->objeto->setPass(123);
+        $daoU->objeto->setEmail($_REQUEST["correo"]);
+        $daoU->objeto->setDireccion($_REQUEST["direccion"]);
+        $daoU->objeto->setDui($_REQUEST["dui"]);
+        $daoU->objeto->setTelefono($_REQUEST["telefonoMovil"]);
+        $daoU->objeto->setFechaNacimiento($_REQUEST["fechaNac"]);
+        $daoU->objeto->setCodigoRol(2);
+
+
+        echo $daoU->registrar();
 
         echo $dao->registrarDatos();
     }

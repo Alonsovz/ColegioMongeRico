@@ -418,6 +418,12 @@ var dui=$("#dui").val();
 
 });
 
+$("#dui").keyup(function(){
+
+$("#btnGuardarUsuario").attr("disabled", false);
+ $("#duiC").css("display","none");
+});
+
 $("#correo").keyup(function(){
 
  $("#btnGuardarUsuario").attr("disabled", false);

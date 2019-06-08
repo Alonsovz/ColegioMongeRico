@@ -61,7 +61,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
@@ -92,7 +92,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query1)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
@@ -105,7 +105,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query2)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
@@ -122,7 +122,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query3)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
@@ -134,7 +134,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query4)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
@@ -157,7 +157,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query5)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                    
@@ -193,7 +193,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query6)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
@@ -205,7 +205,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query7)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
@@ -222,7 +222,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query8)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
@@ -235,7 +235,7 @@
                                 <?php
                                 
                                 while ($valores = mysqli_fetch_array($query9)) {
-                                    echo '<option value="'.$valores["idUsuario"].'">'.$valores["nom"].' '.$valores["ape"].'</option>';
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
                                 }
                                 ?>
                                 </select>
