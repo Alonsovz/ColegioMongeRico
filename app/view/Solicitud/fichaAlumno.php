@@ -227,6 +227,7 @@
                                     <option value="Microbus">Microbus</option>
                                     <option value="Transporte personal">Transporte personal</option>
                                     <option value="Transporte Colectivo">Transporte Colectivo</option>
+                                    <option value="Ninguno">Ninguno</option>
                                 <select>
                         </div>
                         </div>
@@ -463,7 +464,7 @@
                             <div class="three wide field" style="font-size:16px;">
                             <label><i class="chart bar  icon"></i>Escolaridad:</label>
                                         <select id="escolaridad" name="escolaridad" class="ui dropdown">
-                                                <option value="Universitaria">Universitaria</option>
+                                                <option value="Superior">Superior</option>
                                                 <option value="Media">Media</option>
                                                 <option value="Básica">Básica</option>
                                                 <option value="Ninguna">Ninguna</option>
@@ -596,9 +597,9 @@
                                 <input type="text" id="auto1" name="auto1" placeholder="Contacto 1">
                             </div>
 
-                            <div class="six wide field" style="font-size:16px;">
+                            <div class="six wide field" style="font-size:16px;" >
                             <label><i class="question icon"></i><i class="user icon"></i>Parentesco:</label>
-                                <select name="autoParen1" id="autoParen1" >
+                                <select name="autoParen1" id="autoParen1" class="ui dropdown">
                                     <option value="Padre">Padre</option>
                                     <option value="Madre">Madre</option>
                                     <option value="Hermano/a">Hermano/a</option>
@@ -621,7 +622,7 @@
 
                             <div class="six wide field" style="font-size:16px;">
                             <label><i class="question icon"></i><i class="user icon"></i>Parentesco:</label>
-                                <select name="autoParen2" id="autoParen2" >
+                                <select name="autoParen2" id="autoParen2" class="ui dropdown">
                                     <option value="Padre">Padre</option>
                                     <option value="Madre">Madre</option>
                                     <option value="Hermano/a">Hermano/a</option>

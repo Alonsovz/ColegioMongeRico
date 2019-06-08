@@ -53,10 +53,10 @@
                     <thead>
                         <tr>
                         
-                            <th style="background-color: #CEE3F6; color:black;">N°</th>
-                            <th style="background-color: #CEE3F6; color:black;width:33%;">Talla</th>
-                            <th style="background-color: #CEE3F6; color:black;width:33%;">Existencia</th>
-                            <th style="background-color: #CEE3F6; color:black;width:33%;">Acciones</th>
+                            <th style="background-color: #7BC1AC; color:white;">N°</th>
+                            <th style="background-color: #7BC1AC; color:white;width:33%;">Talla</th>
+                            <th style="background-color: #7BC1AC; color:white;width:33%;">Existencia</th>
+                            <th style="background-color: #7BC1AC; color:white;width:33%;">Acciones</th>
                            
                         </tr>
                     </thead>
