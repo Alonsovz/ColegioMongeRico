@@ -80,7 +80,7 @@ class Reporte {
                         <td> ".$fila['talonario']."</td>";
 
                         if($fila['e']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['e']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -92,7 +92,7 @@ class Reporte {
                         }
                        
                         if($fila['f']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['f']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -104,7 +104,7 @@ class Reporte {
                         }
 
                         if($fila['m']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['m']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -116,7 +116,7 @@ class Reporte {
                         }
 
                         if($fila['a']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['a']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -129,7 +129,7 @@ class Reporte {
 
 
                         if($fila['ma']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['ma']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -141,7 +141,7 @@ class Reporte {
                         }
 
                         if($fila['ju']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['ju']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -153,7 +153,7 @@ class Reporte {
                         }
 
                         if($fila['jul']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['jul']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -166,7 +166,7 @@ class Reporte {
 
 
                         if($fila['ago']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['ago']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -179,7 +179,7 @@ class Reporte {
 
 
                         if($fila['sep']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['sep']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }
@@ -191,7 +191,7 @@ class Reporte {
                         }
 
                         if($fila['oc']==''){
-                            $tabla.="<td> P</td>";
+                            $tabla.="<td> </td>";
                         }else if($fila['oc']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<td> PN</td>";
                         }

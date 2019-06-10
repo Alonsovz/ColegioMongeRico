@@ -590,7 +590,7 @@
                     </div>
 
                     <div class="field">
-                    <h3 style="color:red;text-align:left;margin-left:20px;"><i class="lock icon"></i>Permiso para retirarlo de la escuela:</h3>
+                    <h3 style="color:red;text-align:left;margin-left:20px;"><i class="lock icon"></i>Permiso para retirarlo del colegio:</h3>
                         <br><div class="fields">
                             <div class="ten wide field" style="font-size:16px;">
                                 <label><i class="user icon"></i>Nombre completo:</label>

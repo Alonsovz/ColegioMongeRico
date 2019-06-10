@@ -166,10 +166,9 @@
                         <div class="four wide field" style="font-size:16px;">
                             <label><i class="chart bar  icon"></i> Nivel:</label>
                                         <select id="nivel" name="nivel" class="ui dropdown">
-                                                <option value="Superior">Superior</option>
-                                                <option value="Media">Media</option>
-                                                <option value="Básica">Básica</option>
-                                                <option value="Ninguna">Ninguna</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                
                                             </select>  
                         </div>
 
