@@ -69,6 +69,7 @@ class Reporte {
                 <th bgcolor='#25F1E1'>A</th>
                 <th bgcolor='#25F1E1'>S</th>
                 <th bgcolor='#25F1E1'>O</th>
+                <th bgcolor='#25F1E1'>N</th>
             </tr>
 
             ";
@@ -90,6 +91,9 @@ class Reporte {
                         else if($fila['e']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['e']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
                        
                         if($fila['f']==''){
                             $tabla.="<td> </td>";
@@ -102,6 +106,10 @@ class Reporte {
                         else if($fila['f']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['f']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
 
                         if($fila['m']==''){
                             $tabla.="<td> </td>";
@@ -114,6 +122,10 @@ class Reporte {
                         else if($fila['m']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['m']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
 
                         if($fila['a']==''){
                             $tabla.="<td> </td>";
@@ -126,6 +138,10 @@ class Reporte {
                         else if($fila['a']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['a']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
 
 
                         if($fila['ma']==''){
@@ -139,6 +155,10 @@ class Reporte {
                         else if($fila['ma']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['ma']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
 
                         if($fila['ju']==''){
                             $tabla.="<td> </td>";
@@ -151,6 +171,10 @@ class Reporte {
                         else if($fila['ju']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['ju']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
 
                         if($fila['jul']==''){
                             $tabla.="<td> </td>";
@@ -163,6 +187,10 @@ class Reporte {
                         else if($fila['jul']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['jul']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
 
 
                         if($fila['ago']==''){
@@ -176,6 +204,10 @@ class Reporte {
                         else if($fila['ago']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['ago']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
 
 
                         if($fila['sep']==''){
@@ -189,6 +221,10 @@ class Reporte {
                         else if($fila['sep']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['sep']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
 
                         if($fila['oc']==''){
                             $tabla.="<td> </td>";
@@ -201,7 +237,26 @@ class Reporte {
                         else if($fila['oc']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<td> P-AT</td>";
                         }
+                        else if($fila['oc']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
                     
+                        if($fila['nov']==''){
+                            $tabla.="<td> </td>";
+                        }else if($fila['nov']=="<i class='close icon' style='font-size:30px;'></i>"){
+                            $tabla.="<td> PN</td>";
+                        }
+                        else if($fila['nov']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
+                            $tabla.="<td> P-AD</td>";
+                        }
+                        else if($fila['nov']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
+                            $tabla.="<td> P-AT</td>";
+                        }
+                        else if($fila['nov']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
+                            $tabla.="<td> P-RV</td>";
+                        }
+                       
                         
                         
 

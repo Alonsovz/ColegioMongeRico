@@ -16,7 +16,7 @@ class DaoPagos extends DaoBase {
         $fila = $resultado1->fetch_assoc();
         $idExp = $fila['id'];
 
-        $_query = "insert into pagosAlumnos values(".$corr.",'000','','','','','','','','','','',year(CURRENT_DATE()),1);";
+        $_query = "insert into pagosAlumnos values(".$corr.",'000','','','','','','','','','','','',year(CURRENT_DATE()),1);";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -32,6 +32,171 @@ class DaoPagos extends DaoBase {
 
         
         $_query = "update pagosAlumnos set talonario='".$this->objeto->getTalonario()."' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherE() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set e='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherF() {
+        $color="<i class=\'search icon\' style=\'font-size:30px; color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set f='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherM() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set m='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherA() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set a='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherMa() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set ma='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherJu() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set ju='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherJul() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set jul='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherAgo() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set ago='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherSep() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set sep='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherOc() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set oc='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function pendienteVoucherNov() {
+        $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set nov='$color' where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -182,6 +347,22 @@ class DaoPagos extends DaoBase {
 
         
         $_query = "update pagosAlumnos set oc='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+    public function guardarPagoNov() {
+        $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set nov='$color' where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -344,6 +525,22 @@ class DaoPagos extends DaoBase {
         }
     }
 
+    public function guardarPagoNovA() {
+        $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set nov='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
 
 
     public function guardarPagoEnAt() {
@@ -487,6 +684,21 @@ class DaoPagos extends DaoBase {
 
         
         $_query = "update pagosAlumnos set oc='$color' where idAlumno=".$this->objeto->getIdAlumno();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function guardarPagoNovAt() {
+        $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
+
+        
+        $_query = "update pagosAlumnos set nov='$color' where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 

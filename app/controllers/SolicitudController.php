@@ -265,7 +265,6 @@ class SolicitudController extends ControladorBase {
         $dao->objeto->setTel1($_REQUEST["telDiRes1"]);
         $dao->objeto->setTel2($_REQUEST["telDiRes2"]);
         $dao->objeto->setEmailRes($_REQUEST["correoRes"]);
-        $dao->objeto->setRiesgoRes($_REQUEST["riesgosRes"]);
 
         $dao->objeto->setContacto1($_REQUEST["emergencia1"]);
         $dao->objeto->setContacto1Tel($_REQUEST["telEmer1"]);

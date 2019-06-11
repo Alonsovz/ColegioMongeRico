@@ -71,8 +71,7 @@ class DaoSolictudAlumno extends DaoBase {
         '".$this->objeto->getEscolaridad()."','".$this->objeto->getLugarTrabajoRes()."','".$this->objeto->getTelefonoRes()."',
         '".$this->objeto->getDiscapacidadRes()."','".$this->objeto->getExpDiscapacidadRes()."',
         '".$this->objeto->getTipoSangreRes()."','".$this->objeto->getDireccionRespon()."',
-        '".$this->objeto->getTel1()."','".$this->objeto->getTel2()."','".$this->objeto->getEmailRes()."',
-        '".$this->objeto->getRiesgoRes()."',".$idExp.")";
+        '".$this->objeto->getTel1()."','".$this->objeto->getTel2()."','".$this->objeto->getEmailRes()."',".$idExp.")";
 
         $resultado = $this->con->ejecutar($_query);
 

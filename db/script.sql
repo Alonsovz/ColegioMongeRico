@@ -87,6 +87,7 @@ idEliminado int
 create table maestros(
 idMaestro int primary key unique auto_increment,
 nombre varchar(100),
+apellido varchar(100),
 fechaNacimiento date,
 lugarNacimiento varchar(100),
 sexo varchar(10),
@@ -105,8 +106,7 @@ nivel varchar(30),
 especialidad varchar(20),
 fechaIngreso date,
 habilidades varchar(500),
-usuario varchar(20),
-pass varchar(100),
+tipoPago varchar(100),
 idEliminado int
 );
 
@@ -185,6 +185,7 @@ jul varchar(100),
 ago varchar(100),
 sep varchar(100),
 oc varchar(100),
+nov varchar(100),
 anio varchar(10),
 estado int
 );
@@ -224,7 +225,6 @@ direccionRes varchar(100),
 telRes1 varchar(30),
 telRes2 varchar(30),
 correo varchar(50),
-factorRiesgo varchar(100),
 idAlumno int
 );
 
@@ -256,14 +256,14 @@ idAlumno int
 insert into rol values(2,'Maestro/a');
 insert into rol values(3,'Secretario/a');
 
-insert into usuario values(null,'No','Asignado','no','no','no',sha1('123'),'7912-1241','09237913-1','1997-02-02',2,1);
+insert into usuario values(null,'No','Asignado','no','no','no',sha1('123'),'7912-1241','09231341-1','1997-02-02',2,1);
 insert into usuario values(null,'Fabio','Mejia','fabio','fabiomejiash@gmail.com','San Juan Opico',sha1('123'),'7121-1231','01211242-1','1999-12-02',1,1);
  
  
  insert into usuario values(null,'Juan','Perez','juan','juan@gmail.com','Santa Tecla',sha1('123'),'7912-7680','01234324-1','1980-09-04',2,1);
  insert into usuario values(null,'Alonso','Velasquez','alonso','mejiaFabio383@gmail.com','Santa Tecla',sha1('123'),'7912-1241','09237913-1','1997-02-02',2,1);
 
- insert into usuario values(null,'Juana','Lopez','juana','juan123@gmail.com','San Salvador',sha1('123'),'7912-1241','09237913-1','1997-02-02',3,1);
+ insert into usuario values(null,'Juana','Lopez','juana','juan123@gmail.com','San Salvador',sha1('123'),'7912-1241','01234312-1','1997-02-02',3,1);
  
  insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
@@ -318,3 +318,4 @@ $$
 
 
 
+update fichaAlumno set nombre='Mejía Velásquez Fabio Alonso' where idAlumno=1

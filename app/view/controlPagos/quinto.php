@@ -49,6 +49,7 @@
                     <th style="background-color: #6933BD; color:white;">Agosto</th>
                     <th style="background-color: #6933BD; color:white;">Septiembre</th>
                     <th style="background-color: #6933BD; color:white;">Octubre</th>
+                    <th style="background-color: #6933BD; color:white;">Noviembre</th>
                 </tr>
             </thead>
             <tbody>
@@ -124,6 +125,13 @@
                             echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'"  n="10" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["oc"].'</td>
                             </tr>';
                          }
+
+                         if($valores["nov"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["nov"].'" n="11" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["nov"].'</button></td>';
+                        }else{
+                           echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["nov"].'"  n="11" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["nov"].'</td>
+                           </tr>';
+                        }
                     }
                 ?>
                 </tbody>
@@ -140,6 +148,9 @@
 <button id="pagoNormal" class="ui black button"> <i class="close icon"></i> Pago Normal</button>
 <button id="pagoAde" class="ui blue button"> <i class="window close outline icon"></i> Pago adelantado</button>
 <button id="pagoAtra" class="ui red button"> <i class="window close outline icon"></i> Pago atrasado</button>
+<br><br>
+<div class="ui divider"></div>
+<button id="pendiente" class="ui green button"> <i class="search icon"></i> Pendiente de recibir</button>
 <input type="hidden" id="idAlum" name="idAlum">
 <input type="hidden" id="idCuota" name="idCuota">
 </center>
@@ -197,7 +208,7 @@ Cancelar
     }
     
     
- var cobrar=(ele)=>{
+    var cobrar=(ele)=>{
        var idA= $(ele).attr("id");
        var nombre =$(ele).attr("nombre");
        $("#name").text(nombre);
@@ -237,6 +248,14 @@ Cancelar
         $("#pagoAtra").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="1"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de enero al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
 
 
 
@@ -265,6 +284,14 @@ Cancelar
         $("#pagoNormal").show();
         $("#pagoAde").show();
         $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="2"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de febrero al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
 
@@ -296,6 +323,14 @@ Cancelar
         $("#pagoAtra").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="3"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de marzo al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
 
        if(cu=="" && nCuo=="4"){
         $("#tituloM").text("Cobrar cuota del mes de abril al alumno/a: ");
@@ -322,6 +357,14 @@ Cancelar
         $("#pagoNormal").show();
         $("#pagoAde").show();
         $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="4"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de abril al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
 
@@ -352,6 +395,14 @@ Cancelar
         $("#pagoAtra").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="5"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de mayo al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
 
        if(cu=="" && nCuo=="6"){
         $("#tituloM").text("Cobrar cuota del mes de junio al alumno/a: ");
@@ -380,6 +431,14 @@ Cancelar
         $("#pagoAtra").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="6"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de junio al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
 
        if(cu=="" && nCuo=="7"){
         $("#tituloM").text("Cobrar cuota del mes de julio al alumno/a: ");
@@ -406,6 +465,14 @@ Cancelar
         $("#pagoNormal").show();
         $("#pagoAde").show();
         $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="7"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de julio al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
 
@@ -437,6 +504,14 @@ Cancelar
         $("#pagoAtra").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="8"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de agosto al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
 
 
        if(cu=="" && nCuo=="9"){
@@ -464,6 +539,14 @@ Cancelar
         $("#pagoNormal").show();
         $("#pagoAde").show();
         $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="9"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de septiembre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
 
@@ -494,11 +577,98 @@ Cancelar
         $("#pagoAtra").hide();
         $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
        }
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="10"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de octubre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+
+       if(cu=="" && nCuo=="11"){
+        $("#tituloM").text("Cobrar cuota del mes de noviembre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class='close icon' style='font-size:30px;'></i>" && nCuo=="11"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de noviembre al alumno/a: ");
+        $("#pagoNormal").hide();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>" && nCuo=="11"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de noviembre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").hide();
+        $("#pagoAtra").show();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }else if(cu=="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>" && nCuo=="11"){
+        $("#tituloM").text("Modificar cobro de la cuota del mes de noviembre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
+
+       else if(cu=="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>" && nCuo=="11"){
+        $("#tituloM").text("Asignar tipo de cobro de la cuota del mes de noviembre al alumno/a: ");
+        $("#pagoNormal").show();
+        $("#pagoAde").show();
+        $("#pagoAtra").show();
+        $("#pendiente").hide();
+        $('#cobroCuota').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       }
       
      }
 
 </script>
+<script>
+ $("#pendiente").click(function(){
+        var idAl = $("#idAlum").val();
+        var idC = $("#idCuota").val();
 
+        alertify.confirm("¿Pendiente de recibir voucher del cobro del alumno/a : "+$("#name").text()+ "?",
+            function(){
+
+        $.ajax({
+                
+                type: 'POST',
+                url: '?1=PagosController&2=pendienteVoucher',
+                data: {
+                   idAl: idAl,
+                   idC: idC,
+                },
+                success: function(r) {
+                    if(r == 1) {
+                        $('#cobroCuota').modal('hide');
+                        swal({
+                            title: 'Realizado',
+                            text: 'Guardado con éxito',
+                            type: 'success',
+                            showConfirmButton: true,
+                              
+
+                        }).then((result) => {
+                            location.reload();
+                        }); 
+                        
+                    } 
+                }
+            });
+
+         },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+     });
+</script>
 <script>
  $("#pagoNormal").click(function(){
         var idAl = $("#idAlum").val();

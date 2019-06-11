@@ -111,11 +111,66 @@ class PagosController extends ControladorBase {
 
             echo $dao->guardarPagoOc();
         }
+        if($idCuota==11){
+
+            echo $dao->guardarPagoNov();
+        }
 
        
     }
 
+    public function pendienteVoucher(){
+        $idAlumno = $_REQUEST["idAl"];
+        $idCuota = $_REQUEST["idC"];
 
+        $dao = new DaoPagos();
+        $dao->objeto->setIdAlumno($idAlumno);
+
+        if($idCuota==1){
+
+            echo $dao->pendienteVoucherE();
+        }
+        if($idCuota==2){
+
+            echo $dao->pendienteVoucherF();
+        }
+        if($idCuota==3){
+
+            echo $dao->pendienteVoucherM();
+        }
+        if($idCuota==4){
+
+            echo $dao->pendienteVoucherA();
+        }
+        if($idCuota==5){
+
+            echo $dao->pendienteVoucherMa();
+        }
+        if($idCuota==6){
+
+            echo $dao->pendienteVoucherJu();
+        }
+        if($idCuota==7){
+
+            echo $dao->pendienteVoucherJul();
+        }
+        if($idCuota==8){
+
+            echo $dao->pendienteVoucherAgo();
+        }
+        if($idCuota==9){
+
+            echo $dao->pendienteVoucherSep();
+        }
+        if($idCuota==10){
+
+            echo $dao->pendienteVoucherOc();
+        }
+        if($idCuota==11){
+
+            echo $dao->pendienteVoucherNov();
+        }
+    }
 
     public function guardarPagoAde(){
         $idAlumno = $_REQUEST["idAl"];
@@ -162,6 +217,11 @@ class PagosController extends ControladorBase {
         if($idCuota==10){
 
             echo $dao->guardarPagoOcA();
+        }
+
+        if($idCuota==11){
+
+            echo $dao->guardarPagoNovA();
         }
 
        
@@ -213,6 +273,10 @@ class PagosController extends ControladorBase {
         if($idCuota==10){
 
             echo $dao->guardarPagoOcAt();
+        }
+        if($idCuota==11){
+
+            echo $dao->guardarPagoNovAt();
         }
 
        

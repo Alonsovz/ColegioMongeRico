@@ -541,10 +541,7 @@
                                 <input type="text" id="correoRes" name="correoRes" placeholder="Correo Electrónico">
                         </div>
 
-                        <div class="eight wide field" style="font-size:16px;">
-                            <label><i class="exclamation triangle icon"></i> Factores de riesgo</label>
-                            <textarea rows="3" name="riesgosRes" id="riesgosRes" placeholder="Factores de riesgo"></textarea>
-                        </div>
+                        
 
                         </div>
                     </div>
