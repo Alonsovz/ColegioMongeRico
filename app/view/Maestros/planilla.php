@@ -14,7 +14,7 @@
   format((p.totalP),2) as totalP
    from planilla p 
   inner join maestros m on m.idMaestro = p.idMaestro 
-  where m.idEliminado=1 and p.mes=DATE_FORMAT(CURDATE(),'%m') and anio=year(CURRENT_DATE())");
+  where m.idEliminado=1 and p.mes=DATE_FORMAT(CURDATE(),'%m') and anio=year(CURRENT_DATE())  order by nombre asc");
  ?>
 <div id="app">
         <div class="ui grid">

@@ -67,6 +67,7 @@ class SolicitudController extends ControladorBase {
         echo $daoU->registrar();
 
         echo $dao->registrarDatos();
+        echo $dao->registrarDatosPlanilla();
     }
 
 

@@ -28,6 +28,28 @@ class DaoSolicitudMaestro extends DaoBase {
         }
     }
 
+    public function registrarDatosPlanilla() {
+        $corr= "(select max(idMaestro) as id from maestros)";
+
+        $resultado1 = $this->con->ejecutar($corr);
+
+        $fila = $resultado1->fetch_assoc();
+        $idExp = $fila['id'];
+        
+        $_query = "insert into planilla values(null,".$idExp.",0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
+        DATE_FORMAT(CURDATE(),'%m'),year(CURRENT_DATE()));
+        ";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    
     public function registrarTitulos(){
         $corr= "(select max(idMaestro) as id from maestros)";
 

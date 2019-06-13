@@ -1,4 +1,4 @@
-<br><br><div id="app">
+<div id="app">
         <div class="ui grid">
         <div class="row">
                 <div class="titulo">
@@ -30,12 +30,12 @@
 
             <div class="field">
                         <div class="fields">
-                            <div class="five wide field" style="font-size:16px;">
+                            <div class="four wide field" style="font-size:16px;">
                                 <label><i class="user icon"></i>Nombre del docente:</label>
                                 <input type="text" id="nombre" name="nombre" placeholder="Nombre del docente">
                             </div>
 
-                            <div class="five wide field" style="font-size:16px;">
+                            <div class="four wide field" style="font-size:16px;">
                                 <label><i class="user icon"></i>Apellidos del docente:</label>
                                 <input type="text" id="apellido" name="apellido" placeholder="Apellidos del docente">
                             </div>
@@ -45,7 +45,7 @@
                                 <input type="date" id="fechaNac" name="fechaNac">
                             </div>
 
-                            <div class="five wide field" style="font-size:16px;">
+                            <div class="four wide field" style="font-size:16px;">
                                 <label><i class="map maker icon"></i> Lugar de Nacimiento:</label>
                                 <textarea rows="2" id="lugarNac" name="lugarNac" placeholder="Lugar de nacimiento"></textarea>
                             </div>
@@ -611,7 +611,7 @@ $("#btnGuardarTodo").click(function(){
                 url: '?1=SolicitudController&2=guardarSolicitudMaestro',
                 data: datosFormulario,
                 success: function(r) {
-                    if(r == 11) {
+                    if(r == 111) {
                        
                         swal({
                             title: 'Registrado',
