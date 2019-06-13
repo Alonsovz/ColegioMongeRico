@@ -45,10 +45,52 @@
 
 
 </div>
+
+
 <br>
-<div class="ui fluid selection dropdown" style="color:black; background-color:#9F81F7;">
+<div class="ui fluid selection dropdown" style="color:black; background-color:#0BF50B; font-weight:bold;">
 <i class="dropdown icon"></i>
-    <div class="default text" style="color:black; background-color:#9F81F7;font-size:14px;">
+    <div class="default text" style="color:black; background-color:#0BF50B;font-weight:bold;">
+            <i class="users icon"></i>
+            <b>Maestros</b>       
+    </div>
+
+    <div class="menu">
+    
+
+
+
+    <div class="item">
+
+    <a href="?1=MaestrosController&2=gestion" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
+        <i class="user icon"></i><i class="cogs icon"></i>
+       Gestión de Maestros
+    </a>
+
+    </div>
+
+    
+
+    <div class="item">
+
+    <a href="?1=MaestrosController&2=planilla" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
+        <i class="users icon"></i><i class="dollar icon"></i>
+        Planilla
+    </a>
+
+    </div>
+
+    
+
+    
+    </div>
+
+
+</div>
+<br>
+<div class="ui fluid selection dropdown" style="color:black; background-color:#AFC2F9;">
+<i class="dropdown icon"></i>
+    <div class="default text" style="color:black; background-color:#AFC2F9;font-size:14px;">
             <i class="dollar icon"></i>
             <b>Caja General</b>       
     </div>

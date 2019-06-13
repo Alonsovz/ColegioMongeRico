@@ -133,6 +133,27 @@ hasta date,
 idMaestro int
 );
 
+
+create table planilla(
+id int primary key unique auto_increment,
+idMaestro int,
+diasT int,
+sueldoM double,
+sueldoD double,
+vacacion double,
+afpEmV double,
+afpEmC double,
+isssE double,
+renta double,
+otros double,
+totalDesM double,
+totalP double,
+mes varchar(20),
+anio varchar(20)
+);
+
+insert into planilla values(null,1,0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,DATE_FORMAT(CURDATE(),'%m'),year(CURRENT_DATE()));
+
 create table fichaAlumno(
 idAlumno int primary key unique auto_increment,
 nie varchar(50),
@@ -318,4 +339,6 @@ $$
 
 
 
-update fichaAlumno set nombre='Mejía Velásquez Fabio Alonso' where idAlumno=1
+select p.*, concat(m.nombre," ",m.apellido) as nombre from planilla p 
+inner join maestros m on m.idMaestro = p.idMaestro 
+where m.idEliminado=1 and p.mes=DATE_FORMAT(CURDATE(),'%m') and anio=year(CURRENT_DATE())

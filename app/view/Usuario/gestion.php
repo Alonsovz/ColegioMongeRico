@@ -1,4 +1,4 @@
-<br><br><div id="app">
+<div id="app">
         <div class="ui grid">
         <div class="row">
                 <div class="titulo">

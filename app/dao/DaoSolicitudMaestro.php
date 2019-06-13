@@ -91,6 +91,33 @@ class DaoSolicitudMaestro extends DaoBase {
     }
 
 
+    public function mostrarMaestros() {
+        $_query = "select * from maestros where idEliminado=1;";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        $_json = '';
+
+        while($fila = $resultado->fetch_assoc()) {
+
+            $object = json_encode($fila);
+
+            $btnEditar = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui btnEditar icon blue small button\"><i class=\"edit icon\"></i> Ver Detalles</button>';
+            $btnEliminar = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+
+            $acciones = ', "Acciones": "'.$btnEditar.' '.$btnEliminar.'"';
+
+            $object = substr_replace($object, $acciones, strlen($object) -1, 0);
+
+            $_json .= $object.',';
+        }
+
+        $_json = substr($_json,0, strlen($_json) - 1);
+
+        return '{"data": ['.$_json .']}';
+    }
+
+
 }
 
 
