@@ -22,8 +22,17 @@
                     <div class="titulo">
                     <i class="users icon"></i>
                         Planilla de Pagos <font color="#210B61" size="20px">.</font>
+
+                        <button class="ui right floated blue labeled icon button" id="btnGuardar">
+                    <i class="save icon"></i>
+                    Guardar Todo
+                </button>
                     </div>
+                    
             </div>
+          
+                
+           
         </div>
         
 </div>

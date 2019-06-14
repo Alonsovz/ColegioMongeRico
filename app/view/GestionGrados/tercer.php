@@ -1,4 +1,4 @@
-<br>
+
 <div id="app">
         <div class="ui grid">
             <div class="row">
@@ -40,6 +40,7 @@
                                 <div class="four wide field" id="seMat" style="display:none;">
                                         <label> Materias: </label>
                                         <select name="materias" id="materias" class="ui dropdown">
+                                        <option value="seleccione" set selected>Seleccione una opción</option>
                                         <option value="1">Lenguaje</option>
                                         <option value="2">Matemáticas</option>
                                         <option value="3">Ciencias</option>
@@ -57,10 +58,12 @@
                                 <div class="four wide field" id="sePro" style="display:none;">
                                         <label> Promedios: </label>
                                         <select name="promedios" id="promedios" class="ui dropdown">
-                                        <option value="1">Normales</option>
-                                        <option value="2">Mensuales</option>
-                                        <option value="3">Trimestrales</option>
-                                        <option value="4">Generales</option>                                        
+                                        <option value="seleccione" set selected>Seleccione una opción</option>
+                                        <option value="1">Colectores de Notas</option>
+                                        <option value="2">General de Mes</option>
+                                        <option value="3">Promedios Mensuales</option>
+                                        <option value="4">Cuadro de aprendizajes</option> 
+                                        <option value="5">Cuadro de promedios</option>                                        
                                         </select>
                                 </div>
                         </div>
@@ -89,6 +92,64 @@
             </div>
         </div>
             </div>
+
+            <div id="notasMaterialen" style="display:none">
+            <h2><i class="file icon"></i>Notas de Lenguaje</h2>
+            <table  class="ui selectable very compact celled table" style="width:100%; margin:auto;text-align:center; border: 1px solid black;">
+            <thead>
+                    <tr>
+                    <th rowspan="2" style="background-color:#EAB352;" >N° </th>
+                    <th rowspan="2" style="width:25%;background-color:#EAB352;">Alumn@</th>
+                    <th colspan="4" style="background-color:#181156;" ><form class="ui form"> <input type="text" id="mes1" name="mes1" placeholder="MES"></form></th>
+                    <th colspan="4" style="background-color:#CDC729;"  ><form class="ui form"> <input type="text" id="mes1" name="mes1" placeholder="MES"></form></th>
+                    <th colspan="4" style="background-color:#E12D53;" ><form class="ui form"> <input type="text" id="mes1" name="mes1" placeholder="MES"></form></th>
+                    <th rowspan="2" style="background-color:#30AF0B; color:white;"  >PROM T</th>
+                    </tr>
+                    <tr>
+                    <th  style="background-color:#818DF1;">1</th>
+                    <th style="background-color:#818DF1;"  >2</th>
+                    <th style="background-color:#818DF1;"  >3</th>
+                    <th style="background-color:#095AA7; color:white;"  >PROM</th>
+
+                    <th  style="background-color:#F5EF58;">1</th>
+                    <th  style="background-color:#F5EF58;">2</th>
+                    <th  style="background-color:#F5EF58;">3</th>
+                    <th style="background-color:#ADA713; color:white;">PROM</th>
+
+
+                    <th style="background-color:#F67F98;">1</th>
+                    <th style="background-color:#F67F98;">2</th>
+                    <th style="background-color:#F67F98;">3</th>
+                    <th style="background-color:#9F0223;color:white;">PROM</th>
+                    </tr>
+
+                    
+  </thead>
+                    <tbody style="text-align:center; border: 1px solid black;">
+                    <tr  style="border: 1px solid black;">
+                    <td>1</td>
+                    <td>Fabio Mejia</td>    
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+
+                                <td>0</td>
+                               
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
  </div>
  <script src="./res/tablas/tablaAlumnos.js"></script>
  <script>
@@ -110,20 +171,69 @@ var acc = $(this).val();
 if(acc == 2){
  $("#sePro").hide();
  $("#nominaGe").hide();
+ $("#notasMaterialen").hide(1000);
    $("#seMat").show(1000);
 }
-if(acc == 3){
-   $("#seMat").hide();
-   $("#nominaGe").hide();
-   $("#sePro").show(1000);
-}
+
 if(acc == 1){
    $("#seMat").hide(1000);
    $("#sePro").hide(1000);
+   $("#notasMaterialen").hide(1000);
    $("#nominaGe").show(1000);
 }
 
 });
+
+$("#materias").change(function(){
+    var acc = $(this).val();
+
+    if(acc == 1){
+ $("#sePro").hide();
+ $("#nominaGe").hide(1000);
+   $("#sePro").show(1000);
+}
+});
+
+
+$("#promedios").change(function(){
+    var mat = $("#materias").val();
+    var acc = $(this).val();
+
+    if(acc == 1 && mat == 1){
+
+ $("#nominaGe").hide(1000);
+   $("#notasMaterialen").show(1000);
+
+}
+});
+
+
  </script>
+
+ <style>
+td{
+   border: 1px solid black;
+}
+th{
+    border: 1px solid black;
+    
+}
+
+tr{
+    border: 1px solid black;
+}
+
+thead{
+    border: 1px solid black;
+}
+
+tbody{
+    border: 1px solid black;
+}
+
+table{
+    border: 1px solid black;
+}
+ </style>
         
 
