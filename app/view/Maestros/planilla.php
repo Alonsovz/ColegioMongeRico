@@ -61,7 +61,8 @@
                     
                 </tr>
             </thead>
-            <input type="hidden" id="idMaestro">
+            <input type="hidden" id="idMaestro" name="idMaestro">
+         
             <tbody style="background-color:#E4E6E2;">
             <?php
                     while ($valores = mysqli_fetch_array($listado)) {
@@ -69,24 +70,46 @@
                         
                         <tr>
                         
-                        <td style="width:1%;"><button style="width:2%;" class="ui black button" id='.$valores["idMaestro"].' onclick="definirID(this)"><i class="lock icon"></i></button>
-                        <button style="display:none;width:2%;" class="ui green button" id="des'.$valores["idMaestro"].'" idB='.$valores["idMaestro"].' onclick="guardar(this)"><i class="check icon"></i></button></td>
+                        <td style="width:0%;"><button style="" class="ui black button" id='.$valores["idMaestro"].' onclick="definirID(this)"><i class="lock icon"></i></button>
+                        <button style="display:none;" class="ui green button" id="des'.$valores["idMaestro"].'" idB='.$valores["idMaestro"].' onclick="guardar(this)"><i class="check icon"></i></button></td>
                         <td style="width:20%;">'.utf8_encode($valores["nombre"]).'</td>
-                        <td style="width:4%;" >
+                        <td style="width:6%;" >
                         
                         <input type="hidden" id="pago'.$valores["idMaestro"].'" value="'.utf8_encode($valores["pago"]).'">
-                        <input type="text" disabled id="diasT'.$valores["idMaestro"].'" value="'.utf8_encode($valores["diasT"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled  id="sueldoM'.$valores["idMaestro"].'" value="'.utf8_encode($valores["sueldoM"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled id="sueldoD'.$valores["idMaestro"].'" value="'.utf8_encode($valores["sueldoD"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled id="vacacion'.$valores["idMaestro"].'" value="'.utf8_encode($valores["vacacion"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled id="aguinaldo'.$valores["idMaestro"].'" value="'.utf8_encode($valores["aguinaldo"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled id="afpEmV'.$valores["idMaestro"].'" value="'.utf8_encode($valores["afpEmV"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled  id="afpEmC'.$valores["idMaestro"].'" value="'.utf8_encode($valores["afpEmC"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled id="isssE'.$valores["idMaestro"].'" value="'.utf8_encode($valores["isssE"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled id="renta'.$valores["idMaestro"].'" value="'.utf8_encode($valores["renta"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled  id="otros'.$valores["idMaestro"].'" value="'.utf8_encode($valores["otros"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled  id="totalDesM'.$valores["idMaestro"].'" value="'.utf8_encode($valores["totalDesM"]).'"></td>
-                        <td style="width:7%;"><input type="text" disabled id="totalP'.$valores["idMaestro"].'" value="'.utf8_encode($valores["totalP"]).'"></td>
+                        <form class="ui form"><input type="text" style="background-color:#C4C3C3;" disabled id="diasT'.$valores["idMaestro"].'" value="'.utf8_encode($valores["diasT"]).'"></form></td>
+                        <td style="width:8%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled  id="sueldoM'.$valores["idMaestro"].'" value="'.utf8_encode($valores["sueldoM"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text"style="background-color:#C4C3C3;"  disabled id="sueldoD'.$valores["idMaestro"].'" value="'.utf8_encode($valores["sueldoD"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled id="vacacion'.$valores["idMaestro"].'" value="'.utf8_encode($valores["vacacion"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled id="aguinaldo'.$valores["idMaestro"].'" value="'.utf8_encode($valores["aguinaldo"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled id="afpEmV'.$valores["idMaestro"].'" value="'.utf8_encode($valores["afpEmV"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled  id="afpEmC'.$valores["idMaestro"].'" value="'.utf8_encode($valores["afpEmC"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled id="isssE'.$valores["idMaestro"].'" value="'.utf8_encode($valores["isssE"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled id="renta'.$valores["idMaestro"].'" value="'.utf8_encode($valores["renta"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled  id="otros'.$valores["idMaestro"].'" value="'.utf8_encode($valores["otros"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled  id="totalDesM'.$valores["idMaestro"].'" value="'.utf8_encode($valores["totalDesM"]).'">
+                        </form></td>
+                        <td style="width:7%;"><form class="ui form">
+                        <input type="text" style="background-color:#C4C3C3;" disabled id="totalP'.$valores["idMaestro"].'" value="'.utf8_encode($valores["totalP"]).'">
+                        </form></td>
                         <td style="width:1%;"><a class="ui black button" id='.$valores["idMaestro"].' name='.utf8_encode($valores["nombre"]).' onclick="reporte(this)"><i class="file icon"></i></a></td>
                         </tr>
                         ';
@@ -98,12 +121,7 @@
 </div>
 <script>
 
-$(document).ready(function(){
-    
 
- 
-    
-});
 var reporte=(ele)=>{
        var id= $(ele).attr("id");
        var nombre =$(ele).attr("name");
@@ -114,6 +132,7 @@ var reporte=(ele)=>{
     var definirID=(ele)=>{
         
        $("#idMaestro").val($(ele).attr("id"));
+       
 
        $("#"+$(ele).attr("id")).hide(1000);
        $("#des"+$(ele).attr("id")).show(1000);
@@ -144,6 +163,108 @@ var reporte=(ele)=>{
      $("#otros"+id).prop("disabled",false);
      $("#totalDesM"+id).prop("disabled",false);
      $("#totalP"+id).prop("disabled",false);
+
+     $("#diasT"+id).css("background-color","white");
+     $("#sueldoM"+id).css("background-color","white");
+     $("#sueldoD"+id).css("background-color","white");
+     $("#vacacion"+id).css("background-color","white");
+     $("#aguinaldo"+id).css("background-color","white");
+     $("#afpEmV"+id).css("background-color","white");
+     $("#afpEmC"+id).css("background-color","white");
+     $("#isssE"+id).css("background-color","white");
+     $("#renta"+id).css("background-color","white");
+     $("#otros"+id).css("background-color","white");
+     $("#totalDesM"+id).css("background-color","white");
+     $("#totalP"+id).css("background-color","white");
+
+     $("#diasT"+id).keyup(function(){
+
+        var diasT = $("#diasT"+id).val();
+    var sueldoM = $("#sueldoM"+id).val();
+
+    if($("#pago"+id).val() == "Por seguro"){
+
+    if(diasT<31){
+       var sueldoDiario= sueldoM / 30;
+        var sueldoDevengado = sueldoDiario*diasT;
+         $("#sueldoD"+id).val(sueldoDevengado.toFixed(2));
+
+        if(sueldoDevengado <= 5352.00){
+            var descAfpV = sueldoDevengado * 0.04;
+            var descAfpC = sueldoDevengado * 0.0325;
+
+            $("#afpEmV"+id).val(descAfpV.toFixed(2));
+            $("#afpEmC"+id).val(descAfpC.toFixed(2));
+
+        }
+        else{
+            $("#afpEmV"+id).val('303.88');
+            $("#afpEmC"+id).val('303.88');
+        }
+
+        if(sueldoDevengado <= 685.71){
+            var descISSS = sueldoDevengado * 0.03;
+            
+
+            $("#isssE"+id).val(descISSS.toFixed(2));
+
+        }
+        else{
+           
+            $("#isssE"+id).val('51.44');
+        }
+
+
+     $("#vacacion"+id).keyup(function(){
+    var vacacion = $("#vacacion"+id).val();
+    var totalP = $("#totalP"+id).val();
+
+    var total = parseFloat(vacacion) + parseFloat(totalP);
+            
+  //  alert(total.toFixed(2));
+
+    $("#totalP"+id).val('');
+    $("#totalP"+id).val(total.toFixed(2));
+});
+    }
+    }
+
+    if($("#pago"+id).val() == "Por honorarios"){
+
+                if(diasT<31){
+                var sueldoDiario= sueldoM / 30;
+                    var sueldoDevengado = sueldoDiario * diasT;
+
+                    var descRenta = sueldoDevengado * 0.1;
+                    $("#renta"+id).val(descRenta.toFixed(2));
+
+                    
+
+                    
+                    var desc = sueldoDevengado - descRenta;
+
+                    $("#totalP"+id).val(desc.toFixed(2));
+                    $("#sueldoD"+id).val(sueldoDevengado.toFixed(2));
+
+
+$("#vacacion"+id).keyup(function(){
+    var vacacion = $("#vacacion"+id).val();
+    var totalP = $("#totalP"+id).val();
+
+    var total = vacacion - totalP;
+            
+   // alert(total.toFixed(2));
+
+    $("#totalP"+id).val('');
+    $("#totalP"+id).val(total.toFixed(2));
+});
+
+                }
+            }
+
+          
+
+            });
       
     }
 
@@ -172,76 +293,26 @@ var reporte=(ele)=>{
       $("#totalDesM"+idB).prop("disabled",true);
       $("#totalP"+idB).prop("disabled",true);
        
+
+      $("#diasT"+idB).css("background-color","#C4C3C3");
+     $("#sueldoM"+idB).css("background-color","#C4C3C3");
+     $("#sueldoD"+idB).css("background-color","#C4C3C3");
+     $("#vacacion"+idB).css("background-color","#C4C3C3");
+     $("#aguinaldo"+idB).css("background-color","#C4C3C3");
+     $("#afpEmV"+idB).css("background-color","#C4C3C3");
+     $("#afpEmC"+idB).css("background-color","#C4C3C3");
+     $("#isssE"+idB).css("background-color","#C4C3C3");
+     $("#renta"+idB).css("background-color","#C4C3C3");
+     $("#otros"+idB).css("background-color","#C4C3C3");
+     $("#totalDesM"+idB).css("background-color","#C4C3C3");
+     $("#totalP"+idB).css("background-color","#C4C3C3");
+
+
+        
+     
      }
 
-function diasT(){
-    var diasT = $("#diasT").val();
-    var sueldoM = $("#sueldoM").val();
 
-    if($("#pago").val() == "Por seguro"){
-
-    if(diasT<31){
-       var sueldoDiario= sueldoM / 30;
-        var sueldoDevengado = sueldoDiario*diasT;
-         $("#sueldoD").val(sueldoDevengado.toFixed(2));
-
-        if(sueldoDevengado <= 5352.00){
-            var descAfpV = sueldoDevengado * 0.04;
-            var descAfpC = sueldoDevengado * 0.0325;
-
-            $("#afpEmV").val(descAfpV.toFixed(2));
-            $("#afpEmC").val(descAfpC.toFixed(2));
-
-        }
-        else{
-            $("#afpEmV").val('303.88');
-            $("#afpEmC").val('303.88');
-        }
-
-
-        if(sueldoDevengado <= 685.71){
-            var descISSS = sueldoDevengado * 0.03;
-            
-
-            $("#isssE").val(descISSS.toFixed(2));
-
-        }
-        else{
-           
-            $("#isssE").val('51.44');
-        }
-        
-
-    }
-
-    }
-
-
-    if($("#pago").val() == "Por honorarios"){
-
-if(diasT<31){
-   var sueldoDiario= sueldoM / 30;
-    var sueldoDevengado = sueldoDiario * diasT;
-
-    var descRenta = sueldoDevengado * 0.1;
-     $("#renta").val(descRenta.toFixed(2));
-
-    
-
-    
-     var desc = sueldoDevengado - descRenta;
-
-     $("#totalP").val(desc.toFixed(2));
-     $("#sueldoD").val(sueldoDevengado.toFixed(2));
-
-}
-
-
-
-
-
-}
-}
 
 $("#vacacion").keyup(function(){
     var vacacion = $(this).val();
@@ -268,4 +339,12 @@ $("#aguinaldo").keyup(function(){
 
 
 
+</script>
+<script language=javascript type=text/javascript>
+function stopRKey(evt) {
+var evt = (evt) ? evt : ((event) ? event : null);
+var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+if ((evt.keyCode == 13) && (node.type=="text")) {return false;}
+}
+document.onkeypress = stopRKey; 
 </script>
