@@ -107,6 +107,7 @@ especialidad varchar(20),
 fechaIngreso date,
 habilidades varchar(500),
 tipoPago varchar(100),
+sueldo double,
 idEliminado int
 );
 
@@ -141,6 +142,7 @@ diasT int,
 sueldoM double,
 sueldoD double,
 vacacion double,
+aguinaldo double,
 afpEmV double,
 afpEmC double,
 isssE double,
@@ -152,7 +154,6 @@ mes varchar(20),
 anio varchar(20)
 );
 
-insert into planilla values(null,1,0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,DATE_FORMAT(CURDATE(),'%m'),year(CURRENT_DATE()));
 
 create table fichaAlumno(
 idAlumno int primary key unique auto_increment,
@@ -339,6 +340,4 @@ $$
 
 
 
-select p.*, concat(m.nombre," ",m.apellido) as nombre from planilla p 
-inner join maestros m on m.idMaestro = p.idMaestro 
-where m.idEliminado=1 and p.mes=DATE_FORMAT(CURDATE(),'%m') and anio=year(CURRENT_DATE())
+update maestros set tipoPago = 'Por honorarios' where idMaestro=1

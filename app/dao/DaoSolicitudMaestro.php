@@ -17,7 +17,7 @@ class DaoSolicitudMaestro extends DaoBase {
         '".$this->objeto->getNumeroPartida()."','".$this->objeto->getSubNumero()."',
         '".$this->objeto->getNivelAcademico()."','".$this->objeto->getNivel()."',
         '".$this->objeto->getEspecialidad()."','".$this->objeto->getFechaIngreso()."',
-        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."',1)";
+        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."','".$this->objeto->getSueldo()."',1)";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -36,7 +36,7 @@ class DaoSolicitudMaestro extends DaoBase {
         $fila = $resultado1->fetch_assoc();
         $idExp = $fila['id'];
         
-        $_query = "insert into planilla values(null,".$idExp.",0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
+        $_query = "insert into planilla values(null,".$idExp.",0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
         DATE_FORMAT(CURDATE(),'%m'),year(CURRENT_DATE()));
         ";
 

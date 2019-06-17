@@ -369,6 +369,12 @@
                             <option value="Por seguro">Por seguro</option>
                         </select>
                     </div>
+
+                    <div class="eight wide field" style="font-size:16px;">
+                        <label><i class="dollar icon"></i> Sueldo:</label>
+                        <input type="text" id="sueldo" name="sueldo" placeholder="Sueldo a pagar">
+                        
+                    </div>
                    
                 </div>
             </div>

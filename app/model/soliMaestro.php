@@ -31,6 +31,7 @@ class soliMaestro extends ModeloBase{
     private $fechaIngreso;
     private $habilidades;
     private $tipoPago;
+    private $sueldp;
 
     public function __construct() {
 
@@ -445,6 +446,18 @@ class soliMaestro extends ModeloBase{
         return $this;
     }
 
+
+    public function getSueldo()
+    {
+        return $this->sueldo;
+    }
+
+    public function setSueldo($sueldo)
+    {
+        $this->sueldo = $sueldo;
+
+        return $this;
+    }
   
 
 

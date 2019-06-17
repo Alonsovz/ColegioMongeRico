@@ -49,6 +49,7 @@ class SolicitudController extends ControladorBase {
         $dao->objeto->setFechaIngreso($_REQUEST["fechaIngre"]);
         $dao->objeto->setHabilidades($_REQUEST["habilidades"]);
         $dao->objeto->setTipoPago($_REQUEST["tipoPago"]);
+        $dao->objeto->setSueldo($_REQUEST["sueldo"]);
 
         $daoU = new DaoUsuario();
 
