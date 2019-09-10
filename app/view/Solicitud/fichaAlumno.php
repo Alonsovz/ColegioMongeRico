@@ -415,7 +415,7 @@
                                     <option value="Soltero/a">Soltero/a</option>
                                     <option value="Divoricado/a">Divoricado/a</option>
                                     <option value="Viudo/a">Viudo/a</option>
-                                    <option value="Soltero/a">Soltero/a</option>
+                                    
                                 </select>
                             </div>
                             <div class="three wide field" style="font-size:16px;">

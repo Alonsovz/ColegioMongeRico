@@ -31,7 +31,7 @@ class soliMaestro extends ModeloBase{
     private $fechaIngreso;
     private $habilidades;
     private $tipoPago;
-    private $sueldp;
+    private $sueldo;
 
     public function __construct() {
 

@@ -21,5 +21,12 @@ class MaestrosController extends ControladorBase {
         echo $dao->mostrarMaestros();
     }
 
+    public function mostrarPlanilla() {
+        $dao = new DaoSolicitudMaestro();
+
+        echo $dao->mostrarPlanilla();
+    }
+
+
 
 }

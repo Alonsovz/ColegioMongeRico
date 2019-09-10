@@ -1,22 +1,4 @@
-<?php
-  require_once './vendor/autoload.php';
-  $mysqli = new mysqli("localhost","root","","colegioMongeRico");
-  $listado = $mysqli -> query ("select p.*, concat(m.nombre,' ',m.apellido) as nombre, m.tipoPago as pago,
-  format((m.sueldo),2) as sueldoM,
-  format((p.sueldoD),2) as sueldoD,
-  format((p.vacacion),2) as vacacion,
-  format((p.aguinaldo),2) as aguinaldo,
-  format((p.afpEmV),2) as afpEmV,
-  format((p.afpEmC),2) as afpEmC,
-  format((p.isssE),2) as isssE,
-  format((p.renta),2) as renta,
-  format((p.otros),2) as otros,
-  format((p.totalDesM),2) as totalDesM,
-  format((p.totalP),2) as totalP
-   from planilla p 
-  inner join maestros m on m.idMaestro = p.idMaestro 
-  where m.idEliminado=1 and p.mes=DATE_FORMAT(CURDATE(),'%m') and anio=year(CURRENT_DATE())  order by nombre asc");
- ?>
+
 <div id="app">
         <div class="ui grid">
             <div class="row">
@@ -37,314 +19,188 @@
         </div>
         
 </div>
-<div class="content" style="width:100%;">
-<br>
-        <br>
-        <table class="ui selectable very compact celled table" style="width:100%; margin:auto;text-align:center; font-size:13px;">
-            <thead>
-                <tr>
-                <th style="background-color: #447820; color:white;border: 1px solid white;"><i class="lock icon"></i></th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Nombre</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Días T</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Sueldo Mensual</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Sueldo Devengado</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Vacación</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Aguinaldo</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">AFP|Vejez</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">AFP|Comsión</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">ISSS | Emp.</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Imp. Renta </th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Otros desc.</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Total Desc</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;">Total a Pagar</th>
-                    <th style="background-color: #447820; color:white;border: 1px solid white;"><i class="list icon"></i></th>
-                    
-                </tr>
-            </thead>
-            <input type="hidden" id="idMaestro" name="idMaestro">
-         
-            <tbody style="background-color:#E4E6E2;">
-            <?php
-                    while ($valores = mysqli_fetch_array($listado)) {
-                        echo '
-                        
+<div class="row title-bar">
+            <div class="sixteen wide column">
+                <div class="ui divider"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="sixteen wide column">
+            <table id="dtMaestros" class="ui selectable very compact celled table" style="width:100%; margin:auto;">
+                    <thead>
                         <tr>
                         
-                        <td style="width:0%;"><button style="" class="ui black button" id='.$valores["idMaestro"].' onclick="definirID(this)"><i class="lock icon"></i></button>
-                        <button style="display:none;" class="ui green button" id="des'.$valores["idMaestro"].'" idB='.$valores["idMaestro"].' onclick="guardar(this)"><i class="check icon"></i></button></td>
-                        <td style="width:20%;">'.utf8_encode($valores["nombre"]).'</td>
-                        <td style="width:6%;" >
-                        
-                        <input type="hidden" id="pago'.$valores["idMaestro"].'" value="'.utf8_encode($valores["pago"]).'">
-                        <form class="ui form"><input type="text" style="background-color:#C4C3C3;" disabled id="diasT'.$valores["idMaestro"].'" value="'.utf8_encode($valores["diasT"]).'"></form></td>
-                        <td style="width:8%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled  id="sueldoM'.$valores["idMaestro"].'" value="'.utf8_encode($valores["sueldoM"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text"style="background-color:#C4C3C3;"  disabled id="sueldoD'.$valores["idMaestro"].'" value="'.utf8_encode($valores["sueldoD"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled id="vacacion'.$valores["idMaestro"].'" value="'.utf8_encode($valores["vacacion"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled id="aguinaldo'.$valores["idMaestro"].'" value="'.utf8_encode($valores["aguinaldo"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled id="afpEmV'.$valores["idMaestro"].'" value="'.utf8_encode($valores["afpEmV"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled  id="afpEmC'.$valores["idMaestro"].'" value="'.utf8_encode($valores["afpEmC"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled id="isssE'.$valores["idMaestro"].'" value="'.utf8_encode($valores["isssE"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled id="renta'.$valores["idMaestro"].'" value="'.utf8_encode($valores["renta"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled  id="otros'.$valores["idMaestro"].'" value="'.utf8_encode($valores["otros"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled  id="totalDesM'.$valores["idMaestro"].'" value="'.utf8_encode($valores["totalDesM"]).'">
-                        </form></td>
-                        <td style="width:7%;"><form class="ui form">
-                        <input type="text" style="background-color:#C4C3C3;" disabled id="totalP'.$valores["idMaestro"].'" value="'.utf8_encode($valores["totalP"]).'">
-                        </form></td>
-                        <td style="width:1%;"><a class="ui black button" id='.$valores["idMaestro"].' name='.utf8_encode($valores["nombre"]).' onclick="reporte(this)"><i class="file icon"></i></a></td>
+                            <th style="background-color: #E6C404; color:white;">N°</th>
+                            <th style="background-color: #08088A; color:white;">Nombre</th>
+                            <th style="background-color: #08088A; color:white;">Tipo de pago</th>
+                            <th style="background-color: #08088A; color:white;">Sueldo</th>
+                            <th style="background-color: #08088A; color:white;">Acciones</th>
+                           
                         </tr>
-                        ';
-                    }
-            ?>
-            </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
+<div class="ui modal" id="modalPlanilla" >
+    <div class="header" style="background-color: #0BAA67; color:white;">
+    Planilla de : <a id="nombre" style="color:yellow;"></a> .<br>
+    Tipo de pago: <a id="pago" style="color:yellow;"></a> .
+    </div>
+    <div class="content" style="background-color:#D4D6D6">
+    <form class="ui form" id="planilla">
+    <input type="hidden" id="idMaestro">
+        <div class="field">
+            <div class="fields">
+            <div class="six wide field">
+                    <label><i class="calendar icon"></i>Días trabajados</label>
+                    <input type="text" id="dias" placeholder="Dias trabajados" >
+                </div>
+                <div class="six wide field">
+                    <label><i class="user icon"></i><i class="dollar icon"></i>Sueldo Mensual</label>
+                    <input type="text" id="sueldo" readonly>
+                </div>
+                
+                <div class="six wide field">
+                    <label><i class="ship icon"></i><i class="dollar icon"></i>Vacación</label>
+                    <input type="text" id="vacacion" placeholder="vacacion" >
+                </div>
+                </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="field">
+            <div class="fields">
+                <div class="six wide field" id="s1">
+                    <label><i class="address card icon"></i><i class="dollar icon"></i>AFP Vejez</label>
+                    <input type="text" id="afpVejez" placeholder="AFP Vejez" >
+                </div>
+                <div class="six wide field" id="s2">
+                    <label><i class="address card icon"></i><i class="dollar icon"></i>AFP Comisión</label>
+                    <input type="text" id="afpComision" placeholder="AFP Comisión" >
+                </div>
+                <div class="six wide field" id="s3">
+                    <label><i class="address card icon"></i><i class="dollar icon" ></i>ISSS</label>
+                    <input type="text" id="isss" placeholder="ISSS" >
+                </div>
+               
+             
+                <div class="six wide field" id="ho">
+                    <label><i class="address card icon"></i><i class="dollar icon" ></i>ISR</label>
+                    <input type="text" id="renta" placeholder="Renta" >
+                
+                </div>
+                <div class="six wide field">
+                        <label><i class="question mark icon"></i><i class="dollar icon"></i>Otros descuentos</label>
+                        <input type="text" id="otros" placeholder="Otros descuentos" >
+                </div>
+
+                <div class="six wide field">
+                        <label><i class="gift icon"></i><i class="dollar icon"></i>Aguinaldo</label>
+                        <input type="text" id="aguinaldo" placeholder="Aguinaldo" >
+                </div>
+            </div>
+        </div>
+        <br>
+                <hr>
+                <br>
+        <div class="field">
+            <div class="fields">
+            <div class="six wide field">
+                        <label><br></label>
+                       <center> <a id="totalizar" class="ui orange button" style="">Totalizar</a> </center>
+                </div>
+                <div class="six wide field">
+                    <label><i class="money icon"></i><i class="dollar icon"></i>Sueldo Devengado</label>
+                    <input type="text" id="sueldoDevengado" placeholder="Sueldo Devengado" readonly>
+                </div>
+                <div class="six wide field">
+                        <label><i class="money bill icon"></i><i class="dollar icon"></i>Total de Descuentos</label>
+                        <input type="text" id="descuentos" placeholder="Total de descuentos" readonly>
+                </div>
+                <div class="six wide field">
+                        <label><i class="money bill icon"></i><i class="dollar icon"></i>Total a pagar</label>
+                        <input type="text" id="totalPago" placeholder="Total a pagar" readonly>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="actions">
+    <button class="ui red deny button" id="reset">Cancelar</button>
+    <button class="ui blue  button" id="guardar">Guardar</button>
+    </div>
 </div>
+<script src="./res/tablas/tablaPlanilla.js"></script>
 <script>
-
-
-var reporte=(ele)=>{
-       var id= $(ele).attr("id");
-       var nombre =$(ele).attr("name");
-       
-      
-    }
-
-    var definirID=(ele)=>{
-        
-       $("#idMaestro").val($(ele).attr("id"));
-       
-
-       $("#"+$(ele).attr("id")).hide(1000);
-       $("#des"+$(ele).attr("id")).show(1000);
-       
-     var id = $(ele).attr("id");
-
-     $("#diasT"+id).mask("99");
-    $("#sueldoM"+id).mask("###0.00", {reverse: true});
-    $("#sueldoD"+id).mask("###0.00", {reverse: true});
-    $("#vacacion"+id).mask("###0.00", {reverse: true});
-    $("#afpEmV"+id).mask("###0.00", {reverse: true});
-    $("#afpEmC"+id).mask("###0.00", {reverse: true});
-    $("#isssE"+id).mask("###0.00", {reverse: true});
-    $("#renta"+id).mask("###0.00", {reverse: true});
-    $("#otros"+id).mask("###0.00", {reverse: true});
-    $("#totalDesM"+id).mask("###0.00", {reverse: true});
-    $("#totalP"+id).mask("###0.00", {reverse: true});
-
-     $("#diasT"+id).prop("disabled",false);
-     $("#sueldoM"+id).prop("disabled",false);
-     $("#sueldoD"+id).prop("disabled",false);
-     $("#vacacion"+id).prop("disabled",false);
-     $("#aguinaldo"+id).prop("disabled",false);
-     $("#afpEmV"+id).prop("disabled",false);
-     $("#afpEmC"+id).prop("disabled",false);
-     $("#isssE"+id).prop("disabled",false);
-     $("#renta"+id).prop("disabled",false);
-     $("#otros"+id).prop("disabled",false);
-     $("#totalDesM"+id).prop("disabled",false);
-     $("#totalP"+id).prop("disabled",false);
-
-     $("#diasT"+id).css("background-color","white");
-     $("#sueldoM"+id).css("background-color","white");
-     $("#sueldoD"+id).css("background-color","white");
-     $("#vacacion"+id).css("background-color","white");
-     $("#aguinaldo"+id).css("background-color","white");
-     $("#afpEmV"+id).css("background-color","white");
-     $("#afpEmC"+id).css("background-color","white");
-     $("#isssE"+id).css("background-color","white");
-     $("#renta"+id).css("background-color","white");
-     $("#otros"+id).css("background-color","white");
-     $("#totalDesM"+id).css("background-color","white");
-     $("#totalP"+id).css("background-color","white");
-
-     $("#diasT"+id).keyup(function(){
-
-        var diasT = $("#diasT"+id).val();
-    var sueldoM = $("#sueldoM"+id).val();
-
-    if($("#pago"+id).val() == "Por seguro"){
-
-    if(diasT<31){
-       var sueldoDiario= sueldoM / 30;
-        var sueldoDevengado = sueldoDiario*diasT;
-         $("#sueldoD"+id).val(sueldoDevengado.toFixed(2));
-
-        if(sueldoDevengado <= 5352.00){
-            var descAfpV = sueldoDevengado * 0.04;
-            var descAfpC = sueldoDevengado * 0.0325;
-
-            $("#afpEmV"+id).val(descAfpV.toFixed(2));
-            $("#afpEmC"+id).val(descAfpC.toFixed(2));
-
-        }
-        else{
-            $("#afpEmV"+id).val('303.88');
-            $("#afpEmC"+id).val('303.88');
-        }
-
-        if(sueldoDevengado <= 685.71){
-            var descISSS = sueldoDevengado * 0.03;
-            
-
-            $("#isssE"+id).val(descISSS.toFixed(2));
-
-        }
-        else{
-           
-            $("#isssE"+id).val('51.44');
-        }
-
-
-     $("#vacacion"+id).keyup(function(){
-    var vacacion = $("#vacacion"+id).val();
-    var totalP = $("#totalP"+id).val();
-
-    var total = parseFloat(vacacion) + parseFloat(totalP);
-            
-  //  alert(total.toFixed(2));
-
-    $("#totalP"+id).val('');
-    $("#totalP"+id).val(total.toFixed(2));
+$(document).ready(function(){
+    $('#dias').mask("##");
+    $('#vacacion').mask("###0.00", {reverse: true});
+    $('#afpVejez').mask("###0.00", {reverse: true});
+    $('#afpComision').mask("###0.00", {reverse: true});
+    $('#isss').mask("###0.00", {reverse: true});
+    $('#renta').mask("###0.00", {reverse: true});
+    $('#aguinaldo').mask("###0.00", {reverse: true});
+    $('#otros').mask("###0.00", {reverse: true});
 });
-    }
-    }
+$(document).on("click", ".btnEditar", function () {
+ $('#modalPlanilla').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+$("#nombre").text($(this).attr("nombre"));
+$("#pago").text($(this).attr("tipoPago"));
+$("#sueldo").val($(this).attr("sueldo"));
+$("#idMaestro").val($(this).attr("id"));
 
-    if($("#pago"+id).val() == "Por honorarios"){
-
-                if(diasT<31){
-                var sueldoDiario= sueldoM / 30;
-                    var sueldoDevengado = sueldoDiario * diasT;
-
-                    var descRenta = sueldoDevengado * 0.1;
-                    $("#renta"+id).val(descRenta.toFixed(2));
-
-                    
-
-                    
-                    var desc = sueldoDevengado - descRenta;
-
-                    $("#totalP"+id).val(desc.toFixed(2));
-                    $("#sueldoD"+id).val(sueldoDevengado.toFixed(2));
-
-
-$("#vacacion"+id).keyup(function(){
-    var vacacion = $("#vacacion"+id).val();
-    var totalP = $("#totalP"+id).val();
-
-    var total = vacacion - totalP;
-            
-   // alert(total.toFixed(2));
-
-    $("#totalP"+id).val('');
-    $("#totalP"+id).val(total.toFixed(2));
-});
-
-                }
-            }
-
-          
-
-            });
-      
-    }
-
-
-    var guardar=(ele)=>{
-        
-        $("#idMaestro").val($(ele).attr("idB"));
- 
-        $("#des"+$(ele).attr("idB")).hide(1000);
-        $("#"+$(ele).attr("idB")).show(1000);
-        
-      var idB = $(ele).attr("idB");
- 
-  
- 
-      $("#diasT"+idB).prop("disabled",true);
-      $("#sueldoM"+idB).prop("disabled",true);
-      $("#sueldoD"+idB).prop("disabled",true);
-      $("#vacacion"+idB).prop("disabled",true);
-      $("#aguinaldo"+idB).prop("disabled",true);
-      $("#afpEmV"+idB).prop("disabled",true);
-      $("#afpEmC"+idB).prop("disabled",true);
-      $("#isssE"+idB).prop("disabled",true);
-      $("#renta"+idB).prop("disabled",true);
-      $("#otros"+idB).prop("disabled",true);
-      $("#totalDesM"+idB).prop("disabled",true);
-      $("#totalP"+idB).prop("disabled",true);
-       
-
-      $("#diasT"+idB).css("background-color","#C4C3C3");
-     $("#sueldoM"+idB).css("background-color","#C4C3C3");
-     $("#sueldoD"+idB).css("background-color","#C4C3C3");
-     $("#vacacion"+idB).css("background-color","#C4C3C3");
-     $("#aguinaldo"+idB).css("background-color","#C4C3C3");
-     $("#afpEmV"+idB).css("background-color","#C4C3C3");
-     $("#afpEmC"+idB).css("background-color","#C4C3C3");
-     $("#isssE"+idB).css("background-color","#C4C3C3");
-     $("#renta"+idB).css("background-color","#C4C3C3");
-     $("#otros"+idB).css("background-color","#C4C3C3");
-     $("#totalDesM"+idB).css("background-color","#C4C3C3");
-     $("#totalP"+idB).css("background-color","#C4C3C3");
-
-
-        
-     
-     }
-
-
-
-$("#vacacion").keyup(function(){
-    var vacacion = $(this).val();
-    var totalP = $("#totalP").val();
-
-    
-
-    var total = parseFloat(vacacion) + parseFloat($('#totalP').val())
-
-    
-
-    $("#totalP").val(total.toFixed(2));
-});
-
-
-$("#aguinaldo").keyup(function(){
-    var aguinaldo = $("#aguinaldo").val();
-    var totalP = $("#totalP").val();
-
-    var total = vacacion + totalP;
-
-    $("#totalP").val(total.toFixed(2));
-});
-
-
-
-</script>
-<script language=javascript type=text/javascript>
-function stopRKey(evt) {
-var evt = (evt) ? evt : ((event) ? event : null);
-var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
-if ((evt.keyCode == 13) && (node.type=="text")) {return false;}
+if($(this).attr("tipoPago")=="Por honorarios"){
+    $("#ho").show();
+    $("#s1").hide();
+    $("#s2").hide();
+    $("#s3").hide();
+}else{
+    $("#ho").hide();
+    $("#s1").show();
+    $("#s2").show();
+    $("#s3").show();
 }
-document.onkeypress = stopRKey; 
+});
+
+$("#reset").click(function(){
+    $('#planilla')[0].reset();
+});
+
+$("#totalizar").click(function(){
+    var dias = $("#dias").val();
+    var sueldo = $("#sueldo").val();
+
+    var sueldoPorDia = sueldo / 30;
+
+    var sueldoDevengado = sueldoPorDia * dias;
+
+
+
+    var vacacion = $("#vacacion").val();
+
+    var afpVejez = $("#afpVejez").val();
+
+    var afpComision = $("#afpComision").val();
+
+    var isss = $("#isss").val();
+
+    var otros = $("#otros").val();
+
+    var aguinaldo = $("#aguinaldo").val();
+
+    var renta = $("#renta").val();
+    $("#sueldoDevengado").val(sueldoDevengado.toFixed(2));
+
+    var descuentos =  parseFloat(afpVejez) + parseFloat(afpComision) + parseFloat(isss) + parseFloat(renta) + parseFloat(otros);
+    var totalPago = parseFloat(sueldoDevengado) + parseFloat(vacacion) + parseFloat(aguinaldo) - parseFloat(descuentos);
+
+    $("#totalPago").val(totalPago.toFixed(2));
+    $("#descuentos").val(descuentos.toFixed(2));
+});
+
+
 </script>
