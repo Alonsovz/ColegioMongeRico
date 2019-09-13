@@ -4,12 +4,12 @@ create database colegioMongeRico;
 use colegioMongeRico;
 
 create table rol(
-codigoRol int primary key unique auto_increment,
+codigoRol int primary key  auto_increment,
 descRol varchar(50)
 );
 
 create table usuario (
-    codigoUsuario int primary key unique auto_increment,
+    codigoUsuario int primary key  auto_increment,
     nombre varchar(50),
     apellido varchar(50),
     nomUsuario varchar(75),
@@ -24,7 +24,7 @@ create table usuario (
 );
 
 create table chequeras(
-idChequera int primary key unique auto_increment,
+idChequera int primary key  auto_increment,
 chequera varchar(50),
 numeroCuenta varchar(100),
 monto double,
@@ -32,7 +32,7 @@ idEliminado int
 );
 
 create table cargosBancarios(
-idCargo int primary key unique auto_increment,
+idCargo int primary key  auto_increment,
 concepto varchar(500),
 monto double,
 fecha date,
@@ -43,7 +43,7 @@ idEliminado int
 );
 
 create table remesas(
-idRemesa int primary key unique auto_increment,
+idRemesa int primary key  auto_increment,
 concepto varchar(500),
 monto double,
 fecha date,
@@ -54,7 +54,7 @@ idEliminado int
 );
 
 create table datosGrados(
-idGrado int primary key unique auto_increment,
+idGrado int primary key  auto_increment,
 orientador int,
 orientadorMate int,
 orientadorSoc int,
@@ -71,21 +71,21 @@ aula varchar(20)
 
 
 create table inventarioUni(
-id int primary key unique auto_increment,
+id int primary key  auto_increment,
 talla varchar(10),
 existencia int,
 idEliminado int
 );
 
 create table inventarioCal(
-id int primary key unique auto_increment,
+id int primary key  auto_increment,
 talla varchar(10),
 existencia int,
 idEliminado int
 );
 
 create table maestros(
-idMaestro int primary key unique auto_increment,
+idMaestro int primary key  auto_increment,
 nombre varchar(100),
 apellido varchar(100),
 fechaNacimiento date,
@@ -112,19 +112,19 @@ idEliminado int
 );
 
 create table titulosObtenidos(
-idTitulo int primary key unique auto_increment,
+idTitulo int primary key  auto_increment,
 nombreTitulo varchar(40),
 idMaestro int
 );
 
 create table capacitaciones(
-idCapacitacion int primary key unique auto_increment,
+idCapacitacion int primary key  auto_increment,
 nombreCapacitacion varchar(40),
 idMaestro int
 );
 
 create table experienciaLaboral(
-id int primary key unique auto_increment,
+id int primary key  auto_increment,
 institucion varchar(50),
 cargo varchar(50),
 grado varchar(30),
@@ -136,7 +136,7 @@ idMaestro int
 
 
 create table planilla(
-id int primary key unique auto_increment,
+id int primary key  auto_increment,
 idMaestro int,
 diasT int,
 sueldoM double,
@@ -156,7 +156,7 @@ anio varchar(20)
 
 
 create table fichaAlumno(
-idAlumno int primary key unique auto_increment,
+idAlumno int primary key  auto_increment,
 nie varchar(50),
 nombre varchar(100),
 grado int,

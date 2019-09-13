@@ -68,7 +68,9 @@ class SolicitudController extends ControladorBase {
         echo $daoU->registrar();
 
         echo $dao->registrarDatos();
-        echo $dao->registrarDatosPlanilla();
+      echo $dao->registrarDatosPlanilla();
+
+        
     }
 
 
@@ -95,6 +97,11 @@ class SolicitudController extends ControladorBase {
         } else {
             echo 2;
         }
+    }
+
+    public function pruebaPlanilla(){
+        $dao = new DaoSolicitudMaestro();
+        echo $dao->registrarDatosPlanilla();
     }
 
 

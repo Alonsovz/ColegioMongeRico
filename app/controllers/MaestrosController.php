@@ -22,9 +22,14 @@ class MaestrosController extends ControladorBase {
     }
 
     public function mostrarPlanilla() {
+
+
+        $mes = (isset($_REQUEST['mes']))? $_REQUEST['mes']:0;
+        $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
         $dao = new DaoSolicitudMaestro();
 
-        echo $dao->mostrarPlanilla();
+        echo $dao->mostrarPlanilla($mes , $anio);
+       
     }
 
 

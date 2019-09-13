@@ -35,12 +35,21 @@ class DaoSolicitudMaestro extends DaoBase {
 
         $fila = $resultado1->fetch_assoc();
         $idExp = $fila['id'];
-        
-        $_query = "insert into planilla values(null,".$idExp.",0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
-        DATE_FORMAT(CURDATE(),'%m'),year(CURRENT_DATE()));
+
+        $mes = date("m");
+        while($mes < 13){
+            
+         $_query = "insert into planilla values(null,".$idExp.",0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
+        '".$mes."',year(CURRENT_DATE()));
         ";
 
         $resultado = $this->con->ejecutar($_query);
+        $mes++;
+        }
+        
+        
+
+        
 
         if($resultado) {
             return 1;
@@ -140,7 +149,7 @@ class DaoSolicitudMaestro extends DaoBase {
     }
 
 
-    public function mostrarPlanilla() {
+    public function mostrarPlanilla($mes=0 , $anio=0) {
         $_query = "select p.*, concat(m.nombre,' ',m.apellido) as nombre, m.tipoPago as pago,
         format(m.sueldo,2) as sueldoFijo,
       concat('$', ' ',  format((m.sueldo),2) ) as sueldoM,
@@ -156,7 +165,7 @@ class DaoSolicitudMaestro extends DaoBase {
         format((p.totalP),2) as totalP
          from planilla p 
         inner join maestros m on m.idMaestro = p.idMaestro 
-        where m.idEliminado=1 and p.mes=DATE_FORMAT(CURDATE(),'%m') and anio=year(CURRENT_DATE())  order by nombre asc";
+        where m.idEliminado=1 and p.mes=".$mes." and anio=".$anio."  order by nombre asc";
 
         $resultado = $this->con->ejecutar($_query);
 

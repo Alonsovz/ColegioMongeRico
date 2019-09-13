@@ -1,10 +1,10 @@
 var tablaMaestros;
-
+function filtrarPlanilla(mes,anio) {
 $(function() {
     if($('#dtMaestros').length) {
         tablaMaestros = $('#dtMaestros').DataTable({
             "ajax": {
-                "url": "?1=MaestrosController&2=mostrarPlanilla",
+                "url": "?1=MaestrosController&2=mostrarPlanilla&mes="+mes+"&anio="+anio,
                 "type": "POST"
             },
             "columns": [{
@@ -50,10 +50,33 @@ $(function() {
                     "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
                     "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                 }
-            }
+            },
+            "initComplete": function(settings, json) {               
+                $('#cargando').hide();
+                
+                swal({
+                    title: 'Listo',
+                    text: 'Datos procesados correctamente',
+                    imageUrl: "./res/img/success.gif",
+                    imageWidth: 170,
+                    imageHeight: 175,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    showConfirmButton: false,
+                    confirmButtonColor: "#00903C",
+                    timer: 3000
+                }).then((result) => {
+                $('#loader').hide(2000);
+                $('#app').fadeIn(2000);
+                
+                }); 
+                    
+              },
         });
 
          // Ocultar columna de id de Usuario
          tablaMaestros.column(0).visible(false);
     }
 });
+}

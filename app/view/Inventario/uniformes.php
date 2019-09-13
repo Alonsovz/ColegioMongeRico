@@ -169,7 +169,7 @@
                                 ?>
                     </select>
                     <br><br>
-                                Existencia (Pares):
+                                Existencia:
                                 <div id="existenciaEx"></div>
                     <br>
                     </div>
