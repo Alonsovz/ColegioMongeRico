@@ -70,8 +70,4 @@ $(function() {
     
 </div>
 
-<a href="?1=SolicitudController&2=pruebaPlanilla"  style="width: 24%;" class="tiles-tiles ui green inverted segment">
-        <h3>Gestión grados</h3>
-        <div class="ui divider"></div>
-        <i class="users icon"></i><i class="book icon"></i>
-    </a>
+

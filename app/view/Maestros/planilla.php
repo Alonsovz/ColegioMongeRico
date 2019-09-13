@@ -139,7 +139,7 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
     </div>
 </div>
 
-    <div class="ui basic modal" id="planillafiltro">
+    <div class="ui tiny basic modal" id="planillafiltro">
     <div class="header" style="color:#85F8F4;">
     <i class="calendar icon"></i> <i class="filter icon"></i> Mes y año a seleccionar
     </div>
@@ -193,6 +193,10 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
     </form>
     </div>
     <div class="actions">
+    <button class="ui left compact red labeled icon button" id="btnCancelar">
+<i class="close icon"></i>
+Cancelar
+</button>
     <button class="ui compact blue  icon button" id="btnProcesar">
     <i class="angle right icon"></i>
     Procesar
@@ -360,5 +364,7 @@ $("#btnAct").click(function(){
 location.reload();
 } );    
 
-
+$("#btnCancelar").click(function(){ 
+location.href = "?1=UsuarioController&2=dashboard";
+} );
 </script>
