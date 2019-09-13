@@ -458,10 +458,172 @@ class soliMaestro extends ModeloBase{
 
         return $this;
     }
+
+
+
+
+    private $idPlanilla;
+    private $diasT;
+    private $vacacion;
+    private $afpVejez;
+    private $afpComision;
+    private $isss;
+    private $renta;
+    private $otros;
+    private $aguinaldo;
+    private $sueldoD;
+    private $totalDes;
+    private $totalP;
   
+    public function getIdPlanilla()
+    {
+        return $this->idPlanilla;
+    }
+
+    public function setIdPlanilla($idPlanilla)
+    {
+        $this->idPlanilla = $idPlanilla;
+
+        return $this;
+    }
+
+    public function getDiasT()
+    {
+        return $this->diasT;
+    }
+
+    public function setDiasT($diasT)
+    {
+        $this->diasT = $diasT;
+
+        return $this;
+    }
 
 
+    public function getVacacion()
+    {
+        return $this->vacacion;
+    }
+
+    public function setVacacion($vacacion)
+    {
+        $this->vacacion = $vacacion;
+
+        return $this;
+    }
+
+    public function getAfpVejez()
+    {
+        return $this->afpVejez;
+    }
+
+    public function setAfpVejez($afpVejez)
+    {
+        $this->afpVejez = $afpVejez;
+
+        return $this;
+    }
+
+
+    public function getAfpComision()
+    {
+        return $this->afpComision;
+    }
+
+    public function setAfpComision($afpComision)
+    {
+        $this->afpComision = $afpComision;
+
+        return $this;
+    }
+
+    public function getISSS()
+    {
+        return $this->isss;
+    }
+
+    public function setISSS($isss)
+    {
+        $this->isss = $isss;
+
+        return $this;
+    }
     
+
+    public function getRenta()
+    {
+        return $this->renta;
+    }
+
+    public function setRenta($renta)
+    {
+        $this->renta = $renta;
+
+        return $this;
+    }
+
+
+    public function getOtros()
+    {
+        return $this->otros;
+    }
+
+    public function setotros($otros)
+    {
+        $this->otros = $otros;
+
+        return $this;
+    }
+
+    public function getAguinaldo()
+    {
+        return $this->aguinaldo;
+    }
+
+    public function setAguinaldo($aguinaldo)
+    {
+        $this->aguinaldo = $aguinaldo;
+
+        return $this;
+    }
+
+
+    public function getTotalDes()
+    {
+        return $this->totalDes;
+    }
+
+    public function setTotalDes($totalDes)
+    {
+        $this->totalDes = $totalDes;
+
+        return $this;
+    }
+
+    public function getSueldoD()
+    {
+        return $this->sueldoD;
+    }
+
+    public function setSueldoD($sueldoD)
+    {
+        $this->sueldoD = $sueldoD;
+
+        return $this;
+    }
+    
+
+    public function getTotalP()
+    {
+        return $this->totalP;
+    }
+
+    public function setTotalP($totalP)
+    {
+        $this->totalP = $totalP;
+
+        return $this;
+    }
 
 
 }

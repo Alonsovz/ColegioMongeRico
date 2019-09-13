@@ -38,7 +38,9 @@
     $(document).ready(function () {
         $('.ui.dropdown')
             .dropdown();
+            $("form :input").attr("autocomplete", "off");
     });
+   
 </script>
 
 <script>

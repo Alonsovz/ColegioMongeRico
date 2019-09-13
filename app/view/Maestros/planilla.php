@@ -54,22 +54,23 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
     Tipo de pago: <a id="pago" style="color:yellow;"></a> .
     </div>
     <div class="content" style="background-color:#D4D6D6">
-    <form class="ui form" id="planilla">
-    <input type="hidden" id="idMaestro">
+    <form class="ui form" id="frmPlanilla" method="POST" enctype="multipart/form-data">
+    <input type="hidden" id="idMaestro" name="idMaestro">
+    <input type="hidden" id="idPlanilla" name="idPlanilla">
         <div class="field">
             <div class="fields">
             <div class="six wide field">
                     <label><i class="calendar icon"></i>Días trabajados</label>
-                    <input type="text" id="dias" placeholder="Dias trabajados" >
+                    <input type="text" id="dias" placeholder="Dias trabajados"  name="dias">
                 </div>
                 <div class="six wide field">
                     <label><i class="user icon"></i><i class="dollar icon"></i>Sueldo Mensual</label>
-                    <input type="text" id="sueldo" readonly>
+                    <input type="text" id="sueldo" readonly >
                 </div>
                 
                 <div class="six wide field">
                     <label><i class="ship icon"></i><i class="dollar icon"></i>Vacación</label>
-                    <input type="text" id="vacacion" placeholder="vacacion" >
+                    <input type="text" id="vacacion" placeholder="vacacion"  name="vacacion">
                 </div>
                 </div>
                 </div>
@@ -80,31 +81,31 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
             <div class="fields">
                 <div class="six wide field" id="s1">
                     <label><i class="address card icon"></i><i class="dollar icon"></i>AFP Vejez</label>
-                    <input type="text" id="afpVejez" placeholder="AFP Vejez" >
+                    <input type="text" id="afpVejez" placeholder="AFP Vejez"  name="afpVejez">
                 </div>
                 <div class="six wide field" id="s2">
                     <label><i class="address card icon"></i><i class="dollar icon"></i>AFP Comisión</label>
-                    <input type="text" id="afpComision" placeholder="AFP Comisión" >
+                    <input type="text" id="afpComision" placeholder="AFP Comisión"  name="afpComision">
                 </div>
                 <div class="six wide field" id="s3">
                     <label><i class="address card icon"></i><i class="dollar icon" ></i>ISSS</label>
-                    <input type="text" id="isss" placeholder="ISSS" >
+                    <input type="text" id="isss" placeholder="ISSS"  name="isss">
                 </div>
                
              
                 <div class="six wide field" id="ho">
                     <label><i class="address card icon"></i><i class="dollar icon" ></i>ISR</label>
-                    <input type="text" id="renta" placeholder="Renta" >
+                    <input type="text" id="renta" placeholder="Renta"  name="renta">
                 
                 </div>
                 <div class="six wide field">
                         <label><i class="question mark icon"></i><i class="dollar icon"></i>Otros descuentos</label>
-                        <input type="text" id="otros" placeholder="Otros descuentos" >
+                        <input type="text" id="otros" placeholder="Otros descuentos"  name="otros">
                 </div>
 
                 <div class="six wide field">
                         <label><i class="gift icon"></i><i class="dollar icon"></i>Aguinaldo</label>
-                        <input type="text" id="aguinaldo" placeholder="Aguinaldo" >
+                        <input type="text" id="aguinaldo" placeholder="Aguinaldo"  name="aguinaldo">
                 </div>
             </div>
         </div>
@@ -119,15 +120,15 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                 </div>
                 <div class="six wide field">
                     <label><i class="money icon"></i><i class="dollar icon"></i>Sueldo Devengado</label>
-                    <input type="text" id="sueldoDevengado" placeholder="Sueldo Devengado" readonly>
+                    <input type="text" id="sueldoDevengado" placeholder="Sueldo Devengado" readonly  name="sueldoDevengado">
                 </div>
                 <div class="six wide field">
                         <label><i class="money bill icon"></i><i class="dollar icon"></i>Total de Descuentos</label>
-                        <input type="text" id="descuentos" placeholder="Total de descuentos" readonly>
+                        <input type="text" id="descuentos" placeholder="Total de descuentos" readonly  name="descuentos">
                 </div>
                 <div class="six wide field">
                         <label><i class="money bill icon"></i><i class="dollar icon"></i>Total a pagar</label>
-                        <input type="text" id="totalPago" placeholder="Total a pagar" readonly>
+                        <input type="text" id="totalPago" placeholder="Total a pagar" readonly  name="totalPago">
                 </div>
             </div>
         </div>
@@ -139,7 +140,7 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
     </div>
 </div>
 
-    <div class="ui tiny basic modal" id="planillafiltro">
+<div class="ui tiny basic modal" id="planillafiltro">
     <div class="header" style="color:#85F8F4;">
     <i class="calendar icon"></i> <i class="filter icon"></i> Mes y año a seleccionar
     </div>
@@ -194,14 +195,14 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
     </div>
     <div class="actions">
     <button class="ui left compact red labeled icon button" id="btnCancelar">
-<i class="close icon"></i>
-Cancelar
-</button>
+    <i class="close icon"></i>
+    Cancelar
+    </button>
     <button class="ui compact blue  icon button" id="btnProcesar">
     <i class="angle right icon"></i>
     Procesar
     </button>
-    </div>
+</div>
 
 <script src="./res/tablas/tablaPlanilla.js"></script>
 <script>
@@ -235,14 +236,26 @@ $("#anFiltro").dropdown('set selected', anio);
     $('#aguinaldo').mask("###0.00", {reverse: true});
     $('#otros').mask("###0.00", {reverse: true});
 });
-$(document).on("click", ".btnEditar", function () {
- $('#modalPlanilla').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
-$("#nombre").text($(this).attr("nombre"));
-$("#pago").text($(this).attr("tipoPago"));
-$("#sueldo").val($(this).attr("sueldo"));
-$("#idMaestro").val($(this).attr("id"));
+var planilla=(ele)=>{
+ 
+$("#nombre").text($(ele).attr("nombre"));
+$("#pago").text($(ele).attr("tipoPago"));
+$("#dias").val($(ele).attr("diasT"));
+$("#sueldo").val($(ele).attr("sueldo"));
+$("#sueldoDevengado").val($(ele).attr("sueldoD"));
+$("#vacacion").val($(ele).attr("vacacion"));
+$("#aguinaldo").val($(ele).attr("aguinaldo"));
+$("#afpVejez").val($(ele).attr("afpEmV"));
+$("#afpComision").val($(ele).attr("afpEmC"));
+$("#isss").val($(ele).attr("isssE"));
+$("#renta").val($(ele).attr("renta"));
+$("#otros").val($(ele).attr("otros"));
+$("#descuentos").val($(ele).attr("totalDesM"));
+$("#totalPago").val($(ele).attr("totalP"));
+$("#idMaestro").val($(ele).attr("id"));
+$("#idPlanilla").val($(ele).attr("idPlanilla"));
 
-if($(this).attr("tipoPago")=="Por honorarios"){
+if($(ele).attr("tipoPago")=="Por honorarios"){
     $("#ho").show();
     $("#s1").hide();
     $("#s2").hide();
@@ -253,11 +266,11 @@ if($(this).attr("tipoPago")=="Por honorarios"){
     $("#s2").show();
     $("#s3").show();
 }
-});
 
-$("#reset").click(function(){
-    $('#planilla')[0].reset();
-});
+$('#modalPlanilla').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
 
 $("#totalizar").click(function(){
     var dias = $("#dias").val();
@@ -367,4 +380,51 @@ location.reload();
 $("#btnCancelar").click(function(){ 
 location.href = "?1=UsuarioController&2=dashboard";
 } );
+
+
+
+$("#guardar").click(function(){
+
+    alertify.confirm("¿Desea guardar los datos?",
+            function(){
+                const form = $('#frmPlanilla');
+
+                const datosFormulario = new FormData(form[0]);
+
+                $.ajax({
+                enctype: 'multipart/form-data',
+                contentType: false,
+                processData: false,
+                cache: false,
+                type: 'POST',
+                url: '?1=MaestrosController&2=guardarPlanilla',
+                data: datosFormulario,
+                success: function(r) {
+
+                    if(r == 1) {
+                    $.amaran({
+
+                    'theme'     :'awesome ok',
+                    'content'   :{
+                    title:'Listo!',
+                    message:'Datos guardados!',
+                    info:'Actualizado en planilla',
+                    icon:'check icon'
+                    },
+                    'cssanimationOut'   :random(salidas),
+                            'position'  : random(positions) ,
+                            'inEffect'  : random(inEffects)
+                    });
+                }   
+                }
+                });
+                
+
+                },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+});
 </script>

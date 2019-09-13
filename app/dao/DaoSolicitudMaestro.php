@@ -175,11 +175,17 @@ class DaoSolicitudMaestro extends DaoBase {
             $btnEditar = "";
             $object = json_encode($fila);
 
-            $btnEditar .= '<button id=\"'.$fila["idMaestro"].'\"  nombre=\"'.$fila["nombre"].'\" ';
-            $btnEditar .= ' sueldo =\"'.$fila["sueldoFijo"].'\" tipoPago =\"'.$fila["pago"].'\" class=\"ui btnEditar icon blue small button\"><i class=\"edit icon\"></i> Ver Detalles</button>';
+            $btnEditar .= '<button id=\"'.$fila["idMaestro"].'\"   nombre=\"'.$fila["nombre"].'\" ';
+            $btnEditar .= ' sueldo =\"'.$fila["sueldoFijo"].'\" tipoPago =\"'.$fila["pago"].'\" ';
+            $btnEditar .= 'idPlanilla = \"'.$fila["id"].'\" sueldoD =\"'.$fila["sueldoD"].'\" ';
+            $btnEditar .= ' vacacion =\"'.$fila["vacacion"].'\" aguinaldo =\"'.$fila["aguinaldo"].'\" ';
+            $btnEditar .= ' afpEmV =\"'.$fila["afpEmV"].'\" afpEmC =\"'.$fila["afpEmC"].'\" ';
+            $btnEditar .= ' isssE =\"'.$fila["isssE"].'\" renta =\"'.$fila["renta"].'\" ';
+            $btnEditar .= ' otros =\"'.$fila["otros"].'\" totalDesM =\"'.$fila["totalDesM"].'\" ';
+            $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon blue small button\" onclick=\"planilla(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
             $btnEliminar = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
 
-            $acciones = ', "Acciones": "'.$btnEditar.' '.$btnEliminar.'"';
+            $acciones = ', "Acciones": "'.$btnEditar.'"';
 
             $object = substr_replace($object, $acciones, strlen($object) -1, 0);
 
@@ -189,6 +195,33 @@ class DaoSolicitudMaestro extends DaoBase {
         $_json = substr($_json,0, strlen($_json) - 1);
 
         return '{"data": ['.$_json .']}';
+    }
+
+
+    public function actualizarDatosPlanilla(){
+       
+
+        $query = "update planilla set diasT = ".$this->objeto->getDiasT().",
+        vacacion = ".$this->objeto->getVacacion().",
+        afpEmV = ".$this->objeto->getAfpVejez().",
+        afpEmC = ".$this->objeto->getAfpComision().",
+        isssE = ".$this->objeto->getIsss().",
+        renta = ".$this->objeto->getRenta().",
+        otros = ".$this->objeto->getOtros().",
+        aguinaldo = ".$this->objeto->getAguinaldo().",
+        sueldoD = ".$this->objeto->getSueldoD().",
+        totalDesM = ".$this->objeto->getTotalDes().",
+        totalP = ".$this->objeto->getTotalP()."
+         where id =".$this->objeto->getIdPlanilla();
+
+        $resultado = $this->con->ejecutar($query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+
     }
 
 

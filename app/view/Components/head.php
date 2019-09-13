@@ -53,6 +53,9 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/semantic.min.css"/>
 
 
+<link rel="stylesheet" href="./res/plugins/amaran.min.css">
+<link rel="stylesheet" href="./res/plugins/animate.min.css">
+<script src="//cdn.jsdelivr.net/jquery.amaran/0.5.4/jquery.amaran.min.js"></script>
 
 </head>
 <body class="">
@@ -62,6 +65,7 @@
     $(document).ready(function () {
         $('.ui.dropdown')
             .dropdown();
+            $("form :input").attr("autocomplete", "off");
     });
 
     alertify.defaults.title = "Confirmación";
@@ -69,4 +73,21 @@ alertify.defaults.transition = "zoom";
 alertify.defaults.theme.ok = "ui green button";
 alertify.defaults.theme.cancel = "ui black button";
 alertify.defaults.theme.input = "field";
+
+
+var random = function(items)
+                {
+                    return items[Math.floor(Math.random()*items.length)];
+                }
+                var inEffects = ['slideRight','slideLeft','slideBottom','slideTop'];
+                var positions = ['top left','top right','bottom right','bottom left'];
+
+
+ var randomEntradas = function(items)
+                {
+                    return items[Math.floor(Math.random()*items.length)];
+                }
+                
+                var entradas = ['bounceInRight','swing','tada','boundeInDown','bounceInRight','shake'];
+                var salidas = ['fadeOutRight','rollOut','bounceOut','rollOut','slideBottom','zoomOutUp'];
 </script>
