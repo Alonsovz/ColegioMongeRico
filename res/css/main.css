@@ -319,3 +319,12 @@ select:-webkit-autofill:focus {
     box-shadow: 0em 0em 0em 0em transparent inset !important;
     transition: background-color 5000s ease-in-out 0s !important;
 }
+
+td{
+    background: #CFD0CF;
+   
+}
+
+th{
+    text-align: center;
+}

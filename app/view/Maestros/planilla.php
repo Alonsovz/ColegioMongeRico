@@ -17,8 +17,8 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                     </div>
                     
             </div>
-          
-                
+       
+               
            
         </div>
         
@@ -34,17 +34,97 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                     <thead>
                         <tr>
                         
-                            <th style="background-color: #E6C404; color:white;">N°</th>
-                            <th style="background-color: #08088A; color:white;">Nombre</th>
-                            <th style="background-color: #08088A; color:white;">Tipo de pago</th>
-                            <th style="background-color: #08088A; color:white;">Sueldo</th>
-                            <th style="background-color: #08088A; color:white;">Acciones</th>
+                            <th style="background-color: #E6C404; color:white;text-align: center;">N°</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">Nombre</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">Tipo de pago</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">Sueldo</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">Acciones</th>
                            
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style=" text-align: center;">
                     </tbody>
+               
                 </table>
+                <br>
+                <hr>
+
+               <table>
+                   <tr>
+                    <th style="width:30%;text-align:left;color:#028302; font-size:20px;
+                    font-weight:bold;">Totales de planilla</th>
+                    <th style="width:23%;text-align:right;font-weight:bold;font-size:17px;color:#AF4204">Total retenciones =  <a id="reten" style="color:black"></a></th>
+
+                    <th style="width:23%;text-align:right;font-weight:bold;font-size:17px;color:#7F32F5">Total de pagos =  <a id="tp" style="color:black"></a></th>
+                    
+                    <th style="width:23%;text-align:right;font-weight:bold;font-size:17px;color:#044AD8;">Gran total =  <a id="gr" style="color:black"> </th>
+
+                    </tr>
+                </table>
+                <hr>
+                <br>
+            <table style="width:100%;">
+            <tr>
+            <th  style="background-color: #08088A; color:white;">Sueldos</th>
+            <th  style="background-color: #08088A; color:white;">Retenciones</th>
+            <th  style="background-color: #08088A; color:white;">Otros</th>
+            </tr>
+            <tr>
+                <th>
+                    <table class = "ui selectable very compact celled table" style="width:100%;">
+                        <tr>
+                            <th style="background-color: black; color:white;">Sueldos mensuales</th>
+                            <th style="background-color: black; color:white;"> Sueldos devengados</th>
+                        </tr>
+                        <tr>
+                            <td style=" text-align: center;">$ <a id="sueldosMen" style="color:black"></a></td>
+                            <td style=" text-align: center;">$ <a id="sueldoDev" style="color:black"></a></td>
+                        </tr>
+                    </table>
+                </th>
+
+                <th>
+                    <table class = "ui selectable very compact celled table" >
+                        <tr>
+                            <th style="background-color: #B48F05; color:white;">AFP IMV</th>
+                            <th style="background-color: #B48F05; color:white;">AFP Comisión</th>
+                            <th style="background-color: #B48F05; color:white;">ISSS</th>
+                            <th style="background-color: #B48F05; color:white;">ISR</th>
+                            <th style="background-color: #B48F05; color:white;">Otras Retenciones</th>
+                            
+                        </tr>
+                        <tr>
+                            <td style=" text-align: center;">$ <a id="afpImv" style="color:black"></a></td>
+                            <td style=" text-align: center;">$ <a id="afpCo" style="color:black"></a></td>
+                            <td style=" text-align: center;">$ <a id="isssE" style="color:black"></a></td>
+                            <td style=" text-align: center;">$ <a id="isr" style="color:black"></a></td>
+                            <td style=" text-align: center;">$ <a id="otroR" style="color:black"></a></td>
+                        
+                        </tr>
+                    </table>
+                
+                </th>
+
+                <th>
+
+                        <table class = "ui selectable very compact celled table" style="">
+                            <tr>
+                                <th style="background-color: #0C6903; color:white;">Vacación</th>
+                                <th style="background-color: #0C6903; color:white;">Aguinaldo</th>
+                            </tr>
+                            <tr>
+                                <td style=" text-align: center;">$ <a id="vac" style="color:black"></a></td>
+                                <td style=" text-align: center;">$ <a id="agui" style="color:black"></a></td>
+                            </tr>
+                        </table>
+
+                </th>
+
+            </tr>
+            </table>
+
+              
+
             </div>
         </div>
 </div>
@@ -204,6 +284,8 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
     </button>
 </div>
 
+
+
 <script src="./res/tablas/tablaPlanilla.js"></script>
 <script>
 $(document).ready(function(){
@@ -360,7 +442,159 @@ filtrarPlanilla(mes , anio);
 
 $('#planillafiltro').modal('hide');
 
-//$('#app').show();
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=sueldosMensuales",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#sueldosMen').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=sueldoDevengados",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#sueldoDev').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=afpCo",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#afpCo').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=afpImv",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#afpImv').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=isss",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#isssE').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=isr",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#isr').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=otroR",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#otroR').html(r);
+			}
+});
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=vacacion",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#vac').html(r);
+			}
+});
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=aguinaldo",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#agui').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=retenciones",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#reten').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=pagos",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#tp').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=gr",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#gr').html(r);
+			}
+});
+
 
 var mesR = $("#mesFiltro option:selected").text();
 var anR = $("#anFiltro option:selected").text();
@@ -400,7 +634,7 @@ $("#guardar").click(function(){
                 url: '?1=MaestrosController&2=guardarPlanilla',
                 data: datosFormulario,
                 success: function(r) {
-
+                    $('#dtMaestros').DataTable().ajax.reload();
                     if(r == 1) {
                     $.amaran({
 
