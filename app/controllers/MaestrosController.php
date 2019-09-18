@@ -71,4 +71,22 @@ class MaestrosController extends ControladorBase {
 
 
 
+    public function voucher() {
+        $dao = new DaoSolicitudMaestro();
+
+        require_once './app/reportes/voucher.php';
+
+        //$idArea = $_REQUEST["area"];
+
+        $reporte = new Reporte();
+
+
+     //   $daoArea->objeto->setCodigoArea($idArea);
+        $resultado = 1;
+      //  $resultado1 = $daoArea->reporteAreaDiario();
+
+        $reporte->voucher($resultado);
+    }
+
+
 }

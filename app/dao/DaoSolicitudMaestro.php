@@ -183,7 +183,7 @@ class DaoSolicitudMaestro extends DaoBase {
             $btnEditar .= ' isssE =\"'.$fila["isssE"].'\" renta =\"'.$fila["renta"].'\" ';
             $btnEditar .= ' otros =\"'.$fila["otros"].'\" totalDesM =\"'.$fila["totalDesM"].'\" ';
             $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon orange small button\" onclick=\"planilla(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
-            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui  icon green small button\"><i class=\"print icon\"></i> Imprimir </button>';
+            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui  icon green small button\" onclick=\"voucher(this)\"><i class=\"print icon\"></i> Imprimir </button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnVoucher.'"';
 

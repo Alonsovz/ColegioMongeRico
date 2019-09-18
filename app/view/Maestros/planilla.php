@@ -871,4 +871,9 @@ $.ajax({
 });
 
 });
+
+var voucher=(ele)=>{
+window.open('?1=MaestrosController&2=voucher','_blank');
+                                return false;
+}
 </script>
