@@ -38,8 +38,10 @@ class Reporte {
 
         $tabla.= "
             <div class='header'>
-                <h1>Historial de envíos Deloitte<font color='#85BC22'>.</font></h1>
-                <h3> Entre las fechas: <font color='blue'></font> y <font color='blue'></font>.</h3>
+                
+                <h4>
+                Por $ <br>
+                RECIBÍ DEL COLEGIO DOCTORA MARGARITA MONGE RICO LA CANTIDAD DE:</h4>
             </div>    
 
            
@@ -53,7 +55,7 @@ class Reporte {
         $html = $tabla;
 
 
-        $pdf = new \Mpdf\Mpdf(['orientation' => 'L']);
+        $pdf = new \Mpdf\Mpdf();
         $pdf->WriteHTML($html);
         $pdf->Output();
     }
