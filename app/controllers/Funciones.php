@@ -161,9 +161,9 @@ class Funciones extends ControladorBase {
 
         $mysqli = new mysqli("localhost","root","","colegioMongeRico");
         $sueldosDe = $mysqli -> query ("select format(
-            afpEmV + afpEmC + isssE + renta + otros
-            ,2) as sueldo from  planilla 
-        where mes = '".$mes."' and anio = '".$anio."';");
+          (sum(afpEmV) + sum(afpEmC) + sum(isssE) + sum(renta) + sum(otros))
+          ,2) as sueldo from  planilla 
+        where mes = '".$mes."' and anio = '".$anio."' group by anio, mes;");
         
         $sueldosMen = "";
         while ($sueldosM = mysqli_fetch_array($sueldosDe)) {
@@ -171,6 +171,8 @@ class Funciones extends ControladorBase {
         }
 
         echo "$".$sueldosMen;
+
+        
     }
 
 
@@ -180,7 +182,7 @@ class Funciones extends ControladorBase {
 
         $mysqli = new mysqli("localhost","root","","colegioMongeRico");
         $sueldosDe = $mysqli -> query ("select format(sum(totalP),2) as sueldo from  planilla 
-        where mes = '".$mes."' and anio = '".$anio."';");
+        where mes = '".$mes."' and anio = '".$anio."' group by anio, mes;");
         
         $sueldosMen = "";
         while ($sueldosM = mysqli_fetch_array($sueldosDe)) {
@@ -197,9 +199,9 @@ class Funciones extends ControladorBase {
 
         $mysqli = new mysqli("localhost","root","","colegioMongeRico");
         $sueldosDe = $mysqli -> query ("select format(
-            (afpEmV + afpEmC + isssE + renta + otros) +
-            sum(totalP),2) as sueldo from  planilla 
-        where mes = '".$mes."' and anio = '".$anio."';");
+        (  sum(afpEmV) + sum(afpEmC) + sum(isssE) + sum(renta) + sum(otros) +
+            sum(totalP) ) ,2) as sueldo from  planilla 
+        where mes = '".$mes."' and anio = '".$anio."' group by anio, mes;");
         
         $sueldosMen = "";
         while ($sueldosM = mysqli_fetch_array($sueldosDe)) {

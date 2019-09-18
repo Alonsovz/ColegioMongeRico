@@ -61,7 +61,7 @@ body {
 
 #barra {
     /* background-color:#2f3542; */
-    background-color: #eee !important;
+    background-color: #DBDDDD !important;
     /* background-image: linear-gradient(#212F3D, #17202A); */
     min-height: 10px !important;
     color: rgb(17, 3, 80);
@@ -321,7 +321,7 @@ select:-webkit-autofill:focus {
 }
 
 td{
-    background: #CFD0CF;
+    background: #DBDDDD;
    
 }
 

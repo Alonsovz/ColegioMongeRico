@@ -183,9 +183,9 @@ class DaoSolicitudMaestro extends DaoBase {
             $btnEditar .= ' isssE =\"'.$fila["isssE"].'\" renta =\"'.$fila["renta"].'\" ';
             $btnEditar .= ' otros =\"'.$fila["otros"].'\" totalDesM =\"'.$fila["totalDesM"].'\" ';
             $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon orange small button\" onclick=\"planilla(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
-            $btnEliminar = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui  icon green small button\"><i class=\"print icon\"></i> Imprimir </button>';
 
-            $acciones = ', "Acciones": "'.$btnEditar.'"';
+            $acciones = ', "Acciones": "'.$btnEditar.' '.$btnVoucher.'"';
 
             $object = substr_replace($object, $acciones, strlen($object) -1, 0);
 

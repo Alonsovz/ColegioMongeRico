@@ -48,16 +48,19 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                 </table>
                 <br>
                 <hr>
-
-               <table>
+                <br>
+                <button class="ui purple button" id="actualizar">Actualizar</button>
+                <br>
+                <br>
+               <table style="width:100%;">
                    <tr>
-                    <th style="width:30%;text-align:left;color:#028302; font-size:20px;
+                    <th style="width:40%;text-align:left;color:#028302; font-size:20px;
                     font-weight:bold;">Totales de planilla</th>
-                    <th style="width:23%;text-align:right;font-weight:bold;font-size:17px;color:#AF4204">Total retenciones =  <a id="reten" style="color:black"></a></th>
+                    <th style="width:20%;text-align:left;font-weight:bold;font-size:17px;color:#AF4204">Total retenciones =  <a id="reten" style="color:black"></a></th>
 
-                    <th style="width:23%;text-align:right;font-weight:bold;font-size:17px;color:#7F32F5">Total de pagos =  <a id="tp" style="color:black"></a></th>
+                    <th style="width:20%;text-align:right;font-weight:bold;font-size:17px;color:#7F32F5">Total de pagos =  <a id="tp" style="color:black"></a></th>
                     
-                    <th style="width:23%;text-align:right;font-weight:bold;font-size:17px;color:#044AD8;">Gran total =  <a id="gr" style="color:black"> </th>
+                    <th style="width:20%;text-align:right;font-weight:bold;font-size:17px;color:#044AD8;">Gran total =  <a id="gr" style="color:black"> </th>
 
                     </tr>
                 </table>
@@ -137,6 +140,7 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
     <form class="ui form" id="frmPlanilla" method="POST" enctype="multipart/form-data">
     <input type="hidden" id="idMaestro" name="idMaestro">
     <input type="hidden" id="idPlanilla" name="idPlanilla">
+    <input type="hidden" id="tipo" name="tipo">
         <div class="field">
             <div class="fields">
             <div class="six wide field">
@@ -152,13 +156,32 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                     <label><i class="ship icon"></i><i class="dollar icon"></i>Vacación</label>
                     <input type="text" id="vacacion" placeholder="vacacion"  name="vacacion">
                 </div>
+
+                
+
+                <div class="six wide field">
+                        <label><i class="gift icon"></i><i class="dollar icon"></i>Aguinaldo</label>
+                        <input type="text" id="aguinaldo" placeholder="Aguinaldo"  name="aguinaldo">
+                </div>
+
+                <div class="six wide field">
+                        <label><i class="question mark icon"></i><i class="dollar icon"></i>Otros descuentos</label>
+                        <input type="text" id="otros" placeholder="Otros descuentos"  name="otros">
+                </div>
+
+
                 </div>
                 </div>
                 <br>
                 <hr>
+               
                 <br>
                 <div class="field">
             <div class="fields">
+            <div class="six wide field">
+                        <label><br></label>
+                       <center> <a id="totalizar" class="ui orange button" style="">Totalizar</a> </center>
+                </div>
                 <div class="six wide field" id="s1">
                     <label><i class="address card icon"></i><i class="dollar icon"></i>AFP Vejez</label>
                     <input type="text" id="afpVejez" placeholder="AFP Vejez"  name="afpVejez">
@@ -178,26 +201,11 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                     <input type="text" id="renta" placeholder="Renta"  name="renta">
                 
                 </div>
-                <div class="six wide field">
-                        <label><i class="question mark icon"></i><i class="dollar icon"></i>Otros descuentos</label>
-                        <input type="text" id="otros" placeholder="Otros descuentos"  name="otros">
                 </div>
-
-                <div class="six wide field">
-                        <label><i class="gift icon"></i><i class="dollar icon"></i>Aguinaldo</label>
-                        <input type="text" id="aguinaldo" placeholder="Aguinaldo"  name="aguinaldo">
                 </div>
-            </div>
-        </div>
-        <br>
-                <hr>
-                <br>
         <div class="field">
             <div class="fields">
-            <div class="six wide field">
-                        <label><br></label>
-                       <center> <a id="totalizar" class="ui orange button" style="">Totalizar</a> </center>
-                </div>
+            
                 <div class="six wide field">
                     <label><i class="money icon"></i><i class="dollar icon"></i>Sueldo Devengado</label>
                     <input type="text" id="sueldoDevengado" placeholder="Sueldo Devengado" readonly  name="sueldoDevengado">
@@ -342,11 +350,13 @@ if($(ele).attr("tipoPago")=="Por honorarios"){
     $("#s1").hide();
     $("#s2").hide();
     $("#s3").hide();
+    $("#tipo").val(1);
 }else{
     $("#ho").hide();
     $("#s1").show();
     $("#s2").show();
     $("#s3").show();
+    $("#tipo").val(2);
 }
 
 $('#modalPlanilla').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
@@ -366,17 +376,46 @@ $("#totalizar").click(function(){
 
     var vacacion = $("#vacacion").val();
 
-    var afpVejez = $("#afpVejez").val();
+    
 
-    var afpComision = $("#afpComision").val();
 
-    var isss = $("#isss").val();
+    if($("#tipo").val() == "1"){
+        var renta = sueldoDevengado * 0.10;
+        var afpVejez  = 0.00;
+        var afpComision = 0.00;
+        var isss = 0.00;
+    }else{
+        var renta = 0.00;
+        if(sueldoDevengado > 5352.54){
+            var afpVejez = 303.88;
+        }
+        else{
+            var afpVejez = sueldoDevengado * 0.04;
+        }
+
+        if(sueldoDevengado > 5352.54){
+            var afpComision = 303.88;
+        }
+        else{
+            var afpComision = sueldoDevengado * 0.0325;
+        }
+
+        if(sueldoDevengado > 685.71){
+            var isss = 51.44;
+        }
+        else{
+            var isss = sueldoDevengado * 0.03;
+        }
+    }
+    
+
+    
 
     var otros = $("#otros").val();
 
     var aguinaldo = $("#aguinaldo").val();
 
-    var renta = $("#renta").val();
+   
     $("#sueldoDevengado").val(sueldoDevengado.toFixed(2));
 
     var descuentos =  parseFloat(afpVejez) + parseFloat(afpComision) + parseFloat(isss) + parseFloat(renta) + parseFloat(otros);
@@ -384,6 +423,10 @@ $("#totalizar").click(function(){
 
     $("#totalPago").val(totalPago.toFixed(2));
     $("#descuentos").val(descuentos.toFixed(2));
+    $("#afpVejez").val(afpVejez.toFixed(2));
+    $("#afpComision").val(afpComision.toFixed(2));
+    $("#isss").val(isss.toFixed(2));
+    $("#renta").val(renta.toFixed(2));
 });
 
 
@@ -660,5 +703,172 @@ $("#guardar").click(function(){
                 alertify.error('Cancelado');
                 
             }); 
+});
+
+
+$("#actualizar").click(function(){
+
+
+    var mes  = $("#mesFiltro").val();
+var anio  = $("#anFiltro").val();
+
+
+
+$('#planillafiltro').modal('hide');
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=sueldosMensuales",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#sueldosMen').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=sueldoDevengados",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#sueldoDev').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=afpCo",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#afpCo').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=afpImv",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#afpImv').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=isss",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#isssE').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=isr",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#isr').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=otroR",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#otroR').html(r);
+			}
+});
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=vacacion",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#vac').html(r);
+			}
+});
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=aguinaldo",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#agui').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=retenciones",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#reten').html(r);
+			}
+});
+
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=pagos",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#tp').html(r);
+			}
+});
+
+
+$.ajax({
+			type:"POST",
+			url:"?1=Funciones&2=gr",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				$('#gr').html(r);
+			}
+});
+
 });
 </script>
