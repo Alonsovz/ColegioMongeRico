@@ -39,12 +39,56 @@ class Reporte {
         $tabla.= "
             <div class='header'>
                 
-                <h4>
+                
                 Por $ <br>
-                RECIBÍ DEL COLEGIO DOCTORA MARGARITA MONGE RICO LA CANTIDAD DE:</h4>
-            </div>    
+                RECIBÍ DEL COLEGIO DOCTORA MARGARITA MONGE RICO LA CANTIDAD DE:
+                ----- , EN CONCEPTO DE PAGO POR SERVICIOS DE ENSEÑANZA EN DICHA INSTITUCIÓN 
+                DURANTE EL MES DE : -----.
 
-           
+                TOTAL $ ---.<br>
+                (-) 10% DE RENTA $ ----- <br>
+                OTROS $ ------ <br>
+                <b>A RECIBIR $ ------</b><br>
+
+                LOURDES, -----FECHA-------. <br><br><br><br>
+
+
+                Firma: ___________________________<br>
+                NOMBRE: --------nombre--------<br>
+                NIT : ------------nit---------<br>
+                DIRECCIÓN: COL. PALOS GRANDES BLOCK X CASA #2, LOURDES COLON.
+            </div>    
+             <br><br>           
+           _____________________________________________________________________
+
+            ";
+
+
+            $tabla.= "
+            <br><br>
+            <div class='header'>
+                
+                
+                Por $ <br>
+                RECIBÍ DEL COLEGIO DOCTORA MARGARITA MONGE RICO LA CANTIDAD DE:
+                ----- , EN CONCEPTO DE PAGO POR SERVICIOS DE ENSEÑANZA EN DICHA INSTITUCIÓN 
+                DURANTE EL MES DE : -----.
+
+                TOTAL $ ---.<br>
+                (-) 10% DE RENTA $ ----- <br>
+                OTROS $ ------ <br>
+                <b>A RECIBIR $ ------</b><br>
+
+                LOURDES, -----FECHA-------. <br><br><br><br>
+
+
+                Firma: ___________________________<br>
+                NOMBRE: --------nombre--------<br>
+                NIT : ------------nit---------<br>
+                DIRECCIÓN: COL. PALOS GRANDES BLOCK X CASA #2, LOURDES COLON.
+            </div>    
+             <br><br>           
+         
 
             ";
 
