@@ -5,7 +5,7 @@
                     <div class="titulo">
                     <i class="users icon"></i>
                         Planilla de Pagos <a id="rango" style="color:#060DA1"></a><font color="#210B61" size="20px">.</font>
-
+                        
                         <button style="
                     -webkit-box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);
 -moz-box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);
@@ -291,8 +291,32 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
     Procesar
     </button>
 </div>
+</div>
 
 
+
+
+<div class="ui tiny modal" id="modalVoucher">
+
+<div class="header" style="background-color: black; color: white">
+    Imprimir recibo de : <a id="no" style="color: aqua"></a> del mes :
+    <a id="mesAnio" style="color: aqua"></a>
+    </div>
+    <div class="content" style="background-color: #DBDDDD; text-align:center;">
+    
+    <a id="tpa" name="tpa" style="display:none"></a>
+    <input type="hidden" id="m">
+    <input type="hidden" id="a">
+    <input type="hidden" id="id">
+    <a id="cantidadLe" name="cantidadLe" style="display:none"></a>
+    <h3>¿Imprimir voucher?</h3>
+    </div>
+<div class="actions">
+    <button class="ui red deny button">Cancelar</button>
+    <button class="ui blue  button" id="imprimir">Imprimir</button>
+    
+</div>
+</div>
 
 <script src="./res/tablas/tablaPlanilla.js"></script>
 <script>
@@ -873,7 +897,53 @@ $.ajax({
 });
 
 var voucher=(ele)=>{
-window.open('?1=MaestrosController&2=voucher','_blank');
-                                return false;
+
+    var mes  = $("#mesFiltro").val();
+var anio  = $("#anFiltro").val();
+
+
+var mesT  = $("#mesFiltro option:selected").text();
+var anioT  = $("#anFiltro option:selected").text();
+
+var id = $(ele).attr("id");
+
+
+$("#no").text($(ele).attr("nombre"));
+$("#mesAnio").text(mesT + " " +anioT);
+$("#m").val(mes);
+$("#a").val(anio);
+$("#tpa").text($(ele).attr("tipoPago"));
+$("#id").val(id);
+var sueldo = $(ele).attr("sueldoD");
+
+$("#cantidadLe").load("app/view/Maestros/ajax.php",{ sueldo : sueldo });
+
+$('#modalVoucher').modal('setting', 'closable', false).modal('show');
+
+
+
+
+
+
+
 }
+
+
+$("#imprimir").click(function(){
+    var mes  = $("#mesFiltro").val();
+var anio  = $("#anFiltro").val();
+var id = $("#id").val();
+var letras = $("#cantidadLe").text();
+$('#modalVoucher').modal('hide');
+    if($("#tpa").text() =="Por honorarios"){
+      
+window.open('?1=MaestrosController&2=voucherRenta&mes='+mes+'&anio='+anio+'&id='+id+"&letras="+letras,'_blank');
+                                return false;
+
+    }else{
+        
+        window.open('?1=MaestrosController&2=voucherSeguro&mes='+mes+'&anio='+anio+'&id='+id+"&letras="+letras,'_blank');
+                                return false;
+    }
+});
 </script>

@@ -183,7 +183,7 @@ class DaoSolicitudMaestro extends DaoBase {
             $btnEditar .= ' isssE =\"'.$fila["isssE"].'\" renta =\"'.$fila["renta"].'\" ';
             $btnEditar .= ' otros =\"'.$fila["otros"].'\" totalDesM =\"'.$fila["totalDesM"].'\" ';
             $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon orange small button\" onclick=\"planilla(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
-            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui  icon green small button\" onclick=\"voucher(this)\"><i class=\"print icon\"></i> Imprimir </button>';
+            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\" nombre =\"'.$fila["nombre"].'\" sueldoD =\"'.$fila["sueldoD"].'\" tipoPago =\"'.$fila["pago"].'\" class=\"ui  icon green small button\" onclick=\"voucher(this)\"><i class=\"print icon\"></i> Imprimir </button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnVoucher.'"';
 
@@ -223,6 +223,95 @@ class DaoSolicitudMaestro extends DaoBase {
         }
 
     }
+
+    public function sueldoDevengado ($mes=0 , $anio=0, $id=0){
+
+    $_query="select format(sum(sueldoD),2) as sueldo from planilla
+     where idMaestro='".$id."' and mes='".$mes."' and anio ='".$anio."' ";
+       
+    $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+    return $resultado['sueldo'];
+
+    }
+
+
+
+    public function descRenta ($mes=0 , $anio=0, $id=0){
+
+        $_query="select format(sum(renta),2) as sueldo from planilla
+         where idMaestro='".$id."' and mes='".$mes."' and anio ='".$anio."' ";
+           
+        $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+        return $resultado['sueldo'];
+    
+        }
+
+
+        public function otrosD ($mes=0 , $anio=0, $id=0){
+
+            $_query="select format(sum(otros),2) as sueldo from planilla
+             where idMaestro='".$id."' and mes='".$mes."' and anio ='".$anio."' ";
+               
+            $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+            return $resultado['sueldo'];
+        
+        }
+
+
+
+        public function nombreMaestro ($id=0){
+
+            $_query="select concat (nombre,' ', apellido) as nombre from maestros
+             where idMaestro=".$id;
+               
+            $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+            return $resultado['nombre'];
+        
+        }
+
+
+         public function direccion ($id=0){
+
+            $_query="select direccionResidencia as direccion from maestros
+             where idMaestro=".$id;
+               
+            $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+            return $resultado['direccion'];
+        
+        }
+
+
+        public function nit ($id=0){
+
+            $_query="select nit as nit from maestros
+             where idMaestro=".$id;
+               
+            $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+            return $resultado['nit'];
+        
+        }
+
+
+        public function ISSS ($mes=0 , $anio=0, $id=0){
+
+            $_query="select format(sum(isssE),2) as sueldo from planilla
+             where idMaestro='".$id."' and mes='".$mes."' and anio ='".$anio."' ";
+               
+            $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+            return $resultado['sueldo'];
+        
+        }
+
+
+        public function afp ($mes=0 , $anio=0, $id=0){
+
+            $_query="select format(sum(afpEmC) + sum(afpEmV),2) as sueldo from planilla
+             where idMaestro='".$id."' and mes='".$mes."' and anio ='".$anio."' ";
+               
+            $resultado=$this->con->ejecutar($_query)->fetch_assoc();
+            return $resultado['sueldo'];
+        
+        }
 
 
 }
