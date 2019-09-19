@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Colegio | Monge Rico</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./res/img/logoMongeRico.jpg">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="./res/img/logoMongeRico.jpg">
 
     <!-- JQuery -->
     <script src="./res/plugins/jquery/jquery.js"></script>
@@ -22,6 +22,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="./res/css/main.css">
     <link rel="stylesheet" type="text/css" href="./res/css/fondo-dot.css">
+
     <link rel="stylesheet" type="text/css" href="./res/css/fonts.css">
     <link rel="stylesheet" href="./res/plugins/ripple/ripple.css">
     <link rel="stylesheet" href="./res/plugins/Material-Icons/material-icons.css">
@@ -40,18 +41,29 @@
 
     <!-- DataTable -->
     <link rel="stylesheet" href="./res/plugins/dataTable/dataTable.semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.semanticui.min.css">   
     <script src="./res/plugins/dataTable/dataTable.jquery.min.js"></script>
     <script src="./res/plugins/dataTable/dataTable.semantic.min.js"></script>
+
+
+
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.semanticui.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
 
     <!-- SweerAlert -->
     <script src="./res/plugins/sweetalert2.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
-
 <!-- CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/alertify.min.css"/>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/semantic.min.css"/>
-
 
 <link rel="stylesheet" href="./res/plugins/amaran.min.css">
 <link rel="stylesheet" href="./res/plugins/animate.min.css">
@@ -65,14 +77,14 @@
     $(document).ready(function () {
         $('.ui.dropdown')
             .dropdown();
-            $("form :input").attr("autocomplete", "off");
     });
-
     alertify.defaults.title = "Confirmación";
 alertify.defaults.transition = "zoom";
 alertify.defaults.theme.ok = "ui green button";
 alertify.defaults.theme.cancel = "ui black button";
-alertify.defaults.theme.input = "field";
+
+alertify.defaults.theme.ok.title = "Si";
+alertify.defaults.theme.cancel.title = "No";
 
 
 var random = function(items)
@@ -90,4 +102,9 @@ var random = function(items)
                 
                 var entradas = ['bounceInRight','swing','tada','boundeInDown','bounceInRight','shake'];
                 var salidas = ['fadeOutRight','rollOut','bounceOut','rollOut','slideBottom','zoomOutUp'];
+
+
+                $('.special.cards .image').dimmer({
+  on: 'hover'
+});
 </script>

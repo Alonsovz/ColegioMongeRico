@@ -11,18 +11,18 @@ $(function() {
                     "data": "idMaestro"
                 },
                 {
-                    "data": "nombre"
+                    "data": "nombreD"
                 },
-                {
-                    "data": "apellido"
-                },
+               
                 {
                     "data": "telMovil"             
                 },
                 {
                     "data": "correo"             
                 },
-                
+                {
+                    "data": "tipoPago"             
+                },
                 {
                     "data": "Acciones"             
                 }

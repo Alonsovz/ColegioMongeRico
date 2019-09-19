@@ -17,7 +17,7 @@ class DaoSolicitudMaestro extends DaoBase {
         '".$this->objeto->getNumeroPartida()."','".$this->objeto->getSubNumero()."',
         '".$this->objeto->getNivelAcademico()."','".$this->objeto->getNivel()."',
         '".$this->objeto->getEspecialidad()."','".$this->objeto->getFechaIngreso()."',
-        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."','".$this->objeto->getSueldo()."',1)";
+        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."','".$this->objeto->getSueldo()."',1,'')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -28,6 +28,41 @@ class DaoSolicitudMaestro extends DaoBase {
         }
     }
 
+
+
+    public function editarDatos() {
+        $_query = "update  maestros set nombre= '".$this->objeto->getNombre()."',
+        apellido='".$this->objeto->getApellido()."',
+         fechaNacimiento = '".$this->objeto->getFechaNac()."',
+        lugarNacimiento = '".$this->objeto->getLugarNacimiento()."', 
+        sexo = '".$this->objeto->getSexo()."',
+        direccionResidencia = '".$this->objeto->getDireccionRes()."',
+        telResidencia = '".$this->objeto->getTelRes()."',
+        telMovil = '".$this->objeto->getTelMovil()."',
+         correo = '".$this->objeto->getEmail()."',
+         dui='".$this->objeto->getDui()."',
+         nit = '".$this->objeto->getNit()."',
+         nip = '".$this->objeto->getNip()."',
+         afp = '".$this->objeto->getAfp()."',
+         numeroPartida = '".$this->objeto->getNumeroPartida()."',
+         subnumero = '".$this->objeto->getSubNumero()."',
+        nivelAcademico = '".$this->objeto->getNivelAcademico()."',
+        nivel = '".$this->objeto->getNivel()."',
+        especialidad = '".$this->objeto->getEspecialidad()."',
+        fechaIngreso = '".$this->objeto->getFechaIngreso()."',
+        habilidades = '".$this->objeto->getHabilidades()."',
+        tipoPago = '".$this->objeto->getTipoPago()."',
+        sueldo = '".$this->objeto->getSueldo()."'
+        where idMaestro = ".$this->objeto->getId();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
     public function registrarDatosPlanilla() {
         $corr= "(select max(idMaestro) as id from maestros)";
 
@@ -123,7 +158,10 @@ class DaoSolicitudMaestro extends DaoBase {
 
 
     public function mostrarMaestros() {
-        $_query = "select * from maestros where idEliminado=1;";
+        $_query = "select concat(m.nombre,' ',m.apellido) as nombreD, m.*,
+        TIMESTAMPDIFF(YEAR,fechaNacimiento,CURDATE()) AS edad,
+        format (m.sueldo,2) as sueldoD
+         from maestros m where m.idEliminado=1;";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -133,8 +171,19 @@ class DaoSolicitudMaestro extends DaoBase {
 
             $object = json_encode($fila);
 
-            $btnEditar = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui btnEditar icon blue small button\"><i class=\"edit icon\"></i> Ver Detalles</button>';
-            $btnEliminar = '<button id=\"'.$fila["idMaestro"].'\"  class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+            $btnEditar = '<button id=\"'.$fila["idMaestro"].'\" nombreTxt=\"'.$fila["nombreD"].'\" ';
+            $btnEditar .= 'nombre=\"'.$fila["nombre"].'\"  apellido=\"'.$fila["apellido"].'\" ';
+            $btnEditar .= 'fechaNacimiento=\"'.$fila["fechaNacimiento"].'\"  lugarNacimiento=\"'.$fila["lugarNacimiento"].'\" ';
+            $btnEditar .= 'sexo=\"'.$fila["sexo"].'\" direccion=\"'.$fila["direccionResidencia"].'\"';
+            $btnEditar .= 'edad=\"'.$fila["edad"].'\" telResidencia=\"'.$fila["telResidencia"].'\" telMovil=\"'.$fila["telMovil"].'\"';
+            $btnEditar .= 'correo=\"'.$fila["correo"].'\" dui=\"'.$fila["dui"].'\" nit=\"'.$fila["nit"].'\"';
+            $btnEditar .= 'nip=\"'.$fila["nip"].'\" afp=\"'.$fila["afp"].'\" numeroPartida=\"'.$fila["numeroPartida"].'\"  subnumero=\"'.$fila["subnumero"].'\" ';
+            $btnEditar .= 'nivelAcademico=\"'.$fila["nivelAcademico"].'\" nivel=\"'.$fila["nivel"].'\" especialidad=\"'.$fila["especialidad"].'\"';
+            $btnEditar .= 'fechaIngreso=\"'.$fila["fechaIngreso"].'\" habilidades=\"'.$fila["habilidades"].'\" tipoPago=\"'.$fila["tipoPago"].'\"';
+            $btnEditar .= 'sueldo=\"'.$fila["sueldoD"].'\" ';
+            $btnEditar .= 'class=\"ui  icon blue small button\" onclick=\"detalles(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
+            
+            $btnEliminar = '<button id=\"'.$fila["idMaestro"].'\"  nombreTxt=\"'.$fila["nombreD"].'\"  onclick=\"eliminar(this)\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnEliminar.'"';
 

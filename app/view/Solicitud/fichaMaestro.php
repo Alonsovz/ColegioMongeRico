@@ -390,6 +390,7 @@
     $('#telefonoRes').mask("9999-9999");
     $('#telefonoMovil').mask("9999-9999");
     $('#nit').mask("9999-999999-999-9");
+    $("#sueldo").mask("###0.00", {reverse: true});
 }); 
 var app = new Vue({
         el: "#app",

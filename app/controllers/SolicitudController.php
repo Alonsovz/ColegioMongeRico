@@ -74,6 +74,46 @@ class SolicitudController extends ControladorBase {
     }
 
 
+
+    public function editarDatosMaestros(){
+
+        $dao = new DaoSolicitudMaestro();
+
+        $dao->objeto->setNombre($_REQUEST["nombre"]);
+        $dao->objeto->setApellido($_REQUEST["apellido"]);
+        $dao->objeto->setFechaNac($_REQUEST["fechaNac"]);
+        $dao->objeto->setLugarNacimiento($_REQUEST["lugarNac"]);
+        $dao->objeto->setSexo($_REQUEST["sexo"]);
+        $dao->objeto->setDireccionRes($_REQUEST["direccion"]);
+        $dao->objeto->setTelRes($_REQUEST["telefonoRes"]);
+        $dao->objeto->setTelMovil($_REQUEST["telefonoMovil"]);
+        $dao->objeto->setEmail($_REQUEST["correo"]);
+        $dao->objeto->setDui($_REQUEST["dui"]);
+        $dao->objeto->setNit($_REQUEST["nit"]);
+        $dao->objeto->setNip($_REQUEST["nip"]);
+        $dao->objeto->setAfp($_REQUEST["afp"]);
+
+        
+        $dao->objeto->setNumeroPartida($_REQUEST["numeroPartida"]);
+        $dao->objeto->setSubNumero($_REQUEST["subNumero"]);
+        
+        $dao->objeto->setNivelAcademico($_REQUEST["nivelAcademico"]);
+        $dao->objeto->setNivel($_REQUEST["nivel"]);
+        $dao->objeto->setEspecialidad($_REQUEST["especialidad"]);
+        $dao->objeto->setFechaIngreso($_REQUEST["fechaIngre"]);
+        $dao->objeto->setHabilidades($_REQUEST["habilidades"]);
+        $dao->objeto->setTipoPago($_REQUEST["tipoPago"]);
+        $dao->objeto->setSueldo($_REQUEST["sueldo"]);
+        $dao->objeto->setId($_REQUEST["idMaestro"]);
+
+        echo $dao->editarDatos();
+    
+
+        
+    }
+
+
+
     public function guardarTitulos(){
         $detalles = json_decode($_REQUEST["lista"]);
 
