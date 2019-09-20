@@ -15,10 +15,25 @@ class MaestrosController extends ControladorBase {
     }
 
 
+    public static function bajas() {
+        self::loadMain();
+        
+        require_once './app/view/Maestros/bajas.php';
+    }
+
+
+
     public function mostrarMaestros() {
         $dao = new DaoSolicitudMaestro();
 
         echo $dao->mostrarMaestros();
+    }
+
+
+    public function mostrarMaestrosBajas() {
+        $dao = new DaoSolicitudMaestro();
+
+        echo $dao->mostrarMaestrosBajas();
     }
 
     public function mostrarPlanilla() {

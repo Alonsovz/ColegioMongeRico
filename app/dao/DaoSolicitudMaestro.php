@@ -17,7 +17,7 @@ class DaoSolicitudMaestro extends DaoBase {
         '".$this->objeto->getNumeroPartida()."','".$this->objeto->getSubNumero()."',
         '".$this->objeto->getNivelAcademico()."','".$this->objeto->getNivel()."',
         '".$this->objeto->getEspecialidad()."','".$this->objeto->getFechaIngreso()."',
-        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."','".$this->objeto->getSueldo()."',1,'')";
+        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."','".$this->objeto->getSueldo()."',1,'','')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -183,9 +183,53 @@ class DaoSolicitudMaestro extends DaoBase {
             $btnEditar .= 'sueldo=\"'.$fila["sueldoD"].'\" ';
             $btnEditar .= 'class=\"ui  icon blue small button\" onclick=\"detalles(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
             
-            $btnEliminar = '<button id=\"'.$fila["idMaestro"].'\"  nombreTxt=\"'.$fila["nombreD"].'\"  onclick=\"eliminar(this)\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+            $btnEliminar = '<button id=\"'.$fila["idMaestro"].'\"  nombreTxt=\"'.$fila["nombreD"].'\" nombre=\"'.$fila["nombre"].'\"  apellido=\"'.$fila["apellido"].'\"  onclick=\"eliminar(this)\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnEliminar.'"';
+
+            $object = substr_replace($object, $acciones, strlen($object) -1, 0);
+
+            $_json .= $object.',';
+        }
+
+        $_json = substr($_json,0, strlen($_json) - 1);
+
+        return '{"data": ['.$_json .']}';
+    }
+
+
+
+    public function mostrarMaestrosBajas() {
+        $_query = "select concat(m.nombre,' ',m.apellido) as nombreD, m.*,
+        TIMESTAMPDIFF(YEAR,fechaNacimiento,CURDATE()) AS edad,
+        format (m.sueldo,2) as sueldoD,
+        DATE_FORMAT(fechaBaja, '%d/%m/%Y') as fechaBajaM
+         from maestros m where m.idEliminado=2;";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        $_json = '';
+
+        while($fila = $resultado->fetch_assoc()) {
+
+            $object = json_encode($fila);
+
+            $btnEditar = '<button id=\"'.$fila["idMaestro"].'\" nombreTxt=\"'.$fila["nombreD"].'\" ';
+            $btnEditar .= 'nombre=\"'.$fila["nombre"].'\"  apellido=\"'.$fila["apellido"].'\" ';
+            $btnEditar .= 'fechaNacimiento=\"'.$fila["fechaNacimiento"].'\"  lugarNacimiento=\"'.$fila["lugarNacimiento"].'\" ';
+            $btnEditar .= 'sexo=\"'.$fila["sexo"].'\" direccion=\"'.$fila["direccionResidencia"].'\"';
+            $btnEditar .= 'edad=\"'.$fila["edad"].'\" telResidencia=\"'.$fila["telResidencia"].'\" telMovil=\"'.$fila["telMovil"].'\"';
+            $btnEditar .= 'correo=\"'.$fila["correo"].'\" dui=\"'.$fila["dui"].'\" nit=\"'.$fila["nit"].'\"';
+            $btnEditar .= 'nip=\"'.$fila["nip"].'\" afp=\"'.$fila["afp"].'\" numeroPartida=\"'.$fila["numeroPartida"].'\"  subnumero=\"'.$fila["subnumero"].'\" ';
+            $btnEditar .= 'nivelAcademico=\"'.$fila["nivelAcademico"].'\" nivel=\"'.$fila["nivel"].'\" especialidad=\"'.$fila["especialidad"].'\"';
+            $btnEditar .= 'fechaIngreso=\"'.$fila["fechaIngreso"].'\" habilidades=\"'.$fila["habilidades"].'\" tipoPago=\"'.$fila["tipoPago"].'\"';
+            $btnEditar .= 'sueldo=\"'.$fila["sueldoD"].'\" razonBaja=\"'.$fila["razonBaja"].'\"';
+            $btnEditar .= 'txtFecha=\"'.$fila["fechaBajaM"].'\" ';
+            $btnEditar .= 'class=\"ui  icon blue small button\" onclick=\"detalles(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
+            
+            $btnEliminar = '<button id=\"'.$fila["idMaestro"].'\"  nombreTxt=\"'.$fila["nombreD"].'\" nombre=\"'.$fila["nombre"].'\"  apellido=\"'.$fila["apellido"].'\"  onclick=\"eliminar(this)\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+
+            $acciones = ', "Acciones": "'.$btnEditar.'"';
 
             $object = substr_replace($object, $acciones, strlen($object) -1, 0);
 
@@ -361,6 +405,39 @@ class DaoSolicitudMaestro extends DaoBase {
             return $resultado['sueldo'];
         
         }
+
+        public function eliminarDocente (){
+
+            $_query="update maestros set idEliminado = 2, razonBaja = '".$this->objeto->getHabilidades()."',
+            fechaBaja = curdate()
+            where idMaestro = ".$this->objeto->getId();
+               
+            $resultado = $this->con->ejecutar($_query);
+
+            if($resultado) {
+                return 1;
+            } else {
+                return 0;
+            }
+           
+        
+        }
+
+
+        public function eliminarUser() {
+            $_query = "update usuario set idEliminado=2 where nombre = '".$this->objeto->getNombre()."' and
+            apellido = '".$this->objeto->getApellido()."'";
+    
+            $resultado = $this->con->ejecutar($_query);
+    
+            if($resultado) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        
 
 
 }

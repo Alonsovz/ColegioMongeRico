@@ -113,6 +113,21 @@ class SolicitudController extends ControladorBase {
     }
 
 
+    public function bajaMaestro (){
+        $dao = new DaoSolicitudMaestro();
+        $daoU = new DaoUsuario();
+
+        $dao->objeto->setId($_REQUEST["idBaja"]);
+        $dao->objeto->setHabilidades($_REQUEST["baja"]);
+        $dao->objeto->setNombre($_REQUEST["nombreBaja"]);
+        $dao->objeto->setApellido($_REQUEST["apellidoBaja"]);
+
+
+        echo $dao->eliminarDocente();
+        echo $dao->eliminarUser();
+    }
+
+
 
     public function guardarTitulos(){
         $detalles = json_decode($_REQUEST["lista"]);

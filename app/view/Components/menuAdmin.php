@@ -8,7 +8,7 @@
 
     <div class="menu">
     
-
+    <hr>
     <div class="item">
 
     <a href="?1=SolicitudController&2=fichaAlumno" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
@@ -17,7 +17,7 @@
     </a>
 
     </div>
-
+    <hr>
     <div class="item">
 
     <a href="?1=SolicitudController&2=fichaMaestro" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
@@ -28,7 +28,7 @@
     </div>
 
     
-
+    <hr>
     <div class="item">
 
     <a href="?1=UsuarioController&2=gestion" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
@@ -59,18 +59,20 @@
     
 
 
-
+<hr>
     <div class="item">
 
     <a href="?1=MaestrosController&2=gestion" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
         <i class="user icon"></i><i class="cogs icon"></i>
-       Gestión de Maestros
+       Gestión
     </a>
 
     </div>
 
-    
+ 
 
+    
+    <hr>
     <div class="item">
 
     <a href="?1=MaestrosController&2=planilla" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
@@ -80,8 +82,15 @@
 
     </div>
 
-    
+    <hr>
+    <div class="item">
 
+<a href="?1=MaestrosController&2=bajas" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
+    <i class="close icon"></i><i class="users icon"></i>
+   Bajas
+</a>
+
+</div>
     
     </div>
 
@@ -97,7 +106,7 @@
 
     <div class="menu">
     
-    
+    <hr>
 
     <div class="item">
     <a href="?1=RemesasController&2=chequeras" class="item menu-it" style="color:black; font-weight:bold; font-size:14px;">
@@ -106,7 +115,7 @@
     </a>
 
     </div>
-
+    <hr>
     <div class="item">
     <a href="?1=RemesasController&2=remesas" class="item menu-it" style="color:black;font-weight:bold; font-size:14px;">
         <i class="share icon"></i><i class="dollar icon"></i>
@@ -115,7 +124,7 @@
 
     </div>
 
-    
+    <hr>
 
     <div class="item">
     <a href="?1=RemesasController&2=cargoBancario" class="item menu-it" style="color:black;font-weight:bold; font-size:14px;">
