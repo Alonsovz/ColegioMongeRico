@@ -25,7 +25,7 @@
                     </button>
          <div class="ui divider"></div>
            
-<div class="content" style="text-align:center; border: 1px solid black;border-radius:3%; background-color: #F3F3F1;">
+<div class="content" style="text-align:center; border: 1px solid black; background-color: #DBDDDD;">
 
 
     
