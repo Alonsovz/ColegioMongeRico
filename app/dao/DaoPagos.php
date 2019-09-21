@@ -46,7 +46,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set e='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set e='$color', pagoEnero = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -61,7 +61,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px; color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set f='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set f='$color' , pagoFebrero = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -76,7 +76,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set m='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set m='$color' , pagoMarzo = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -91,7 +91,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set a='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set a='$color' , pagoAbril = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -106,7 +106,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ma='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ma='$color' , pagoMayo = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -121,7 +121,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ju='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ju='$color' , pagoJunio = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -136,7 +136,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set jul='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set jul='$color' , pagoJulio = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -151,7 +151,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ago='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ago='$color' , pagoAgosto = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -166,7 +166,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set sep='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set sep='$color' , pagoSep = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -181,7 +181,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set oc='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set oc='$color' , pagoOctubre = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -196,7 +196,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 
         
-        $_query = "update pagosAlumnos set nov='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set nov='$color' , pagoNov = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -211,7 +211,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set e='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set e='$color', pagoEnero = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -226,7 +226,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set f='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set f='$color' , pagoFebrero = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -241,7 +241,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set m='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set m='$color' , pagoMarzo = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -256,7 +256,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set a='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set a='$color' , pagoAbril = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -271,7 +271,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ma='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ma='$color' , pagoMayo = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -286,7 +286,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ju='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ju='$color' , pagoJunio = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -301,7 +301,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set jul='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set jul='$color' , pagoJulio = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -316,7 +316,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ago='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ago='$color' , pagoAgosto = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -331,7 +331,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set sep='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set sep='$color' , pagoSep = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -346,7 +346,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set oc='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set oc='$color' , pagoOctubre = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -362,7 +362,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'close icon\' style=\'font-size:30px;\'></i>";
 
         
-        $_query = "update pagosAlumnos set nov='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set nov='$color' , pagoNov = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -378,7 +378,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set e='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set e='$color', pagoEnero = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -394,7 +394,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set f='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set f='$color' , pagoFebrero = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -409,7 +409,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set m='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set m='$color' , pagoMarzo = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -424,7 +424,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set a='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set a='$color' , pagoAbril = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -439,7 +439,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ma='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ma='$color' , pagoMayo = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -454,7 +454,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ju='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ju='$color' , pagoJunio = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -469,7 +469,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set jul='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set jul='$color' , pagoJulio = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -484,7 +484,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ago='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ago='$color' , pagoAgosto = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -499,7 +499,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set sep='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set sep='$color' , pagoSep = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -514,7 +514,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set oc='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set oc='$color' , pagoOctubre = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -529,7 +529,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set nov='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set nov='$color' , pagoNov = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -547,7 +547,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set e='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set e='$color' , pagoEnero = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -563,7 +563,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set f='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set f='$color' , pagoFebrero = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -578,7 +578,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set m='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set m='$color', pagoMarzo = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -593,7 +593,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set a='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set a='$color', pagoAbril = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -608,7 +608,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ma='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ma='$color', pagoMayo = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -623,7 +623,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ju='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ju='$color', pagoJunio = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -638,7 +638,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set jul='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set jul='$color', pagoJulio = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -653,7 +653,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set ago='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set ago='$color', pagoAgosto = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -668,7 +668,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set sep='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set sep='$color' , pagoSep = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -683,7 +683,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set oc='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set oc='$color', pagoOctubre = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -698,7 +698,7 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:red;\'></i>";
 
         
-        $_query = "update pagosAlumnos set nov='$color' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set nov='$color', pagoNov = curdate() where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -714,6 +714,31 @@ class DaoPagos extends DaoBase {
         $query = "select p.talonario as talonario,p.*, f.nombre as nombre from pagosAlumnos p
         inner join fichaAlumno f on f.idAlumno=p.idAlumno
         where f.grado=".$this->objeto->getIdGrado()." and p.anio = year(CURRENT_DATE()) and p.estado=1 order by f.nombre asc";
+
+        $resultado = $this->con->ejecutar($query);
+
+        return $resultado;
+    }
+
+
+
+    public function reportesPagoCuotasAlumno() {
+        $query = "select p.talonario as talonario,p.*, f.nombre as nombre,
+        DATE_FORMAT(p.pagoEnero, '%d/%m/%Y') as pagoEnero,
+        DATE_FORMAT(p.pagoFebrero, '%d/%m/%Y') as pagoFebrero,
+        DATE_FORMAT(p.pagoMarzo, '%d/%m/%Y') as pagoMarzo,
+        DATE_FORMAT(p.pagoAbril, '%d/%m/%Y') as pagoAbril,
+        DATE_FORMAT(p.pagoMayo, '%d/%m/%Y') as pagoMayo,
+        DATE_FORMAT(p.pagoJunio, '%d/%m/%Y') as pagoJunio,
+        DATE_FORMAT(p.pagoJulio, '%d/%m/%Y') as pagoJulio,
+        DATE_FORMAT(p.pagoAgosto, '%d/%m/%Y') as pagoAgosto,
+        DATE_FORMAT(p.pagoSep, '%d/%m/%Y') as pagoSep,
+        DATE_FORMAT(p.pagoOctubre, '%d/%m/%Y') as pagoOctubre,
+        DATE_FORMAT(p.pagoNov, '%d/%m/%Y') as pagoNov
+
+        from pagosAlumnos p
+        inner join fichaAlumno f on f.idAlumno=p.idAlumno
+        where f.idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($query);
 

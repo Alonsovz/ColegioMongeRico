@@ -315,6 +315,25 @@ class PagosController extends ControladorBase {
         $reporte->reportesPagoCuotas($resultado,$anio,$grado);
     }
 
+
+    public function reportePagoCuotasAlumno() {
+        $dao = new DaoPagos();
+
+        require_once './app/reportes/reportePagoCuotasAlumno.php';
+
+        $id = $_REQUEST["id"];
+        $grado = $_REQUEST["grado"];
+        $anio = $_REQUEST["anio"];
+        $alumno = $_REQUEST["alumno"];
+
+        $reporte = new Reporte();
+
+
+        $dao->objeto->setIdAlumno($id);
+        $resultado = $dao->reportesPagoCuotasAlumno();
+
+        $reporte->reportesPagoCuotasAlumno($resultado,$grado,$anio,$alumno);
+    }
 }
 
 ?>

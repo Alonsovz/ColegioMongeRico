@@ -11,18 +11,18 @@
         <div class="ui grid">
             <div class="row">
                 <div class="titulo">
-                        <a href="?1=PagosController&2=prekinder" class="ui blue button" id="prekinder">Prekinder</a>
-                        <a href="?1=PagosController&2=kinder" class="ui teal button" id="kinder">Kinder</a>
-                        <a href="?1=PagosController&2=preparatoria" class="ui green button" id="prepa">Preparatoria</a>
-                        <a href="?1=PagosController&2=primerGrado" class="ui red button" id="primer">1er Grado</a>
-                        <a href="?1=PagosController&2=segundoGrado" class="ui orange button" id="segundo">2do Grado</a>
-                        <a href="?1=PagosController&2=tercerGrado" class="ui yellow button" id="tercer">3er Grado</a>
-                        <a href="?1=PagosController&2=cuartoGrado" class="ui purple button" id="cuarto">4to Grado</a>
-                        <a href="?1=PagosController&2=quintoGrado" class="ui violet button" id="quinto">5to Grado</a>
-                        <a href="?1=PagosController&2=sextoGrado" class="ui brown button" id="sexto">6to Grado</a>
-                        <a href="?1=PagosController&2=septimoGrado" class="ui black button" id="septimo">7mo Grado</a>
-                        <a href="?1=PagosController&2=octavoGrado" class="ui olive button" id="octavo">8vo Grado</a>
-                        <a href="?1=PagosController&2=novenoGrado" class="ui gray button" id="noveno">9no Grado</a>
+                        <a href="?1=PagosController&2=prekinder" class="ui compact blue button" id="prekinder">Prekinder</a>
+                        <a href="?1=PagosController&2=kinder" class="ui compact teal button" id="kinder">Kinder</a>
+                        <a href="?1=PagosController&2=preparatoria" class="ui compact green button" id="prepa">Preparatoria</a>
+                        <a href="?1=PagosController&2=primerGrado" class="ui compact red button" id="primer">1er Grado</a>
+                        <a href="?1=PagosController&2=segundoGrado" class="ui compact orange button" id="segundo">2do Grado</a>
+                        <a href="?1=PagosController&2=tercerGrado" class="ui compact yellow button" id="tercer">3er Grado</a>
+                        <a href="?1=PagosController&2=cuartoGrado" class="ui compact purple button" id="cuarto">4to Grado</a>
+                        <a href="?1=PagosController&2=quintoGrado" class="ui compact violet button" id="quinto">5to Grado</a>
+                        <a href="?1=PagosController&2=sextoGrado" class="ui compact brown button" id="sexto">6to Grado</a>
+                        <a href="?1=PagosController&2=septimoGrado" class="ui compact black button" id="septimo">7mo Grado</a>
+                        <a href="?1=PagosController&2=octavoGrado" class="ui compact olive button" id="octavo">8vo Grado</a>
+                        <a href="?1=PagosController&2=novenoGrado" class="ui compact gray button" id="noveno">9no Grado</a>
                         <br><br><br>
                         <font color="#D93C2F" size="6px">
                         <i class="file icon"></i><i class="dollar icon"></i>
@@ -53,6 +53,7 @@
                     <th style="background-color: #C41813; color:white;">Septiembre</th>
                     <th style="background-color: #C41813; color:white;">Octubre</th>
                     <th style="background-color: #C41813; color:white;">Noviembre</th>
+                    <th style="background-color: #C41813; color:white;"><i class="file icon"></i></th>
                 </tr>
             </thead>
             <tbody>
@@ -126,14 +127,17 @@
                             echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'" n="10" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["oc"].'</button></td>';
                          }else{
                             echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'"  n="10" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["oc"].'</td>
-                            </tr>';
+                            ';
                          }
                          if($valores["nov"]==''){
                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["nov"].'" n="11" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["nov"].'</button></td>';
                         }else{
                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["nov"].'"  n="11" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["nov"].'</td>
-                           </tr>';
+                          ';
                         }
+                        echo '
+                        <td><button id="'.$valores["idAlumno"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick ="verReporte(this)" class="ui compact icon green button"><i class="print icon"></i></button></td>
+                        </tr>';
                     }
                 ?>
                 </tbody>
@@ -869,6 +873,19 @@ return false;
      });
    
 
+
+     var verReporte=(ele)=>{
+        var id = $(ele).attr("id");
+      var alumno = $(ele).attr("nombre");
+
+ var grado= '1er Grado';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+         window.open('?1=PagosController&2=reportePagoCuotasAlumno&id='+id+'&grado='+grado+'&anio='+anio+'&alumno='+alumno,'_blank');
+            return false;
+     }
 </script>
 
 
