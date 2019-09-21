@@ -40,6 +40,7 @@
                                 <div class="four wide field" id="seMat" style="display:none;">
                                         <label> Materias: </label>
                                         <select name="materias" id="materias" class="ui dropdown">
+                                        <option value="ninguno" set selected>Seleccione</option>
                                         <option value="1">Lenguaje</option>
                                         <option value="2">Matemáticas</option>
                                         <option value="3">Ciencias</option>
@@ -63,11 +64,27 @@
                                         <option value="4">Generales</option>                                        
                                         </select>
                                 </div>
+                                <div class="four wide field" id="mesMat" style="display:none;">
+                                <label>Mes a ver: </label>
+                                <select name="mesNotasLenguaje" id="mesNotasLenguaje" class="ui dropdown">
+                                    <option value="ninguno" set selected>Seleccione </option>
+                                    <option value="Febrero" >Febrero </option>
+                                    <option value="Marzo">Marzo </option>
+                                    <option value="Abril" >Abril </option>
+                                    <option value="Mayo" >Mayo </option>
+                                    <option value="Junio">Junio </option>
+                                    <option value="Julio" >Julio </option>
+                                    <option value="Agosto">Agosto </option>
+                                    <option value="Septiembre">Septiembre </option>
+                                    <option value="Octubre">Octubre </option>
+                                    <option value="Noviembre">Noviembre </option>
+                                </select>
+                                </div>
                         </div>
                 </div>
             </form>
 
-            <div id="nominaGe">
+    <div id="nominaGe">
             <h2><i class="file icon"></i>Nómina general</h2>
             <div class="ui divider"></div>
             <div class="row">
@@ -88,9 +105,72 @@
                 </table>
             </div>
         </div>
+    </div>
+
+
+    <div id="notasLenguaje" style="display:none">
+
+      
+
+    <h2><i class="file icon"></i>Notas de Lenguaje del mes de <a id="mesVisto" style="color:green"></a></h2>
+            <div class="ui divider"></div>
+            <div class="row">
+            <div class="sixteen wide column">
+                <table id="dtNotasLenguaje" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                        <tr>
+                        
+                            <th style="background-color: #B40431; color:white;">N°</th>
+                            <th style="background-color: #B40431; color:white;">Alumno</th>
+                            <th style="background-color: #B40431; color:white;">Nota 1</th>
+                            <th style="background-color: #B40431; color:white;">Nota 2</th>
+                            <th style="background-color: #B40431; color:white;">Nota 3</th>
+                            <th style="background-color: #B40431; color:white;">Promedio</th>
+                            <th style="background-color: #B40431; color:white;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
+        </div>
+    </div>
  </div>
+
+<div id="modalNotas" class="ui tiny modal">
+    <div class="header" style="color:white; background-color:black">
+        Notas  de lenguaje del alumno : <a id="alName" style="color:yellow"></a>
+        <br> Del mes de : <a id="mesModal" style="color:aqua"></a>
+    </div>
+    <div class="content" style="background-color:#DBDDDD ">
+    <form class="ui form">
+    <div class="field">
+        <div class="fields">
+            <div class="six wide field">
+            <input type="hidden" name="idAlumnoNota" id="idAlumnoNota">
+                <label>Nota 1</label>
+                <input type="text" name="nota1" id="nota1" placeholder="Nota 1">
+            </div>
+            <div class="six wide field">
+                <label>Nota 2</label>
+                <input type="text" name="nota2" id="nota2" placeholder="Nota 2">
+            </div>
+            <div class="six wide field">
+                <label>Nota 3</label>
+                <input type="text" name="nota3" id="nota3" placeholder="Nota 3">
+            </div>
+        </div>
+    </div>
+    </form>
+    </div>
+    <div class="actions">
+    <button class="ui black deny button">Cancelar</button>
+    <button class="ui teal button" id="guardar">Guardar</button>
+    </div>
+</div>
+
  <script src="./res/tablas/tablaAlumnos.js"></script>
+ <script src="./res/tablas/tablaNotasLenguaje.js"></script>
  <script>
 
 $(document).ready(function(){
@@ -123,6 +203,100 @@ if(acc == 1){
    $("#nominaGe").show(1000);
 }
 
+});
+
+
+$("#materias").change(function(){
+    var acc = $(this).val();
+
+    if(acc == 1){
+        $("#mesMat").show(1000);
+    }
+});
+
+
+
+$("#mesNotasLenguaje").change(function(){
+    var grado= '1er Grado';
+
+    var mesR = $("#mesNotasLenguaje option:selected").text();
+
+    $("#mesVisto").text(mesR);
+var d = new Date();
+  var anio = d.getFullYear();
+
+    var acc = $(this).val();
+
+    var grado = "1";
+if(acc == "Febrero"){
+    $("#sePro").hide();
+    $("#nominaGe").hide();
+
+    fitrarTabla(acc,anio,grado);
+    $("#notasLenguaje").fadeIn(1000);
+    $("#dtNotasLenguaje").fadeIn(1000);
+}
+});
+
+
+var notas=(ele)=>{
+    var mesR = $("#mesNotasLenguaje option:selected").text();
+
+        var id = $(ele).attr("id");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
+$("#guardar").click(function(){
+    var id= $("#idAlumnoNota").val();
+    var nota1 = $("#nota1").val();
+    var nota2 = $("#nota2").val();
+    var nota3 = $("#nota3").val();
+    var mes = $("#mesNotasLenguaje").val();
+
+    $.ajax({
+               
+                type: 'POST',
+                url: '?1=LenguajeController&2=guardarNotas',
+                data: {
+                    id:id,
+                    nota1 : nota1,
+                    nota2 : nota2,
+                    nota3 : nota3,
+                    mes : mes
+                },
+                success: function(r) {
+                    if(r == 1) {
+                        $('#dtNotasLenguaje').DataTable().ajax.reload();
+                        $('#modalNotas').modal('hide');
+                        $.amaran({
+
+                    'theme'     :'awesome ok',
+                    'content'   :{
+                    title:'Listo!',
+                    message:'Datos modificados con éxito!',
+                    info:'Cambios guardados',
+                    icon:'check icon'
+                    },
+                    'cssanimationOut'   :random(salidas),
+                            'position'  : random(positions) ,
+                            'inEffect'  : random(inEffects)
+                    });
+                    }
+                }
+            });
 });
  </script>
         

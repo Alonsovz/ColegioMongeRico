@@ -49,6 +49,35 @@ class LenguajeController extends ControladorBase {
         self::loadMain();
         require_once './app/view/Lenguaje/noveno.php';
     }
+
+
+    public function mostrarNotasColectores() {
+        $mes = (isset($_REQUEST['mes']))? $_REQUEST['mes']:0;
+        $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
+        $grado = (isset($_REQUEST['grado']))? $_REQUEST['grado']:0;
+        $dao = new DaoNotas();
+       
+        
+        
+        echo $dao->mostrarNotasColectoresLenguaje($mes,$anio,$grado);
+    
+    }
+
+    public function guardarNotas(){
+        $id = $_REQUEST["id"];
+        $nota1 = $_REQUEST["nota1"];
+        $nota2 = $_REQUEST["nota2"];
+        $nota3 = $_REQUEST["nota3"];
+        $mes = $_REQUEST["mes"];
+
+
+        $dao = new DaoNotas();
+       
+        
+        
+        echo $dao->guardarNotas($id,$nota1,$nota2,$nota3,$mes);
+    }
+
 }
 
 ?>
