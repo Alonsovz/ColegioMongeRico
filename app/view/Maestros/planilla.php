@@ -38,6 +38,7 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                             <th style="background-color: #08088A; color:white;text-align: center;">Nombre</th>
                             <th style="background-color: #08088A; color:white;text-align: center;">Tipo de pago</th>
                             <th style="background-color: #08088A; color:white;text-align: center;">Sueldo</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">AFPEMV</th>
                             <th style="background-color: #08088A; color:white;text-align: center;">Acciones</th>
                            
                         </tr>

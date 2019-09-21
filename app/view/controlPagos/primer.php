@@ -159,6 +159,8 @@
 <button id="pendiente" class="ui green button"> <i class="search icon"></i> Pendiente de recibir</button>
 <input type="hidden" id="idAlum" name="idAlum">
 <input type="hidden" id="idCuota" name="idCuota">
+Fecha de pago.
+<input type="date" id="fechaPago">
 </center>
 </div>
 <div class="actions">

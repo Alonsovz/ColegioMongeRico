@@ -19,6 +19,9 @@ $(function() {
                 {
                     "data": "sueldoM"             
                 },
+                {
+                    "data": "afpEmV"             
+                },
                 
                 {
                     "data": "Acciones"             

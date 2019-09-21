@@ -229,6 +229,9 @@ var d = new Date();
 
     var grado = "1";
 if(acc == "Febrero"){
+    var table = $('#dtNotasLenguaje').DataTable();
+    table.destroy();
+
     $("#sePro").hide();
     $("#nominaGe").hide();
 
@@ -236,6 +239,29 @@ if(acc == "Febrero"){
     $("#notasLenguaje").fadeIn(1000);
     $("#dtNotasLenguaje").fadeIn(1000);
 }
+
+else if(acc == "Marzo"){
+    var table = $('#dtNotasLenguaje').DataTable();
+    table.destroy();
+    $("#sePro").hide();
+    $("#nominaGe").hide();
+
+    fitrarTabla(acc,anio,grado);
+    $("#notasLenguaje").fadeIn(1000);
+    $("#dtNotasLenguaje").fadeIn(1000);
+}
+
+else if(acc == "Abril"){
+    var table = $('#dtNotasLenguaje').DataTable();
+    table.destroy();
+    $("#sePro").hide();
+    $("#nominaGe").hide();
+
+    fitrarTabla(acc,anio,grado);
+    $("#notasLenguaje").fadeIn(1000);
+    $("#dtNotasLenguaje").fadeIn(1000);
+}
+
 });
 
 

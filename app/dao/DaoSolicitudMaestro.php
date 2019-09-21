@@ -276,7 +276,7 @@ class DaoSolicitudMaestro extends DaoBase {
             $btnEditar .= ' isssE =\"'.$fila["isssE"].'\" renta =\"'.$fila["renta"].'\" ';
             $btnEditar .= ' otros =\"'.$fila["otros"].'\" totalDesM =\"'.$fila["totalDesM"].'\" ';
             $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon orange small button\" onclick=\"planilla(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
-            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\" nombre =\"'.$fila["nombre"].'\" sueldoD =\"'.$fila["sueldoD"].'\" tipoPago =\"'.$fila["pago"].'\" class=\"ui  icon green small button\" onclick=\"voucher(this)\"><i class=\"print icon\"></i> Imprimir </button>';
+            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\" nombre =\"'.$fila["nombre"].'\" sueldoD =\"'.$fila["totalP"].'\" tipoPago =\"'.$fila["pago"].'\" class=\"ui  icon green small button\" onclick=\"voucher(this)\"><i class=\"print icon\"></i> Imprimir </button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnVoucher.'"';
 
@@ -319,7 +319,7 @@ class DaoSolicitudMaestro extends DaoBase {
 
     public function sueldoDevengado ($mes=0 , $anio=0, $id=0){
 
-    $_query="select format(sum(sueldoD),2) as sueldo from planilla
+    $_query="select format(sum(totalP),2) as sueldo from planilla
      where idMaestro='".$id."' and mes='".$mes."' and anio ='".$anio."' ";
        
     $resultado=$this->con->ejecutar($_query)->fetch_assoc();

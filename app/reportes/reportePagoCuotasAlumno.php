@@ -77,22 +77,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['e']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Enero</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoEnero']."</td></tr>";
                         }
                         else if($fila['e']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Enero</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoEnero']."</td></tr>";
                         }
                         else if($fila['e']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Enero</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoEnero']."</td></tr>";
                         }
                         else if($fila['e']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Enero</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoEnero']."</td></tr>";
                         }
                        
@@ -104,22 +104,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['f']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Febrero</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoFebrero']."</td></tr>";
                         }
                         else if($fila['f']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Febrero</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoFebrero']."</td></tr>";
                         }
                         else if($fila['f']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Febrero</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoFebrero']."</td></tr>";
                         }
                         else if($fila['f']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Febrero</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoFebrero']."</td></tr>";
                         }
                        
@@ -132,22 +132,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['m']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Marzo</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoMarzo']."</td></tr>";
                         }
                         else if($fila['m']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Marzo</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoMarzo']."</td></tr>";
                         }
                         else if($fila['m']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Marzo</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoMarzo']."</td></tr>";
                         }
                         else if($fila['m']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Marzo</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoMarzo']."</td></tr>";
                         }
                        
@@ -160,22 +160,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['a']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Abril</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoAbril']."</td></tr>";
                         }
                         else if($fila['a']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Abril</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoAbril']."</td></tr>";
                         }
                         else if($fila['a']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Abril</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoAbril']."</td></tr>";
                         }
                         else if($fila['a']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Abril</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoAbril']."</td></tr>";
                         }
                        
@@ -189,22 +189,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['ma']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Mayo</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoMayo']."</td></tr>";
                         }
                         else if($fila['ma']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Mayo</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoMayo']."</td></tr>";
                         }
                         else if($fila['ma']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Mayo</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoMayo']."</td></tr>";
                         }
                         else if($fila['ma']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Mayo</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoMayo']."</td></tr>";
                         }
                        
@@ -217,23 +217,23 @@ class Reporte {
                             </tr>";
                         }else if($fila['ju']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Junio</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoJunio']."</td></tr>";
                         }
                         else if($fila['ju']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Junio</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoJunio']."</td></tr>";
 
                         }
                         else if($fila['ju']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Junio</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoJunio']."</td></tr>";
                         }
                         else if($fila['ju']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Junio</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoJunio']."</td></tr>";
                         }
                        
@@ -246,22 +246,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['jul']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Julio</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoJulio']."</td></tr>";
                         }
                         else if($fila['jul']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Julio</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoJulio']."</td></tr>";
                         }
                         else if($fila['jul']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Julio</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoJulio']."</td></tr>";
                         }
                         else if($fila['jul']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Julio</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoJulio']."</td></tr>";
                         }
                        
@@ -275,22 +275,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['ago']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Agosto</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoAgosto']."</td></tr>";
                         }
                         else if($fila['ago']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Agosto</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoAgosto']."</td></tr>";
                         }
                         else if($fila['ago']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Agosto</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoAgosto']."</td></tr>";
                         }
                         else if($fila['ago']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Agosto</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoAgosto']."</td></tr>";
                         }
                        
@@ -304,22 +304,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['sep']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Septiembre</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoSep']."</td></tr>";
                         }
                         else if($fila['sep']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Septiembre</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoSep']."</td></tr>";
                         }
                         else if($fila['sep']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Septiembre</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoSep']."</td></tr>";
                         }
                         else if($fila['sep']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Septiembre</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoSep']."</td></tr>";
                         }
                        
@@ -332,22 +332,22 @@ class Reporte {
                             </tr>";
                         }else if($fila['oc']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Octubre</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoOctubre']."</td></tr>";
                         }
                         else if($fila['oc']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Octubre</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                             $tabla.="<td> ".$fila['pagoOctubre']."</td></tr>";
                         }
                         else if($fila['oc']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Octubre</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                             $tabla.="<td> ".$fila['pagoOctubre']."</td></tr>";
                         }
                         else if($fila['oc']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Octubre</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoOctubre']."</td></tr>";
                         }
                        
@@ -360,20 +360,20 @@ class Reporte {
                             </tr>";
                         }else if($fila['nov']=="<i class='close icon' style='font-size:30px;'></i>"){
                             $tabla.="<tr><td> Noviembre</td>";
-                            $tabla.="<td> PN</td>";
+                            $tabla.="<td> Pago Normal</td>";
                             $tabla.="<td> ".$fila['pagoNov']."</td></tr>";
                         }
                         else if($fila['nov']=="<i class='window close outline icon' style='font-size:30px;color:blue;'></i>"){
                             $tabla.="<tr><td> Noviembre</td>";
-                            $tabla.="<td> P-AD</td>";
+                            $tabla.="<td> Pago Adelantado</td>";
                         }
                         else if($fila['nov']=="<i class='window close outline icon' style='font-size:30px;color:red;'></i>"){
                             $tabla.="<tr><td> Noviembre</td>";
-                            $tabla.="<td> P-AT</td>";
+                            $tabla.="<td> Pago Atrasado</td>";
                         }
                         else if($fila['nov']=="<i class='search icon' style='font-size:30px;color:orange;'></i>"){
                             $tabla.="<tr><td> Noviembre</td>";
-                            $tabla.="<td> P-RV</td>";
+                            $tabla.="<td> Pendiente de recibir Voucher</td>";
                             $tabla.="<td> ".$fila['pagoNov']."</td></tr>";
                             
                         }
