@@ -50,6 +50,33 @@ class SocialesController extends ControladorBase {
         require_once './app/view/Sociales/noveno.php';
     }
 
+    public function mostrarNotasColectoresSociales() {
+        $mes = (isset($_REQUEST['mes']))? $_REQUEST['mes']:0;
+        $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
+        $grado = (isset($_REQUEST['grado']))? $_REQUEST['grado']:0;
+        $dao = new DaoNotas();
+       
+        
+        
+        echo $dao->mostrarNotasColectoresSociales($mes,$anio,$grado);
+    
+    }
+
+    public function guardarNotas(){
+        $id = $_REQUEST["id"];
+        $nota1 = $_REQUEST["nota1"];
+        $nota2 = $_REQUEST["nota2"];
+        $nota3 = $_REQUEST["nota3"];
+        $mes = $_REQUEST["mes"];
+        $anio = $_REQUEST["anio"];
+
+        $dao = new DaoNotas();
+       
+        
+        
+        echo $dao->guardarNotasSociales($id,$nota1,$nota2,$nota3,$mes,$anio);
+    }
+
 }
 
 ?>

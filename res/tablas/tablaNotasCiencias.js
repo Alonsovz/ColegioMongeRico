@@ -1,11 +1,11 @@
-var tablaNotasLenguaje;
+var tablaNotasCiencias;
 
-function fitrarTablaLenguaje(mes,anio,grado){
+function fitrarTablaCiencias(mes,anio,grado){
 $(function() {
-    if($('#dtNotasLenguaje').length) {
-        tablaNotasLenguaje = $('#dtNotasLenguaje').DataTable({
+    if($('#dtNotasCiencias').length) {
+        tablaNotasCiencias = $('#dtNotasCiencias').DataTable({
             "ajax": {
-                "url": "?1=LenguajeController&2=mostrarNotasColectoresLenguaje&mes="+mes+"&anio="+anio+"&grado="+grado,
+                "url": "?1=CienciasController&2=mostrarNotasColectoresCiencias&mes="+mes+"&anio="+anio+"&grado="+grado,
                 "type": "POST"
             },
             "columns": [{
@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasLenguaje.column(0).visible(false);
+         tablaNotasCiencias.column(0).visible(false);
     }
 });
 }

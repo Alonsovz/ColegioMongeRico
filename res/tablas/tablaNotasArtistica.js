@@ -1,11 +1,11 @@
-var tablaNotasLenguaje;
+var tablaNotasArtistica;
 
-function fitrarTablaLenguaje(mes,anio,grado){
+function fitrarTablaArtistica(mes,anio,grado){
 $(function() {
-    if($('#dtNotasLenguaje').length) {
-        tablaNotasLenguaje = $('#dtNotasLenguaje').DataTable({
+    if($('#dtNotasArtistica').length) {
+        tablaNotasArtistica = $('#dtNotasArtistica').DataTable({
             "ajax": {
-                "url": "?1=LenguajeController&2=mostrarNotasColectoresLenguaje&mes="+mes+"&anio="+anio+"&grado="+grado,
+                "url": "?1=ArtisticaController&2=mostrarNotasColectoresArtistica&mes="+mes+"&anio="+anio+"&grado="+grado,
                 "type": "POST"
             },
             "columns": [{
@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasLenguaje.column(0).visible(false);
+         tablaNotasArtistica.column(0).visible(false);
     }
 });
 }

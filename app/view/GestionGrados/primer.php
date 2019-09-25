@@ -21,14 +21,14 @@
                     <i class="user icon"></i><i class="book icon"></i>
                     Gestión de 1er Grado</font>
                     <font color="#210B61" size="20px"> .</font>
-                    </div>
+            </div>
             </div>
 </div>
             <br><hr><br>
-            <form class="ui form" style="font-size:16px;">
-                <div class="field">
+            <form class="ui form" style="font-size:16px;background-color:#DBDDDD">
+                <div class="field" style="margin-left: 10px;margin-right: 10px;">
                         <div class="fields">
-                                <div class="four wide field">
+                                <div class="six wide field">
                                         <label> Seleccione la acción a realizar: </label>
                                         <select name="accion" id="accion" class="ui dropdown">
                                         <option value="1">Ver nómina general de alumnos/as</option>
@@ -37,14 +37,14 @@
                                         </select>
                                 </div>
 
-                                <div class="four wide field" id="seMat" style="display:none;">
+                                <div class="six wide field" id="seMat" style="display:none;">
                                         <label> Materias: </label>
                                         <select name="materias" id="materias" class="ui dropdown">
                                         <option value="ninguno" set selected>Seleccione</option>
                                         <option value="1">Lenguaje</option>
                                         <option value="2">Matemáticas</option>
-                                        <option value="3">Ciencias</option>
-                                        <option value="4">Sociales</option>
+                                        <option value="3">Ciencias Naturales</option>
+                                        <option value="4">Estudios Sociales</option>
                                         <option value="5">Íngles</option>
                                         <option value="6">Artística</option>
                                         <option value="7">Educación en la Fe</option>
@@ -56,7 +56,7 @@
                                         </select>
                                 </div>
 
-                                <div class="four wide field" id="sePro" style="display:none;">
+                                <div class="six wide field" id="sePro" style="display:none;">
                                         <label> Promedios: </label>
                                         <select name="promedios" id="promedios" class="ui dropdown">
                                         <option value="1">Normales</option>
@@ -65,7 +65,7 @@
                                         <option value="4">Generales</option>                                        
                                         </select>
                                 </div>
-                                <div class="four wide field" id="mesMat" style="display:none;">
+                                <div class="six wide field" id="mesMat" style="display:none;">
                                 <label>Mes a ver: </label>
                                 <select name="mesNotas" id="mesNotas" class="ui dropdown">
                                     <option value="ninguno" set selected>Seleccione </option>
@@ -83,6 +83,7 @@
                                 </div>
                         </div>
                 </div>
+                <br>
             </form>
             
     <div id="nominaGe">
@@ -108,7 +109,7 @@
         </div>
     </div>
 
-    <br><br>
+    <br>
     <div id="notasLenguaje" style="display:none">
     <hr>
       
@@ -146,7 +147,7 @@
             <div class="ui divider"></div>
             <div class="row">
             <div class="sixteen wide column">
-                <table id="dtNotasMatematica" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                <table id="dtNotasMatematicas" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
                         
@@ -431,9 +432,10 @@
  </div>
 
 <div id="modalNotas" class="ui tiny modal">
-    <div class="header" style="color:white; background-color:black">
-        Notas  de lenguaje del alumno : <a id="alName" style="color:yellow"></a>
-        <br> Del mes de : <a id="mesModal" style="color:aqua"></a>
+    <div class="header" style="color:white; background-color:#009C95">
+        Notas  de <a id="materia" style="color:white"></a> del alumno :
+        <br> <a id="alName" style="color:yellow"></a>
+        <br> Del mes de : <a id="mesModal" style="color:#04F8FB"></a>
     </div>
     <div class="content" style="background-color:#DBDDDD ">
     <form class="ui form">
@@ -464,6 +466,17 @@
 
  <script src="./res/tablas/tablaAlumnos.js"></script>
  <script src="./res/tablas/tablaNotasLenguaje.js"></script>
+ <script src="./res/tablas/tablaNotasMatematicas.js"></script>
+ <script src="./res/tablas/tablaNotasSociales.js"></script>
+ <script src="./res/tablas/tablaNotasCiencias.js"></script>
+ <script src="./res/tablas/tablaNotasIngles.js"></script>
+ <script src="./res/tablas/tablaNotasArtistica.js"></script>
+ <script src="./res/tablas/tablaNotasEduFe.js"></script>
+ <script src="./res/tablas/tablaNotasMoral.js"></script>
+ <script src="./res/tablas/tablaNotasCompu.js"></script>
+ <script src="./res/tablas/tablaNotasFisica.js"></script>
+ <script src="./res/tablas/tablaNotasConducta.js"></script>
+
  <script>
 
 $(document).ready(function(){
@@ -484,17 +497,19 @@ if(acc == 2){
  $("#sePro").hide();
  $("#nominaGe").hide();
    $("#seMat").show(1000);
-   $("#mesMat").show(1000);
+  
 }
 if(acc == 3){
    $("#seMat").hide();
    $("#nominaGe").hide();
    $("#sePro").show(1000);
+   $("#mesMat").hide(1000);
 }
 if(acc == 1){
    $("#seMat").hide(1000);
    $("#sePro").hide(1000);
    $("#nominaGe").show(1000);
+   $("#mesMat").hide(1000);
 }
 
 });
@@ -512,6 +527,7 @@ $("#materias").change(function(){
     $("#notasInfo").hide();
     $("#notasFisica").hide();
     $("#notasConducta").hide();
+    $("#mesMat").show(1000);
 });
 
 
@@ -519,26 +535,24 @@ $("#materias").change(function(){
 
 $("#mesNotas").change(function(){
      var materia = $("#materias").val();
+     var d = new Date();
+var anio = d.getFullYear();
 
      var mesR = $("#mesNotas option:selected").text();
 
-$(".mesVisto").text(mesR);
-var d = new Date();
-var anio = d.getFullYear();
+$(".mesVisto").text(mesR + '' +anio);
 
+var acc = $("#mesNotas").val();
 var grado = "1";
 
     if(materia == 1){
-        var acc = $("#mesNotas").val();
-
-        
-       
+        $("#notasLenguaje").hide();
         var table = $('#dtNotasLenguaje').DataTable();
         table.destroy();
         $("#sePro").hide();
         $("#nominaGe").hide();
 
-        fitrarTabla(acc,anio,grado);
+        fitrarTablaLenguaje(acc,anio,grado);
 
         $("#notasLenguaje").fadeIn(1000);
         $("#dtNotasLenguaje").fadeIn(1000);
@@ -555,12 +569,15 @@ var grado = "1";
         $("#notasConducta").hide();
     }
     else if(materia == 2){
-        
+        $("#notasMatematicas").hide();
+        var tableM = $('#dtNotasMatematicas').DataTable();
+        tableM.destroy();
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasMatematicas").fadeIn(1000);
-        $("#dtNotasMatematica").fadeIn(1000);
+        $("#dtNotasMatematicas").fadeIn(1000);
 
+        fitrarTablaMate(acc,anio,grado);
 
         $("#notasSociales").hide();
         $("#notasLenguaje").hide();
@@ -574,11 +591,16 @@ var grado = "1";
         $("#notasConducta").hide();
     }
     else if(materia == 3){
+        $("#notasCiencias").hide();
+
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasCiencias").fadeIn(1000);
         $("#dtNotasCiencias").fadeIn(1000);
-        
+
+        var tableC = $('#dtNotasCiencias').DataTable();
+        tableC.destroy();
+        fitrarTablaCiencias(acc,anio,grado);
 
         $("#notasLenguaje").hide();
         $("#notasMatematicas").hide();
@@ -593,10 +615,19 @@ var grado = "1";
     }
 
     else if(materia == 4){
+
+        $("#notasSociales").hide();
+
+        var tableS = $('#dtNotasSociales').DataTable();
+        tableS.destroy();
+        fitrarTablaSociales(acc,anio,grado);
+       
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasSociales").fadeIn(1000);
         $("#dtNotasSociales").fadeIn(1000);
+
+        
 
         $("#notasLenguaje").hide();
         $("#notasMatematicas").hide();
@@ -612,6 +643,13 @@ var grado = "1";
 
 
     else if(materia == 5){
+
+        $("#notasIngles").hide();
+
+        var tableI = $('#dtNotasIngles').DataTable();
+        tableI.destroy();
+        fitrarTablaIngles(acc,anio,grado);
+
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasIngles").fadeIn(1000);
@@ -630,6 +668,13 @@ var grado = "1";
     }
 
     else if(materia == 6){
+
+        $("#notasArtistica").hide();
+
+        var tableArt = $('#dtNotasArtistica').DataTable();
+        tableArt.destroy();
+        fitrarTablaArtistica(acc,anio,grado);
+
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasArtistica").fadeIn(1000);
@@ -647,6 +692,14 @@ var grado = "1";
         $("#notasConducta").hide();
     }
     else if(materia == 7){
+
+        
+        $("#notasFe").hide();
+
+        var tableFe = $('#dtNotasFe').DataTable();
+        tableFe.destroy();
+        fitrarTablaEduFe(acc,anio,grado);
+
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasFe").fadeIn(1000);
@@ -665,6 +718,13 @@ var grado = "1";
     }
 
     else if(materia == 8){
+
+        $("#notasMoral").hide();
+
+        var tableMo = $('#dtNotasMoral').DataTable();
+        tableMo.destroy();
+        fitrarTablaMoral(acc,anio,grado);
+
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasMoral").fadeIn(1000);
@@ -683,6 +743,12 @@ var grado = "1";
     }
 
     else if(materia == 9){
+        $("#notasInfo").hide();
+
+        var tableInfo = $('#dtNotasInfo').DataTable();
+        tableInfo.destroy();
+        fitrarTablaInfo(acc,anio,grado);
+
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasInfo").fadeIn(1000);
@@ -701,6 +767,13 @@ var grado = "1";
     }
 
     else if(materia == 10){
+
+        $("#notasFisica").hide();
+
+        var tableFi = $('#dtNotasFisica').DataTable();
+        tableFi.destroy();
+        fitrarTablaFisica(acc,anio,grado);
+
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasFisica").fadeIn(1000);
@@ -719,6 +792,13 @@ var grado = "1";
     }
 
     else if(materia == 11){
+        $("#notasConducta").hide();
+
+        var tableCon = $('#dtNotasConducta').DataTable();
+        tableCon.destroy();
+        fitrarTablaConducta(acc,anio,grado);
+
+
         $("#sePro").hide();
         $("#nominaGe").hide();
         $("#notasConducta").fadeIn(1000);
@@ -743,10 +823,13 @@ var grado = "1";
 });
 
 
-var notas=(ele)=>{
+var notasLenguaje=(ele)=>{
     var mesR = $("#mesNotas option:selected").text();
+    var d = new Date();
+    var anio = d.getFullYear();
 
         var id = $(ele).attr("id");
+        $("#materia").text("Lenguaje");
 
         var nota1 = $(ele).attr("nota1");
         var nota2 = $(ele).attr("nota2");
@@ -758,10 +841,249 @@ var notas=(ele)=>{
 
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
-            $("#mesModal").text(mesR);
+            $("#mesModal").text(mesR + '' +anio);
         $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
 }
 
+
+var notasMatematicas=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Matemáticas");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
+
+
+var notasCiencias=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Ciencias Naturales");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
+
+var notasSociales=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+
+    var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Estudios Sociales");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
+
+var notasIngles=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+
+    var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Íngles");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
+var notasArtistica=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+
+    var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Educación Artística");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
+var notasEduFe=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+
+    var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Educación en la Fe");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+var notasMoral=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+
+    var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Moral");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
+var notasInfo=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+
+    var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Computación");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+
+var notasFisica=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+
+    var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Educación Física");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
+
+var notasConducta=(ele)=>{
+    var mesR = $("#mesNotas option:selected").text();
+
+    var d = new Date();
+    var anio = d.getFullYear();
+
+        var id = $(ele).attr("id");
+        $("#materia").text("Conducta");
+
+        var nota1 = $(ele).attr("nota1");
+        var nota2 = $(ele).attr("nota2");
+        var nota3 = $(ele).attr("nota3");
+
+        $("#nota1").val(nota1);
+        $("#nota2").val(nota2);
+        $("#nota3").val(nota3);
+
+        $("#idAlumnoNota").val(id);
+            $("#alName").text($(ele).attr("nombre"));
+            $("#mesModal").text(mesR + '' +anio);
+        $('#modalNotas').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+}
 
 $("#guardar").click(function(){
     var id= $("#idAlumnoNota").val();
@@ -769,38 +1091,406 @@ $("#guardar").click(function(){
     var nota2 = $("#nota2").val();
     var nota3 = $("#nota3").val();
     var mes = $("#mesNotas").val();
+    var d = new Date();
+    var anio = d.getFullYear();
+    var materia = $("#materia").text();
 
-    $.ajax({
+    alertify.confirm("¿Desea guardar los datos?",
+            function(){    
+
+    if(materia == "Lenguaje"){
+        $.ajax({
                
-                type: 'POST',
-                url: '?1=LenguajeController&2=guardarNotas',
-                data: {
-                    id:id,
-                    nota1 : nota1,
-                    nota2 : nota2,
-                    nota3 : nota3,
-                    mes : mes
-                },
-                success: function(r) {
-                    if(r == 1) {
+               type: 'POST',
+               url: '?1=LenguajeController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#0020FF;">Notas de Lenguaje modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/book.gif',
+                        imageWidth: 325,
+                        imageHeight: 300,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
                         $('#dtNotasLenguaje').DataTable().ajax.reload();
-                        $('#modalNotas').modal('hide');
-                        $.amaran({
+                   }
+               }
+           });
+    }
 
-                    'theme'     :'awesome ok',
-                    'content'   :{
-                    title:'Listo!',
-                    message:'Datos modificados con éxito!',
-                    info:'Cambios guardados',
-                    icon:'check icon'
-                    },
-                    'cssanimationOut'   :random(salidas),
-                            'position'  : random(positions) ,
-                            'inEffect'  : random(inEffects)
-                    });
-                    }
-                }
-            });
+    else if(materia == "Matemáticas"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=MatematicaController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#0020FF;">Notas de Matemáticas modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/pen.gif',
+                        imageWidth: 300,
+                        imageHeight: 300,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasMatematicas').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+    else if(materia == "Ciencias Naturales"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=CienciasController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#FF0000;">Notas de Ciencias Naturales modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/ciencias.gif',
+                        imageWidth: 300,
+                        imageHeight: 300,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasCiencias').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+
+    else if(materia == "Estudios Sociales"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=SocialesController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#366c8b;">Notas de Estudios Sociales modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/sociales.gif',
+                        imageWidth: 275,
+                        imageHeight: 225,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasSociales').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+    else if(materia == "Íngles"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=InglesController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#7A2828;">Notas de Íngles modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/english.gif',
+                        imageWidth: 225,
+                        imageHeight: 200,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasIngles').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+    else if(materia == "Educación Artística"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=ArtisticaController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#2E7C8B;">Notas de Educación Artística modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/artistica.gif',
+                        imageWidth: 275,
+                        imageHeight: 200,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasArtistica').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+
+    else if(materia == "Educación en la Fe"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=EducacionFeController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#CF0C0B;">Notas de Educación en la Fe modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/eduFe.gif',
+                        imageWidth: 215,
+                        imageHeight: 200,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasFe').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+    else if(materia == "Moral"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=MoralController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#E7519E;">Notas de Moral modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/moral.gif',
+                        imageWidth: 215,
+                        imageHeight: 200,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasMoral').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+    else if(materia == "Computación"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=InformaticaController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#020490;">Notas de Computación modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/computer.gif',
+                        imageWidth: 215,
+                        imageHeight: 200,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasInfo').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+    else if(materia == "Educación Física"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=FisicaController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#020490;">Notas de Educación Física modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/fisica.gif',
+                        imageWidth: 195,
+                        imageHeight: 180,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasFisica').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+    else if(materia == "Conducta"){
+        $.ajax({
+               
+               type: 'POST',
+               url: '?1=ConductaController&2=guardarNotas',
+               data: {
+                   id:id,
+                   nota1 : nota1,
+                   nota2 : nota2,
+                   nota3 : nota3,
+                   mes : mes,
+                   anio: anio,
+               },
+               success: function(r) {
+                   if(r == 1) {
+                      
+                       
+                       $('#modalNotas').modal('hide');
+                       Swal.fire({
+                        title: '<h2 style="color:#020490;">Notas de Conducta modificadas</h2>',
+                        text: 'Alumno/a : '+$("#alName").text(),
+                        imageUrl: './res/img/conducta.gif',
+                        imageWidth: 195,
+                        imageHeight: 180,
+                        allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    backdrop: 'rgb(37, 37, 37)'
+                        });
+                        $('#dtNotasConducta').DataTable().ajax.reload();
+                   }
+               }
+           });
+    }
+
+},
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+   
 });
  </script>
         

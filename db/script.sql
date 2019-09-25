@@ -273,8 +273,121 @@ nombre varchar(100),
 grado varchar(10),
 idAlumno int
 );
- 
 
+
+create table notasLenguaje
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+create table notasMatematica 
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+
+create table notasSociales(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+create table notasCiencias
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+
+create table notasArtistica
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+create table notasEduFe
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+
+create table notasMoral
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+
+create table notasCompu
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+
+create table notasFisica
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
+
+create table notasConducta
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
 
  insert into rol values(1,'Administrador/a');
 insert into rol values(2,'Maestro/a');
@@ -301,6 +414,20 @@ insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+
+
+INSERT into notasmatematica VALUES (null, 1, 7,8,9,'Febrero','2019');
+INSERT into notassociales VALUES (null, 1, 7,6,9,'Febrero','2019');
+INSERT into notasciencias VALUES (null, 1, 7,8,7,'Febrero','2019');
+
+INSERT into notasmatematica VALUES (null, 1,6,8,9,'Marzo','2019');
+INSERT into notassociales VALUES (null, 1, 9,6,9,'Marzo','2019');
+INSERT into notasciencias VALUES (null, 1, 7,8,7,'Marzo','2019');
+
+INSERT into notasmatematica VALUES (null, 1, 7,8,7,'Abril','2019');
+INSERT into notassociales VALUES (null, 1, 7,6,7,'Abril','2019');
+INSERT into notasciencias VALUES (null, 1, 9,8,9,'Abril','2019');
+
 
 insert into inventarioUni values(null,'S',12,1);
 insert into inventarioCal values(null,'12',10,1);

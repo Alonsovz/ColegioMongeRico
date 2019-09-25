@@ -51,7 +51,7 @@ class LenguajeController extends ControladorBase {
     }
 
 
-    public function mostrarNotasColectores() {
+    public function mostrarNotasColectoresLenguaje() {
         $mes = (isset($_REQUEST['mes']))? $_REQUEST['mes']:0;
         $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
         $grado = (isset($_REQUEST['grado']))? $_REQUEST['grado']:0;
@@ -69,13 +69,13 @@ class LenguajeController extends ControladorBase {
         $nota2 = $_REQUEST["nota2"];
         $nota3 = $_REQUEST["nota3"];
         $mes = $_REQUEST["mes"];
-
+        $anio = $_REQUEST["anio"];
 
         $dao = new DaoNotas();
        
         
         
-        echo $dao->guardarNotas($id,$nota1,$nota2,$nota3,$mes);
+        echo $dao->guardarNotasLenguaje($id,$nota1,$nota2,$nota3,$mes,$anio);
     }
 
 }

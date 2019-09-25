@@ -1,6 +1,6 @@
 <?php
 
-class FisicaController extends ControladorBase {
+class ConductaController extends ControladorBase {
     
     public static function primerGrado() {
        
@@ -52,7 +52,7 @@ class FisicaController extends ControladorBase {
 
 
      
-    public function mostrarNotasColectoresFisica() {
+    public function mostrarNotasColectoresConducta() {
         $mes = (isset($_REQUEST['mes']))? $_REQUEST['mes']:0;
         $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
         $grado = (isset($_REQUEST['grado']))? $_REQUEST['grado']:0;
@@ -60,7 +60,7 @@ class FisicaController extends ControladorBase {
        
         
         
-        echo $dao->mostrarNotasColectoresFisica($mes,$anio,$grado);
+        echo $dao->mostrarNotasColectoresConducta($mes,$anio,$grado);
     
     }
 
@@ -77,7 +77,7 @@ class FisicaController extends ControladorBase {
        
         
         
-        echo $dao->guardarNotasFisica($id,$nota1,$nota2,$nota3,$mes,$anio);
+        echo $dao->guardarNotasConducta($id,$nota1,$nota2,$nota3,$mes,$anio);
     }
 
 }

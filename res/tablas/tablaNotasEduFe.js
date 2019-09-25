@@ -1,11 +1,11 @@
-var tablaNotasLenguaje;
+var tablaNotasEduFe;
 
-function fitrarTablaLenguaje(mes,anio,grado){
+function fitrarTablaEduFe(mes,anio,grado){
 $(function() {
-    if($('#dtNotasLenguaje').length) {
-        tablaNotasLenguaje = $('#dtNotasLenguaje').DataTable({
+    if($('#dtNotasFe').length) {
+        tablaNotasEduFe = $('#dtNotasFe').DataTable({
             "ajax": {
-                "url": "?1=LenguajeController&2=mostrarNotasColectoresLenguaje&mes="+mes+"&anio="+anio+"&grado="+grado,
+                "url": "?1=EducacionFeController&2=mostrarNotasColectoresEduFe&mes="+mes+"&anio="+anio+"&grado="+grado,
                 "type": "POST"
             },
             "columns": [{
@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasLenguaje.column(0).visible(false);
+         tablaNotasEduFe.column(0).visible(false);
     }
 });
 }

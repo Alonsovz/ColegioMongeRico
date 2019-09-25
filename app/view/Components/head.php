@@ -69,6 +69,8 @@
 <link rel="stylesheet" href="./res/plugins/animate.min.css">
 <script src="//cdn.jsdelivr.net/jquery.amaran/0.5.4/jquery.amaran.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="./res/css/notie.min.css">
+<script src="./res/plugins/notie.js"></script>
 </head>
 <body class="">
 
