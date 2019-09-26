@@ -359,6 +359,89 @@ class DaoNotas extends DaoBase {
 
 
 
+    public function mostrarNotasColectores($mes = 0, $anio = 0, $grado = 0) {
+        $_query = "
+        
+
+SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioLenguaje,
+
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasmatematica n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioMate,
+
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasciencias n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioCiencias,
+
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notassociales n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioSociales,
+
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasingles n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioIngles,
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasartistica n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioArtistica,
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasfisica n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioFisica,
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasedufe n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioFe,
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasmoral n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioMoral,
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notascompu n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioCompu,
+(
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasconducta n
+        where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
+) as promedioConducta
+
+FROM fichaalumno F
+WHERE F.anio = '".$anio."' and f.grado= ".$grado."
+        ";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        $_json = '';
+
+        while($fila = $resultado->fetch_assoc()) {
+
+            $object = json_encode($fila);
+
+            $btnEditar = '<button id=\"'.$fila["idAlumno"].'\"  nombre =\"'.$fila["nombreAlumno"].'\"   class=\"ui icon blue small button\" onclick=\"notas(this)\"><i class=\"edit icon\"></i> Ver</button>';
+            $btnEliminar = '<button id=\"'.$fila["idAlumno"].'\" nombre =\"'.$fila["nombreAlumno"].'\"   class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+
+            $acciones = ', "Acciones": "'.$btnEditar.'"';
+
+            $object = substr_replace($object, $acciones, strlen($object) -1, 0);
+
+            $_json .= $object.',';
+        }
+
+        $_json = substr($_json,0, strlen($_json) - 1);
+
+        return '{"data": ['.$_json .']}';
+    }
+
+
+
 
     public function guardarNotasLenguaje( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
       

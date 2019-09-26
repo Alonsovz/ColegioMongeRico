@@ -78,6 +78,20 @@ class GestionGradosController extends ControladorBase {
         echo $dao->mostrarAlumnosPrimer($idGrado);
     }
 
+
+
+    public function mostrarNotasColectores() {
+        $mes = (isset($_REQUEST['mes']))? $_REQUEST['mes']:0;
+        $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
+        $grado = (isset($_REQUEST['grado']))? $_REQUEST['grado']:0;
+        $dao = new DaoNotas();
+       
+        
+        
+        echo $dao->mostrarNotasColectores($mes,$anio,$grado);
+    
+    }
+
 }
 
 ?>

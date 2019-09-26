@@ -59,7 +59,7 @@
                                 <div class="six wide field" id="sePro" style="display:none;">
                                         <label> Promedios: </label>
                                         <select name="promedios" id="promedios" class="ui dropdown">
-                                        <option value="1">Normales</option>
+                                        <option value="ninguno" set selected>Seleccione</option>
                                         <option value="2">Mensuales</option>
                                         <option value="3">Trimestrales</option>
                                         <option value="4">Generales</option>                                        
@@ -68,6 +68,24 @@
                                 <div class="six wide field" id="mesMat" style="display:none;">
                                 <label>Mes a ver: </label>
                                 <select name="mesNotas" id="mesNotas" class="ui dropdown">
+                                    <option value="ninguno" set selected>Seleccione </option>
+                                    <option value="Febrero" >Febrero </option>
+                                    <option value="Marzo">Marzo </option>
+                                    <option value="Abril" >Abril </option>
+                                    <option value="Mayo" >Mayo </option>
+                                    <option value="Junio">Junio </option>
+                                    <option value="Julio" >Julio </option>
+                                    <option value="Agosto">Agosto </option>
+                                    <option value="Septiembre">Septiembre </option>
+                                    <option value="Octubre">Octubre </option>
+                                    <option value="Noviembre">Noviembre </option>
+                                </select>
+                                </div>
+
+
+                                <div class="six wide field" id="mesCo" style="display:none;">
+                                <label>Mes a ver: </label>
+                                <select name="mesColectores" id="mesColectores" class="ui dropdown">
                                     <option value="ninguno" set selected>Seleccione </option>
                                     <option value="Febrero" >Febrero </option>
                                     <option value="Marzo">Marzo </option>
@@ -429,6 +447,43 @@
         </div>
     </div>
 
+
+
+    <div id="colectorMes" style="display:none">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Colector de notas de <a class="mesVisto" style="color:green"></a></h2>
+            <div class="ui divider"></div>
+            <div class="row">
+            <div class="sixteen wide column">
+                <table id="dtColector" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                        <tr>
+                        
+                            <th style="background-color: #C80854; color:white;">N°</th>
+                            <th style="background-color: #C80854; color:white;">Alumno</th>
+                            <th style="background-color: #C80854; color:white;">Lenguaje</th>
+                            <th style="background-color: #C80854; color:white;">Matemáticas</th>
+                            <th style="background-color: #C80854; color:white;">Ciencias</th>
+                            <th style="background-color: #C80854; color:white;">Sociales</th>
+                            <th style="background-color: #C80854; color:white;">Íngles</th>
+                            <th style="background-color: #C80854; color:white;">Artística</th>
+                            <th style="background-color: #C80854; color:white;">Física</th>
+                            <th style="background-color: #C80854; color:white;">Edu. Fe</th>
+                            <th style="background-color: #C80854; color:white;">Moral</th>
+                            <th style="background-color: #C80854; color:white;">Computación</th>
+                            <th style="background-color: #C80854; color:white;">Conducta</th>
+                   
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
  </div>
 
 <div id="modalNotas" class="ui tiny modal">
@@ -476,7 +531,7 @@
  <script src="./res/tablas/tablaNotasCompu.js"></script>
  <script src="./res/tablas/tablaNotasFisica.js"></script>
  <script src="./res/tablas/tablaNotasConducta.js"></script>
-
+ <script src="./res/tablas/tablaColectorMes.js"></script>
  <script>
 
 $(document).ready(function(){
@@ -491,25 +546,66 @@ $(document).ready(function(){
     });
 
 $("#accion").change(function(){
+
+    $("#materias").dropdown('set selected', 'ninguno');
+   $("#mesMat").hide();
+   $("#colectorMes").hide();
+   $("#mesNotas").dropdown('set selected', 'ninguno');
+   $("#promedios").dropdown('set selected', 'ninguno');
+   $("#mesColectores").dropdown('set selected', 'ninguno');
+
 var acc = $(this).val();
 
 if(acc == 2){
  $("#sePro").hide();
  $("#nominaGe").hide();
    $("#seMat").show(1000);
-  
+   $("#mesCo").hide();
+   $("#colectorMes").hide();
 }
 if(acc == 3){
    $("#seMat").hide();
    $("#nominaGe").hide();
-   $("#sePro").show(1000);
-   $("#mesMat").hide(1000);
+  
+   
+   $("#mesMat").hide();
+   
+    $("#notasMatematicas").hide();
+    $("#notasLenguaje").hide();
+    $("#notasCiencias").hide();
+    $("#notasSociales").hide();
+    $("#notasIngles").hide();
+    $("#notasArtistica").hide();
+    $("#notasFe").hide();
+    $("#notasMoral").hide();
+    $("#notasInfo").hide();
+    $("#notasFisica").hide();
+    $("#notasConducta").hide();
+   
+    $("#sePro").show(1000);
 }
 if(acc == 1){
-   $("#seMat").hide(1000);
-   $("#sePro").hide(1000);
-   $("#nominaGe").show(1000);
-   $("#mesMat").hide(1000);
+   $("#seMat").hide();
+   $("#sePro").hide();
+   $("#colectorMes").hide();
+   $("#mesMat").hide();
+   $("#mesCo").hide();
+
+    $("#notasMatematicas").hide();
+    $("#notasLenguaje").hide();
+    $("#notasCiencias").hide();
+    $("#notasSociales").hide();
+    $("#notasIngles").hide();
+    $("#notasArtistica").hide();
+    $("#notasFe").hide();
+    $("#notasMoral").hide();
+    $("#notasInfo").hide();
+    $("#notasFisica").hide();
+    $("#notasConducta").hide();
+
+    $("#nominaGe").show(1000);
+    
+    
 }
 
 });
@@ -528,6 +624,12 @@ $("#materias").change(function(){
     $("#notasFisica").hide();
     $("#notasConducta").hide();
     $("#mesMat").show(1000);
+});
+
+
+$("#promedios").change(function(){
+    $("#mesCo").show(1000);
+    $("#mesColectores").dropdown('set selected', 'ninguno');
 });
 
 
@@ -1491,6 +1593,30 @@ $("#guardar").click(function(){
                 
             }); 
    
+});
+
+
+
+$("#mesColectores").change(function(){
+
+    
+     var d = new Date();
+var anio = d.getFullYear();
+
+     var mesR = $("#mesColectores option:selected").text();
+
+$(".mesVisto").text(mesR + '' +anio);
+
+var acc = $("#mesColectores").val();
+var grado = "1";
+
+    var tableFi = $('#dtColector').DataTable();
+        tableFi.destroy();
+        fitrarTablaColector(acc,anio,grado);
+
+       ;
+        $("#colectorMes").fadeIn(1000);
+        $("#dtColector").fadeIn(1000);
 });
  </script>
         
