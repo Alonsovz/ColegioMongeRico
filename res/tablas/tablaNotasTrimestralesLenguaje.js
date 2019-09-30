@@ -26,7 +26,7 @@ $(function() {
                 }
                 ,
                 {
-                    "data": "promLenguajeAb"             
+                    "data": "Promedio1"             
                 }
                 ,
                 {
@@ -42,7 +42,7 @@ $(function() {
                 }
                 ,
                 {
-                    "data": "promLenguajeAb"             
+                    "data": "Promedio2"             
                 }
                 ,
                 {
@@ -59,7 +59,11 @@ $(function() {
                 
                 ,
                 {
-                    "data": "promLenguajeAb"             
+                    "data": "Promedio3"             
+                }
+                ,
+                {
+                    "data": "PromedioF"             
                 }
             ],
             "order": [

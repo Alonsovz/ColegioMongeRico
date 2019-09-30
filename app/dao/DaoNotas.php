@@ -482,10 +482,111 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promLenguajeOctubre
+        ) as promLenguajeOctubre,
+
+
+
+        FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        ) 
+        ) / 3 ,2) as Promedio3 ,
         
+        FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
+        ) 
+        ) / 3,2) as Promedio2 ,
         
-        
+        FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
+        ) 
+        ) / 3 ,2) as Promedio1 ,
+
+
+
+
+       FORMAT( (
+
+            (
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
+        ) 
+        ) / 3 
+
+        + 
+
+        (
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
+        ) 
+        ) / 3
+
+        +
+
+        (
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        ) +
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        ) 
+        ) / 3
+
+        ) / 3 ,2) as PromedioF
+
         
         
         
@@ -505,6 +606,8 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
             $btnEliminar = '<button id=\"'.$fila["idAlumno"].'\" nombre =\"'.$fila["nombreAlumno"].'\"   class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.'"';
+
+          
 
             $object = substr_replace($object, $acciones, strlen($object) -1, 0);
 
