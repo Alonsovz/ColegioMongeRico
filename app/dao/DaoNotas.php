@@ -441,6 +441,82 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
     }
 
 
+    public function mostrarNotasTrimestralesLenguaje($anio = 0, $grado = 0) {
+        $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
+        ) as promLenguajeFe,
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
+        ) as promLenguajeMa,
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
+        ) as promLenguajeAb,
+        
+        
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
+        ) as promLenguajeMayo,
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
+        ) as promLenguajeJun,
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
+        ) as promLenguajeJul,
+        
+        
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) as promLenguajeAgosto,
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        ) as promLenguajeSep,
+        (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        ) as promLenguajeOctubre
+        
+        
+        
+        
+        
+        
+        FROM fichaalumno F
+        WHERE F.anio = '".$anio."' and f.grado=  ".$grado."
+        ";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        $_json = '';
+
+        while($fila = $resultado->fetch_assoc()) {
+
+            $object = json_encode($fila);
+
+            $btnEditar = '<button id=\"'.$fila["idAlumno"].'\"  nombre =\"'.$fila["nombreAlumno"].'\"   class=\"ui icon blue small button\" onclick=\"notas(this)\"><i class=\"edit icon\"></i> Ver</button>';
+            $btnEliminar = '<button id=\"'.$fila["idAlumno"].'\" nombre =\"'.$fila["nombreAlumno"].'\"   class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+
+            $acciones = ', "Acciones": "'.$btnEditar.'"';
+
+            $object = substr_replace($object, $acciones, strlen($object) -1, 0);
+
+            $_json .= $object.',';
+        }
+
+        $_json = substr($_json,0, strlen($_json) - 1);
+
+        return '{"data": ['.$_json .']}';
+    }
+
+
 
 
     public function guardarNotasLenguaje( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {

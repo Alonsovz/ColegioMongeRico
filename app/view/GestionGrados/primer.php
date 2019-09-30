@@ -56,13 +56,35 @@
                                         </select>
                                 </div>
 
+
+                               
+
                                 <div class="six wide field" id="sePro" style="display:none;">
                                         <label> Promedios: </label>
                                         <select name="promedios" id="promedios" class="ui dropdown">
                                         <option value="ninguno" set selected>Seleccione</option>
-                                        <option value="2">Mensuales</option>
-                                        <option value="3">Trimestrales</option>
-                                        <option value="4">Generales</option>                                        
+                                        <option value="1">Mensuales</option>
+                                        <option value="2">Trimestrales</option>
+                                        <option value="3">Generales</option>                                        
+                                        </select>
+                                </div>
+
+                                <div class="six wide field" id="triMat" style="display:none;">
+                                        <label> Materia a seleccionar: </label>
+                                        <select name="materiasTri" id="materiasTri" class="ui dropdown">
+                                        <option value="ninguno" set selected>Seleccione</option>
+                                        <option value="1">Lenguaje</option>
+                                        <option value="2">Matemáticas</option>
+                                        <option value="3">Ciencias Naturales</option>
+                                        <option value="4">Estudios Sociales</option>
+                                        <option value="5">Íngles</option>
+                                        <option value="6">Artística</option>
+                                        <option value="7">Educación en la Fe</option>
+                                        <option value="8">Moral</option>
+                                        <option value="9">Computación</option>
+                                        <option value="10">Educación Física</option>
+                                        <option value="11">Conducta</option>
+                                        
                                         </select>
                                 </div>
                                 <div class="six wide field" id="mesMat" style="display:none;">
@@ -104,7 +126,7 @@
                 <br>
             </form>
             
-    <div id="nominaGe">
+    <div id="nominaGe" style="">
             <h2><i class="file icon"></i>Nómina general</h2>
             <div class="ui divider"></div>
             <div class="row">
@@ -484,6 +506,57 @@
         </div>
     </div>
 
+
+    
+    <div id="trimestralesL" style="display:none">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Lenguaje</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+            <div class="sixteen wide column">
+                <table id="dtTrimestralesLenguaje" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #00AFFE; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #007CAD; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #FF532B; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #93C9FF;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #93C9FF;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #8490B6;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #93C9FF;color:black;">Prom.</th> 
+                       
+                          </tr>
+
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+
+
  </div>
 
 <div id="modalNotas" class="ui tiny modal">
@@ -532,6 +605,7 @@
  <script src="./res/tablas/tablaNotasFisica.js"></script>
  <script src="./res/tablas/tablaNotasConducta.js"></script>
  <script src="./res/tablas/tablaColectorMes.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesLenguaje.js"></script>
  <script>
 
 $(document).ready(function(){
@@ -546,13 +620,15 @@ $(document).ready(function(){
     });
 
 $("#accion").change(function(){
-
+    $("#trimestralesL").hide();
     $("#materias").dropdown('set selected', 'ninguno');
    $("#mesMat").hide();
    $("#colectorMes").hide();
    $("#mesNotas").dropdown('set selected', 'ninguno');
    $("#promedios").dropdown('set selected', 'ninguno');
    $("#mesColectores").dropdown('set selected', 'ninguno');
+   $("#triMat").hide();
+    $("#materiasTri").dropdown('set selected', 'ninguno');
 
 var acc = $(this).val();
 
@@ -628,8 +704,51 @@ $("#materias").change(function(){
 
 
 $("#promedios").change(function(){
-    $("#mesCo").show(1000);
-    $("#mesColectores").dropdown('set selected', 'ninguno');
+    var vista = $(this).val();
+    
+
+    if(vista == 1){
+        $("#trimestralesL").hide();
+        $("#triMat").hide();
+    
+
+
+        $("#mesCo").show(1000);
+        $("#mesColectores").dropdown('set selected', 'ninguno');
+
+
+    
+
+    } else if(vista == 2){
+        $("#colectorMes").hide();
+
+        $("#mesCo").hide();
+   
+        $("#triMat").show(1000);
+     $("#materiasTri").dropdown('set selected', 'ninguno');
+
+
+    
+    }
+    
+});
+
+$("#materiasTri").change(function(){
+ var ver = $(this).val();
+
+ var d = new Date();
+var anio = d.getFullYear();
+var grado = "1";
+
+ if(ver == 1){
+    filtrarTablaTrimestreLenguaje(anio,grado);
+    var table = $('#dtTrimestralesLenguaje').DataTable();
+        table.destroy();
+    $("#trimestralesL").fadeIn(1000);
+        $("#dtTrimestralesLenguaje").fadeIn(1000);
+ }else{
+
+ }
 });
 
 
@@ -1603,7 +1722,11 @@ $("#mesColectores").change(function(){
      var d = new Date();
 var anio = d.getFullYear();
 
-     var mesR = $("#mesColectores option:selected").text();
+if($(this) .val() == "ninguno"){
+
+}else{
+
+    var mesR = $("#mesColectores option:selected").text();
 
 $(".mesVisto").text(mesR + '' +anio);
 
@@ -1617,6 +1740,9 @@ var grado = "1";
        ;
         $("#colectorMes").fadeIn(1000);
         $("#dtColector").fadeIn(1000);
+}
+
+     
 });
  </script>
         
