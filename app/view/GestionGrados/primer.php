@@ -546,8 +546,8 @@
                         <th style="text-align:center;background-color: #93C9FF;color:black;">Prom.</th> 
                        
                           </tr>
-
-                    <tbody>
+                    </thead>
+                    <tbody style="text-align:center">
                     </tbody>
                 </table>
             </div>
