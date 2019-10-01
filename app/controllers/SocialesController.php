@@ -62,6 +62,18 @@ class SocialesController extends ControladorBase {
     
     }
 
+
+    public function mostrarNotasTrimestralesSociales() {
+        $dao = new DaoNotas();
+       
+        
+        $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
+        $grado = (isset($_REQUEST['grado']))? $_REQUEST['grado']:0;
+        
+        echo $dao->mostrarNotasTrimestralesSociales($anio,$grado);
+    
+    }
+
     public function guardarNotas(){
         $id = $_REQUEST["id"];
         $nota1 = $_REQUEST["nota1"];

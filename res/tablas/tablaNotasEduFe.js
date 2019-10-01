@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasEduFe.column(0).visible(false);
+         //tablaNotasEduFe.column(0).visible(false);
     }
 });
 }

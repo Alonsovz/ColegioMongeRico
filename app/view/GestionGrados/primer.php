@@ -25,7 +25,10 @@
             </div>
 </div>
             <br><hr><br>
-            <form class="ui form" style="font-size:16px;background-color:#DBDDDD">
+            <form class="ui form" style="font-size:16px;background-color:#DBDDDD;
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);">
                 <div class="field" style="margin-left: 10px;margin-right: 10px;">
                         <div class="fields">
                                 <div class="six wide field">
@@ -46,7 +49,7 @@
                                         <option value="3">Ciencias Naturales</option>
                                         <option value="4">Estudios Sociales</option>
                                         <option value="5">Íngles</option>
-                                        <option value="6">Artística</option>
+                                        <option value="6">Educación Artística</option>
                                         <option value="7">Educación en la Fe</option>
                                         <option value="8">Moral</option>
                                         <option value="9">Computación</option>
@@ -78,7 +81,7 @@
                                         <option value="3">Ciencias Naturales</option>
                                         <option value="4">Estudios Sociales</option>
                                         <option value="5">Íngles</option>
-                                        <option value="6">Artística</option>
+                                        <option value="6">Educación Artística</option>
                                         <option value="7">Educación en la Fe</option>
                                         <option value="8">Moral</option>
                                         <option value="9">Computación</option>
@@ -126,11 +129,15 @@
                 <br>
             </form>
             
-    <div id="nominaGe" style="">
+    <br><br>            
+    <div id="nominaGe" style="background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
             <h2><i class="file icon"></i>Nómina general</h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNomina" class="ui selectable very compact celled table" style="width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -150,14 +157,17 @@
     </div>
 
     <br>
-    <div id="notasLenguaje" style="display:none">
+    <div id="notasLenguaje" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Lenguaje del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasLenguaje" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -179,14 +189,17 @@
     </div>
 
 
-    <div id="notasMatematicas" style="display:none">
+    <div id="notasMatematicas" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de matematicas del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasMatematicas" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -208,14 +221,17 @@
     </div>
 
 
-    <div id="notasCiencias" style="display:none">
+    <div id="notasCiencias" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Ciencias Naturales del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasCiencias" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -237,14 +253,17 @@
     </div>
 
 
-    <div id="notasSociales" style="display:none">
+    <div id="notasSociales" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Estudios Sociales del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasSociales" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -266,14 +285,17 @@
     </div>
 
 
-    <div id="notasIngles" style="display:none">
+    <div id="notasIngles" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Ingles del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasIngles" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -295,14 +317,17 @@
     </div>
 
 
-    <div id="notasArtistica" style="display:none">
+    <div id="notasArtistica" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Educación Artística del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasArtistica" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -324,14 +349,17 @@
     </div>
 
 
-    <div id="notasFe" style="display:none">
+    <div id="notasFe" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Educación en la Fe del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasFe" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -353,14 +381,17 @@
     </div>
 
 
-    <div id="notasMoral" style="display:none">
+    <div id="notasMoral" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Moral del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasMoral" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -383,14 +414,17 @@
 
 
 
-    <div id="notasInfo" style="display:none">
+    <div id="notasInfo" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Computación del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasInfo" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -412,14 +446,17 @@
     </div>
 
 
-    <div id="notasFisica" style="display:none">
+    <div id="notasFisica" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Educación Física del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasFisica" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -441,14 +478,17 @@
     </div>
 
 
-    <div id="notasConducta" style="display:none">
+    <div id="notasConducta" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas de Conducta del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtNotasConducta" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -471,14 +511,17 @@
 
 
 
-    <div id="colectorMes" style="display:none">
+    <div id="colectorMes" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Colector de notas de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtColector" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -508,27 +551,30 @@
 
 
     
-    <div id="trimestralesL" style="display:none">
+    <div id="trimestralesL" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
     <h2><i class="file icon"></i>Notas Trimestrales  de Lenguaje</h2>
             <div class="ui divider"></div>
             <div class="row">
-            <div class="sixteen wide column">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtTrimestralesLenguaje" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                     
                     
                     
                         <tr>
-                        <th style="background-color: #00AFFE; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #007CAD; color:white;text-align:center" rowspan="2">N°</th>
                         <th style="background-color: #007CAD; color:white;text-align:center" rowspan="2">Alumn@</th>
                             <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">1er Trimestre</th>
                             <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">2do Trimestre</th>
                             <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">3er Trimestre</th>
                          
-                            <th style="background-color: #FF532B; color:white;text-align:center" rowspan="2">Prom F</th>
+                            <th style="background-color: #1D0280; color:white;text-align:center" rowspan="2">Prom F</th>
                         </tr>
 
                         <tr > 
@@ -554,7 +600,512 @@
         </div>
     </div>
 
+
+
+    <div id="trimestralesM" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Matemáticas</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesMate" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #02AAD8; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #02AAD8; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #1D0280; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #1D0280; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #46EBA9;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #46EBA9;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #088C8A;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #46EBA9;color:black;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="trimestralesC" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Ciencias Naturales</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesCiencias" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #1D8031; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #1D8031; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #0F4018; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #0F4018; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #0F4018; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #0F4018; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #72FC80;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #72FC80;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #2CBF49;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #72FC80;color:black;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     
+    <div id="trimestralesS" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Estudios Sociales</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesSociales" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #0E7FA6; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #0E7FA6; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #001747; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #001747; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #001747; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #001747; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #70D6BC;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #70D6BC;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #138C6B;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #70D6BC;color:black;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="trimestralesI" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Íngles</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesIngles" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #0E7FA6; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #0E7FA6; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #001747; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #001747; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #001747; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #001747; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #FF6700;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #FF6700;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #FF8837;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #FF6700;color:white;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="trimestralesArt" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Educación Artística</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesArtistica" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #002E40; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #002E40; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #2A5769; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #2A5769; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #2A5769; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #2A5769; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #FABD4A;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #FABD4A;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #FA9600;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #FABD4A;color:black;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="trimestralesFe" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Educación en la Fe</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+            <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesFe" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #002736; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #002736; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #B35C15; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #B35C15; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #B35C15; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #B35C15; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #F24416;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #FFBF33;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #FFBF33;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #FFBF33;color:black;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="trimestralesMo" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Moral</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesMoral" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #1C1919; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #1C1919; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #403D3C; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #403D3C; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #403D3C; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #403D3C; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #456F74;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #456F74;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #456F74;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #EB5937;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #456F74;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #456F74;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #456F74;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #EB5937;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #456F74;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #456F74;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #456F74;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #EB5937;color:white;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="trimestralesCo" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Computación</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesCompu" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #403952; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #403952; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #34133A; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #34133A; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #34133A; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #34133A; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #C497D4;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #C497D4;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #7A0099;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #C497D4;color:black;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="trimestralesFi" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Educación Física</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesFisica" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #403952; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #403952; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #341358; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #341358; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #341358; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #341358; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #F27999;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #F27999;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #8B3A5A;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #F27999;color:white;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="trimestralesCon" style="display:none;background-color:#D8D8D8;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
+    <hr>
+      
+
+    <h2><i class="file icon"></i>Notas Trimestrales  de Conducta</h2>
+            <div class="ui divider"></div>
+            <div class="row">
+           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesConducta" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                    <thead>
+                    
+                    
+                    
+                        <tr>
+                        <th style="background-color: #2D4A7F; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #2D4A7F; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #07317F; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #07317F; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #07317F; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                         
+                            <th style="background-color: #07317F; color:white;text-align:center" rowspan="2">Prom F</th>
+                        </tr>
+
+                        <tr > 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #5A93FF;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #5A93FF;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #0B4ECC;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #5A93FF;color:white;">Prom.</th> 
+                       
+                          </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 
  </div>
@@ -606,6 +1157,16 @@
  <script src="./res/tablas/tablaNotasConducta.js"></script>
  <script src="./res/tablas/tablaColectorMes.js"></script>
  <script src="./res/tablas/tablaNotasTrimestralesLenguaje.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesMatematicas.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesCiencias.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesSociales.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesIngles.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesArtistica.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesFe.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesMoral.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesCompu.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesFisica.js"></script>
+ <script src="./res/tablas/tablaNotasTrimestralesConducta.js"></script>
  <script>
 
 $(document).ready(function(){
@@ -621,6 +1182,17 @@ $(document).ready(function(){
 
 $("#accion").change(function(){
     $("#trimestralesL").hide();
+    $("#trimestralesM").hide();
+    $("#trimestralesC").hide();
+    $("#trimestralesS").hide();
+    $("#trimestralesI").hide();
+    $("#trimestralesArt").hide();
+    $("#trimestralesFe").hide();
+    $("#trimestralesMo").hide();
+    $("#trimestralesCo").hide();
+    $("#trimestralesFi").hide();
+    $("#trimestralesCon").hide();
+
     $("#materias").dropdown('set selected', 'ninguno');
    $("#mesMat").hide();
    $("#colectorMes").hide();
@@ -710,8 +1282,16 @@ $("#promedios").change(function(){
     if(vista == 1){
         $("#trimestralesL").hide();
         $("#triMat").hide();
-    
-
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
 
         $("#mesCo").show(1000);
         $("#mesColectores").dropdown('set selected', 'ninguno');
@@ -744,9 +1324,232 @@ var grado = "1";
     filtrarTablaTrimestreLenguaje(anio,grado);
     var table = $('#dtTrimestralesLenguaje').DataTable();
         table.destroy();
-    $("#trimestralesL").fadeIn(1000);
+
+        $("#trimestralesL").fadeIn(1000);
         $("#dtTrimestralesLenguaje").fadeIn(1000);
- }else{
+
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+ }
+ else if(ver == 2){
+    filtrarTablaTrimestreMate(anio,grado);
+
+    var table = $('#dtTrimestralesMate').DataTable();
+        table.destroy();
+
+         $("#trimestralesM").fadeIn(1000);
+        $("#dtTrimestralesMate").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+ }
+
+ else if(ver == 3){
+    filtrarTablaTrimestreCiencias(anio,grado);
+
+    var table = $('#dtTrimestralesCiencias').DataTable();
+        table.destroy();
+
+         $("#trimestralesC").fadeIn(1000);
+        $("#dtTrimestralesCiencias").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+ }
+ 
+ else if(ver == 4){
+    filtrarTablaTrimestreSociales(anio,grado);
+
+    var table = $('#dtTrimestralesSociales').DataTable();
+        table.destroy();
+
+         $("#trimestralesS").fadeIn(1000);
+        $("#dtTrimestralesSociales").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+ }
+
+ else if(ver == 5){
+    filtrarTablaTrimestreIngles(anio,grado);
+
+    var table = $('#dtTrimestralesIngles').DataTable();
+        table.destroy();
+
+         $("#trimestralesI").fadeIn(1000);
+        $("#dtTrimestralesIngles").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+ }
+
+ else if(ver == 6){
+    filtrarTablaTrimestreArtistica(anio,grado);
+
+    var table = $('#dtTrimestralesArtistica').DataTable();
+        table.destroy();
+
+         $("#trimestralesArt").fadeIn(1000);
+        $("#dtTrimestralesArtistica").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+ }
+
+
+ else if(ver == 7){
+    filtrarTablaTrimestreFe(anio,grado);
+
+    var table = $('#dtTrimestralesFe').DataTable();
+        table.destroy();
+
+         $("#trimestralesFe").fadeIn(1000);
+        $("#dtTrimestralesFe").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+         }
+
+
+ else if(ver == 8){
+    filtrarTablaTrimestreMoral(anio,grado);
+
+    var table = $('#dtTrimestralesMoral').DataTable();
+        table.destroy();
+
+         $("#trimestralesMo").fadeIn(1000);
+        $("#dtTrimestralesMoral").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+ }
+
+ else if(ver == 9){
+    filtrarTablaTrimestreCompu(anio,grado);
+
+    var table = $('#dtTrimestralesCompu').DataTable();
+        table.destroy();
+
+         $("#trimestralesCo").fadeIn(1000);
+        $("#dtTrimestralesCompu").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesFi").hide();
+        $("#trimestralesCon").hide();
+ }
+
+ else if(ver == 10){
+    filtrarTablaTrimestreFisica(anio,grado);
+
+    var table = $('#dtTrimestralesFisica').DataTable();
+        table.destroy();
+
+         $("#trimestralesFi").fadeIn(1000);
+        $("#dtTrimestralesFisica").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesCon").hide();
+ }
+ else if(ver == 11){
+    filtrarTablaTrimestreConducta(anio,grado);
+
+    var table = $('#dtTrimestralesConducta').DataTable();
+        table.destroy();
+
+         $("#trimestralesCon").fadeIn(1000);
+        $("#dtTrimestralesConducta").fadeIn(1000);
+
+        $("#trimestralesL").hide();
+        $("#trimestralesM").hide();
+        $("#trimestralesC").hide();
+        $("#trimestralesS").hide();
+        $("#trimestralesI").hide();
+        $("#trimestralesArt").hide();
+        $("#trimestralesFe").hide();
+        $("#trimestralesMo").hide();
+        $("#trimestralesCo").hide();
+        $("#trimestralesFi").hide();
+ }
+ else{
 
  }
 });

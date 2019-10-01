@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasSociales.column(0).visible(false);
+        // tablaNotasSociales.column(0).visible(false);
     }
 });
 }

@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasFisica.column(0).visible(false);
+        // tablaNotasFisica.column(0).visible(false);
     }
 });
 }

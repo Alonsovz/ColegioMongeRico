@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasCiencias.column(0).visible(false);
+        // tablaNotasCiencias.column(0).visible(false);
     }
 });
 }

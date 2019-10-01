@@ -64,6 +64,17 @@ class FisicaController extends ControladorBase {
     
     }
 
+    public function mostrarNotasTrimestralesFisica() {
+        $dao = new DaoNotas();
+       
+        
+        $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
+        $grado = (isset($_REQUEST['grado']))? $_REQUEST['grado']:0;
+        
+        echo $dao->mostrarNotasTrimestralesFisica($anio,$grado);
+    
+    }
+
 
     public function guardarNotas(){
         $id = $_REQUEST["id"];

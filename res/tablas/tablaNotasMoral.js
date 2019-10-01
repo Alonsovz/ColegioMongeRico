@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasMoral.column(0).visible(false);
+       //  tablaNotasMoral.column(0).visible(false);
     }
 });
 }

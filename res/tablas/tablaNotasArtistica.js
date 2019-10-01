@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasArtistica.column(0).visible(false);
+         //tablaNotasArtistica.column(0).visible(false);
     }
 });
 }

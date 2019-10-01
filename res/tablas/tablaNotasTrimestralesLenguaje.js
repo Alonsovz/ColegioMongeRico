@@ -16,13 +16,13 @@ $(function() {
                 },
                
                 {
-                    "data": "promLenguajeFe"             
+                    "data": "promFe"             
                 },
                 {
-                    "data": "promLenguajeMa"             
+                    "data": "promMa"             
                 },
                 {
-                    "data": "promLenguajeAb"             
+                    "data": "promAb"             
                 }
                 ,
                 {
@@ -30,15 +30,15 @@ $(function() {
                 }
                 ,
                 {
-                    "data": "promLenguajeMayo"             
+                    "data": "promMayo"             
                 }
                 ,
                 {
-                    "data": "promLenguajeJun"             
+                    "data": "promJun"             
                 }
                 ,
                 {
-                    "data": "promLenguajeJul"             
+                    "data": "promJul"             
                 }
                 ,
                 {
@@ -46,15 +46,15 @@ $(function() {
                 }
                 ,
                 {
-                    "data": "promLenguajeAgosto"             
+                    "data": "promAgosto"             
                 }
                 ,
                 {
-                    "data": "promLenguajeSep"             
+                    "data": "promSep"             
                 }
                 ,
                 {
-                    "data": "promLenguajeOctubre"             
+                    "data": "promOctubre"             
                 }
                 
                 ,
@@ -96,7 +96,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasTrimestralesLenguaje.column(0).visible(false);
+         //tablaNotasTrimestralesLenguaje.column(0).visible(false);
     }
 });
 }

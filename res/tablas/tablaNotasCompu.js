@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasCompu.column(0).visible(false);
+        // tablaNotasCompu.column(0).visible(false);
     }
 });
 }

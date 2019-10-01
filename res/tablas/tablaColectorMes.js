@@ -79,7 +79,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaColectorMes.column(0).visible(false);
+        // tablaColectorMes.column(0).visible(false);
     }
 });
 }

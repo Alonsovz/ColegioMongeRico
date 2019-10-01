@@ -63,6 +63,17 @@ class ArtisticaController extends ControladorBase {
     
     }
 
+    public function mostrarNotasTrimestralesArtistica() {
+        $dao = new DaoNotas();
+       
+        
+        $anio = (isset($_REQUEST['anio']))? $_REQUEST['anio']:0;
+        $grado = (isset($_REQUEST['grado']))? $_REQUEST['grado']:0;
+        
+        echo $dao->mostrarNotasTrimestralesArtistica($anio,$grado);
+    
+    }
+
 
     public function guardarNotas(){
         $id = $_REQUEST["id"];

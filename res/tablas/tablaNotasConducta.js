@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasConducta.column(0).visible(false);
+         //tablaNotasConducta.column(0).visible(false);
     }
 });
 }

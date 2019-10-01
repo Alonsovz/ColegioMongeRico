@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNotasMatematicas.column(0).visible(false);
+         //tablaNotasMatematicas.column(0).visible(false);
     }
 });
 }

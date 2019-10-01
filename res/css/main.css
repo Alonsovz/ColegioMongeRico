@@ -321,10 +321,30 @@ select:-webkit-autofill:focus {
 }
 
 td{
-    background: #DBDDDD;
-   
+    background: white;
+    border: 1px solid black;
 }
+
+tbody{
+    border: 1px solid black;
+    text-align: center;
+}
+
+thead{
+    text-align: center;
+}
+
+tr{
+    text-align: center;
+}
+
+tbody td:hover{
+    color: white;
+    background: #333;
+}
+
 
 th{
     text-align: center;
+    
 }
