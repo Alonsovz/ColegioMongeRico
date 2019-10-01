@@ -10,8 +10,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresLenguaje($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasLenguaje n
+        select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasLenguaje n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -41,8 +42,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresMatematicas($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasMatematica n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasMatematica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -73,8 +75,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresCiencias($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasCiencias n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasCiencias n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -105,8 +108,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresSociales($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasSociales n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasSociales n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -137,8 +141,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresIngles($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasIngles n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasIngles n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -169,8 +174,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresArtistica($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasArtistica n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasArtistica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -201,8 +207,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresEduFe($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasEduFe n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasEduFe n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -233,8 +240,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresMoral($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasMoral n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasMoral n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -265,8 +273,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresInfo($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasCompu n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasCompu n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -297,8 +306,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresFisica($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasFisica n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasFisica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -328,8 +338,9 @@ class DaoNotas extends DaoBase {
 
     public function mostrarNotasColectoresConducta($mes = 0, $anio = 0, $grado = 0) {
         $_query = "
-        select n.*, f.nombre as nombreAlumno,
-        format((n.nota1 + n.nota2 + n.nota3)/ 3,2) as promedio from notasConducta n
+       select n.*, round(n.nota1)  as nota1 , round(n.nota2)  as nota2 ,round(n.nota3)  as nota3 ,
+         f.nombre as nombreAlumno,
+        ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasConducta n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
         where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
         ";
@@ -364,54 +375,54 @@ class DaoNotas extends DaoBase {
         
 
 SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-(
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioLenguaje,
+)) as promedioLenguaje,
 
-(
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasmatematica n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioMate,
+)) as promedioMate,
 
-(
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasciencias n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioCiencias,
+)) as promedioCiencias,
 
-(
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notassociales n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioSociales,
+)) as promedioSociales,
 
-(
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasingles n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioIngles,
-(
+)) as promedioIngles,
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasartistica n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioArtistica,
-(
+)) as promedioArtistica,
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasfisica n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioFisica,
-(
+)) as promedioFisica,
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasedufe n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioFe,
-(
+)) as promedioFe,
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasmoral n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioMoral,
-(
+)) as promedioMoral,
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notascompu n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioCompu,
-(
+)) as promedioCompu,
+round((
  select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasconducta n
         where n.idAlumno = F.idAlumno and n.mes = '".$mes."' and n.anio = '".$anio."'
-) as promedioConducta
+)) as promedioConducta
 
 FROM fichaalumno F
 WHERE F.anio = '".$anio."' and f.grado= ".$grado."
@@ -443,65 +454,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesLenguaje($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -514,9 +525,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -529,12 +540,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -585,7 +596,7 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -624,65 +635,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesMatematicas($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -695,9 +706,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -710,12 +721,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -727,7 +738,7 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMatematica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
         ) / 3 
@@ -766,7 +777,7 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -805,65 +816,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesCiencias($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -876,9 +887,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -891,12 +902,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -942,13 +953,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCiencias n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -985,65 +995,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesSociales($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -1056,9 +1066,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -1071,12 +1081,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -1122,13 +1132,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasSociales n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -1167,65 +1176,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesIngles($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -1238,9 +1247,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -1253,12 +1262,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -1304,13 +1313,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasIngles n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -1347,65 +1355,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesArtistica($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -1418,9 +1426,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -1433,12 +1441,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -1484,13 +1492,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasArtistica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -1527,65 +1534,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesFe($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -1598,9 +1605,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -1613,12 +1620,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -1664,13 +1671,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasEduFe n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -1707,66 +1713,66 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
 
     public function mostrarNotasTrimestralesMoral($anio = 0, $grado = 0) {
-        $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+       $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -1779,9 +1785,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -1794,12 +1800,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -1845,13 +1851,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasMoral n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -1888,65 +1893,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesCompu($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -1959,9 +1964,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -1974,12 +1979,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -2025,13 +2030,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasCompu n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -2069,65 +2073,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesFisica($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -2140,9 +2144,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -2155,12 +2159,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -2206,13 +2210,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasFisica n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
@@ -2251,65 +2254,65 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
 
     public function mostrarNotasTrimestralesConducta($anio = 0, $grado = 0) {
         $_query = "SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
-        (
+        round( (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
-        ) as promFe,
-        (
+        ) )as promFe,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Marzo' and n.anio = '".$anio."'
-        ) as promMa,
-        (
+        )) as promMa,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
-        ) as promAb,
+        )) as promAb,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
-        ) as promMayo,
-        (
+        )) as promMayo,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Junio' and n.anio = '".$anio."'
-        ) as promJun,
-        (
+        )) as promJun,
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
-        ) as promJul,
+        )) as promJul,
         
         
-        (
+        round((
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) as promAgosto,
+        )) as promAgosto,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
+                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
+        )) as promSep,
+        round((
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
+                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
+        )) as promOctubre,
+
+
+
+       round( FORMAT((
+            (
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
+                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
+        ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
-        ) as promSep,
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
-                where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
-        ) as promOctubre,
-
-
-
-        FORMAT((
-            (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
-                where n.idAlumno = F.idAlumno and n.mes = 'Agosto' and n.anio = '".$anio."'
-        ) +
-        (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
-                where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio3 ,
+        ) / 3 ,2) ) as Promedio3 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Mayo' and n.anio = '".$anio."'
@@ -2322,9 +2325,9 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Julio' and n.anio = '".$anio."'
         ) 
-        ) / 3,2) as Promedio2 ,
+        ) / 3,2) ) as Promedio2 ,
         
-        FORMAT((
+       round( FORMAT((
             (
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Febrero' and n.anio = '".$anio."'
@@ -2337,12 +2340,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
          select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Abril' and n.anio = '".$anio."'
         ) 
-        ) / 3 ,2) as Promedio1 ,
+        ) / 3 ,2) ) as Promedio1 ,
 
 
 
 
-       FORMAT( (
+      round( FORMAT( (
 
             (
             (
@@ -2388,13 +2391,12 @@ WHERE F.anio = '".$anio."' and f.grado= ".$grado."
                 where n.idAlumno = F.idAlumno and n.mes = 'Septiembre' and n.anio = '".$anio."'
         ) +
         (
-         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta
-          n
+         select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasConducta n
                 where n.idAlumno = F.idAlumno and n.mes = 'Octubre' and n.anio = '".$anio."'
         ) 
         ) / 3
 
-        ) / 3 ,2) as PromedioF
+        ) / 3 ,2) ) as PromedioF
 
         
         
