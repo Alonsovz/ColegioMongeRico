@@ -53,7 +53,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         tablaNominaPrimer.column(0).visible(false);
+         //tablaNominaPrimer.column(0).visible(false);
     }
 
 });
