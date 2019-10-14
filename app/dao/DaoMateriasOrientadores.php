@@ -12,7 +12,8 @@ class DaoMateriasOrientadores extends DaoBase {
     {
         $_query = "select d.*,u.nombre as nomO,u.apellido as apeO,s.nombre as nomOM,s.apellido as apeOM,a.nombre as nomOS,a.apellido as apeOS,
         r.nombre as nomOC,r.apellido as apeOC,i.nombre as nomOL,i.apellido as apeOL,o.nombre as nomOI,o.apellido as apeOI,f.nombre as nomOAR,f.apellido as apeOAR,
-        c.nombre as nomOMO,c.apellido as apeOMO,w.nombre as nomOIN,w.apellido as apeOIN,x.nombre as nomOFIS,x.apellido as apeOFIS from datosGrados d
+        c.nombre as nomOMO,c.apellido as apeOMO,w.nombre as nomOIN,w.apellido as apeOIN,x.nombre as nomOFIS,x.apellido as apeOFIS,
+        v.nombre as nomOFE, v.apellido as apeOFe from datosGrados d
         inner join usuario u on u.codigoUsuario = d.orientador
         inner join usuario s on s.codigoUsuario = d.orientadorMate
         inner join usuario a on a.codigoUsuario = d.orientadorSoc
@@ -23,11 +24,10 @@ class DaoMateriasOrientadores extends DaoBase {
         inner join usuario c on c.codigoUsuario = d.orientadorMo
         inner join usuario w on w.codigoUsuario = d.orientadorInfo
         inner join usuario x on x.codigoUsuario = d.orientadorFis
+        inner join usuario v on v.codigoUsuario = v.orientadorFe
         where d.idGrado=".$this->objeto->getIdGrado();
 
         
-
-        $resultado = $this->con->ejecutar($_query);
 
         $resultado = $this->con->ejecutar($_query);
 
