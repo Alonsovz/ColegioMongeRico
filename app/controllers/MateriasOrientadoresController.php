@@ -110,6 +110,7 @@ class MateriasOrientadoresController extends ControladorBase {
        $dao->objeto->setOrientadorFis($_REQUEST["orientadorFis"]);
        $dao->objeto->setOrientadorInfo($_REQUEST["orientadorInfo"]);
        $dao->objeto->setOrientadorMo($_REQUEST["orientadorMo"]);
+       $dao->objeto->setOrientadorFe($_REQUEST["orientadorFe"]);
 
         echo $dao->guardarDatos();        
     }

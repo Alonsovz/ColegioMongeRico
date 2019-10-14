@@ -6,10 +6,24 @@ class Pagos extends ModeloBase{
     private $cuota;
     private $estado;
     private $talonario;
-    
+    private $fecha;
 
     public function __construct() {
 
+    }
+
+
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
+
+   
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+
+        return $this;
     }
 
     public function getIdGrado()

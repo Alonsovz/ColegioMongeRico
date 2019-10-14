@@ -12,6 +12,7 @@ class MateriasOrientadores extends ModeloBase{
     private $orientadorFi;
     private $orientadorMo;
     private $orientadorInfo;
+    private $orientadorFe;
     private $aula;
 
     public function __construct() {
@@ -221,6 +222,25 @@ class MateriasOrientadores extends ModeloBase{
 
         return $this;
     }
+
+
+    public function getOrientadorFe()
+    {
+        return $this->orientadorFe;
+    }
+
+    /**
+     * Set the value of codigoUsuario
+     *
+     * @return  self
+     */ 
+    public function setOrientadorFe($orientadorFe)
+    {
+        $this->orientadorFe = $orientadorFe;
+
+        return $this;
+    }
+
 
 }
 

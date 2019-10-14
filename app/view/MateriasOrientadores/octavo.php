@@ -11,6 +11,7 @@
   $query7 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
   $query8 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
   $query9 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
+  $query10 = $mysqli -> query ("select u.nombre as nom,u.apellido as ape,u.codigoUsuario as idUsuario from usuario u inner join rol r on r.codigoRol = u.codigoRol where u.idEliminado=1 and u.codigoRol=2;");
 
   
 ?>
@@ -18,19 +19,19 @@
         <div class="ui grid">
             <div class="row">
                     <div class="titulo">
-                    <a href="?1=MateriasOrientadoresController&2=prekinder" class="ui blue button" id="prekinder">Prekinder</a>
-                    <a href="?1=MateriasOrientadoresController&2=kinder" class="ui teal button" id="kinder">Kinder</a>
-                    <a href="?1=MateriasOrientadoresController&2=preparatoria" class="ui green button" id="prepa">Preparatoria</a>
-                    <a href="?1=MateriasOrientadoresController&2=primerGrado" class="ui red button" id="primer">1er Grado</a>
-                    <a href="?1=MateriasOrientadoresController&2=segundoGrado" class="ui orange button" id="segundo">2do Grado</a>
-                    <a href="?1=MateriasOrientadoresController&2=tercerGrado" class="ui yellow button" id="tercer">3er Grado</a>
-                    <a href="?1=MateriasOrientadoresController&2=cuartoGrado" class="ui purple button" id="cuarto">4to Grado</a>
-                    <a href="?1=MateriasOrientadoresController&2=quintoGrado" class="ui violet button" id="quinto">5to Grado</a>
-                    <a href="?1=MateriasOrientadoresController&2=sextoGrado" class="ui brown button" id="sexto">6to Grado</a>
-                    <a href="?1=MateriasOrientadoresController&2=septimoGrado" class="ui black button" id="septimo">7mo Grado</a>
-                    <a href="?1=MateriasOrientadoresController&2=octavoGrado" class="ui olive button" id="octavo">8vo Grado</a>
-                    <a href="?1=MateriasOrientadoresController&2=novenoGrado" class="ui gray button" id="noveno">9no Grado</a>
-                    <br><br>
+                    <a href="?1=MateriasOrientadoresController&2=prekinder" class="ui compact blue button" id="prekinder">Prekinder</a>
+                    <a href="?1=MateriasOrientadoresController&2=kinder" class="ui compact teal button" id="kinder">Kinder</a>
+                    <a href="?1=MateriasOrientadoresController&2=preparatoria" class="ui compact green button" id="prepa">Preparatoria</a>
+                    <a href="?1=MateriasOrientadoresController&2=primerGrado" class="ui compact red button" id="primer">1er Grado</a>
+                    <a href="?1=MateriasOrientadoresController&2=segundoGrado" class="ui compact orange button" id="segundo">2do Grado</a>
+                    <a href="?1=MateriasOrientadoresController&2=tercerGrado" class="ui compact yellow button" id="tercer">3er Grado</a>
+                    <a href="?1=MateriasOrientadoresController&2=cuartoGrado" class="ui compact purple button" id="cuarto">4to Grado</a>
+                    <a href="?1=MateriasOrientadoresController&2=quintoGrado" class="ui compact violet button" id="quinto">5to Grado</a>
+                    <a href="?1=MateriasOrientadoresController&2=sextoGrado" class="ui compact brown button" id="sexto">6to Grado</a>
+                    <a href="?1=MateriasOrientadoresController&2=septimoGrado" class="ui compact black button" id="septimo">7mo Grado</a>
+                    <a href="?1=MateriasOrientadoresController&2=octavoGrado" class="ui compact olive button" id="octavo">8vo Grado</a>
+                    <a href="?1=MateriasOrientadoresController&2=novenoGrado" class="ui compact gray button" id="noveno">9no Grado</a>
+                       <br><br>
                     <font color="#86B404" size="6px">
                     <i class="users icon"></i><i class="book icon"></i>
                     Asignación de materias y orientador de octavo grado</font>
@@ -42,7 +43,8 @@
         <form class="ui form" id="frmIzquierda">
             
         <div class="fields">
-                <div class="eight wide field" style="text-align:left; border: 2px solid #86B404; border-radius: 18px 18px 18px 18px;">
+                <div class="eight wide field" style="text-align:left; border: 2px solid #86B404;
+                 border-radius: 18px 18px 18px 18px;background-color:#DBDDDD">
                     
                         <div class="fields">
                            
@@ -165,7 +167,8 @@
                 <label style="font-size:20px; color:#fafafa;"> <i class="book icon"></i>Otras:</label>
                 </div>
                 </div>
-                <div class="eight wide field" style="text-align:left; border: 2px solid #86B404; border-radius: 18px 18px 18px 18px;">
+                <div class="eight wide field" style="text-align:left; border: 2px solid #86B404;
+                 border-radius: 18px 18px 18px 18px;background-color:#DBDDDD">
                 <br>
                 <hr>
                     
@@ -222,25 +225,20 @@
                         
                         
                         </div>
-                        <hr>
-                        <div class="fields">
-                        <div class="sixteen wide field">
-                                <br>
-                                <label style="font-size:20px;"> <i class="building icon"></i>Salón asignado:</label>
-                            </div>
-                        </div>
-                        <hr><br>
-                        <div class="fields">
-                        <div class="ten wide field">
-                                <label><i class="building icon"></i>Aula a asignar:</label>
-                                <select name="aulaAsig" id="aulaAsig" class="ui search dropdown">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                      
+                       
+                       <div class="eight wide field">
+                                <label><i class="book icon"></i>Educación en la fe:</label>
+                                <select name="orientadorFe" id="orientadorFE">
+                                
+                                <?php
+                                
+                                while ($valores = mysqli_fetch_array($query10)) {
+                                    echo '<option value="'.$valores["idUsuario"].'">'.utf8_encode($valores["nom"]).' '.utf8_encode($valores["ape"]).'</option>';
+                                }
+                                ?>
+                                   
                                 </select>
-                        </div>
                         </div>
 
                     
@@ -314,6 +312,7 @@ var app = new Vue({
            var orientadorInfo = $("#orientadorInfo").val();
            var orientadorFis = $("#orientadorFis").val();
            var orientadorMo = $("#orientadorMo").val();
+           var orientadorFe = $("#orientadorFe").val();
            var idGrado= 8;
           
 
@@ -332,6 +331,7 @@ var app = new Vue({
                     orientadorInfo : orientadorInfo,
                     orientadorFis : orientadorFis,
                     orientadorMo : orientadorMo,
+                    orientadorFe : orientadorFe,
                     idGrado : idGrado,
                     
                 },

@@ -122,9 +122,11 @@ class PagosController extends ControladorBase {
     public function pendienteVoucher(){
         $idAlumno = $_REQUEST["idAl"];
         $idCuota = $_REQUEST["idC"];
+        $fecha = $_REQUEST["fecha"];
 
         $dao = new DaoPagos();
         $dao->objeto->setIdAlumno($idAlumno);
+        $dao->objeto->setFecha($fecha);
 
         if($idCuota==1){
 
@@ -175,9 +177,11 @@ class PagosController extends ControladorBase {
     public function guardarPagoAde(){
         $idAlumno = $_REQUEST["idAl"];
         $idCuota = $_REQUEST["idC"];
+        $fecha = $_REQUEST["fecha"];
 
         $dao = new DaoPagos();
         $dao->objeto->setIdAlumno($idAlumno);
+        $dao->objeto->setFecha($fecha);
         if($idCuota==1){
 
             echo $dao->guardarPagoEnA();
@@ -231,9 +235,12 @@ class PagosController extends ControladorBase {
     public function guardarPagoAtr(){
         $idAlumno = $_REQUEST["idAl"];
         $idCuota = $_REQUEST["idC"];
+        $fecha = $_REQUEST["fecha"];
 
         $dao = new DaoPagos();
         $dao->objeto->setIdAlumno($idAlumno);
+        $dao->objeto->setFecha($fecha);
+        
         if($idCuota==1){
 
             echo $dao->guardarPagoEnAt();

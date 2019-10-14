@@ -47,7 +47,8 @@ class DaoMateriasOrientadores extends DaoBase {
          orientadorArt='".$this->objeto->getOrientadorArt()."',
          orientadorInfo='".$this->objeto->getOrientadorInfo()."',
          orientadorMo='".$this->objeto->getOrientadorMo()."',
-         orientadorFis='".$this->objeto->getOrientadorFis()."'
+         orientadorFis='".$this->objeto->getOrientadorFis()."',
+         orientadorFe='".$this->objeto->getOrientadorFe()."'
         where idGrado = ".$this->objeto->getIdGrado();
 
         $resultado = $this->con->ejecutar($_query);

@@ -9,19 +9,19 @@
         <div class="ui grid">
             <div class="row">
                 <div class="titulo">
-                        <a href="?1=PagosController&2=prekinder" class="ui blue button" id="prekinder">Prekinder</a>
-                        <a href="?1=PagosController&2=kinder" class="ui teal button" id="kinder">Kinder</a>
-                        <a href="?1=PagosController&2=preparatoria" class="ui green button" id="prepa">Preparatoria</a>
-                        <a href="?1=PagosController&2=primerGrado" class="ui red button" id="primer">1er Grado</a>
-                        <a href="?1=PagosController&2=segundoGrado" class="ui orange button" id="segundo">2do Grado</a>
-                        <a href="?1=PagosController&2=tercerGrado" class="ui yellow button" id="tercer">3er Grado</a>
-                        <a href="?1=PagosController&2=cuartoGrado" class="ui purple button" id="cuarto">4to Grado</a>
-                        <a href="?1=PagosController&2=quintoGrado" class="ui violet button" id="quinto">5to Grado</a>
-                        <a href="?1=PagosController&2=sextoGrado" class="ui brown button" id="sexto">6to Grado</a>
-                        <a href="?1=PagosController&2=septimoGrado" class="ui black button" id="septimo">7mo Grado</a>
-                        <a href="?1=PagosController&2=octavoGrado" class="ui olive button" id="octavo">8vo Grado</a>
-                        <a href="?1=PagosController&2=novenoGrado" class="ui gray button" id="noveno">9no Grado</a>
-                        <br><br>
+                <a href="?1=PagosController&2=prekinder" class="ui compact blue button" id="prekinder">Prekinder</a>
+                                <a href="?1=PagosController&2=kinder" class="ui compact teal button" id="kinder">Kinder</a>
+                                <a href="?1=PagosController&2=preparatoria" class="ui compact green button" id="prepa">Preparatoria</a>
+                                <a href="?1=PagosController&2=primerGrado" class="ui compact red button" id="primer">1er Grado</a>
+                                <a href="?1=PagosController&2=segundoGrado" class="ui compact orange button" id="segundo">2do Grado</a>
+                                <a href="?1=PagosController&2=tercerGrado" class="ui compact yellow button" id="tercer">3er Grado</a>
+                                <a href="?1=PagosController&2=cuartoGrado" class="ui compact purple button" id="cuarto">4to Grado</a>
+                                <a href="?1=PagosController&2=quintoGrado" class="ui compact violet button" id="quinto">5to Grado</a>
+                                <a href="?1=PagosController&2=sextoGrado" class="ui compact brown button" id="sexto">6to Grado</a>
+                                <a href="?1=PagosController&2=septimoGrado" class="ui compact black button" id="septimo">7mo Grado</a>
+                                <a href="?1=PagosController&2=octavoGrado" class="ui compact olive button" id="octavo">8vo Grado</a>
+                                <a href="?1=PagosController&2=novenoGrado" class="ui compact gray button" id="noveno">9no Grado</a>
+                                  <br><br>
                         <font color="#5A6CC6" size="6px">
                         <i class="file icon"></i><i class="dollar icon"></i>
                         Control de pagos Pre-Kinder</font>
@@ -142,14 +142,30 @@
 <br>
 <a id="name" style="font-size:17px;"></a>
 </div>
-<div class="content" style="margin:auto;">
+<div class="content" style="margin:auto;background-color:#DBDDDD">
+<form class="ui form">
+<div class="field">
+<div class="fields">
+<div class="four wide field"></div>
+<div class="eight wide field">
+    <label><i class="calendar icon"></i> Fecha de cobro </label>
+    <input type="date" name="fecha" id="fecha">
+    </div>
+  </div>
+  </div>
+</form>
+<br>
 <center>
 <button id="pagoNormal" class="ui black button"> <i class="close icon"></i> Pago Normal</button>
 <button id="pagoAde" class="ui blue button"> <i class="window close outline icon"></i> Pago adelantado</button>
 <button id="pagoAtra" class="ui red button"> <i class="window close outline icon"></i> Pago atrasado</button>
-<br><br>
+
+<br>
 <div class="ui divider"></div>
-<button id="pendiente" class="ui green button"> <i class="search icon"></i> Pendiente de recibir</button>
+<button id="pendiente" class="ui green button"> <i class="search icon">
+</i> Pendiente de recibir</button>
+
+
 <input type="hidden" id="idAlum" name="idAlum">
 <input type="hidden" id="idCuota" name="idCuota">
 </center>
@@ -630,6 +646,7 @@ Cancelar
  $("#pendiente").click(function(){
         var idAl = $("#idAlum").val();
         var idC = $("#idCuota").val();
+        var fecha = $("#fecha").val();
 
         alertify.confirm("¿Pendiente de recibir voucher del cobro del alumno/a : "+$("#name").text()+ "?",
             function(){
@@ -641,6 +658,7 @@ Cancelar
                 data: {
                    idAl: idAl,
                    idC: idC,
+                   fecha: fecha,
                 },
                 success: function(r) {
                     if(r == 1) {
@@ -672,7 +690,7 @@ Cancelar
  $("#pagoNormal").click(function(){
         var idAl = $("#idAlum").val();
         var idC = $("#idCuota").val();
-
+        var fecha = $("#fecha").val();
         alertify.confirm("¿Desea guardar el cobro al alumno/a : "+$("#name").text()+ "?",
             function(){
 
@@ -683,6 +701,7 @@ Cancelar
                 data: {
                    idAl: idAl,
                    idC: idC,
+                   fecha: fecha,
                 },
                 success: function(r) {
                     if(r == 1) {
@@ -717,7 +736,7 @@ Cancelar
  $("#pagoAde").click(function(){
         var idAl = $("#idAlum").val();
         var idC = $("#idCuota").val();
-
+        var fecha = $("#fecha").val();
         alertify.confirm("¿Desea guardar el cobro de manera adelantada al alumno/a : "+$("#name").text()+ "?",
             function(){
 
@@ -728,6 +747,7 @@ Cancelar
                 data: {
                    idAl: idAl,
                    idC: idC,
+                   fecha: fecha,
                 },
                 success: function(r) {
                     if(r == 1) {
@@ -761,7 +781,7 @@ Cancelar
  $("#pagoAtra").click(function(){
         var idAl = $("#idAlum").val();
         var idC = $("#idCuota").val();
-
+        var fecha = $("#fecha").val();
         alertify.confirm("¿Desea guardar el cobro de manera atrasada al alumno/a : "+$("#name").text()+ "?",
             function(){
 
@@ -772,6 +792,7 @@ Cancelar
                 data: {
                    idAl: idAl,
                    idC: idC,
+                   fecha:fecha,
                 },
                 success: function(r) {
                     if(r == 1) {
