@@ -254,7 +254,7 @@
                      
                          <div class="eight wide field">
                                 <label><i class="book icon"></i>Educación en la fe:</label>
-                                <select name="orientadorFe" id="orientadorFE">
+                                <select name="orientadorFe" id="orientadorFe">
                                 
                                 <?php
                                 

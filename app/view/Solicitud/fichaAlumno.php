@@ -1098,7 +1098,7 @@ $("#btnGuardarTodo").click(function(){
                 url: '?1=SolicitudController&2=guardarSolicitudAlumno',
                 data: datosFormulario,
                 success: function(r) {
-                    if(r == 11111) {
+if(r == 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111) {
                        
                         swal({
                             title: 'Registrado',

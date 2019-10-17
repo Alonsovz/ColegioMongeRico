@@ -356,9 +356,121 @@ class SolicitudController extends ControladorBase {
        echo $dao->registrarDatosResponsable();
         echo $dao->registrarOtrosDatos();
         echo $daoP->registrarPagos();
+        
+        echo $dao->guardarNotasLenguajeF();
+        echo $dao->guardarNotasLenguajeMar();
+        echo $dao->guardarNotasLenguajeAb();
+        echo $dao->guardarNotasLenguajeMay();
+        echo $dao->guardarNotasLenguajeJun();
+        echo $dao->guardarNotasLenguajeJul();
+        echo $dao->guardarNotasLenguajeAg();
+        echo $dao->guardarNotasLenguajeS();
+        echo $dao->guardarNotasLenguajeO();
+
+        echo $dao->guardarNotasMatematicaF();
+        echo $dao->guardarNotasMatematicaMar();
+        echo $dao->guardarNotasMatematicaAb();
+        echo $dao->guardarNotasMatematicaMay();
+        echo $dao->guardarNotasMatematicaJun();
+        echo $dao->guardarNotasMatematicaJul();
+        echo $dao->guardarNotasMatematicaAg();
+        echo $dao->guardarNotasMatematicaS();
+        echo $dao->guardarNotasMatematicaO();
+
+        echo $dao->guardarNotasSocialesF();
+        echo $dao->guardarNotasSocialesMar();
+        echo $dao->guardarNotasSocialesAb();
+        echo $dao->guardarNotasSocialesMay();
+        echo $dao->guardarNotasSocialesJun();
+        echo $dao->guardarNotasSocialesJul();
+        echo $dao->guardarNotasSocialesAg();
+        echo $dao->guardarNotasSocialesS();
+        echo $dao->guardarNotasSocialesO();
+
+        echo $dao->guardarNotasCienciasF();
+        echo $dao->guardarNotasCienciasMar();
+        echo $dao->guardarNotasCienciasAb();
+        echo $dao->guardarNotasCienciasMay();
+        echo $dao->guardarNotasCienciasJun();
+        echo $dao->guardarNotasCienciasJul();
+        echo $dao->guardarNotasCienciasAg();
+        echo $dao->guardarNotasCienciasS();
+        echo $dao->guardarNotasCienciasO();
+
+        echo $dao->guardarNotasInglesF();
+        echo $dao->guardarNotasInglesMar();
+        echo $dao->guardarNotasInglesAb();
+        echo $dao->guardarNotasInglesMay();
+        echo $dao->guardarNotasInglesJun();
+        echo $dao->guardarNotasInglesJul();
+        echo $dao->guardarNotasInglesAg();
+        echo $dao->guardarNotasInglesS();
+        echo $dao->guardarNotasInglesO();
+
+        echo $dao->guardarNotasArtisticaF();
+        echo $dao->guardarNotasArtisticaMar();
+        echo $dao->guardarNotasArtisticaAb();
+        echo $dao->guardarNotasArtisticaMay();
+        echo $dao->guardarNotasArtisticaJun();
+        echo $dao->guardarNotasArtisticaJul();
+        echo $dao->guardarNotasArtisticaAg();
+        echo $dao->guardarNotasArtisticaS();
+        echo $dao->guardarNotasArtisticaO();
+
+        echo $dao->guardarNotasMoralF();
+        echo $dao->guardarNotasMoralMar();
+        echo $dao->guardarNotasMoralAb();
+        echo $dao->guardarNotasMoralMay();
+        echo $dao->guardarNotasMoralJun();
+        echo $dao->guardarNotasMoralJul();
+        echo $dao->guardarNotasMoralAg();
+        echo $dao->guardarNotasMoralS();
+        echo $dao->guardarNotasMoralO();
+
+        echo $dao->guardarNotasFisicaF();
+        echo $dao->guardarNotasFisicaMar();
+        echo $dao->guardarNotasFisicaAb();
+        echo $dao->guardarNotasFisicaMay();
+        echo $dao->guardarNotasFisicaJun();
+        echo $dao->guardarNotasFisicaJul();
+        echo $dao->guardarNotasFisicaAg();
+        echo $dao->guardarNotasFisicaS();
+        echo $dao->guardarNotasFisicaO();
 
 
         
+     echo $dao->guardarNotasInfoF();
+     echo $dao->guardarNotasInfoMar();
+     echo $dao->guardarNotasInfoAb();
+     echo $dao->guardarNotasInfoMay();
+     echo $dao->guardarNotasInfoJun();
+     echo $dao->guardarNotasInfoJul();
+     echo $dao->guardarNotasInfoAg();
+     echo $dao->guardarNotasInfoS();
+     echo $dao->guardarNotasInfoO();
+
+     
+     echo $dao->guardarNotasEduFeF();
+        echo $dao->guardarNotasEduFeMar();
+        echo $dao->guardarNotasEduFeAb();
+        echo $dao->guardarNotasEduFeMay();
+        echo $dao->guardarNotasEduFeJun();
+        echo $dao->guardarNotasEduFeJul();
+        echo $dao->guardarNotasEduFeAg();
+        echo $dao->guardarNotasEduFeS();
+        echo $dao->guardarNotasEduFeO();
+
+        
+     echo $dao->guardarNotasConductaF();
+     echo $dao->guardarNotasConductaMar();
+     echo $dao->guardarNotasConductaAb();
+     echo $dao->guardarNotasConductaMay();
+     echo $dao->guardarNotasConductaJun();
+     echo $dao->guardarNotasConductaJul();
+     echo $dao->guardarNotasConductaAg();
+     echo $dao->guardarNotasConductaS();
+     echo $dao->guardarNotasConductaO();
+
     }
 
     public function guardarHermanos(){

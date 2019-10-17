@@ -65,7 +65,7 @@ orientadorArt int,
 orientadorMo int,
 orientadorInfo int,
 orientadorFis int,
-aula varchar(20)
+orientadorFe int
 );
 
 
@@ -399,6 +399,14 @@ create table notasConducta
     mes varchar(10),
     anio varchar(10)
 );
+
+
+create table anio(
+anio varchar(4)
+);
+
+insert into anio values('2019');
+
 
  insert into rol values(1,'Administrador/a');
 insert into rol values(2,'Maestro/a');

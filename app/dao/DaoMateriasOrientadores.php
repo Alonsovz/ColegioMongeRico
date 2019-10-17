@@ -24,7 +24,7 @@ class DaoMateriasOrientadores extends DaoBase {
         inner join usuario c on c.codigoUsuario = d.orientadorMo
         inner join usuario w on w.codigoUsuario = d.orientadorInfo
         inner join usuario x on x.codigoUsuario = d.orientadorFis
-        inner join usuario v on v.codigoUsuario = v.orientadorFe
+        inner join usuario v on v.codigoUsuario = d.orientadorFe
         where d.idGrado=".$this->objeto->getIdGrado();
 
         

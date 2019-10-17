@@ -16,9 +16,17 @@ class DaoPagos extends DaoBase {
         $fila = $resultado1->fetch_assoc();
         $idExp = $fila['id'];
 
+
+        $anio= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anio);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
+
         $_query = "insert into pagosAlumnos values(".$corr.",
         '000','','','','','','','','','','','','','','','','','','','','','','',
-        year(CURRENT_DATE()),1);";
+        '".$anioAc."',1);";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -380,7 +388,8 @@ class DaoPagos extends DaoBase {
         $color="<i class=\'window close outline icon\' style=\'font-size:30px;color:blue;\'></i>";
 
         
-        $_query = "update pagosAlumnos set e='$color', pagoEnero = '".$this->objeto->getFecha()."' where idAlumno=".$this->objeto->getIdAlumno();
+        $_query = "update pagosAlumnos set e='$color',
+         pagoEnero = '".$this->objeto->getFecha()."' where idAlumno=".$this->objeto->getIdAlumno();
 
         $resultado = $this->con->ejecutar($_query);
 
