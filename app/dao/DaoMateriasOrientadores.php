@@ -10,6 +10,14 @@ class DaoMateriasOrientadores extends DaoBase {
 
     public function datosGenerales()
     {
+
+        $anio= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anio);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
+
         $_query = "select d.*,u.nombre as nomO,u.apellido as apeO,s.nombre as nomOM,s.apellido as apeOM,a.nombre as nomOS,a.apellido as apeOS,
         r.nombre as nomOC,r.apellido as apeOC,i.nombre as nomOL,i.apellido as apeOL,o.nombre as nomOI,o.apellido as apeOI,f.nombre as nomOAR,f.apellido as apeOAR,
         c.nombre as nomOMO,c.apellido as apeOMO,w.nombre as nomOIN,w.apellido as apeOIN,x.nombre as nomOFIS,x.apellido as apeOFIS,
@@ -25,7 +33,8 @@ class DaoMateriasOrientadores extends DaoBase {
         inner join usuario w on w.codigoUsuario = d.orientadorInfo
         inner join usuario x on x.codigoUsuario = d.orientadorFis
         inner join usuario v on v.codigoUsuario = d.orientadorFe
-        where d.idGrado=".$this->objeto->getIdGrado();
+        where d.idGrado=".$this->objeto->getIdGrado()." and 
+        anio =".$anioAc." ;
 
         
 

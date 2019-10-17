@@ -65,7 +65,8 @@ orientadorArt int,
 orientadorMo int,
 orientadorInfo int,
 orientadorFis int,
-orientadorFe int
+orientadorFe int,
+anio varchar(4)
 );
 
 
@@ -421,18 +422,18 @@ insert into usuario values(null,'Fabio','Mejia','fabio','fabiomejiash@gmail.com'
 
  insert into usuario values(null,'Juana','Lopez','juana','juan123@gmail.com','San Salvador',sha1('123'),'7912-1241','01234312-1','1997-02-02',3,1);
  
- insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
-insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,'1');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
+insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
 
 
 INSERT into notasmatematica VALUES (null, 1, 7,8,9,'Febrero','2019');
