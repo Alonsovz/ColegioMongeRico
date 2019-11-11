@@ -2958,7 +2958,16 @@ class DaoSolictudAlumno extends DaoBase {
 
     
     public function mostrarAlumnosPrimer($idGrado=0) {
-        $_query = "select * from fichaAlumno  where grado=".$idGrado." and anio = year(CURRENT_DATE())  group by nie order by nombre asc";
+
+        $anio= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anio);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
+
+        $_query = "select * from fichaAlumno  where grado=".$idGrado." and anio 
+        = '".$anioAc."'  group by nie order by nombre asc";
 
         $resultado = $this->con->ejecutar($_query);
 
