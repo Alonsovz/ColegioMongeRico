@@ -64,6 +64,14 @@ class DaoSolicitudMaestro extends DaoBase {
         }
     }
     public function registrarDatosPlanilla() {
+        $anio= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anio);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
+
+
         $corr= "(select max(idMaestro) as id from maestros)";
 
         $resultado1 = $this->con->ejecutar($corr);
@@ -75,7 +83,7 @@ class DaoSolicitudMaestro extends DaoBase {
         while($mes < 13){
             
          $_query = "insert into planilla values(null,".$idExp.",0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
-        '".$mes."',year(CURRENT_DATE()));
+        '".$mes."','".$anioAc."');
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -158,10 +166,17 @@ class DaoSolicitudMaestro extends DaoBase {
 
 
     public function mostrarMaestros() {
+        $anio= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anio);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
+
         $_query = "select concat(m.nombre,' ',m.apellido) as nombreD, m.*,
         TIMESTAMPDIFF(YEAR,fechaNacimiento,CURDATE()) AS edad,
         format (m.sueldo,2) as sueldoD
-         from maestros m where m.idEliminado=1;";
+         from maestros m where m.idEliminado=1 and anio = '".$anioAc."';";
 
         $resultado = $this->con->ejecutar($_query);
 

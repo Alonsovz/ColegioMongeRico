@@ -111,7 +111,8 @@ tipoPago varchar(100),
 sueldo double,
 idEliminado int,
 razonBaja varchar(500),
-fechaBaja date
+fechaBaja date,
+anio varchar(4)
 );
 
 create table titulosObtenidos(

@@ -21,7 +21,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasLenguaje n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -60,7 +60,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasMatematica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -100,7 +100,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasCiencias n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -140,7 +140,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasSociales n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -180,7 +180,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasIngles n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -220,7 +220,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasArtistica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -260,7 +260,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasEduFe n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -300,7 +300,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasMoral n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -340,7 +340,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasCompu n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -380,7 +380,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasFisica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -419,7 +419,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasConducta n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anio."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2594,11 +2594,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
 
     
     public function guardarNotasLenguaje( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasLenguaje set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2612,11 +2619,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
 
 
     public function guardarNotasMatematicas( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasMatematica set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2629,11 +2643,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
     }
 
     public function guardarNotasCiencias( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasCiencias set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2646,11 +2667,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
     }
 
     public function guardarNotasSociales( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasSociales set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2663,11 +2691,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
     }
 
     public function guardarNotasIngles( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasIngles set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2681,11 +2716,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
 
 
     public function guardarNotasArtistica( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasArtistica set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2698,11 +2740,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
     }
 
     public function guardarNotasEduFe( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasEduFe set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2715,11 +2764,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
     }
 
     public function guardarNotasMoral( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasMoral set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2732,11 +2788,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
     }
 
     public function guardarNotasInfo( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasCompu set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2749,11 +2812,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
     }
 
     public function guardarNotasFisica( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasFisica set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2766,11 +2836,18 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
     }
 
     public function guardarNotasConducta( $id = 0,$nota1 = 0,$nota2 = 0,$nota3 = 0,$mes = 0 ,$anio = 0) {
+
+        $anioA= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anioA);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
       
 
         $_query = "
         update notasConducta set nota1 = ".$nota1.", nota2=".$nota2." , nota3 = ".$nota3."
-        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anio."'
+        where idAlumno = ".$id." and mes ='".$mes."' and  anio ='".$anioAc."'
         ";
 
         $resultado = $this->con->ejecutar($_query);

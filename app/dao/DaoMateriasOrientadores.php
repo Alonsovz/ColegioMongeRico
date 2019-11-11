@@ -47,6 +47,13 @@ class DaoMateriasOrientadores extends DaoBase {
 
     public function guardarDatos()
     {
+        $anio= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anio);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
+
         $_query = "update datosGrados set orientador='".$this->objeto->getOrientador()."',
          orientadorMate='".$this->objeto->getOrientadorMate()."',
          orientadorLen='".$this->objeto->getOrientadorLen()."',
@@ -58,7 +65,7 @@ class DaoMateriasOrientadores extends DaoBase {
          orientadorMo='".$this->objeto->getOrientadorMo()."',
          orientadorFis='".$this->objeto->getOrientadorFis()."',
          orientadorFe='".$this->objeto->getOrientadorFe()."'
-        where idGrado = ".$this->objeto->getIdGrado();
+        where anio = '".$anioAc."' and idGrado = ".$this->objeto->getIdGrado();
 
         $resultado = $this->con->ejecutar($_query);
 
