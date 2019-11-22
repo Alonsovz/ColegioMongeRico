@@ -2538,7 +2538,7 @@ var grado = "4";
         tableFi.destroy();
         fitrarTablaColector(acc,anio,grado);
 
-       ;
+       
         $("#colectorMes").fadeIn(1000);
         $("#dtColector").fadeIn(1000);
 }
