@@ -339,8 +339,9 @@ tr{
 }
 
 tbody td:hover{
-    color: white;
-    background: #333;
+    color: blue;
+    background-color: #C2C0C0;
+    font-weight: bold;
 }
 
 

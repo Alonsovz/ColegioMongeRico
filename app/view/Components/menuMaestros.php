@@ -12,6 +12,7 @@
   $orientadorMo = $mysqli -> query ("select idGrado from datosGrados where orientadorMo=".$idOrien);
   $orientadorFis = $mysqli -> query ("select idGrado from datosGrados where orientadorFis=".$idOrien);
   $orientadorInfo = $mysqli -> query ("select idGrado from datosGrados where orientadorInfo=".$idOrien);
+  $orientadorFe = $mysqli -> query ("select idGrado from datosGrados where orientadorFe=".$idOrien);
   ?>
     <h3 style="color:#81DAF5;text-align:center">Grados a mi cargo</h3>
   <?php
@@ -882,3 +883,91 @@
 }
 ?>
 
+<?php
+  while ($info = mysqli_fetch_array($orientadorFe)) {
+    $grado = $info["idGrado"];
+
+    if($grado==1){
+        echo "<div class='item'>
+        <a href='?1=EducacionFeController&2=primerGrado'
+         class='item menu-it'  style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe -- 1er Grado
+        </a>
+
+        </div>";
+    }
+    if($grado==2){
+        echo "<div class='item'>
+        <a href='?1=EducacionFeController&2=segundoGrado'
+         class='item menu-it' style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe --  2do Grado
+        </a>
+
+        </div>";
+    }
+    if($grado==3){
+        echo "<div class='item'>
+        <a href='?1=EducacionFeController&2=tercerGrado'
+         class='item menu-it'  style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe -- 3er Grado
+        </a>
+
+        </div>";
+    }
+    if($grado==4){
+        echo "<div class='item'>
+        <a href='?1=EducacionFeController&2=cuartoGrado'
+         class='item menu-it'  style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe -- 4to Grado
+        </a>
+
+        </div>";
+    }
+    if($grado==5){
+        echo "<div class='item'>
+        <a href='?1=EducacionFeController&2=quintoGrado'
+         class='item menu-it'  style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe -- 5to Grado
+        </a>
+
+        </div>";
+    }
+    if($grado==6){
+        echo "<div class='item'>
+        <a href='?1=EducacionFeController&2=sextoGrado'
+         class='item menu-it'  style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe-- 6to Grado
+        </a>
+
+        </div>";
+    }
+    if($grado==7){
+        echo "<div class='item'>
+        <a href='?1=EducacionFeController&2=septimoGrado'
+         class='item menu-it'  style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe -- 7mo Grado
+        </a>
+
+        </div>";
+    }
+    if($grado==8){
+        echo "
+        <div class='item'>
+        <a href='?1=EducacionFeController&2=octavoGrado'
+         class='item menu-it'  style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe --  8vo Grado
+        </a></div>
+
+        ";
+    }
+    if($grado==9){
+        echo "<div class='item'>
+        <a href='?1=EducacionFeController&2=novenoGrado'
+         class='item menu-it'  style='color:white; background-color:#B57703;  font-weight:bold;'>
+         <i class='book icon'></i> Edu. Fe --  9no Grado
+        </a>
+
+        </div>";
+    }
+}
+?>

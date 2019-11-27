@@ -5,12 +5,12 @@
                    
                     <font color="#08088A" size="6px">
                     <i class="street view icon"></i><i class="book icon"></i>
-                    Notas de Educación Física de 3er grado</font>
+                    Notas de Educación en la Fe de 2do grado</font>
                     <font color="#210B61" size="20px"> .</font>
                     </div>
             </div>
             <div class="ui divider"></div>
-<form class="ui form" style="font-size:16px;background-color:#DBDDDD;
+  <form class="ui form" style="font-size:16px;background-color:#DBDDDD;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
     -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
     box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);">
@@ -57,21 +57,21 @@
 
 
 
-<h2><i class="file icon"></i>Notas de Educación Física del mes de <a class="mesVisto" style="color:green"></a></h2>
+<h2><i class="file icon"></i>Notas de Educación en la Fe del mes de <a class="mesVisto" style="color:green"></a></h2>
             <div class="ui divider"></div>
             <div class="row">
            <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
-                <table id="dtNotasFisica" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+                <table id="dtNotasFe" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                         <tr>
                         
-                            <th style="background-color: #37CA04; color:black;">N°</th>
-                            <th style="background-color: #37CA04; color:black;">Alumno</th>
-                            <th style="background-color: #37CA04; color:black;">Nota 1</th>
-                            <th style="background-color: #37CA04; color:black;">Nota 2</th>
-                            <th style="background-color: #37CA04; color:black;">Nota 3</th>
-                            <th style="background-color: #37CA04; color:black;">Promedio</th>
-                            <th style="background-color: #37CA04; color:black;">Acciones</th>
+                            <th style="background-color: #6102DA; color:white;">N°</th>
+                            <th style="background-color: #6102DA; color:white;">Alumno</th>
+                            <th style="background-color: #6102DA; color:white;">Nota 1</th>
+                            <th style="background-color: #6102DA; color:white;">Nota 2</th>
+                            <th style="background-color: #6102DA; color:white;">Nota 3</th>
+                            <th style="background-color: #6102DA; color:white;">Promedio</th>
+                            <th style="background-color: #6102DA; color:white;">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,45 +83,45 @@
 
 
 
-<div id="trimestralesFi" style="display:none;background-color:#D8D8D8;
+<div id="trimestralesFe" style="display:none;background-color:#D8D8D8;
 -webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
                 -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
                 box-shadow: 10px 10px 5px 0px rgba(133,131,133,1); text-align:center">
     <hr>
       
 
-    <h2><i class="file icon"></i>Notas Trimestrales  de Educación Física</h2>
+    <h2><i class="file icon"></i>Notas Trimestrales  de Educación en la Fe</h2>
             <div class="ui divider"></div>
             <div class="row">
-           <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
-                <table id="dtTrimestralesFisica" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
+            <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+                <table id="dtTrimestralesFe" class="ui selectable very compact celled table" style="display:none;width:100%; margin:auto;">
                     <thead>
                     
                     
                     
                         <tr>
-                        <th style="background-color: #403952; color:white;text-align:center" rowspan="2">N°</th>
-                        <th style="background-color: #403952; color:white;text-align:center" rowspan="2">Alumn@</th>
-                            <th style="background-color: #341358; color:white;text-align:center" colspan="4">1er Trimestre</th>
-                            <th style="background-color: #341358; color:white;text-align:center" colspan="4">2do Trimestre</th>
-                            <th style="background-color: #341358; color:white;text-align:center" colspan="4">3er Trimestre</th>
+                        <th style="background-color: #002736; color:white;text-align:center" rowspan="2">N°</th>
+                        <th style="background-color: #002736; color:white;text-align:center" rowspan="2">Alumn@</th>
+                            <th style="background-color: #B35C15; color:white;text-align:center" colspan="4">1er Trimestre</th>
+                            <th style="background-color: #B35C15; color:white;text-align:center" colspan="4">2do Trimestre</th>
+                            <th style="background-color: #B35C15; color:white;text-align:center" colspan="4">3er Trimestre</th>
                          
-                            <th style="background-color: #341358; color:white;text-align:center" rowspan="2">Prom F</th>
+                            <th style="background-color: #B35C15; color:white;text-align:center" rowspan="2">Prom F</th>
                         </tr>
 
                         <tr > 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">F</th> 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">M</th> 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">A</th> 
-                        <th style="text-align:center;background-color: #F27999;color:white;">Prom.</th> 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">M</th> 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">J</th> 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">J</th> 
-                        <th style="text-align:center;background-color: #F27999;color:white;">Prom.</th> 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">A</th> 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">S</th> 
-                        <th style="text-align:center;background-color: #8B3A5A;color:white;">O</th> 
-                        <th style="text-align:center;background-color: #F27999;color:white;">Prom.</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">F</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #FFBF33;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">M</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">J</th> 
+                        <th style="text-align:center;background-color: #FFBF33;color:black;">Prom.</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">A</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">S</th> 
+                        <th style="text-align:center;background-color: #F24416;color:white;">O</th> 
+                        <th style="text-align:center;background-color: #FFBF33;color:black;">Prom.</th> 
                        
                           </tr>
                     </thead>
@@ -170,19 +170,19 @@ Notas  de <a id="materia" style="color:white"></a> del alumno :
 </div>
 </div>
 
-<script src="./res/tablas/tablaNotasFisica.js"></script>
-<script src="./res/tablas/tablaNotasTrimestralesFisica.js"></script>
+<script src="./res/tablas/tablaNotasEduFe.js"></script>
+<script src="./res/tablas/tablaNotasTrimestralesFe.js"></script>
 
 
 <script>
 
-var notasFisica=(ele)=>{
+var notasEduFe=(ele)=>{
 var mesR = $("#mesColectores option:selected").text();
 var d = new Date();
 var anio = d.getFullYear();
 
 var id = $(ele).attr("id");
-$("#materia").text("Educación Física");
+$("#materia").text("Educación en la Fe");
 
 var nota1 = $(ele).attr("nota1");
 var nota2 = $(ele).attr("nota2");
@@ -206,21 +206,21 @@ $("#promedios").change(function(){
     if(vista == 1){
             $("#mesCo").show(1000);
             $("#mesColectores").dropdown('set selected', 'ninguno');
-            $("#trimestralesFi").hide();
+            $("#trimestralesFe").hide();
     }else if(vista == 2){
             $("#mesCo").hide();
             $("#notasMensuales").hide();
             var d = new Date();
             var anio = d.getFullYear();
-            var grado = "3";
+            var grado = "2";
 
 
-            filtrarTablaTrimestreFisica(anio,grado);
-            var table = $('#dtTrimestralesFisica').DataTable();
+            filtrarTablaTrimestreFe(anio,grado);
+            var table = $('#dtTrimestralesFe').DataTable();
             table.destroy();
 
-            $("#trimestralesFi").fadeIn(1000);
-            $("#dtTrimestralesFisica").fadeIn(1000);
+            $("#trimestralesFe").fadeIn(1000);
+            $("#dtTrimestralesFe").fadeIn(1000);
     }
 });
 
@@ -236,19 +236,19 @@ $("#mesColectores").change(function(){
     $(".mesVisto").text(mesR + '' +anio);
 
     var acc = $("#mesColectores").val();
-    var grado = "3";
+    var grado = "2";
 
 
     if(acc == 'ninguno'){
 
 }else{
     $("#notasMensuales").hide();
-    var tableS = $('#dtNotasFisica').DataTable();
+    var tableS = $('#dtNotasFe').DataTable();
         tableS.destroy();
-        fitrarTablaFisica(acc,anio,grado);
+        fitrarTablaEduFe(acc,anio,grado);
 
     $("#notasMensuales").fadeIn(1000);
-    $("#dtNotasFisica").fadeIn(1000);
+    $("#dtNotasFe").fadeIn(1000);
 }
 
 
@@ -270,11 +270,10 @@ var materia = $("#materia").text();
 alertify.confirm("¿Desea guardar los datos?",
 function(){    
 
-
-        $.ajax({
+    $.ajax({
                
                type: 'POST',
-               url: '?1=FisicaController&2=guardarNotas',
+               url: '?1=EducacionFeController&2=guardarNotas',
                data: {
                    id:id,
                    nota1 : nota1,
@@ -289,17 +288,17 @@ function(){
                        
                        $('#modalNotas').modal('hide');
                        Swal.fire({
-                        title: '<h2 style="color:#020490;">Notas de Educación Física modificadas</h2>',
+                        title: '<h2 style="color:#CF0C0B;">Notas de Educación en la Fe modificadas</h2>',
                         text: 'Alumno/a : '+$("#alName").text(),
-                        imageUrl: './res/img/fisica.gif',
-                        imageWidth: 195,
-                        imageHeight: 180,
+                        imageUrl: './res/img/eduFe.gif',
+                        imageWidth: 215,
+                        imageHeight: 200,
                         allowOutsideClick: false,
                     allowEscapeKey: false,
                     allowEnterKey: false,
                     backdrop: 'rgb(37, 37, 37)'
                         });
-                        $('#dtNotasFisica').DataTable().ajax.reload();
+                        $('#dtNotasFe').DataTable().ajax.reload();
                    }
                }
            });
@@ -320,10 +319,5 @@ function(){
 
 
 </script>
-
-
-        
-
-
         
 

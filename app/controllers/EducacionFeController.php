@@ -6,48 +6,48 @@ class EducacionFeController extends ControladorBase {
        
         self::loadMain();
       
-        require_once './app/view/Ciencias/primer.php';
+        require_once './app/view/EducacionFe/primer.php';
     }
 
     public static function segundoGrado() {
         self::loadMain();
-        require_once './app/view/Ciencias/segundo.php';
+        require_once './app/view/EducacionFe/segundo.php';
     }
 
     public static function tercerGrado() {
         self::loadMain();
        
-        require_once './app/view/Ciencias/tercer.php';
+        require_once './app/view/EducacionFe/tercer.php';
     }
 
     public static function cuartoGrado() {
         self::loadMain();
-        require_once './app/view/Ciencias/cuarto.php';
+        require_once './app/view/EducacionFe/cuarto.php';
     }
 
     public static function quintoGrado() {
         self::loadMain();
-        require_once './app/view/Ciencias/quinto.php';
+        require_once './app/view/EducacionFe/quinto.php';
     }
 
     public static function sextoGrado() {
         self::loadMain();
-        require_once './app/view/Ciencias/sexto.php';
+        require_once './app/view/EducacionFe/sexto.php';
     }
 
     public static function septimoGrado() {
         self::loadMain();
-        require_once './app/view/Ciencias/septimo.php';
+        require_once './app/view/EducacionFe/septimo.php';
     }
 
     public static function octavoGrado() {
         self::loadMain();
-        require_once './app/view/Ciencias/octavo.php';
+        require_once './app/view/EducacionFe/octavo.php';
     }
 
     public static function novenoGrado() {
         self::loadMain();
-        require_once './app/view/Ciencias/noveno.php';
+        require_once './app/view/EducacionFe/noveno.php';
     }
 
 
