@@ -239,6 +239,9 @@ $("#mesColectores").change(function(){
     var grado = "8";
 
 
+    if(acc == 'ninguno'){
+
+}else{
     $("#notasMensuales").hide();
     var tableS = $('#dtNotasIngles').DataTable();
         tableS.destroy();
@@ -246,6 +249,7 @@ $("#mesColectores").change(function(){
 
     $("#notasMensuales").fadeIn(1000);
     $("#dtNotasIngles").fadeIn(1000);
+}
 
 
 });

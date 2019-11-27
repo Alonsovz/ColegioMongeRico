@@ -239,7 +239,9 @@ $("#mesColectores").change(function(){
     var acc = $("#mesColectores").val();
     var grado = "6";
 
+    if(acc == 'ninguno'){
 
+}else{
     $("#notasMensuales").hide();
     var table = $('#dtNotasMatematicas').DataTable();
     table.destroy();
@@ -249,6 +251,7 @@ $("#mesColectores").change(function(){
 
     $("#notasMensuales").fadeIn(1000);
     $("#dtNotasMatematicas").fadeIn(1000);
+}
 
 
 });

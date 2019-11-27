@@ -237,16 +237,24 @@ $("#mesColectores").change(function(){
     $(".mesVisto").text(mesR + '' +anio);
 
     var acc = $("#mesColectores").val();
+
+
     var grado = "1";
 
+    if(acc == 'ninguno'){
 
-    $("#notasMensuales").hide();
+    }else{
+        $("#notasMensuales").hide();
         var tableS = $('#dtNotasArtistica').DataTable();
         tableS.destroy();
         fitrarTablaArtistica(acc,anio,grado);
 
     $("#notasMensuales").fadeIn(1000);
     $("#dtNotasArtistica").fadeIn(1000);
+    }
+
+
+   
 
 
 });

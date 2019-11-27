@@ -240,7 +240,9 @@ $("#mesColectores").change(function(){
     var acc = $("#mesColectores").val();
     var grado = "2";
 
+    if(acc == 'ninguno'){
 
+}else{
     $("#notasMensuales").hide();
     var table = $('#dtNotasCiencias').DataTable();
     table.destroy();
@@ -250,6 +252,7 @@ $("#mesColectores").change(function(){
 
     $("#notasMensuales").fadeIn(1000);
     $("#dtNotasCiencias").fadeIn(1000);
+}
 
 
 });

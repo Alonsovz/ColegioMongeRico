@@ -240,13 +240,17 @@ $("#mesColectores").change(function(){
     var grado = "3";
 
 
-    $("#notasMensuales").hide();
-        var tableS = $('#dtNotasArtistica').DataTable();
-        tableS.destroy();
-        fitrarTablaArtistica(acc,anio,grado);
+    if(acc == 'ninguno'){
 
-    $("#notasMensuales").fadeIn(1000);
-    $("#dtNotasArtistica").fadeIn(1000);
+}else{
+    $("#notasMensuales").hide();
+    var tableS = $('#dtNotasArtistica').DataTable();
+    tableS.destroy();
+    fitrarTablaArtistica(acc,anio,grado);
+
+$("#notasMensuales").fadeIn(1000);
+$("#dtNotasArtistica").fadeIn(1000);
+}
 
 
 });

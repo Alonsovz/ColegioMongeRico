@@ -240,6 +240,9 @@ $("#mesColectores").change(function(){
     var grado = "1";
 
 
+    if(acc == 'ninguno'){
+
+}else{
     $("#notasMensuales").hide();
 
   
@@ -251,6 +254,7 @@ $("#mesColectores").change(function(){
 
     $("#notasMensuales").fadeIn(1000);
     $("#dtNotasMoral").fadeIn(1000);
+}
 
 
 });

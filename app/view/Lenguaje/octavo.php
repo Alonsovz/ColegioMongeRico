@@ -240,6 +240,9 @@ $("#mesColectores").change(function(){
     var grado = "8";
 
 if(materia == 1){
+    if(acc == 'ninguno'){
+
+}else{
     $("#notasMensuales").hide();
     var table = $('#dtNotasLenguaje').DataTable();
     table.destroy();
@@ -249,6 +252,7 @@ if(materia == 1){
 
     $("#notasMensuales").fadeIn(1000);
     $("#dtNotasLenguaje").fadeIn(1000);
+}
 
 }
 });

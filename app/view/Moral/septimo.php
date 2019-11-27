@@ -239,7 +239,9 @@ $("#mesColectores").change(function(){
     var acc = $("#mesColectores").val();
     var grado = "7";
 
+    if(acc == 'ninguno'){
 
+}else{
     $("#notasMensuales").hide();
 
   
@@ -251,6 +253,7 @@ $("#mesColectores").change(function(){
 
     $("#notasMensuales").fadeIn(1000);
     $("#dtNotasMoral").fadeIn(1000);
+}
 
 
 });

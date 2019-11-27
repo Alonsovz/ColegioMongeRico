@@ -240,15 +240,19 @@ $(document).ready(function(){
                 var grado = "1";
 
         if(materia == 1){
-                $("#notasMensuales").hide();
-                var table = $('#dtNotasLenguaje').DataTable();
-                table.destroy();
-              
+            if(acc == 'ninguno'){
 
-                fitrarTablaLenguaje(acc,anio,grado);
+}else{
+    $("#notasMensuales").hide();
+    var table = $('#dtNotasLenguaje').DataTable();
+    table.destroy();
+  
 
-                $("#notasMensuales").fadeIn(1000);
-                $("#dtNotasLenguaje").fadeIn(1000);
+    fitrarTablaLenguaje(acc,anio,grado);
+
+    $("#notasMensuales").fadeIn(1000);
+    $("#dtNotasLenguaje").fadeIn(1000);
+}
         
         }
         });
