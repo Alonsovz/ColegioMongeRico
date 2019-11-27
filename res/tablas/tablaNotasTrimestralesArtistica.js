@@ -2,7 +2,7 @@ var tablaNotasTrimestralesArtistica;
 
 function filtrarTablaTrimestreArtistica(anio,grado){
 $(function() {
-    if($('#dtTrimestralesIngles').length) {
+    if($('#dtTrimestralesArtistica').length) {
         tablaNotasTrimestralesArtistica = $('#dtTrimestralesArtistica').DataTable({
             "ajax": {
                 "url": "?1=ArtisticaController&2=mostrarNotasTrimestralesArtistica&anio="+anio+"&grado="+grado,

@@ -1424,9 +1424,9 @@ var grado = "1";
  }
 
  else if(ver == 6){
-    filtrarTablaTrimestreArtistica(anio,grado);
+      filtrarTablaTrimestreArtistica(anio,grado);
 
-    var table = $('#dtTrimestralesArtistica').DataTable();
+        var table = $('#dtTrimestralesArtistica').DataTable();
         table.destroy();
 
          $("#trimestralesArt").fadeIn(1000);

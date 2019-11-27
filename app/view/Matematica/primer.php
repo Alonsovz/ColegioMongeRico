@@ -217,11 +217,11 @@ $("#promedios").change(function(){
 
             filtrarTablaTrimestreMate(anio,grado);
 
-    var table = $('#dtTrimestralesMate').DataTable();
-        table.destroy();
+            var table = $('#dtTrimestralesMate').DataTable();
+            table.destroy();
 
-         $("#trimestralesM").fadeIn(1000);
-        $("#dtTrimestralesMate").fadeIn(1000);
+          $("#trimestralesM").fadeIn(1000);
+          $("#dtTrimestralesMate").fadeIn(1000);
     }
 });
 

@@ -576,7 +576,7 @@
         echo "<div class='item'>
         <a href='?1=ArtisticaController&2=tercerGrado'
          class='item menu-it' style='color:black; background-color:#F7819F;  font-weight:bold;'>
-         <i class='globe icon'></i>  Íngles -- 3er Grado
+         <i class='globe icon'></i>  Artística -- 3er Grado
         </a>
 
         </div>";
