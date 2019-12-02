@@ -2,9 +2,15 @@
 <?php
   require_once './vendor/autoload.php';
   $mysqli = new mysqli("localhost","root","","colegioMongeRico");
+
+$anioC = $mysqli -> query ("select anio from anio");
+$fila1 = $anioC->fetch_assoc();
+
+$anio = $fila1['anio'];
+
   $listado = $mysqli -> query ("select p.talonario as talonario,p.*, f.nombre as nombre from pagosAlumnos p
   inner join fichaAlumno f on f.idAlumno=p.idAlumno
-  where f.grado=1 and p.anio = year(CURRENT_DATE()) and p.estado=1 order by f.nombre asc");
+  where f.grado=1 and p.anio = '".$anio."' and p.estado=1 order by f.nombre asc");
  ?>
  
 <div id="app">
@@ -32,6 +38,12 @@
                         <button class="ui right floated black labeled icon button" id="btnReporte">
                         <i class="file icon"></i>
                         Ver Reporte
+                    </button>
+
+                    <button class="ui right floated red labeled icon button" id="btnMora"
+                    style="background-color:#DDC305;color:black">
+                        <i class="dollar icon"></i>
+                        Ver Alumnos en mora
                     </button>
                 </div>
             </div>
@@ -216,7 +228,17 @@ Cancelar
    </div>
 </div>
  
+<div class="ui modal" id="reporteMora">
+<div class="header">
+</div>
 
+<div class="content">
+</div>
+
+<div class="actions">
+<button class="ui black deny button">Cerrar</button>
+</div>
+</div>
  <script>
     $(document).ready(function(){
     $("#primer").removeClass("ui red button");
@@ -235,7 +257,9 @@ Cancelar
        $('#modalTalonario').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
     }
     
-    
+    $("#btnMora").click(function(){
+        $('#reporteMora').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+    });
  
     var cobrar=(ele)=>{
        var idA= $(ele).attr("id");

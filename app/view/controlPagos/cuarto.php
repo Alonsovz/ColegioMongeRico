@@ -1,9 +1,15 @@
 <?php
   require_once './vendor/autoload.php';
   $mysqli = new mysqli("localhost","root","","colegioMongeRico");
+
+  $anioC = $mysqli -> query ("select anio from anio");
+  $fila1 = $anioC->fetch_assoc();
+  
+  $anio = $fila1['anio'];
+
   $listado = $mysqli -> query ("select p.talonario as talonario,p.*, f.nombre as nombre from pagosAlumnos p
   inner join fichaAlumno f on f.idAlumno=p.idAlumno
-  where f.grado=4 and p.anio = year(CURRENT_DATE()) and p.estado=1 order by f.nombre asc");
+  where f.grado=4 and p.anio = '".$anio."' and p.estado=1 order by f.nombre asc");
  ?>
 <div id="app">
         <div class="ui grid">

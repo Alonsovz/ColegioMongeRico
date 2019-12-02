@@ -102,6 +102,20 @@ class DaoUsuario extends DaoBase {
         }
     }
 
+
+
+    public function guardarAnioEscolar($anio)
+    {
+        $_query = "update anio set anio = '".$anio."' ";
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
     public function cuentasAdministrador() {
         $_query = "call cuentasAdministrador()";
         $resultado = $this->con->ejecutar($_query);

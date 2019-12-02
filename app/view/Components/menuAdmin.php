@@ -465,8 +465,8 @@
 
 <div class="item">
 <hr><br>
-        <a href="?1=UsuarioController&2=reporteria"  style="color:white;font-weight:bold; font-size:14px; ">
-        <i class="file icon"></i> Reportes
+        <a href="?1=UsuarioController&2=anioEscolar"  style="color:white;font-weight:bold; font-size:14px; ">
+        <i class="calendar icon"></i> Anio Escolar
         </a>
 
         </div>

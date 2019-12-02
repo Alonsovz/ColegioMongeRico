@@ -21,6 +21,14 @@ class UsuarioController extends ControladorBase {
         require_once './app/view/Usuario/dashboard.php';
     }
 
+
+    public static function anioEscolar() {
+        self::loadMain();
+      
+        require_once './app/view/OtrasGestiones/anioEscolar.php';
+    }
+
+
     public static function gestion() {
         self::loadMain();
         
@@ -477,6 +485,19 @@ class UsuarioController extends ControladorBase {
      
 
         require_once './app/view/Usuario/reporteria.php';
+    }
+
+
+
+    public function guardarAnioEscolar()
+    {
+        $anio = $_REQUEST["anio"];
+
+        $dao = new DaoUsuario();
+
+
+        echo $dao->guardarAnioEscolar($anio);
+
     }
 
 
