@@ -50,8 +50,7 @@
 
 <script>
     
-
-        $("#guardarAnio").click(function(){
+    $("#guardarAnio").click(function(){
             alertify.confirm("¿Desea guardar el año escolar en curso?",
             function(){ 
                 $.ajax({

@@ -43,7 +43,7 @@ class DaoSolictudAlumno extends DaoBase {
         $idExp = $fila['id'];
 
         $_query = "insert into datosPadre values('".$this->objeto->getNombrePadre()."', '".$this->objeto->getLugarTrabajoP()."',
-        ".$this->objeto->getTelP().", '".$this->objeto->getNombreMadre()."','".$this->objeto->getLugarTrabajoM()."',
+        '".$this->objeto->getTelP()."', '".$this->objeto->getNombreMadre()."','".$this->objeto->getLugarTrabajoM()."',
         '".$this->objeto->getTelM()."',".$idExp.")";
 
         $resultado = $this->con->ejecutar($_query);
@@ -64,7 +64,7 @@ class DaoSolictudAlumno extends DaoBase {
         $idExp = $fila['id'];
 
         $_query = "insert into datosResponsable values('".$this->objeto->getNombreRes()."', '".$this->objeto->getTipoIden()."',
-        ".$this->objeto->getNumeroIden().", '".$this->objeto->getFamiliar()."','".$this->objeto->getParentesco()."',
+        '".$this->objeto->getNumeroIden()."', '".$this->objeto->getFamiliar()."','".$this->objeto->getParentesco()."',
         '".$this->objeto->getSexoRes()."','".$this->objeto->getEstadoFam()."',
          '".$this->objeto->getFechaNacRes()."','".$this->objeto->getDeparNacRes()."',
          '".$this->objeto->getMunicipioNacRes()."','".$this->objeto->getNacionalidadRes()."','".$this->objeto->getProfesion()."',
@@ -104,6 +104,141 @@ class DaoSolictudAlumno extends DaoBase {
             return 0;
         }
     }
+
+
+
+    public function editarDatos() {
+        $_query = "update  fichaAlumno set nie = '".$this->objeto->getNie()."',
+        nombre = '".$this->objeto->getNombre()."',
+        grado = ".$this->objeto->getGradoEstudiar().",
+        sexo= '".$this->objeto->getSexo()."',
+        repiteGrado = '".$this->objeto->getRepGrado()."',
+        nuevoIngreso  = '".$this->objeto->getNuevoIngreso()."',
+        reingreso = '".$this->objeto->getReingreso()."',
+        religion = '".$this->objeto->getReligion()."',
+        insAnterior = '".$this->objeto->getInsAnterior()."',
+        fechaNac = '".$this->objeto->getFechaNac()."',
+        departamentoNac ='".$this->objeto->getDeparNac()."',
+        municipioNac = '".$this->objeto->getLugarNac()."',
+        nacionalidad = '".$this->objeto->getNacionalidad()."',
+        naturalizado = '".$this->objeto->getNaturalizado()."',
+        discapacidad = '".$this->objeto->getDiscapacidad()."',
+        expDiscapacidad = '".$this->objeto->getExpDiscapacidad()."',
+        enfermedad = '".$this->objeto->getEnfermedad()."',
+        expEnfermedad = '".$this->objeto->getExpEnfermedad()."',
+        alergia= '".$this->objeto->getAlergia()."',
+        expAlergia = '".$this->objeto->getExpAlergia()."',
+        tipoSangre = '".$this->objeto->getTipoSangre()."',
+        direccionRes = '".$this->objeto->getDireccionRes()."',
+        medioTransporte = '".$this->objeto->getMedioTransporte()."',
+        distancia = '".$this->objeto->getDistancia()."',
+        factoresRiesgo = '".$this->objeto->getRiesgos()."',
+        ocupacion = '".$this->objeto->getOcupacion()."',
+        trabaja = '".$this->objeto->getTrabaja()."',
+        dependenciaEco = '".$this->objeto->getDependenciaEco()."',
+        correo = '".$this->objeto->getEmail()."',
+        telefono = '".$this->objeto->getTelefono()."',
+        viveCon = '".$this->objeto->getViveCon()."',
+        viveOtro = '".$this->objeto->getViveOtro()."'
+        where idAlumno = ".$this->objeto->getId();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+
+
+    public function editarDatosPadre() {
+
+       
+        $_query = "update datosPadre set  nombrePadre='".$this->objeto->getNombrePadre()."',
+        lugarTrabajoP = '".$this->objeto->getLugarTrabajoP()."',
+        telefonoPadre = '".$this->objeto->getTelP()."', 
+        nombreMadre = '".$this->objeto->getNombreMadre()."',
+        lugarTrabajoM = '".$this->objeto->getLugarTrabajoM()."',
+        telefonoMadre = '".$this->objeto->getTelM()."'
+        where idAlumno = ".$this->objeto->getId();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+
+    public function editarDatosResponsable() {
+        
+
+        $_query = "update datosResponsable set nombre ='".$this->objeto->getNombreRes()."',
+        tipoIden = '".$this->objeto->getTipoIden()."',
+        numeroIden = '".$this->objeto->getNumeroIden()."',
+        familiar = '".$this->objeto->getFamiliar()."',
+        parentesco = '".$this->objeto->getParentesco()."',
+        sexo = '".$this->objeto->getSexoRes()."',
+        estadoFamiliar = '".$this->objeto->getEstadoFam()."',
+        fechaNac = '".$this->objeto->getFechaNacRes()."',
+        departamentoNac = '".$this->objeto->getDeparNacRes()."',
+        municipioNac = '".$this->objeto->getMunicipioNacRes()."',
+        nacionalidad = '".$this->objeto->getNacionalidadRes()."',
+        profesion = '".$this->objeto->getProfesion()."',
+        escolaridad = '".$this->objeto->getEscolaridad()."',
+        lugarTrabajo = '".$this->objeto->getLugarTrabajoRes()."',
+        telTrabajo = '".$this->objeto->getTelefonoRes()."',
+        discapcidad = '".$this->objeto->getDiscapacidadRes()."',
+        expDiscapacidad = '".$this->objeto->getExpDiscapacidadRes()."',
+        tipoSangre = '".$this->objeto->getTipoSangreRes()."',
+        direccionRes = '".$this->objeto->getDireccionRespon()."',
+        telRes1 = '".$this->objeto->getTel1()."',
+        telRes2 = '".$this->objeto->getTel2()."',
+        correo = '".$this->objeto->getEmailRes()."'
+        where idAlumno = ".$this->objeto->getId();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+
+    public function editarOtrosDatos() {
+   
+
+        $_query = "update  otrosDatos set emergencia1 = '".$this->objeto->getContacto1()."',
+        telEmergencia1 = '".$this->objeto->getContacto1Tel()."',
+        emergencia2 = '".$this->objeto->getContacto2()."',
+        telEmergencia2 =  '".$this->objeto->getContacto2Tel()."',
+        retiro1 = '".$this->objeto->getAuto1()."',
+        parentesco1 = '".$this->objeto->getAuto1Tel()."',
+        retiro2 = '".$this->objeto->getAuto2()."',
+         parentesco2 = '".$this->objeto->getAuto2Tel()."',
+         viajaraSolo = '".$this->objeto->getViaje()."',
+         microbusDe = '".$this->objeto->getMicroProp()."',
+         telMicro = '".$this->objeto->getMicroPropTel()."'
+         where idAlumno = ".$this->objeto->getId();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 
     public function guardarHermanos() {
         $corr= "(select max(idAlumno) as id from fichaAlumno)";
@@ -2966,19 +3101,60 @@ class DaoSolictudAlumno extends DaoBase {
         $fila1 = $resultado2->fetch_assoc();
         $anioAc = $fila1['anio'];
 
-        $_query = "select * from fichaAlumno  where grado=".$idGrado." and anio 
-        = '".$anioAc."'  group by nie order by nombre asc";
+        $_query = "select f.*, dp.*, dr.nombre as nomResponsable,
+        dr.tipoIden, dr.numeroIden, dr.familiar, dr.parentesco, dr.sexo as sexoRes,
+        dr.estadoFamiliar,dr.fechaNac as fechaNacRes, dr.departamentoNac as depRes, 
+        dr.municipioNac as munNac, dr.nacionalidad as nacRes, dr.profesion as proRes,
+        dr.escolaridad as escRes, dr.lugarTrabajo as traRes,dr.telTrabajo, dr.discapcidad as discRes,
+        dr.expDiscapacidad as expDiscRes, dr.tipoSangre as sangRes, dr.direccionRes as direRec,
+        dr.telRes1, dr.telRes2, dr.correo as correoRes, od.* from fichaAlumno f
+        inner join datosPadre dp on dp.idAlumno = f.idAlumno
+        inner join datosResponsable dr on dr.idAlumno = f.idAlumno
+        inner join otrosDatos od on od.idAlumno = f.idAlumno
+        where f.grado=".$idGrado." and f.anio 
+        = '".$anioAc."' and f.idEliminado = 1 group by f.nie order by f.nombre asc";
 
         $resultado = $this->con->ejecutar($_query);
 
         $_json = '';
 
         while($fila = $resultado->fetch_assoc()) {
-
+            $btnEditar='';
             $object = json_encode($fila);
 
-            $btnEditar = '<button id=\"'.$fila["idAlumno"].'\"   class=\"ui btnEditar icon blue small button\"><i class=\"edit icon\"></i> Ver Detalles</button>';
-            $btnEliminar = '<button id=\"'.$fila["idAlumno"].'\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+$btnEditar .= '<button id=\"'.$fila["idAlumno"].'\" nie = \"'.$fila["nie"].'\" nombre = \"'.$fila["nombre"].'\" ';
+$btnEditar .= '<button grado=\"'.$fila["grado"].'\" sexo = \"'.$fila["sexo"].'\" repiteGrado = \"'.$fila["repiteGrado"].'\" ';
+$btnEditar .= '<button nuevoIngreso=\"'.$fila["nuevoIngreso"].'\" reingreso = \"'.$fila["reingreso"].'\" religion = \"'.$fila["religion"].'\" ';
+$btnEditar .= '<button escuelaAnterior=\"'.$fila["insAnterior"].'\" fechaNac = \"'.$fila["fechaNac"].'\" departamento = \"'.$fila["departamentoNac"].'\" ';
+$btnEditar .= '<button municipio=\"'.$fila["municipioNac"].'\" nacionalidad = \"'.$fila["nacionalidad"].'\" naturalizado = \"'.$fila["naturalizado"].'\" ';
+$btnEditar .= '<button discapacidad=\"'.$fila["discapacidad"].'\" expDiscapacidad = \"'.$fila["expDiscapacidad"].'\" enfermedad = \"'.$fila["enfermedad"].'\" ';
+$btnEditar .= '<button expEnfermedad=\"'.$fila["expEnfermedad"].'\" alergia = \"'.$fila["alergia"].'\" expAlergia = \"'.$fila["expAlergia"].'\" ';
+$btnEditar .= '<button tipoSangre=\"'.$fila["tipoSangre"].'\" direccionRes = \"'.$fila["direccionRes"].'\" medioTransporte = \"'.$fila["medioTransporte"].'\" ';
+$btnEditar .= '<button distancia=\"'.$fila["distancia"].'\" factoresRiesgos = \"'.$fila["factoresRiesgo"].'\" ocupacion = \"'.$fila["ocupacion"].'\" ';
+$btnEditar .= '<button trabaja=\"'.$fila["trabaja"].'\" dependenciaEco = \"'.$fila["dependenciaEco"].'\" correo = \"'.$fila["correo"].'\" telefono = \"'.$fila["telefono"].'\" ';
+$btnEditar .= '<button nomPadre=\"'.$fila["nombrePadre"].'\" lugarTrabajoP = \"'.$fila["lugarTrabajoP"].'\" telefonoPadre = \"'.$fila["telefonoPadre"].'\" ';
+$btnEditar .= '<button nomMadre=\"'.$fila["nombreMadre"].'\" lugarTrabajoM = \"'.$fila["lugarTrabajoM"].'\" telefonoMadre = \"'.$fila["telefonoMadre"].'\" ';
+$btnEditar .= '<button viveCon=\"'.$fila["viveCon"].'\" viveOtro = \"'.$fila["viveOtro"].'\"';
+
+$btnEditar .= '<button nomResponsable=\"'.$fila["nomResponsable"].'\" tipoIden = \"'.$fila["tipoIden"].'\"';
+$btnEditar .= '<button numeroIden=\"'.$fila["numeroIden"].'\" familiar = \"'.$fila["familiar"].'\"';
+$btnEditar .= '<button parentesco=\"'.$fila["parentesco"].'\" sexoRes = \"'.$fila["sexoRes"].'\"';
+$btnEditar .= '<button estadoFamiliar=\"'.$fila["estadoFamiliar"].'\" fechaNacRes = \"'.$fila["fechaNacRes"].'\"';
+$btnEditar .= '<button depRes=\"'.$fila["depRes"].'\" munRes = \"'.$fila["munNac"].'\" nacRes = \"'.$fila["nacRes"].'\"';
+$btnEditar .= '<button proRes=\"'.$fila["proRes"].'\" escRes = \"'.$fila["escRes"].'\" traRes = \"'.$fila["traRes"].'\"';
+$btnEditar .= '<button discRes=\"'.$fila["discRes"].'\" expDiscRes = \"'.$fila["expDiscRes"].'\" sangRes = \"'.$fila["sangRes"].'\"';
+$btnEditar .= '<button direRec=\"'.$fila["direRec"].'\" telRes1 = \"'.$fila["telRes1"].'\" telRes2 = \"'.$fila["telRes2"].'\"';
+$btnEditar .= '<button correoRes=\"'.$fila["correoRes"].'\"  telTrabajo=\"'.$fila["telTrabajo"].'\"';
+
+
+$btnEditar .= '<button emergencia1=\"'.$fila["emergencia1"].'\"  telEmergencia1=\"'.$fila["telEmergencia1"].'\"';
+$btnEditar .= '<button emergencia2=\"'.$fila["emergencia2"].'\"  telEmergencia2=\"'.$fila["telEmergencia2"].'\"';
+$btnEditar .= '<button retiro1=\"'.$fila["retiro1"].'\"  parentesco1=\"'.$fila["parentesco1"].'\"';
+$btnEditar .= '<button retiro2=\"'.$fila["retiro2"].'\"  parentesco2=\"'.$fila["parentesco2"].'\"';
+$btnEditar .= '<button viajaraSolo=\"'.$fila["viajaraSolo"].'\"  microbusDe=\"'.$fila["microbusDe"].'\" telMicro=\"'.$fila["telMicro"].'\"';
+
+$btnEditar .= 'class=\"ui icon blue small button\" onclick=\"verNomina(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
+$btnEliminar = '<button id=\"'.$fila["idAlumno"].'\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnEliminar.'"';
 

@@ -3,19 +3,19 @@
         <div class="ui grid">
             <div class="row">
             <div class="titulo">
-                    <a href="?1=GestionGradosController&2=prekinder" class="ui blue button" id="prekinder">Prekinder</a>
-                    <a href="?1=GestionGradosController&2=kinder" class="ui teal button" id="kinder">Kinder</a>
-                    <a href="?1=GestionGradosController&2=preparatoria" class="ui green button" id="prepa">Preparatoria</a>
-                    <a href="?1=GestionGradosController&2=primerGrado" class="ui red button" id="primer">1er Grado</a>
-                    <a href="?1=GestionGradosController&2=segundoGrado" class="ui orange button" id="segundo">2do Grado</a>
-                    <a href="?1=GestionGradosController&2=tercerGrado" class="ui yellow button" id="tercer">3er Grado</a>
-                    <a href="?1=GestionGradosController&2=cuartoGrado" class="ui purple button" id="cuarto">4to Grado</a>
-                    <a href="?1=GestionGradosController&2=quintoGrado" class="ui violet button" id="quinto">5to Grado</a>
-                    <a href="?1=GestionGradosController&2=sextoGrado" class="ui brown button" id="sexto">6to Grado</a>
-                    <a href="?1=GestionGradosController&2=septimoGrado" class="ui black button" id="septimo">7mo Grado</a>
-                    <a href="?1=GestionGradosController&2=octavoGrado" class="ui olive button" id="octavo">8vo Grado</a>
-                    <a href="?1=GestionGradosController&2=novenoGrado" class="ui gray button" id="noveno">9no Grado</a>
-                     <br><br>
+            <a href="?1=GestionGradosController&2=prekinder" class="ui compact blue button" id="prekinder">Prekinder</a>
+                    <a href="?1=GestionGradosController&2=kinder" class="ui compact  teal button" id="kinder">Kinder</a>
+                    <a href="?1=GestionGradosController&2=preparatoria" class="ui compact green button" id="prepa">Preparatoria</a>
+                    <a href="?1=GestionGradosController&2=primerGrado" class="ui compact red button" id="primer">1er Grado</a>
+                    <a href="?1=GestionGradosController&2=segundoGrado" class="ui compact orange button" id="segundo">2do Grado</a>
+                    <a href="?1=GestionGradosController&2=tercerGrado" class="ui compact yellow button" id="tercer">3er Grado</a>
+                    <a href="?1=GestionGradosController&2=cuartoGrado" class="ui compact purple button" id="cuarto">4to Grado</a>
+                    <a href="?1=GestionGradosController&2=quintoGrado" class="ui compact violet button" id="quinto">5to Grado</a>
+                    <a href="?1=GestionGradosController&2=sextoGrado" class="ui compact brown button" id="sexto">6to Grado</a>
+                    <a href="?1=GestionGradosController&2=septimoGrado" class="ui compact black button" id="septimo">7mo Grado</a>
+                    <a href="?1=GestionGradosController&2=octavoGrado" class="ui compact olive button" id="octavo">8vo Grado</a>
+                    <a href="?1=GestionGradosController&2=novenoGrado" class="ui compact gray button" id="noveno">9no Grado</a>
+                        <br><br>
                     <font color="#2F5FDF" size="6px">
                     <i class="user icon"></i><i class="book icon"></i>
                     Gestión de PreKinder</font>

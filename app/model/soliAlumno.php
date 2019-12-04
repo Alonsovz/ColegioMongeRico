@@ -104,6 +104,11 @@ class soliAlumno extends ModeloBase{
         return $this;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function getNie()
     {
         return $this->nie;

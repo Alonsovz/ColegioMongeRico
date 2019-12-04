@@ -524,9 +524,9 @@
 
                             <div class="four wide field" style="font-size:16px;">
                                 <label><i class="phone icon"></i><i class="user circle icon"></i>Teléfono:</label>
-                                <input type="text" id="telDiRes2" name="telDiRes1" placeholder="Teléfono 1">
+                                <input type="text" id="telDiRes1" name="telDiRes1" placeholder="Teléfono 1">
                                 <br><br>
-                                <input type="text" id="telDiRes1" name="telDiRes2" placeholder="Teléfono 2">
+                                <input type="text" id="telDiRes2" name="telDiRes2" placeholder="Teléfono 2">
                             </div>
                         
                         </div>
