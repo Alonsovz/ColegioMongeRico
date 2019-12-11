@@ -56,6 +56,7 @@ $(function() {
             "order": [
                 [0, "desc"]
             ],
+            
             "language": {
                 "sProcessing": "Procesando...",
                 "sLengthMenu": "Mostrar _MENU_ registros",
