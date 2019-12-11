@@ -20,9 +20,35 @@ $(function() {
                     "data": "sueldoM"             
                 },
                 {
-                    "data": "afpEmV"             
+                    "data": "sueldoDeven"             
                 },
-                
+                {
+                    "data": "vacacionE"             
+                },
+                {
+                    "data": "aguinaldoE"             
+                },
+                {
+                    "data": "afpEmVE"             
+                },
+                {
+                    "data": "afpEmCE"             
+                },
+                {
+                    "data": "isssEE"             
+                },
+                {
+                    "data": "rentaE"             
+                },
+                {
+                    "data": "otrosE"             
+                },
+                {
+                    "data": "totalDesME"             
+                },
+                {
+                    "data": "totalPE"             
+                },
                 {
                     "data": "Acciones"             
                 }

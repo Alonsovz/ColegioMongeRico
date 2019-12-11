@@ -82,7 +82,7 @@ class DaoSolicitudMaestro extends DaoBase {
         $mes = date("m");
         while($mes < 13){
             
-         $_query = "insert into planilla values(null,".$idExp.",0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
+         $_query = "insert into planilla values(null,".$idExp.",30,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
         '".$mes."','".$anioAc."');
         ";
 
@@ -257,7 +257,7 @@ class DaoSolicitudMaestro extends DaoBase {
     }
 
 
-    public function mostrarPlanilla($mes=0 , $anio=0) {
+    public function planillaMensual($mes=0 , $anio=0) {
         $_query = "select p.*, concat(m.nombre,' ',m.apellido) as nombre, m.tipoPago as pago,
         format(m.sueldo,2) as sueldoFijo,
       concat('$', ' ',  format((m.sueldo),2) ) as sueldoM,
@@ -273,7 +273,120 @@ class DaoSolicitudMaestro extends DaoBase {
         format((p.totalP),2) as totalP
          from planilla p 
         inner join maestros m on m.idMaestro = p.idMaestro 
-        where m.idEliminado=1 and p.mes=".$mes." and anio=".$anio."  order by nombre asc";
+        where m.idEliminado=1 and p.mes=".$mes." and p.anio=".$anio."  order by nombre asc";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        $_json = '';
+
+        while($fila = $resultado->fetch_assoc()) {
+            $id = $fila["idMaestro"];
+            
+            $tipoPago = $fila["pago"];
+            $sueldoFijo = $fila["sueldoFijo"];
+            $diasT = $fila["diasT"];
+            $sueldoDe = ($sueldoFijo / $diasT) * $diasT;
+            $vacacion = $fila["vacacion"];
+            $aguinaldo = $fila["aguinaldo"];
+            $otros = $fila["otros"];
+           
+            if($tipoPago == 'Por honorarios'){
+                $actualizar = "
+                update planilla set 
+                sueldoD =  ".$sueldoDe.",
+                vacacion = ".$vacacion.",
+                aguinaldo = ".$aguinaldo.",
+                afpEmV = 0,
+                afpEmC = 0,
+                isssE = 0,
+                renta = ".$sueldoFijo." * 0.10,
+                otros = ".$otros .",
+                totalDesM = (".$sueldoFijo." * 0.10) - ".$otros.",
+                totalP = ".$sueldoFijo." - (".$sueldoDe." * 0.10) -(".$otros .") + (".$vacacion." + ".$aguinaldo.")
+                where idMaestro =".$id."
+                and mes='".$mes."' and anio = '".$anio."'  ";
+                $resultado1 = $this->con->ejecutar($actualizar);
+
+                
+            }else{
+
+                $afpEmV = 0;
+                $afpEmC = 0;
+                $isss = 0;
+
+                if($sueldoFijo > 5352.54){
+                    $afpEmV = 303.88;
+                }else{
+                    $afpEmV = $sueldoFijo * 0.04;
+                }
+
+                if($sueldoFijo > 5352.54){
+                    $afpEmC = 303.88;
+                }else{
+                    $afpEmC = $sueldoFijo * 0.0325;
+                }
+
+                if($sueldoFijo > 685.71){
+                    $isss = 51.44;
+                }else{
+                    $isss = $sueldoFijo * 0.03;
+                }
+
+                $actualizar = "update planilla set 
+                sueldoD =  ".$sueldoDe.",
+                vacacion = ".$vacacion.",
+                aguinaldo = ".$aguinaldo.",
+                afpEmV = ".$afpEmV.",
+                afpEmC = ".$afpEmC.",
+                isssE = ".$isss.",
+                renta = 0,
+                otros = ".$otros.",
+                totalDesM = (".$afpEmV." + ".$afpEmC." + ".$isss.") -  ".$otros.",,
+                totalP = (".$sueldoFijo." - (".$afpEmV." + ".$afpEmC." + ".$isss." + ".$vacacion." + ".$aguinaldo.") -(".$otros."))
+                where idMaestro =".$id."
+                and mes='".$mes."' and anio = '".$anio."'  ";
+                $resultado1 = $this->con->ejecutar($actualizar);
+            }
+        
+        }
+
+        
+    }
+
+    public function mostrarPlanilla($mes=0 , $anio=0) {
+        $_query = "select p.*, concat(m.nombre,' ',m.apellido) as nombre, 
+        case when  m.tipoPago = 'Por honorarios'
+        then 
+        '<div style=background-color:#5B05CF;color:white;>Por honorarios</div>'
+        else
+        '<div style=background-color:#027895;color:white;>Por Seguro</div>'
+        end as pago,
+        format(m.sueldo,2) as sueldoFijo,
+      concat('$', ' ',  format((m.sueldo),2) ) as sueldoM,
+        format((p.sueldoD),2) as sueldoD,
+        format((p.vacacion),2) as vacacion,
+        format((p.aguinaldo),2) as aguinaldo,
+        format((p.afpEmV),2) as afpEmV,
+        format((p.afpEmC),2) as afpEmC,
+        format((p.isssE),2) as isssE,
+        format((p.renta),2) as renta,
+        format((p.otros),2) as otros,
+        format((p.totalDesM),2) as totalDesM,
+        format((p.totalP),2) as totalP,
+
+        concat('$', ' ', format((p.sueldoD),2)) as sueldoDeven,
+        concat('$', ' ', format((p.vacacion),2)) as vacacionE,
+        concat('$', ' ', format((p.aguinaldo),2)) as aguinaldoE,
+        concat('$', ' ', format((p.afpEmV),2) ) as afpEmVE,
+        concat('$', ' ', format((p.afpEmC),2) ) as afpEmCE,
+        concat('$', ' ', format((p.isssE),2) ) as isssEE,
+        concat('$', ' ', format((p.renta),2)) as rentaE,
+        concat('$', ' ', format((p.otros),2)) as otrosE,
+        concat('$', ' ', format((p.totalDesM),2)) as totalDesME,
+        concat('$', ' ', format((p.totalP),2)) as totalPE
+         from planilla p 
+        inner join maestros m on m.idMaestro = p.idMaestro 
+        where m.idEliminado=1 and p.mes=".$mes." and p.anio=".$anio."  order by nombre asc";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -290,8 +403,8 @@ class DaoSolicitudMaestro extends DaoBase {
             $btnEditar .= ' afpEmV =\"'.$fila["afpEmV"].'\" afpEmC =\"'.$fila["afpEmC"].'\" ';
             $btnEditar .= ' isssE =\"'.$fila["isssE"].'\" renta =\"'.$fila["renta"].'\" ';
             $btnEditar .= ' otros =\"'.$fila["otros"].'\" totalDesM =\"'.$fila["totalDesM"].'\" ';
-            $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon orange small button\" onclick=\"planilla(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
-            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\" nombre =\"'.$fila["nombre"].'\" sueldoD =\"'.$fila["totalP"].'\" tipoPago =\"'.$fila["pago"].'\" class=\"ui  icon green small button\" onclick=\"voucher(this)\"><i class=\"print icon\"></i> Imprimir </button>';
+            $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon orange small button\" onclick=\"planilla(this)\"><i class=\"eye icon\"></i></button>';
+            $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\" nombre =\"'.$fila["nombre"].'\" sueldoD =\"'.$fila["totalP"].'\" tipoPago =\"'.$fila["pago"].'\" class=\"ui  icon green small button\" onclick=\"voucher(this)\"><i class=\"print icon\"></i>  </button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnVoucher.'"';
 

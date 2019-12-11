@@ -466,18 +466,11 @@
 <div class="item">
 <hr><br>
         <a href="?1=UsuarioController&2=anioEscolar"  style="color:white;font-weight:bold; font-size:14px; ">
-        <i class="calendar icon"></i> Anio Escolar
+        <i class="calendar icon"></i> Año Escolar
         </a>
 
         </div>
 
-<div class="item">
-<hr><br>
-        <a href="?1=UsuarioController&2=papeleria"  style="color:white;font-weight:bold; font-size:14px;">
-           <i class="trash icon"></i> Papelera 
-        </a>
-
-        </div>
 <style>
     div{
         font-weight:bold;

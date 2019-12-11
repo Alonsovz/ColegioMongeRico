@@ -28,9 +28,12 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                 <div class="ui divider"></div>
             </div>
         </div>
-        <div class="row">
-            <div class="sixteen wide column">
-            <table id="dtMaestros" class="ui selectable very compact celled table" style="width:100%; margin:auto;">
+        <div class="row"  style="background-color:#D8D8D8;
+                -webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+                box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);">
+            <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
+            <table id="dtMaestros" class="ui selectable very compact celled table" style="width:100%; margin:auto;font-size:12px;">
                     <thead>
                         <tr>
                         
@@ -38,7 +41,16 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                             <th style="background-color: #08088A; color:white;text-align: center;">Nombre</th>
                             <th style="background-color: #08088A; color:white;text-align: center;">Tipo de pago</th>
                             <th style="background-color: #08088A; color:white;text-align: center;">Sueldo</th>
-                            <th style="background-color: #08088A; color:white;text-align: center;">AFPEMV</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">$ Devengado</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">Vacación</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">Aguinaldo</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">AFP Vejez</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">AFP Comisión</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">ISSS</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">Renta</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">Otros</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">T. Desc</th>
+                            <th style="background-color: #08088A; color:white;text-align: center;">$ Pagar</th>
                             <th style="background-color: #08088A; color:white;text-align: center;">Acciones</th>
                            
                         </tr>
@@ -125,7 +137,7 @@ box-shadow: 5px 13px 5px -6px rgba(133,131,133,1);" class="ui right floated blue
                 </th>
 
             </tr>
-            </table>
+            </table><br><br>
 
               
 
@@ -505,7 +517,20 @@ else{
 var mes  = $("#mesFiltro").val();
 var anio  = $("#anFiltro").val();
 
-filtrarPlanilla(mes , anio);
+
+$.ajax({
+			type:"POST",
+			url:"?1=MaestrosController&2=planillaMensual",
+            data:{
+                mes:mes,
+                anio:anio,
+            },
+        success:function(r){
+				
+			}
+});
+
+
 
 
 $('#planillafiltro').modal('hide');
@@ -663,7 +688,7 @@ $.ajax({
 			}
 });
 
-
+filtrarPlanilla(mes , anio);
 var mesR = $("#mesFiltro option:selected").text();
 var anR = $("#anFiltro option:selected").text();
 
