@@ -357,9 +357,9 @@ class DaoSolicitudMaestro extends DaoBase {
         $_query = "select p.*, concat(m.nombre,' ',m.apellido) as nombre, 
         case when  m.tipoPago = 'Por honorarios'
         then 
-        '<div style=background-color:#5B05CF;color:white;>Por honorarios</div>'
+        '<div style=background-color:#5B05CF;color:white;font-size:12px;>Por honorarios</div>'
         else
-        '<div style=background-color:#027895;color:white;>Por Seguro</div>'
+        '<div style=background-color:#027895;color:white;font-size:12px;>Por Seguro</div>'
         end as pago,
         format(m.sueldo,2) as sueldoFijo,
       concat('$', ' ',  format((m.sueldo),2) ) as sueldoM,
