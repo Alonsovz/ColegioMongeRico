@@ -4,7 +4,11 @@
             <div class="row">
                           
             <div class="titulo">
-            <a href="?1=GestionGradosController&2=prekinder" class="ui compact blue button" id="prekinder">Prekinder</a>
+            <?php
+               if($_SESSION["descRol"] == 'Administrador/a') {
+               
+                ?>
+                    <a href="?1=GestionGradosController&2=prekinder" class="ui compact blue button" id="prekinder">Prekinder</a>
                     <a href="?1=GestionGradosController&2=kinder" class="ui compact  teal button" id="kinder">Kinder</a>
                     <a href="?1=GestionGradosController&2=preparatoria" class="ui compact green button" id="prepa">Preparatoria</a>
                     <a href="?1=GestionGradosController&2=primerGrado" class="ui compact red button" id="primer">1er Grado</a>
@@ -16,7 +20,9 @@
                     <a href="?1=GestionGradosController&2=septimoGrado" class="ui compact black button" id="septimo">7mo Grado</a>
                     <a href="?1=GestionGradosController&2=octavoGrado" class="ui compact olive button" id="octavo">8vo Grado</a>
                     <a href="?1=GestionGradosController&2=novenoGrado" class="ui compact gray button" id="noveno">9no Grado</a>
-                             <br><br>
+                 <?php
+               }
+                 ?>               <br><br>
                     <font color="#8A2908" size="6px">
                     <i class="user icon"></i><i class="book icon"></i>
                     Gestión de 6to Grado</font>
