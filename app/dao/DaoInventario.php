@@ -204,6 +204,51 @@ class DaoInventario extends DaoBase {
         }
     }
 
+
+
+    public function nuevaExisProducto() {
+        $suma=$this->objeto->getExistencia();
+
+        $_query = "update inventarioOtros
+         set existencia = existencia + $suma  where idProducto = ".$this->objeto->getId();
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function restarExisProducto() {
+        $resta=$this->objeto->getExistencia();
+
+        $_query = "update inventarioOtros
+         set existencia = existencia - $resta  where idProducto = ".$this->objeto->getId();
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+    public function eliminarProducto() {
+        $resta=$this->objeto->getExistencia();
+
+        $_query = "update inventarioOtros
+         set idEliminado = 2  where idProducto = ".$this->objeto->getId();
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 }
 
 ?>

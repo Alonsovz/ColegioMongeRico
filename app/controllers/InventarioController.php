@@ -143,6 +143,45 @@ class InventarioController extends ControladorBase {
 
         echo $dao->nuevaExisU();
     }
+
+
+    public function nuevaExisProducto() {
+        $producto = $_REQUEST["idTallaEx"];
+        $existencia = $_REQUEST["cantidadEx"];
+
+        $dao = new DaoInventario();
+
+        $dao->objeto->setId($producto);
+        $dao->objeto->setExistencia($existencia);
+
+        echo $dao->nuevaExisProducto();
+    }
+
+
+
+    public function restarExisProducto() {
+        $producto = $_REQUEST["idTalla"];
+        $existencia = $_REQUEST["vendidos"];
+
+        $dao = new DaoInventario();
+
+        $dao->objeto->setId($producto);
+        $dao->objeto->setExistencia($existencia);
+
+        echo $dao->restarExisProducto();
+    }
+
+
+    public function eliminarProducto() {
+        $datos = $_REQUEST["id"];
+
+        $dao = new DaoInventario();
+
+        $dao->objeto->setId($datos);
+
+        echo $dao->eliminarProducto();
+    }
+
 }
 
 ?>

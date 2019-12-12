@@ -24,17 +24,17 @@
 
         <div class="row title-bar">
             <div class="sixteen wide column">
-            <button class="ui right floated red labeled icon button" id="btnModalRegistroTalla">
+            <button class="ui right floated green labeled icon button" id="btnModalRegistroTalla">
                     <i class="plus icon"></i>
                     Agregar nueva talla
            </button>
 
-                <button class="ui right floated blue labeled icon button" id="btnModalRegistroVenta">
+                <button class="ui right floated orange labeled icon button" id="btnModalRegistroVenta">
                     <i class="plus icon"></i>
                     Agregar Venta
                 </button>
 
-                <button class="ui right floated green labeled icon button" id="btnModalRegistroExis">
+                <button class="ui right floated blue labeled icon button" id="btnModalRegistroExis">
                     <i class="plus icon"></i>
                     Agregar a existencia
                 </button>
@@ -117,6 +117,7 @@
                     <div class="sixteen wide field">
                     <label>Nombre de talla:</label>
                     <select name="tallaNV" id="tallaNV" class="ui dropdown">
+                    <option value="0" set selected>Selecciona</option>
                                  <?php        
                                 while ($valores = mysqli_fetch_array($query)) {
                                     echo '<option value="'.$valores["id"].'">'.$valores["talla"].'</option>';
@@ -166,6 +167,7 @@
                 <div class="sixteen wide field">
                     <label>Nombre de talla:</label>
                     <select name="tallaEx" id="tallaEx" class="ui search dropdown">
+                    <option value="0" set selected>Selecciona</option>
                                  <?php        
                                 while ($valores = mysqli_fetch_array($query1)) {
                                     echo '<option value="'.$valores["id"].'">'.$valores["talla"].'</option>';
@@ -330,10 +332,11 @@ $("#guardarNuevaEx").click(function(){
 
                                         }).then((result) => {
                                             $('#actualizarExis').modal('setting', 'closable', false).modal('show');
-                                            $('#tallaEx').val(1);
+                                            $('#tallaEx').val(0);
                                             recargarLista1();
                                             $("#acExis").val('');
                                             $("#new").text('');
+                                            $("#existenciaEx").text('');
                                         }); 
                                        
                                        // limpiar();
@@ -374,9 +377,10 @@ $("#guardarNuevaC").click(function(){
 
                                         }).then((result) => {
                                             $('#nuevaVenta').modal('setting', 'closable', false).modal('show');
-                                            $('#tallaNV').val(1);
+                                            $('#tallaNV').val(0);
                                             recargarLista();
-                                            $("#vendidos").val('')
+                                            $("#vendidos").val('');
+                                            $("#existenciaV").text('');
                                         }); 
                                        
                                        // limpiar();

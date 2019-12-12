@@ -8,7 +8,7 @@
   ?>
 
 <div id="app">
-<modal-eliminar id_form="frmEliminar" id="modalEliminar" url="?1=InventarioController&2=eliminarC" titulo="Eliminar"
+<modal-eliminar id_form="frmEliminar" id="modalEliminar" url="?1=InventarioController&2=eliminarProducto" titulo="Eliminar"
         sub_titulo="¿Está seguro de querer eliminar el elemento?" :campos="campos_eliminar" tamanio='tiny'></modal-eliminar>
 
         <div class="ui grid">
@@ -30,7 +30,7 @@
                             Agregar nuevo artículo
                 </button>
 
-                <button class="ui right floated red labeled icon button" id="btnModalRegistroVenta">
+                <button class="ui right floated orange labeled icon button" id="btnModalRegistroVenta">
                     <i class="window minimize icon"></i>
                     Restar a existencia
                 </button>
@@ -112,7 +112,7 @@
 
 <div id="nuevaVenta" class="ui tiny modal">
     <div class="header"  style="color:white; background-color:#009C95">
-      <i class="plus icon"></i>  Nueva venta de calcetas
+      <i class="plus icon"></i>  Restar cantidad en existencia
     </div>
     <div class="content" style="background-color:#DBDDDD ">
         <form class="ui form">
@@ -120,15 +120,17 @@
             <div class="fields">
                     <div class="sixteen wide field">
                     <label>Nombre de Producto:</label>
-                    <select name="ProductoNV" id="ProductoNV" class="ui dropdown">
+                    <select name="ProductoNV" id="ProductoNV" class="ui search dropdown">
+                    <option value="0" set selected>Selecciona</option>
+                    
                                  <?php        
                                 while ($valores = mysqli_fetch_array($query)) {
-                                    echo '<option value="'.$valores["id"].'">'.$valores["Producto"].'</option>';
+                                    echo '<option value="'.$valores["idProducto"].'">'.$valores["nombre"].'</option>';
                                 }
                                 ?>
                     </select>
                     <br><br>
-                                Existencia (Pares):
+                                Existencia:
                                 <div id="existenciaV"></div>
                     <br>
                     </div>
@@ -138,10 +140,10 @@
                 <div class="fields">
                     <div class="sixteen wide field">
                     <label>Cantidad de pares vendidos:</label>
-                    <input type="text" name="vendidos" id="vendidos" placeholder="Cantidad de pares vendidos">
+                    <input type="text" name="vendidos" id="vendidos" placeholder="Cantidad a restar">
                     <br><br>
                     <div class="ui red pointing label"  id="errorExis"  style="display: none; margin: 0; text-align:center; width:100%; font-size: 12px;">
-                   No puedes haber vendido mas que la cantidad en existencia
+                   No puedes restar mas que la cantidad en existencia
                     </div>
                     </div>
                 </div>
@@ -169,7 +171,8 @@
                 <div class="fields">
                 <div class="sixteen wide field">
                     <label>Nombre de Producto:</label>
-                    <select name="ProductoEx" id="ProductoEx" class="ui dropdown">
+                    <select name="ProductoEx" id="ProductoEx" class="ui search dropdown">
+                    <option value="0" set selected>Selecciona</option>
                                  <?php        
                                 while ($valores = mysqli_fetch_array($query1)) {
                                     echo '<option value="'.$valores["idProducto"].'">'.$valores["nombre"].'</option>';
@@ -209,11 +212,32 @@
 
 <script src="./res/tablas/tablaInventario.js"></script>
 <script src="./res/js/modalEliminar.js"></script>
-
+<script>
+var app = new Vue({
+        el: "#app",
+        data: {
+            campos_eliminar: [{
+                name: 'idEliminar',
+                type: 'hidden'
+            }]
+        },
+        methods: {
+            refrescarTabla() {
+                tablaInventario.ajax.reload();
+            }
+            
+        }
+    });
+</script>
 <script>
 $(document).ready(function(){
     $("#otrosProductos").removeClass("ui purple button");
     $("#otrosProductos").addClass("ui purple basic button");
+
+    $("#acExis").mask("99999999999999999999999");
+    $("#vendidos").mask("99999999999999999999999");
+    $("#existencia").mask("99999999999999999999999");
+
 });
 
 
@@ -224,6 +248,11 @@ $("#btnModalRegistroProducto").click(function(){
 
 $("#btnModalRegistroExis").click(function(){
     $('#actualizarExis').modal('setting', 'closable', false).modal('show');
+});
+
+
+$("#btnModalRegistroVenta").click(function(){
+    $('#nuevaVenta').modal('setting', 'closable', false).modal('show');
 });
 
 function limpiar(){
@@ -264,4 +293,167 @@ $("#guardarNueva").click(function(){
             });
 });
 
+
+$("#guardarNuevaC").click(function(){
+    var cantidad= parseInt($("#existenciaV").text());
+    var vendidos = parseInt($("#vendidos").val());
+    var idTalla = $("#ProductoNV").val();
+
+    if(vendidos>cantidad){
+       $("#errorExis").css("display","block");
+        
+    }else{
+        alertify.confirm("¿Desea guardar los datos de venta?",
+            function(){
+             $.ajax({
+                    type: 'POST',
+                    url: '?1=InventarioController&2=restarExisProducto',
+					data: {
+                        idTalla: idTalla,
+                        vendidos: vendidos,
+                    },
+                    success: function(r) {
+                                    if(r == 1) {
+                                        $('#nuevaVenta').modal('hide');
+                                        $('#dtInventario').DataTable().ajax.reload();
+                                        swal({
+                                            title: 'Resta registrada',
+                                            text: 'Guardado con éxito, monto en existencia actualizado!',
+                                            type: 'success',
+                                            showConfirmButton: true
+
+                                        }).then((result) => {
+                                            $('#nuevaVenta').modal('setting', 'closable', false).modal('show');
+                                            $('#ProductoNV').val(0);
+                                            recargarLista();
+                                            $("#vendidos").val('');
+                                            $("#existenciaV").text('');
+                                        }); 
+                                       
+                                        limpiar();
+                                    } 
+                                }
+            });
+        },
+            function(){
+                //$("#modalCalendar").modal('toggle');
+                alertify.error('Cancelado');
+                
+            }); 
+
+    }
+});
+
+
+$(document).on("click", ".btnEliminar", function () {
+            $('#modalEliminar').modal('setting', 'closable', false).modal('show');
+            $('#idEliminar').val($(this).attr("id"));
+});
+
+
+$('#ProductoEx').change(function(){
+            recargarLista1();
+            $("#errorExis").css("display","none");
+            $("#vendidos").val('');
+});
+
+
+function recargarLista1(){
+        
+		$.ajax({
+			type:"POST",
+			url:"./app/view/Inventario/datosOtros.php",
+			data:"producto=" + $('#ProductoEx').val(),
+			success:function(r){
+				$('#existenciaEx').html(r);
+			}
+		});
+        
+	}
+
+$(document).ready(function(){
+        $('#ProductoEx').val(0);
+        recargarLista1();
+        $("#errorExis").css("display","none");
+        $("#vendidos").val('');
+
+	
+});
+
+
+$("#acExis").keyup(function(){
+    var cantidadEx= parseInt($("#existenciaEx").text());
+    var cantidadNew= parseInt($("#acExis").val());
+
+   
+
+    if($("#acExis").val()>0) {
+        var total = cantidadEx + cantidadNew;
+        $("#new").text(total);
+    }
+    if($("#acExis").val()== ''){
+       
+        $("#new").text(cantidadEx);
+    }
+   
+});
+
+$('#ProductoNV').change(function(){
+            recargarLista();
+            $("#errorExis").css("display","none");
+            $("#vendidos").val('');
+		});
+
+
+        function recargarLista(){
+        
+		$.ajax({
+			type:"POST",
+			url:"./app/view/Inventario/datosOtros.php",
+			data:"producto=" + $('#ProductoNV').val(),
+			success:function(r){
+				$('#existenciaV').html(r);
+			}
+		});
+        
+	}
+
+
+
+$("#guardarNuevaEx").click(function(){
+    var cantidadEx= $("#acExis").val();
+    var idTallaEx = $("#ProductoEx").val();
+
+             $.ajax({
+                    type: 'POST',
+                    url: '?1=InventarioController&2=nuevaExisProducto',
+					data: {
+                        idTallaEx: idTallaEx,
+                        cantidadEx: cantidadEx,
+                    },
+                    success: function(r) {
+                                    if(r == 1) {
+                                        $('#actualizarExis').modal('hide');
+                                        $('#dtInventario').DataTable().ajax.reload();
+                                        swal({
+                                            title: 'Ingreso de articulo registrado',
+                                            text: 'Guardado con éxito, monto en existencia actualizado!',
+                                            type: 'success',
+                                            showConfirmButton: true
+
+                                        }).then((result) => {
+                                            $('#actualizarExis').modal('setting', 'closable', false).modal('show');
+                                            $('#ProductoEx').val(0);
+                                            $("#existenciaEx").text('');
+                                            recargarLista1();
+                                            $("#acExis").val('');
+                                            $("#new").text('');
+                                        }); 
+                                       
+                                       limpiar();
+                                    } 
+                                }
+            });
+      
+});
 </script>

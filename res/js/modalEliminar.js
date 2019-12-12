@@ -74,11 +74,11 @@ Vue.component('modal-eliminar', {
 
     template: `<div :class="['ui','modal',tamanio]" :id="id">
 
-                <div class="header">
+                <div class="header"  style="color:white; background-color:#009C95;">
                     {{titulo}}
                 </div>
-                <div class="content">
-                    <h4>{{sub_titulo}}</h4>
+                <div class="content" style="background-color:#DBDDDD;text-align:center;">
+                    <h3>{{sub_titulo}}</h3>
                     <form action="" class="ui equal width form" :id="id_form">
                         <div class="fields">
                             <div v-for="campo in campos" class="field">
