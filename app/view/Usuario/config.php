@@ -149,7 +149,7 @@
 </div>
 
 <!-- modal de registro -->
-
+<div class="animated bounceInUp row" id="dashboard-cardC">
         <div class="ui grid">
             <div class="row">
                 <div class="sixteen wide column">
@@ -215,7 +215,7 @@
                             <button class="ui right floated fluid teal  button" id="btnCambiarNom" type="button"><i class="street view icon"></i>Datos Personales</button>
                         </div>
                         <div class="item">
-                            <button class="ui right floated fluid gray button" id="btnCambiarContra" type="button"><i class="lock icon"></i>Modificar contraseña</button>
+                            <button class="ui right floated fluid black button" id="btnCambiarContra" type="button"><i class="lock icon"></i>Modificar contraseña</button>
                         </div>
                         
 
@@ -224,7 +224,7 @@
                 </div>
 
             </div>
-
+</div>
         </div>
         <script>
         $(function () {

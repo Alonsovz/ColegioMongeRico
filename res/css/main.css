@@ -11,6 +11,19 @@ body {
     /* overflow: hidden; */
 }
 
+
+#dashboard-cardC {
+    width: 100%;
+    padding: 30px 70px;
+    background: #D8D8D8;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+-moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+           -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
 .logo {
     margin: 0 !important;
     width: 100px !important;
