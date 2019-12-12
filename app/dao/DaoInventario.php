@@ -36,6 +36,34 @@ class DaoInventario extends DaoBase {
     }
 
 
+
+    public function mostrarOtros()
+    {
+        $_query = "select * from inventarioOtros where idEliminado=1;";
+
+        $resultado = $this->con->ejecutar($_query);
+
+       
+        $_json ='';
+        while($fila = $resultado->fetch_assoc()) {
+
+            $object = json_encode($fila);
+
+         $btnEliminar = '<button id=\"'.$fila["idProducto"].'\" class=\"ui btnEliminar icon red small button\" ><i class=\"trash icon\"></i>Eliminar</button>';
+            
+            $acciones = ', "Acciones": "'.$btnEliminar.'"';   
+               
+            $object = substr_replace($object, $acciones, strlen($object) -1, 0);
+
+            $_json .= $object.',';
+        }
+
+        $_json = substr($_json,0, strlen($_json) - 1);
+
+        return '{"data": ['.$_json .']}';
+    }
+
+
     public function mostrarCalcetas()
     {
         $_query = "select * from inventarioCal where idEliminado=1;";
@@ -87,6 +115,20 @@ class DaoInventario extends DaoBase {
 
     public function registrarC() {
         $_query = "insert into inventarioCal values(null,'".$this->objeto->getTalla()."', '".$this->objeto->getExistencia()."',1)";
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+
+    public function registrarProducto() {
+        $_query = "insert into inventarioOtros values(null,'".$this->objeto->getProducto()."', '".$this->objeto->getExistencia()."',1)";
 
         $resultado = $this->con->ejecutar($_query);
 

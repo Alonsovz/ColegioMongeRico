@@ -407,6 +407,19 @@ create table anio(
 anio varchar(4)
 );
 
+
+create table inventarioOtros(
+	idProducto int PRIMARY key AUTO_INCREMENT,
+	nombre varchar(500),
+	existencia int,
+    idEliminado int
+);
+
+
+
+
+insert into inventarioOtros values(1,'Pupitres',10,1);
+
 insert into anio values('2019');
 
 

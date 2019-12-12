@@ -15,6 +15,7 @@
         <div class="titulo">
         <a href="?1=InventarioController&2=calcetas" class="ui teal button" id="calcetas">Calcetas</a>
         <a href="?1=InventarioController&2=uniformes" class="ui black button" id="uniformes">Uniformes</a>
+        <a href="?1=InventarioController&2=otros" class="ui purple button" id="otrosProductos">Otros</a>
         <br><br>
                 <i class="calendar check icon"></i>
                     Inventario de uniformes<font color="#210B61" size="20px">.</font>
@@ -46,8 +47,11 @@
             </div>
         </div>
         <br>
-        <div class="row">
-            <div class="sixteen wide column">
+        <div class="row" style="background-color:#D8D8D8;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+    box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);">
+            <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtUniformes" class="ui selectable very compact celled table" style="width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -61,17 +65,17 @@
                     </thead>
                     <tbody>
                     </tbody>
-                </table>
+                </table><br><br>
             </div>
         </div>
     </div>
 </div>
 
 <div id="nuevaTalla" class="ui tiny modal">
-    <div class="header">
+    <div class="header" style="color:white; background-color:#009C95">
       <i class="plus icon"></i>  Nueva talla de Uniformes
     </div>
-    <div class="content">
+    <div class="content" style="background-color:#DBDDDD ">
         <form class="ui form">
             <div class="field">
                 <div class="fields">
@@ -103,10 +107,10 @@
 
 
 <div id="nuevaVenta" class="ui tiny modal">
-    <div class="header">
+    <div class="header" style="color:white; background-color:#009C95">
       <i class="plus icon"></i>  Nueva venta de Uniformes
     </div>
-    <div class="content">
+    <div class="content" style="background-color:#DBDDDD ">
         <form class="ui form">
             <div class="field">
                 <div class="fields">
@@ -152,16 +156,16 @@
 
 
 <div id="actualizarExis" class="ui tiny modal">
-    <div class="header">
+    <div class="header" style="color:white; background-color:#009C95">
       <i class="plus icon"></i>  Actualizar existencias de Uniformes
     </div>
-    <div class="content">
+    <div class="content" style="background-color:#DBDDDD ">
         <form class="ui form">
             <div class="field">
                 <div class="fields">
                 <div class="sixteen wide field">
                     <label>Nombre de talla:</label>
-                    <select name="tallaEx" id="tallaEx" class="ui dropdown">
+                    <select name="tallaEx" id="tallaEx" class="ui search dropdown">
                                  <?php        
                                 while ($valores = mysqli_fetch_array($query1)) {
                                     echo '<option value="'.$valores["id"].'">'.$valores["talla"].'</option>';

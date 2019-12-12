@@ -14,6 +14,11 @@ class InventarioController extends ControladorBase {
         require_once './app/view/Inventario/calcetas.php';
     }
 
+    public static function otros() {
+        self::loadMain();
+        require_once './app/view/Inventario/otrosProductos.php';
+    }
+
     public function mostrarUniformes() {
         $dao = new DaoInventario();
 
@@ -24,6 +29,14 @@ class InventarioController extends ControladorBase {
         $dao = new DaoInventario();
 
         echo $dao->mostrarCalcetas();
+    }
+
+
+
+    public function mostrarOtros() {
+        $dao = new DaoInventario();
+
+        echo $dao->mostrarOtros();
     }
 
     public function eliminarC() {
@@ -56,6 +69,19 @@ class InventarioController extends ControladorBase {
         $dao->objeto->setExistencia($existencia);
 
         echo $dao->registrarC();
+    }
+
+
+    public function registrarProducto() {
+        $talla = $_REQUEST["nombre"];
+        $existencia = $_REQUEST["existencia"];
+
+        $dao = new DaoInventario();
+
+        $dao->objeto->setProducto($talla);
+        $dao->objeto->setExistencia($existencia);
+
+        echo $dao->registrarProducto();
     }
 
     public function registrarTallaU() {

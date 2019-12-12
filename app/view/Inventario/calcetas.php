@@ -16,6 +16,7 @@
                 <div class="titulo">
                 <a href="?1=InventarioController&2=calcetas" class="ui teal button" id="calcetas">Calcetas</a>
                 <a href="?1=InventarioController&2=uniformes" class="ui black button" id="uniformes">Uniformes</a>
+                <a href="?1=InventarioController&2=otros" class="ui purple button" id="otrosProductos">Otros</a>
                 <br><br>
                 <i class="calendar check icon"></i>
                     Inventario de Calcetas<font color="#210B61" size="20px">.</font>
@@ -47,8 +48,11 @@
             </div>
         </div>
         <br>
-        <div class="row">
-            <div class="sixteen wide column">
+        <div class="row" style="background-color:#D8D8D8;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+    box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);">
+            <div class="sixteen wide column" style="margin-left:30px;margin-right:30px;">
                 <table id="dtCalcetas" class="ui selectable very compact celled table" style="width:100%; margin:auto;">
                     <thead>
                         <tr>
@@ -62,16 +66,16 @@
                     </thead>
                     <tbody>
                     </tbody>
-                </table>
+                </table><br><br>
             </div>
         </div>
     </div>
 </div>
 <div id="nuevaTalla" class="ui tiny modal">
-    <div class="header">
+    <div class="header" style="color:white; background-color:#009C95">
       <i class="plus icon"></i>  Nueva talla de calcetas
     </div>
-    <div class="content">
+    <div class="content" style="background-color:#DBDDDD ">
         <form class="ui form">
             <div class="field">
                 <div class="fields">
@@ -103,10 +107,10 @@
 
 
 <div id="nuevaVenta" class="ui tiny modal">
-    <div class="header">
+    <div class="header" style="color:white; background-color:#009C95">
       <i class="plus icon"></i>  Nueva venta de calcetas
     </div>
-    <div class="content">
+    <div class="content" style="background-color:#DBDDDD ">
         <form class="ui form">
             <div class="field">
             <div class="fields">
@@ -152,10 +156,10 @@
 
 
 <div id="actualizarExis" class="ui tiny modal">
-    <div class="header">
+    <div class="header" style="color:white; background-color:#009C95">
       <i class="plus icon"></i>  Actualizar existencias de calcetas
     </div>
-    <div class="content">
+    <div class="content" style="background-color:#DBDDDD ">
         <form class="ui form">
             <div class="field">
                 <div class="fields">

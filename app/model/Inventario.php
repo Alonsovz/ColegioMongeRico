@@ -4,6 +4,7 @@ class Inventario extends ModeloBase{
     private $id;
     private $talla;
     private $existencia;
+    private $producto;
 
     public function __construct() {
 
@@ -61,6 +62,23 @@ class Inventario extends ModeloBase{
         return $this;
     }
 
+
+    public function getProducto()
+    {
+        return $this->producto;
+    }
+
+    /**
+     * Set the value of codigoUsuario
+     *
+     * @return  self
+     */ 
+    public function setProducto($producto)
+    {
+        $this->producto = $producto;
+
+        return $this;
+    }
 
 
 }
