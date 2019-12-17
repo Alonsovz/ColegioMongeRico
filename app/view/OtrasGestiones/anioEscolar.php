@@ -61,7 +61,7 @@
                    anio : $("#anio").val(),
                },
                success: function(r) {
-                if(r == 1) {
+                if(r == 111) {
                         swal({
                             title: 'Cambios guardados',
                             text: 'Año guardado con éxito',

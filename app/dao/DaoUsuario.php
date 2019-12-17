@@ -116,6 +116,71 @@ class DaoUsuario extends DaoBase {
         }
     }
 
+
+
+
+    public function registrarNuevaPlanilla($anio){
+        $_query = "select * from maestros where idEliminado = 1";
+
+        $resultado = $this->con->ejecutar($_query);
+
+       
+
+        while($fila = $resultado->fetch_assoc()) {
+            $idMaestro = $fila["idMaestro"];
+
+            $mes = 01;
+
+            while($mes < 13){
+                $_query1= "insert into planilla values(null,".$idMaestro.",30,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,
+                '".$mes."','".$anio."')";
+
+                $resultado1 = $this->con->ejecutar($_query1);
+
+                $mes++;
+
+               
+            }
+            
+        }
+
+        if($resultado1){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+
+
+    public function alumnosExpediente(){
+        $_query = "select * from fichaAlumno where idEliminado = 1";
+
+        $resultado = $this->con->ejecutar($_query);
+
+       
+
+        while($fila = $resultado->fetch_assoc()) {
+            $idAlumno = $fila["idAlumno"];
+
+          
+                $_query1= "update fichaAlumno set idEliminado = 2 where idAlumno =".$idAlumno;
+
+                $resultado1 = $this->con->ejecutar($_query1);    
+                    
+        }
+
+        if($resultado1){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+
+
+
+
     public function cuentasAdministrador() {
         $_query = "call cuentasAdministrador()";
         $resultado = $this->con->ejecutar($_query);

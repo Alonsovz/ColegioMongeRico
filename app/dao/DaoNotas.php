@@ -21,7 +21,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasLenguaje n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -60,7 +60,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasMatematica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -100,7 +100,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasCiencias n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -140,7 +140,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasSociales n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -180,7 +180,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasIngles n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -220,7 +220,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasArtistica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -260,7 +260,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasEduFe n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -300,7 +300,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasMoral n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -340,7 +340,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasCompu n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -380,7 +380,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasFisica n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -419,7 +419,7 @@ class DaoNotas extends DaoBase {
          f.nombre as nombreAlumno,
         ROUND( format((n.nota1 + n.nota2 + n.nota3)/ 3,2) ) as promedio from notasConducta n
         inner join fichaAlumno f on f.idAlumno = n.idAlumno
-        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."';
+        where n.mes ='".$mes."' and n.anio ='".$anioAc."' and f.grado ='".$grado."' and f.idEliminado = 1;
         ";
 
         $resultado = $this->con->ejecutar($_query);

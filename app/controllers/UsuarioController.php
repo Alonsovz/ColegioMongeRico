@@ -497,7 +497,8 @@ class UsuarioController extends ControladorBase {
 
 
         echo $dao->guardarAnioEscolar($anio);
-
+        echo $dao->registrarNuevaPlanilla($anio);
+        echo $dao->alumnosExpediente();
     }
 
 
