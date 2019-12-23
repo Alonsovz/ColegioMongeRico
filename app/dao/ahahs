@@ -1,0 +1,52 @@
+SELECT f.nombre as nombreAlumno, f.idAlumno as idAlumno,
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasLenguaje n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioLenguaje,
+
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasmatematica n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioMate,
+
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasciencias n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioCiencias,
+
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notassociales n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioSociales,
+
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasingles n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioIngles,
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasartistica n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioArtistica,
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasfisica n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioFisica,
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasedufe n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioFe,
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasmoral n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioMoral,
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notascompu n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioCompu,
+round((
+ select format((n.nota1 + n.nota2 + n.nota3)/ 3,2) from notasconducta n
+        where n.idAlumno = F.idAlumno and n.mes = '"Febrero"' and n.anio = '2019'
+)) as promedioConducta
+
+FROM fichaalumno F
+WHERE F.anio = '2019' and f.grado= 1

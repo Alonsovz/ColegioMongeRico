@@ -379,6 +379,16 @@ create table notasCompu
     anio varchar(10)
 );
 
+create table notasIngles
+(
+    idNota int PRIMARY key AUTO_INCREMENT,
+    idAlumno int,
+    nota1 double,
+    nota2 double,
+    nota3 double,
+    mes varchar(10),
+    anio varchar(10)
+);
 
 create table notasFisica
 (
@@ -416,10 +426,6 @@ create table inventarioOtros(
 );
 
 
-
-
-insert into inventarioOtros values(1,'Pupitres',10,1);
-
 insert into anio values('2019');
 
 
@@ -431,10 +437,6 @@ insert into usuario values(null,'No','Asignado','no','no','no',sha1('123'),'7912
 insert into usuario values(null,'Fabio','Mejia','fabio','fabiomejiash@gmail.com','San Juan Opico',sha1('123'),'7121-1231','01211242-1','1999-12-02',1,1);
  
  
- insert into usuario values(null,'Juan','Perez','juan','juan@gmail.com','Santa Tecla',sha1('123'),'7912-7680','01234324-1','1980-09-04',2,1);
- insert into usuario values(null,'Alonso','Velasquez','alonso','mejiaFabio383@gmail.com','Santa Tecla',sha1('123'),'7912-1241','09237913-1','1997-02-02',2,1);
-
- insert into usuario values(null,'Juana','Lopez','juana','juan123@gmail.com','San Salvador',sha1('123'),'7912-1241','01234312-1','1997-02-02',3,1);
  
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
@@ -449,22 +451,6 @@ insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
 insert into datosGrados values(null,1,1,1,1,1,1,1,1,1,1,1,'2019');
 
-
-INSERT into notasmatematica VALUES (null, 1, 7,8,9,'Febrero','2019');
-INSERT into notassociales VALUES (null, 1, 7,6,9,'Febrero','2019');
-INSERT into notasciencias VALUES (null, 1, 7,8,7,'Febrero','2019');
-
-INSERT into notasmatematica VALUES (null, 1,6,8,9,'Marzo','2019');
-INSERT into notassociales VALUES (null, 1, 9,6,9,'Marzo','2019');
-INSERT into notasciencias VALUES (null, 1, 7,8,7,'Marzo','2019');
-
-INSERT into notasmatematica VALUES (null, 1, 7,8,7,'Abril','2019');
-INSERT into notassociales VALUES (null, 1, 7,6,7,'Abril','2019');
-INSERT into notasciencias VALUES (null, 1, 9,8,9,'Abril','2019');
-
-
-insert into inventarioUni values(null,'S',12,1);
-insert into inventarioCal values(null,'12',10,1);
 
  delimiter $$
 create procedure login(

@@ -67,8 +67,8 @@ class DaoUsuario extends DaoBase {
     public function registrar() {
         $_query = "insert into usuario values(null,'".$this->objeto->getNombre()."', '".$this->objeto->getApellido()."',
         '".$this->objeto->getNomUsuario()."', '".$this->objeto->getEmail()."', '".$this->objeto->getDireccion()."',
-        '".sha1($this->objeto->getPass())."',".$this->objeto->getTelefono().",".$this->objeto->getDui().",
-        ".$this->objeto->getFechaNacimiento().",'".$this->objeto->getCodigoRol()."',1)";
+        '".sha1($this->objeto->getPass())."','".$this->objeto->getTelefono()."','".$this->objeto->getDui()."',
+        '".$this->objeto->getFechaNacimiento()."','".$this->objeto->getCodigoRol()."',1)";
 
         $resultado = $this->con->ejecutar($_query);
 

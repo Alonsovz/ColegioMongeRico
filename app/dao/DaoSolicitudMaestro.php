@@ -8,6 +8,13 @@ class DaoSolicitudMaestro extends DaoBase {
     }
 
     public function registrarDatos() {
+        $anio= "(select anio from anio)";
+
+        $resultado2 = $this->con->ejecutar($anio);
+
+        $fila1 = $resultado2->fetch_assoc();
+        $anioAc = $fila1['anio'];
+
         $_query = "insert into maestros values(null,'".$this->objeto->getNombre()."','".$this->objeto->getApellido()."',
          '".$this->objeto->getFechaNac()."',
         '".$this->objeto->getLugarNacimiento()."', '".$this->objeto->getSexo()."','".$this->objeto->getDireccionRes()."',
@@ -17,7 +24,8 @@ class DaoSolicitudMaestro extends DaoBase {
         '".$this->objeto->getNumeroPartida()."','".$this->objeto->getSubNumero()."',
         '".$this->objeto->getNivelAcademico()."','".$this->objeto->getNivel()."',
         '".$this->objeto->getEspecialidad()."','".$this->objeto->getFechaIngreso()."',
-        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."','".$this->objeto->getSueldo()."',1,'','')";
+        '".$this->objeto->getHabilidades()."','".$this->objeto->getTipoPago()."',
+        ".$this->objeto->getSueldo().",1,'','',".$anioAc.")";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -278,8 +286,17 @@ class DaoSolicitudMaestro extends DaoBase {
         $resultado = $this->con->ejecutar($_query);
 
         $_json = '';
-
+        $resultado1 ='';
         while($fila = $resultado->fetch_assoc()) {
+            $id = '';
+            $tipoPago = '';
+            $sueldoFijo = '';
+            $diasT = '';
+            $sueldoDe = 0;
+            $vacacion = 0;
+            $aguinaldo = 0;
+            $otros = 0;
+
             $id = $fila["idMaestro"];
             
             $tipoPago = $fila["pago"];
@@ -306,7 +323,6 @@ class DaoSolicitudMaestro extends DaoBase {
                 where idMaestro =".$id."
                 and mes='".$mes."' and anio = '".$anio."'  ";
                 $resultado1 = $this->con->ejecutar($actualizar);
-
                 
             }else{
 
@@ -341,14 +357,21 @@ class DaoSolicitudMaestro extends DaoBase {
                 isssE = ".$isss.",
                 renta = 0,
                 otros = ".$otros.",
-                totalDesM = (".$afpEmV." + ".$afpEmC." + ".$isss.") -  ".$otros.",,
+                totalDesM = (".$afpEmV." + ".$afpEmC." + ".$isss.") -  ".$otros.",
                 totalP = (".$sueldoFijo." - (".$afpEmV." + ".$afpEmC." + ".$isss." + ".$vacacion." + ".$aguinaldo.") -(".$otros."))
                 where idMaestro =".$id."
                 and mes='".$mes."' and anio = '".$anio."'  ";
                 $resultado1 = $this->con->ejecutar($actualizar);
             }
-        
+            
         }
+
+        if($resultado1){
+            return 1;
+        }else{
+            return 0;
+        }
+
 
         
     }

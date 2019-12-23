@@ -139,7 +139,7 @@
             <div class="field">
                 <div class="fields">
                     <div class="sixteen wide field">
-                    <label>Cantidad de pares vendidos:</label>
+                    <label>Cantidad a restar:</label>
                     <input type="text" name="vendidos" id="vendidos" placeholder="Cantidad a restar">
                     <br><br>
                     <div class="ui red pointing label"  id="errorExis"  style="display: none; margin: 0; text-align:center; width:100%; font-size: 12px;">
@@ -288,6 +288,7 @@ $("#guardarNueva").click(function(){
                                         }); 
                                        
                                        limpiar();
+                                       location.reload();
                                     } 
                                 }
             });
@@ -331,6 +332,7 @@ $("#guardarNuevaC").click(function(){
                                         }); 
                                        
                                         limpiar();
+                                        location.reload();
                                     } 
                                 }
             });
@@ -451,6 +453,7 @@ $("#guardarNuevaEx").click(function(){
                                         }); 
                                        
                                        limpiar();
+                                       location.reload();
                                     } 
                                 }
             });
