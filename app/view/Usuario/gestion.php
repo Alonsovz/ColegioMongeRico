@@ -562,7 +562,6 @@ $(function(){
                             type: 'success',
                             showConfirmButton: false,
                                 timer: 1700
-
                         }).then((result) => {
                             if (result.value) {
                                 location.href = '?';
