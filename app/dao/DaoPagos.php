@@ -52,6 +52,30 @@ class DaoPagos extends DaoBase {
         }
     }
 
+
+
+    public function guardarTalonarioNe() {
+
+
+        $corr= "(select max(idAlumno) as id from fichaAlumno)";
+
+        $resultado1 = $this->con->ejecutar($corr);
+
+        $fila = $resultado1->fetch_assoc();
+        $idExp = $fila['id'];
+
+
+        $_query = "update pagosAlumnos set talonario='".$this->objeto->getTalonario()."' where idAlumno=".$idExp;
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
     public function pendienteVoucherE() {
         $color="<i class=\'search icon\' style=\'font-size:30px;color:orange;\'></i>";
 

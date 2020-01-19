@@ -276,16 +276,20 @@
                     <div class="ui divider"></div>
                     <div class="field">
                         <div class="fields">
-                            <div class="eight wide field" style="font-size:16px;">
+                            <div class="five wide field" style="font-size:16px;">
                             <label><i class="envelope icon"></i> Correo Electrónico</label>
                                 <input type="text" id="correo" name="correo" placeholder="Correo Electrónico">
                         </div>
 
-                        <div class="eight wide field" style="font-size:16px;">
+                        <div class="six wide field" style="font-size:16px;">
                             <label><i class="phone icon"></i>Teléfono</label>
                                 <input type="text" id="telefono" name="telefono" placeholder="Teléfono">
                         </div>
 
+                        <div class="five wide field" style="font-size:16px;">
+                            <label style="font-size:20px;"><i class="address card icon"></i>N° de Talonario</label>
+                            <input type="text" name="nTalonario" id="nTalonario">
+                        </div>
                         </div>
                     </div>
 
@@ -1098,7 +1102,7 @@ $("#btnGuardarTodo").click(function(){
                 url: '?1=SolicitudController&2=guardarSolicitudAlumno',
                 data: datosFormulario,
                 success: function(r) {
-if(r == 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111) {
+if(r == 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111) {
                        
                         swal({
                             title: 'Registrado',

@@ -64,12 +64,7 @@ class Protection
 
 	public function __construct(UniqidGenerator $uniqidGenerator)
 	{
-		if (!function_exists('random_int') || !function_exists('random_bytes')) {
-			throw new \Mpdf\MpdfException(
-				'Unable to set PDF file protection, CSPRNG Functions are not available. '
-				. 'Use paragonie/random_compat polyfill or upgrade to PHP 7.'
-			);
-		}
+		
 
 		$this->uniqidGenerator = $uniqidGenerator;
 

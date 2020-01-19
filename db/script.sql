@@ -386,6 +386,8 @@ create table notasIngles
     nota1 double,
     nota2 double,
     nota3 double,
+    nota4 double,
+    nota5 double,
     mes varchar(10),
     anio varchar(10)
 );
@@ -488,5 +490,3 @@ end
 $$
 
 
-
-update maestros set tipoPago = 'Por honorarios' where idMaestro=1

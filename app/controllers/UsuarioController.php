@@ -115,6 +115,7 @@ class UsuarioController extends ControladorBase {
 
 
         echo $dao->registrar();
+        
 
     }
 

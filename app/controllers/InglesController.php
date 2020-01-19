@@ -80,6 +80,8 @@ class InglesController extends ControladorBase {
         $nota1 = $_REQUEST["nota1"];
         $nota2 = $_REQUEST["nota2"];
         $nota3 = $_REQUEST["nota3"];
+        $nota4 = $_REQUEST["nota4"];
+        $nota5 = $_REQUEST["nota5"];
         $mes = $_REQUEST["mes"];
         $anio = $_REQUEST["anio"];
 
@@ -87,7 +89,7 @@ class InglesController extends ControladorBase {
        
         
         
-        echo $dao->guardarNotasIngles($id,$nota1,$nota2,$nota3,$mes,$anio);
+        echo $dao->guardarNotasIngles($id,$nota1,$nota2,$nota3,$nota4,$nota5,$mes,$anio);
     }
 
 

@@ -13,18 +13,19 @@ $(function() {
                     "data": "idAlumno"
                 },
                 {
+                    "data": "nombre"
+                },  
+                {
                     "data": "nie"
                 },
-                {
-                    "data": "nombre"
-                },
+                
                 
                 {
                     "data": "Acciones"             
                 }
             ],
             "order": [
-                [2, "asc"]
+                [1, "asc"]
             ],
             "language": {
                 "sProcessing": "Procesando...",
@@ -53,7 +54,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         //tablaNominaPrimer.column(0).visible(false);
+         tablaNominaPrimer.column(0).visible(false);
     }
 
 });

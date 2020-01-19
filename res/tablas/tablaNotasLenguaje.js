@@ -32,7 +32,7 @@ $(function() {
                 }
             ],
             "order": [
-                [0, "desc"]
+                [1, "asc"]
             ],
             "language": {
                 "sProcessing": "Procesando...",
@@ -61,7 +61,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         //tablaNotasLenguaje.column(0).visible(false);
+         tablaNotasLenguaje.column(0).visible(false);
     }
 });
 }

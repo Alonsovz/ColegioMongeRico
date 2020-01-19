@@ -151,8 +151,9 @@
                         <tr>
                         
                             <th style="background-color: #B40431; color:white;">N°</th>
-                            <th style="background-color: #B40431; color:white;">NIE</th>
+                            
                             <th style="background-color: #B40431; color:white;">Nombre</th>
+                            <th style="background-color: #B40431; color:white;">NIE</th>
                             <th style="background-color: #B40431; color:white;">Acciones</th>
                            
                         </tr>
@@ -312,7 +313,9 @@
                             <th style="background-color: #C4BC03; color:black;">Alumno</th>
                             <th style="background-color: #C4BC03; color:black;">Nota 1</th>
                             <th style="background-color: #C4BC03; color:black;">Nota 2</th>
-                            <th style="background-color: #C4BC03; color:black;">Nota 3</th>
+                            <th style="background-color: #C4BC03; color:black;">Nota 3</th>               
+                            <th style="background-color: #C4BC03; color:black;">Nota 4</th>
+                            <th style="background-color: #C4BC03; color:black;">Nota 5</th>
                             <th style="background-color: #C4BC03; color:black;">Promedio</th>
                             <th style="background-color: #C4BC03; color:black;">Acciones</th>
                         </tr>
@@ -1128,18 +1131,26 @@
     <form class="ui form">
     <div class="field">
         <div class="fields">
-            <div class="six wide field">
+            <div class="three wide field">
             <input type="hidden" name="idAlumnoNota" id="idAlumnoNota">
                 <label>Nota 1</label>
                 <input type="text" name="nota1" id="nota1" placeholder="Nota 1">
             </div>
-            <div class="six wide field">
+            <div class="three wide field">
                 <label>Nota 2</label>
                 <input type="text" name="nota2" id="nota2" placeholder="Nota 2">
             </div>
-            <div class="six wide field">
+            <div class="three wide field">
                 <label>Nota 3</label>
                 <input type="text" name="nota3" id="nota3" placeholder="Nota 3">
+            </div>
+            <div class="three wide field" id="divNota4">
+                <label>Nota 4</label>
+                <input type="text" name="nota4" id="nota4" placeholder="Nota 4">
+            </div>
+            <div class="three wide field" id="divNota5">
+                <label>Nota 5</label>
+                <input type="text" name="nota5" id="nota5" placeholder="Nota 5">
             </div>
         </div>
     </div>
@@ -2548,6 +2559,10 @@ var notasLenguaje=(ele)=>{
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
 
+        $("#divNota4").hide();
+        $("#divNota5").hide();
+
+
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
             $("#mesModal").text(mesR + '' +anio);
@@ -2570,6 +2585,8 @@ var notasMatematicas=(ele)=>{
         $("#nota1").val(nota1);
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
+        $("#divNota4").hide();
+        $("#divNota5").hide();
 
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
@@ -2596,6 +2613,9 @@ var notasCiencias=(ele)=>{
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
 
+        $("#divNota4").hide();
+        $("#divNota5").hide();
+
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
             $("#mesModal").text(mesR + '' +anio);
@@ -2621,6 +2641,9 @@ var notasSociales=(ele)=>{
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
 
+        $("#divNota4").hide();
+        $("#divNota5").hide();
+
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
             $("#mesModal").text(mesR + '' +anio);
@@ -2641,10 +2664,17 @@ var notasIngles=(ele)=>{
         var nota1 = $(ele).attr("nota1");
         var nota2 = $(ele).attr("nota2");
         var nota3 = $(ele).attr("nota3");
+        var nota4 = $(ele).attr("nota4");
+        var nota5 = $(ele).attr("nota5");
 
         $("#nota1").val(nota1);
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
+        $("#nota4").val(nota4);
+        $("#nota5").val(nota5);
+
+        $("#divNota4").show();
+        $("#divNota5").show();
 
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
@@ -2670,6 +2700,10 @@ var notasArtistica=(ele)=>{
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
 
+
+        $("#divNota4").hide();
+        $("#divNota5").hide();
+
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
             $("#mesModal").text(mesR + '' +anio);
@@ -2694,6 +2728,10 @@ var notasEduFe=(ele)=>{
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
 
+
+        $("#divNota4").hide();
+        $("#divNota5").hide();
+
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
             $("#mesModal").text(mesR + '' +anio);
@@ -2716,6 +2754,9 @@ var notasMoral=(ele)=>{
         $("#nota1").val(nota1);
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
+
+        $("#divNota4").hide();
+        $("#divNota5").hide();
 
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
@@ -2741,6 +2782,9 @@ var notasInfo=(ele)=>{
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
 
+        $("#divNota4").hide();
+        $("#divNota5").hide();
+
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
             $("#mesModal").text(mesR + '' +anio);
@@ -2765,6 +2809,9 @@ var notasFisica=(ele)=>{
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
 
+        $("#divNota4").hide();
+        $("#divNota5").hide();
+
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
             $("#mesModal").text(mesR + '' +anio);
@@ -2788,6 +2835,9 @@ var notasConducta=(ele)=>{
         $("#nota2").val(nota2);
         $("#nota3").val(nota3);
 
+        $("#divNota4").hide();
+        $("#divNota5").hide();
+
         $("#idAlumnoNota").val(id);
             $("#alName").text($(ele).attr("nombre"));
             $("#mesModal").text(mesR + '' +anio);
@@ -2799,6 +2849,8 @@ $("#guardar").click(function(){
     var nota1 = $("#nota1").val();
     var nota2 = $("#nota2").val();
     var nota3 = $("#nota3").val();
+    var nota4 = $("#nota4").val();
+    var nota5 = $("#nota5").val();
     var mes = $("#mesNotas").val();
     var d = new Date();
     var anio = d.getFullYear();
@@ -2957,6 +3009,8 @@ $("#guardar").click(function(){
                    nota1 : nota1,
                    nota2 : nota2,
                    nota3 : nota3,
+                   nota4 : nota4,
+                   nota5 : nota5,
                    mes : mes,
                    anio: anio,
                },

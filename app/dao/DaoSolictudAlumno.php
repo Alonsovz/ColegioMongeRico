@@ -1306,7 +1306,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Febrero','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Febrero','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -1335,7 +1335,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Marzo','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Marzo','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -1364,7 +1364,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Abril','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Abril','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -1393,7 +1393,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Mayo','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Mayo','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -1422,7 +1422,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Junio','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Junio','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -1450,7 +1450,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Julio','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Julio','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -1478,7 +1478,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Agosto','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Agosto','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -1506,7 +1506,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Septiembre','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Septiembre','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -1534,7 +1534,7 @@ class DaoSolictudAlumno extends DaoBase {
         $anioAc = $fila1['anio'];
 
         $_query = "insert into  notasIngles values(null, 
-            ".$idExp.",0,0,0,'Octubre','".$anioAc."')";
+            ".$idExp.",0,0,0,0,0,'Octubre','".$anioAc."')";
 
         $resultado = $this->con->ejecutar($_query);
 

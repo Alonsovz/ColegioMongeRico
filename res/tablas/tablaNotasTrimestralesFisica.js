@@ -67,7 +67,7 @@ $(function() {
             }
         ],
         "order": [
-            [0, "desc"]
+            [1, "asc"]
         ],
             "language": {
                 "sProcessing": "Procesando...",
@@ -96,7 +96,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-         //tablaNotasTrimestralesFisica.column(0).visible(false);
+         tablaNotasTrimestralesFisica.column(0).visible(false);
     }
 });
 }

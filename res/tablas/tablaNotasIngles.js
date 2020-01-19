@@ -25,6 +25,12 @@ $(function() {
                     "data": "nota3"             
                 },
                 {
+                    "data": "nota4"             
+                },
+                {
+                    "data": "nota5"             
+                },
+                {
                     "data": "promedio"             
                 },
                 {
@@ -32,7 +38,7 @@ $(function() {
                 }
             ],
             "order": [
-                [0, "desc"]
+                [1, "asc"]
             ],
             "language": {
                 "sProcessing": "Procesando...",
@@ -61,7 +67,7 @@ $(function() {
         });
 
          // Ocultar columna de id de Usuario
-        // tablaNotasIngles.column(0).visible(false);
+        tablaNotasIngles.column(0).visible(false);
     }
 });
 }

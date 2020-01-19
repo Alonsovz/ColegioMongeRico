@@ -13,6 +13,13 @@ $anio = $fila1['anio'];
   where f.grado=1 and p.anio = '".$anio."' and p.estado=1 order by f.nombre asc");
  ?>
  
+
+
+ 
+
+
+
+
 <div id="app">
         <div class="ui grid">
             <div class="row">

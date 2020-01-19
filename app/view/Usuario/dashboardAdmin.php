@@ -60,11 +60,6 @@ $(function() {
         <i class="users icon"></i><i class="lock icon"></i>
     </a>
 
-   <a style="width: 24%;" href="?1=UsuarioController&2=reporteria" class="tiles-tiles ui teal inverted segment">
-        <h3>Reportes</h3>
-        <div class="ui divider"></div>
-        <i class="save icon"></i>
-    </a>
    
 
     

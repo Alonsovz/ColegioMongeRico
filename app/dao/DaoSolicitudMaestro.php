@@ -184,7 +184,7 @@ class DaoSolicitudMaestro extends DaoBase {
         $_query = "select concat(m.nombre,' ',m.apellido) as nombreD, m.*,
         TIMESTAMPDIFF(YEAR,fechaNacimiento,CURDATE()) AS edad,
         format (m.sueldo,2) as sueldoD
-         from maestros m where m.idEliminado=1 and anio = '".$anioAc."';";
+         from maestros m where m.idEliminado=1;";
 
         $resultado = $this->con->ejecutar($_query);
 

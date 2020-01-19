@@ -348,6 +348,12 @@ class SolicitudController extends ControladorBase {
         $dao->objeto->setMicroPropTel("");
         }
 
+
+        $daoPa = new DaoPagos();
+        $daoPa->objeto->setTalonario($_REQUEST["nTalonario"]);
+        
+
+         
         
 
         echo $dao->registrarDatos();
@@ -471,6 +477,7 @@ class SolicitudController extends ControladorBase {
      echo $dao->guardarNotasConductaS();
      echo $dao->guardarNotasConductaO();
 
+     echo $daoPa->guardarTalonarioNe();
     }
 
     public function guardarHermanos(){
