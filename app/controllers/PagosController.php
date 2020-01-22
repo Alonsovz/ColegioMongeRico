@@ -68,9 +68,11 @@ class PagosController extends ControladorBase {
     public function guardarPagoNo(){
         $idAlumno = $_REQUEST["idAl"];
         $idCuota = $_REQUEST["idC"];
+        $fecha = $_REQUEST["fecha"];
 
         $dao = new DaoPagos();
         $dao->objeto->setIdAlumno($idAlumno);
+        $dao->objeto->setFecha($fecha);
         if($idCuota==1){
 
             echo $dao->guardarPagoEn();

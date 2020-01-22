@@ -13,11 +13,11 @@ class Reporte {
     {   
         
         
-        $tz = 'America/El_Salvador';
-        $timestamp = time();
-        $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
-        $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
-        $fechaActual = $dt->format('d - M - Y');
+             //Se define el timezone que sea necesario
+date_default_timezone_set('America/El_Salvador');
+
+//Dia-Mes-Año Hora:Minutos:Segundos
+$fechaActual = date('d-m-Y');
 
         $tabla = '';
 
@@ -101,7 +101,7 @@ class Reporte {
                 <b>NETO A RECIBIR  &nbsp;&nbsp;&nbsp; 
                 $ ".number_format(($sueldoD - $isss - $afp - $otrosD),2)."</b><br>
 
-                <b>LOURDES, ".$fechaActual." </b><br><br>
+                <b>LOURDES, ".$fechaActual." .</b><br><br>
 
 
                 <b>Firma: ________________________________</b><br><br>
@@ -175,7 +175,7 @@ class Reporte {
                 <b>NETO A RECIBIR &nbsp;&nbsp;&nbsp; 
                 $ ".number_format(($sueldoD - $isss - $afp - $otrosD),2)."</b><br>
 
-                <b>LOURDES, ".$fechaActual." </b><br><br>
+                <b>LOURDES, ".$fechaActual." .</b><br><br>
 
 
                 <b>Firma: ________________________________</b><br><br>

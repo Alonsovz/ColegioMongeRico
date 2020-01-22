@@ -56,6 +56,7 @@
                     <th style="background-color: black; color:white;">Septiembre</th>
                     <th style="background-color: black; color:white;">Octubre</th>
                     <th style="background-color: black; color:white;">Noviembre</th>
+                    <th style="background-color: black; color:white;"><i class="file icon"></i></th>
                 </tr>
             </thead>
             <tbody>
@@ -138,6 +139,9 @@
                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["nov"].'"  n="11" nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)">'.$valores["nov"].'</td>
                            </tr>';
                         }
+                        echo '
+                        <td><button id="'.$valores["idAlumno"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick ="verReporte(this)" class="ui compact icon green button"><i class="print icon"></i></button></td>
+                        </tr>';
                     }
                 ?>
                 </tbody>
@@ -228,6 +232,20 @@ Cancelar
 
        $('#modalTalonario').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
     }
+
+    
+    var verReporte=(ele)=>{
+        var id = $(ele).attr("id");
+      var alumno = $(ele).attr("nombre");
+
+ var grado= '7mo Grado';
+
+      var d = new Date();
+        var anio = d.getFullYear();
+
+         window.open('?1=PagosController&2=reportePagoCuotasAlumno&id='+id+'&grado='+grado+'&anio='+anio+'&alumno='+alumno,'_blank');
+            return false;
+     }
     
     
     var cobrar=(ele)=>{
