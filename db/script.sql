@@ -262,7 +262,8 @@ direccionRes varchar(100),
 telRes1 varchar(30),
 telRes2 varchar(30),
 correo varchar(50),
-idAlumno int
+idAlumno int,
+factoresRiesgo varchar(500)
 );
 
 

@@ -289,7 +289,7 @@
 
                         <div class="five wide field" style="font-size:16px;">
                             <label style="font-size:20px;"><i class="address card icon"></i>N° de Talonario</label>
-                            <input type="text" name="nTalonario" id="nTalonario">
+                            <input type="text" name="nTalonario" id="nTalonario" placeholder="N° Talonario">
                         </div>
                         </div>
                     </div>
