@@ -71,7 +71,8 @@ class DaoSolictudAlumno extends DaoBase {
         '".$this->objeto->getEscolaridad()."','".$this->objeto->getLugarTrabajoRes()."','".$this->objeto->getTelefonoRes()."',
         '".$this->objeto->getDiscapacidadRes()."','".$this->objeto->getExpDiscapacidadRes()."',
         '".$this->objeto->getTipoSangreRes()."','".$this->objeto->getDireccionRespon()."',
-        '".$this->objeto->getTel1()."','".$this->objeto->getTel2()."','".$this->objeto->getEmailRes()."',".$idExp.")";
+        '".$this->objeto->getTel1()."','".$this->objeto->getTel2()."','".$this->objeto->getEmailRes()."',".$idExp.",
+        '".$this->objeto->getRiesgoRes()."')";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -200,7 +201,8 @@ class DaoSolictudAlumno extends DaoBase {
         direccionRes = '".$this->objeto->getDireccionRespon()."',
         telRes1 = '".$this->objeto->getTel1()."',
         telRes2 = '".$this->objeto->getTel2()."',
-        correo = '".$this->objeto->getEmailRes()."'
+        correo = '".$this->objeto->getEmailRes()."',
+        factoresRiesgo = '".$this->objeto->getRiesgoRes()."'
         where idAlumno = ".$this->objeto->getId();
 
         $resultado = $this->con->ejecutar($_query);
@@ -212,7 +214,23 @@ class DaoSolictudAlumno extends DaoBase {
         }
     }
 
+    
 
+
+    public function eliminarAlumno() {
+        
+
+        $_query = "update fichaAlumno set idEliminado=2
+        where idAlumno = ".$this->objeto->getId();
+
+        $resultado = $this->con->ejecutar($_query);
+
+        if($resultado) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 
     public function editarOtrosDatos() {
    
@@ -3107,12 +3125,12 @@ class DaoSolictudAlumno extends DaoBase {
         dr.municipioNac as munNac, dr.nacionalidad as nacRes, dr.profesion as proRes,
         dr.escolaridad as escRes, dr.lugarTrabajo as traRes,dr.telTrabajo, dr.discapcidad as discRes,
         dr.expDiscapacidad as expDiscRes, dr.tipoSangre as sangRes, dr.direccionRes as direRec,
-        dr.telRes1, dr.telRes2, dr.correo as correoRes, od.* from fichaAlumno f
+        dr.telRes1, dr.telRes2, dr.correo as correoRes,dr.factoresRiesgo as factoresRes, od.* from fichaAlumno f
         inner join datosPadre dp on dp.idAlumno = f.idAlumno
         inner join datosResponsable dr on dr.idAlumno = f.idAlumno
         inner join otrosDatos od on od.idAlumno = f.idAlumno
         where f.grado=".$idGrado." and f.anio 
-        = '".$anioAc."' and f.idEliminado = 1 group by f.nie order by f.nombre asc";
+        = '".$anioAc."' and f.idEliminado = 1 order by f.nombre asc";
 
         $resultado = $this->con->ejecutar($_query);
 
@@ -3144,7 +3162,7 @@ $btnEditar .= '<button depRes=\"'.$fila["depRes"].'\" munRes = \"'.$fila["munNac
 $btnEditar .= '<button proRes=\"'.$fila["proRes"].'\" escRes = \"'.$fila["escRes"].'\" traRes = \"'.$fila["traRes"].'\"';
 $btnEditar .= '<button discRes=\"'.$fila["discRes"].'\" expDiscRes = \"'.$fila["expDiscRes"].'\" sangRes = \"'.$fila["sangRes"].'\"';
 $btnEditar .= '<button direRec=\"'.$fila["direRec"].'\" telRes1 = \"'.$fila["telRes1"].'\" telRes2 = \"'.$fila["telRes2"].'\"';
-$btnEditar .= '<button correoRes=\"'.$fila["correoRes"].'\"  telTrabajo=\"'.$fila["telTrabajo"].'\"';
+$btnEditar .= '<button correoRes=\"'.$fila["correoRes"].'\"  telTrabajo=\"'.$fila["telTrabajo"].'\" factoresRes=\"'.$fila["factoresRes"].'\"';
 
 
 $btnEditar .= '<button emergencia1=\"'.$fila["emergencia1"].'\"  telEmergencia1=\"'.$fila["telEmergencia1"].'\"';
@@ -3154,7 +3172,7 @@ $btnEditar .= '<button retiro2=\"'.$fila["retiro2"].'\"  parentesco2=\"'.$fila["
 $btnEditar .= '<button viajaraSolo=\"'.$fila["viajaraSolo"].'\"  microbusDe=\"'.$fila["microbusDe"].'\" telMicro=\"'.$fila["telMicro"].'\"';
 
 $btnEditar .= 'class=\"ui icon blue small button\" onclick=\"verNomina(this)\"><i class=\"edit icon\"></i> Ver Detalles</button>';
-$btnEliminar = '<button id=\"'.$fila["idAlumno"].'\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
+$btnEliminar = '<button id=\"'.$fila["idAlumno"].'\"  nombre = \"'.$fila["nombre"].'\" onclick=\"eliminar(this)\" class=\"ui btnEliminar icon negative small button\"><i class=\"trash icon\"></i> Eliminar</button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnEliminar.'"';
 

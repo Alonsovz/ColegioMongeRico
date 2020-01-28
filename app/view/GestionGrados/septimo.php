@@ -1374,6 +1374,7 @@
                                     <option value="Microbus">Microbus</option>
                                     <option value="Transporte personal">Transporte personal</option>
                                     <option value="Transporte Colectivo">Transporte Colectivo</option>
+                                    <option value="Peatonal">Peatonal</option>
                                     <option value="Ninguno">Ninguno</option>
                                 <select>
                         </div>
@@ -1505,7 +1506,7 @@
                     </div>
         </div>
 
-<div id="datosRespon">
+        <div id="datosRespon">
             <h2 style="color:#04B486;"><i class="user icon"></i> Datos del responsable</h2>
             <hr><br>
                     <div class="field">
@@ -1562,7 +1563,7 @@
                                     <option value="Soltero/a">Soltero/a</option>
                                     <option value="Divoricado/a">Divoricado/a</option>
                                     <option value="Viudo/a">Viudo/a</option>
-                                    
+                                    <option value="Acompañado/a">Acompañado/a</option>
                                 </select>
                             </div>
                             <div class="three wide field" style="font-size:16px;">
@@ -1687,15 +1688,18 @@
                             <label><i class="envelope icon"></i> Correo Electrónico</label>
                                 <input type="text" id="correoRes" name="correoRes" placeholder="Correo Electrónico">
                         </div>
-
+                        <div class="eight wide field" style="font-size:16px;">
+                            <label><i class="exclamation triangle icon"></i> Factores de riesgo</label>
+                            <textarea rows="3" name="riesgosRes" id="riesgosRes" placeholder="Riesgos a los que se expone"></textarea>
+                        </div>
                         
 
                         </div>
                     </div>
 
-</div>
-<div id="otrosDatos">
-<h2 style="color:#04B486;"><i class="exclamation icon"></i> Otros datos</h2>
+        </div>
+    <div id="otrosDatos">
+    <h2 style="color:#04B486;"><i class="exclamation icon"></i> Otros datos</h2>
             <hr><br>
                     <div class="field">
                     <h3 style="color:red;text-align:left;margin-left:20px;"><i class="exclamation triangle icon"></i> En caso de emergencia avisar a:</h3>
@@ -1811,7 +1815,7 @@
                     <div class="ui divider"></div>
 
 
-</div>
+    </div>
 </form>
     </div>
     <div class="actions">
@@ -1820,7 +1824,26 @@
     </div>
 </div>
 
+<div class="ui tiny modal" id="modalEliminar">
 
+                <div class="header">
+                    Eliminar Alumno/a
+                </div>
+                <div class="content">
+                    <h4>¿Desea eliminar al alumno/a a <a id="name" style="color:black;"></a>?</h4>
+                    <input type="hidden"  id="idEliminar">
+                </div>
+                <div class="actions">
+                    <button class="ui black deny button">
+                        Cancelar
+                    </button>
+                    <button class="ui right red button" id="btnEliminar">
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+
+</div>
 
  <script src="./res/tablas/tablaAlumnos.js"></script>
  <script src="./res/tablas/tablaNotasLenguaje.js"></script>
@@ -3267,7 +3290,7 @@ var verNomina=(ele)=>{
 
          $("#btnOtrosDatos").removeClass("ui orange basic button");
          $("#btnOtrosDatos").addClass("ui orange button");
-
+         $("#riesgosRes").val($(ele).attr("factoresRes"));
 
         $("#datosAlumnos").show(1000);
         $("#datosPadres").hide(1000);
@@ -3724,6 +3747,44 @@ $("#btnGuardarTodo").click(function(){
                 alertify.error('Cancelado');
                 
             }); 
+});
+
+
+var eliminar=(ele)=>{
+    $('#modalEliminar').modal('setting', 'autofocus', false).modal('setting', 'closable', false).modal('show');
+       $("#idEliminar").val($(ele).attr("id"));
+       $("#name").text($(ele).attr("nombre"));
+}
+
+
+$("#btnEliminar").click(function(){
+var id = $("#idEliminar").val();
+
+
+
+            $.ajax({
+            type: 'POST',
+            url: '?1=SolicitudController&2=eliminarAlumno',
+            data: {id:id},
+            success: function(r) {
+            if(r ==   1) {
+                   $("#modalEliminar").modal('hide');
+                    swal({
+                        title: 'Eliminado',
+                        text: 'Datos guardados con éxito',
+                        type: 'error',
+                        showConfirmButton: true,
+
+                    }).then((result) => {
+                        
+                        $('#dtNomina').DataTable().ajax.reload();
+                    }); 
+                   
+                   
+                } 
+            }
+            });
+      
 });
 
  </script>

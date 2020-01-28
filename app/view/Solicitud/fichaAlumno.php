@@ -227,6 +227,7 @@
                                     <option value="Microbus">Microbus</option>
                                     <option value="Transporte personal">Transporte personal</option>
                                     <option value="Transporte Colectivo">Transporte Colectivo</option>
+                                    <option value="Peatonal">Peatonal</option>
                                     <option value="Ninguno">Ninguno</option>
                                 <select>
                         </div>
@@ -362,7 +363,7 @@
                     </div>
         </div>
 
-<div id="datosRespon">
+    <div id="datosRespon">
             <h2 style="color:#04B486;"><i class="user icon"></i> Datos del responsable</h2>
             <hr><br>
                     <div class="field">
@@ -419,7 +420,7 @@
                                     <option value="Soltero/a">Soltero/a</option>
                                     <option value="Divoricado/a">Divoricado/a</option>
                                     <option value="Viudo/a">Viudo/a</option>
-                                    
+                                    <option value="Acompañado/a">Acompañado/a</option>
                                 </select>
                             </div>
                             <div class="three wide field" style="font-size:16px;">
@@ -546,14 +547,17 @@
                         </div>
 
                         
-
+                        <div class="eight wide field" style="font-size:16px;">
+                            <label><i class="exclamation triangle icon"></i> Factores de riesgo</label>
+                            <textarea rows="3" name="riesgosRes" id="riesgosRes" placeholder="Riesgos a los que se expone"></textarea>
+                        </div>
                         </div>
                     </div>
 
-</div>
-<div id="otrosDatos">
-<h2 style="color:#04B486;"><i class="exclamation icon"></i> Otros datos</h2>
-            <hr><br>
+    </div>
+    <div id="otrosDatos">
+    <h2 style="color:#04B486;"><i class="exclamation icon"></i> Otros datos</h2>
+                <hr><br>
                     <div class="field">
                     <h3 style="color:red;text-align:left;margin-left:20px;"><i class="exclamation triangle icon"></i> En caso de emergencia avisar a:</h3>
                         <br><div class="fields">
@@ -667,7 +671,7 @@
 
                     <div class="ui divider"></div>
 
-<div class="field">
+    <div class="field">
                         <div class="fields">
 
                         <div class="sixteen wide field" style="font-size:16px;">

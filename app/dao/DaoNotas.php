@@ -510,7 +510,7 @@ round((
 )) as promedioConducta
 
 FROM fichaalumno F
-WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
+WHERE F.anio = '".$anioAc."' and f.grado= ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -694,7 +694,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -882,7 +882,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -1070,7 +1070,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -1256,7 +1256,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -1444,7 +1444,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -1630,7 +1630,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -1816,7 +1816,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2003,7 +2003,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2189,7 +2189,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2376,7 +2376,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
@@ -2564,7 +2564,7 @@ WHERE F.anio = '".$anioAc."' and f.grado= ".$grado."
         
         
         FROM fichaalumno F
-        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado."
+        WHERE F.anio = '".$anioAc."' and f.grado=  ".$grado." and f.idEliminado = 1
         ";
 
         $resultado = $this->con->ejecutar($_query);
