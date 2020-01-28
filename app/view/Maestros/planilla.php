@@ -366,7 +366,7 @@ $("#anFiltro").dropdown('set selected', anio);
 var planilla=(ele)=>{
  
 $("#nombre").text($(ele).attr("nombre"));
-$("#pago").text($(ele).attr("tipoPago"));
+$("#pago").text($(ele).attr("tpago"));
 $("#dias").val($(ele).attr("diasT"));
 $("#sueldo").val($(ele).attr("sueldo"));
 $("#sueldoDevengado").val($(ele).attr("sueldoD"));
@@ -382,7 +382,7 @@ $("#totalPago").val($(ele).attr("totalP"));
 $("#idMaestro").val($(ele).attr("id"));
 $("#idPlanilla").val($(ele).attr("idPlanilla"));
 
-if($(ele).attr("tipoPago")=="Por honorarios"){
+if($(ele).attr("tpago")=="Por honorarios"){
     $("#ho").show();
     $("#s1").hide();
     $("#s2").hide();

@@ -384,6 +384,7 @@ class DaoSolicitudMaestro extends DaoBase {
         else
         '<div style=background-color:#027895;color:white;font-size:12px;>Por Seguro</div>'
         end as pago,
+        m.tipoPago as tpago,
         format(m.sueldo,2) as sueldoFijo,
       concat('$', ' ',  format((m.sueldo),2) ) as sueldoM,
         format((p.sueldoD),2) as sueldoD,
@@ -426,7 +427,7 @@ class DaoSolicitudMaestro extends DaoBase {
             $btnEditar .= ' afpEmV =\"'.$fila["afpEmV"].'\" afpEmC =\"'.$fila["afpEmC"].'\" ';
             $btnEditar .= ' isssE =\"'.$fila["isssE"].'\" renta =\"'.$fila["renta"].'\" ';
             $btnEditar .= ' otros =\"'.$fila["otros"].'\" totalDesM =\"'.$fila["totalDesM"].'\" ';
-            $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon orange small button\" onclick=\"planilla(this)\"><i class=\"eye icon\"></i></button>';
+            $btnEditar .= 'totalP =\"'.$fila["totalP"].'\" tpago =\"'.$fila["tpago"].'\" diasT =\"'.$fila["diasT"].'\" class=\"ui btnEditar icon orange small button\" onclick=\"planilla(this)\"><i class=\"eye icon\"></i></button>';
             $btnVoucher = '<button id=\"'.$fila["idMaestro"].'\" nombre =\"'.$fila["nombre"].'\" sueldoD =\"'.$fila["totalP"].'\" tipoPago =\"'.$fila["pago"].'\" class=\"ui  icon green small button\" onclick=\"voucher(this)\"><i class=\"print icon\"></i>  </button>';
 
             $acciones = ', "Acciones": "'.$btnEditar.' '.$btnVoucher.'"';
