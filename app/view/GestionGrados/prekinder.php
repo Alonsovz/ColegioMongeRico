@@ -765,7 +765,7 @@
                     Eliminar Alumno/a
                 </div>
                 <div class="content">
-                    <h4>¿Desea eliminar al alumno/a a <a id="name" style="color:black;"></a>?</h4>
+                    <h4>¿Desea eliminar al alumno/a <a id="name" style="color:black;"></a>?</h4>
                     <input type="hidden"  id="idEliminar">
                 </div>
                 <div class="actions">
