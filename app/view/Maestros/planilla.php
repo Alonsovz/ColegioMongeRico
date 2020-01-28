@@ -353,7 +353,6 @@ $("#anFiltro").dropdown('set selected', anio);
  $("#mesFiltro").dropdown('set selected', mesF);
 }
     
-
     $('#dias').mask("##");
     $('#vacacion').mask("###0.00", {reverse: true});
     $('#afpVejez').mask("###0.00", {reverse: true});
