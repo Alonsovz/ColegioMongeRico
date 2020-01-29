@@ -61,89 +61,89 @@ $anio = $fila1['anio'];
             </thead>
             <tbody>
                
-                <?php
-                    while ($valores = mysqli_fetch_array($listado)) {
-                        echo '
-                        <tr>
-                        <td>'.$valores["nombre"].'</td>';
+               <?php
+                   while ($valores = mysqli_fetch_array($listado)) {
+                       echo '
+                       <tr>
+                       <td>'.$valores["nombre"].'</td>';
 
-                        if($valores["talonario"]=='000'){
-                           echo '<td style="background-color:#EFFB59; color:black" id="'.$valores["idAlumno"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="talonario(this)">Definir</td>';
+                       if($valores["talonario"]=='000'){
+                          echo '<td style="background-color:#EFFB59; color:black" id="'.$valores["idAlumno"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick="talonario(this)">Definir</td>';
+                       }else{
+                          echo '<td id="'.$valores["idAlumno"].'" actual="'.$valores["talonario"].'" nombre="'.$valores["nombre"].'" onclick="talonario(this)">'.$valores["talonario"].'</td>
+                          ';
+                       }
+                       
+                       if($valores["e"]==''){
+                          echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoEnero"].'" cuota="'.$valores["e"].'" n="1" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["e"].'</button></td>';
+                       }else{
+                          echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoEnero"].'" cuota="'.$valores["e"].'" n="1" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["e"].'</td>';
+                       }
+                       if($valores["f"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoFebrero"].'"  cuota="'.$valores["f"].'" n="2"  nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["f"].'</button></td>';
                         }else{
-                           echo '<td id="'.$valores["idAlumno"].'" actual="'.$valores["talonario"].'" nombre="'.$valores["nombre"].'" onclick="talonario(this)">'.$valores["talonario"].'</td>
-                           ';
+                           echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoFebrero"].'" cuota="'.$valores["f"].'" n="2" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["f"].'</td>';
                         }
-                        
-                        if($valores["e"]==''){
-                           echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["e"].'" n="1" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["e"].'</button></td>';
+                        if($valores["m"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoMarzo"].'" cuota="'.$valores["m"].'" n="3" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["m"].'</button></td>';
                         }else{
-                           echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["e"].'" n="1" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["e"].'</td>';
+                           echo '<td id="'.$valores["idAlumno"].'"  fecha="'.$valores["pagoMarzo"].'" cuota="'.$valores["m"].'" n="3" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["m"].'</td>';
                         }
-                        if($valores["f"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["f"].'" n="2"  nombre="'.utf8_encode($valores["nombre"]).'" onclick="cobrar(this)" class="ui blue button">C'.$valores["f"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["f"].'" n="2" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["f"].'</td>';
-                         }
-                         if($valores["m"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["m"].'" n="3" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["m"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'"  cuota="'.$valores["m"].'" n="3" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["m"].'</td>';
-                         }
 
-                         if($valores["a"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["a"].'" n="4" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["a"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["a"].'" n="4" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["a"].'</td>';
-                         }
-
-                         if($valores["ma"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ma"].'" n="5" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ma"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ma"].'"  n="5" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["ma"].'</td>';
-                         }
-
-                         if($valores["ju"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ju"].'" n="6" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ju"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ju"].'" n="6" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["ju"].'</td>';
-                         }
-
-                         if($valores["jul"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["jul"].'" n="7" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["jul"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["jul"].'" n="7" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["jul"].'</td>';
-                         }
-
-                         if($valores["ago"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["ago"].'" n="8" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ago"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["ago"].'" n="8" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["ago"].'</td>';
-                         }
-
-                         if($valores["sep"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["sep"].'" n="9" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["sep"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["sep"].'" n="9" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["sep"].'</td>';
-                         }
-
-                         if($valores["oc"]==''){
-                            echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'" n="10" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["oc"].'</button></td>';
-                         }else{
-                            echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["oc"].'"  n="10" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["oc"].'</td>
-                            </tr>';
-                         }
-                         if($valores["nov"]==''){
-                           echo '<td><button  id="'.$valores["idAlumno"].'" cuota="'.$valores["nov"].'" n="11" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["nov"].'</button></td>';
+                        if($valores["a"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'"  fecha="'.$valores["pagoAbril"].'" cuota="'.$valores["a"].'" n="4" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["a"].'</button></td>';
                         }else{
-                           echo '<td id="'.$valores["idAlumno"].'" cuota="'.$valores["nov"].'"  n="11" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["nov"].'</td>
+                           echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoAbril"].'" cuota="'.$valores["a"].'" n="4" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["a"].'</td>';
+                        }
+
+                        if($valores["ma"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoMayo"].'" cuota="'.$valores["ma"].'" n="5" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ma"].'</button></td>';
+                        }else{
+                           echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoMayo"].'" cuota="'.$valores["ma"].'"  n="5" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["ma"].'</td>';
+                        }
+
+                        if($valores["ju"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoJunio"].'" cuota="'.$valores["ju"].'" n="6" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ju"].'</button></td>';
+                        }else{
+                           echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoJunio"].'" cuota="'.$valores["ju"].'" n="6" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["ju"].'</td>';
+                        }
+
+                        if($valores["jul"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoJulio"].'" cuota="'.$valores["jul"].'" n="7" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["jul"].'</button></td>';
+                        }else{
+                           echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoJulio"].'" cuota="'.$valores["jul"].'" n="7" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["jul"].'</td>';
+                        }
+
+                        if($valores["ago"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoAgosto"].'" cuota="'.$valores["ago"].'" n="8" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["ago"].'</button></td>';
+                        }else{
+                           echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoAgosto"].'" cuota="'.$valores["ago"].'" n="8" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["ago"].'</td>';
+                        }
+
+                        if($valores["sep"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoSep"].'" cuota="'.$valores["sep"].'" n="9" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["sep"].'</button></td>';
+                        }else{
+                           echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoSep"].'" cuota="'.$valores["sep"].'" n="9" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["sep"].'</td>';
+                        }
+
+                        if($valores["oc"]==''){
+                           echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoOctubre"].'" cuota="'.$valores["oc"].'" n="10" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["oc"].'</button></td>';
+                        }else{
+                           echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoOctubre"].'" cuota="'.$valores["oc"].'"  n="10" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["oc"].'</td>
                            </tr>';
                         }
-                        echo '
-                        <td><button id="'.$valores["idAlumno"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick ="verReporte(this)" class="ui compact icon green button"><i class="print icon"></i></button></td>
-                        </tr>';
-                    }
-                ?>
-                </tbody>
+                        if($valores["nov"]==''){
+                          echo '<td><button  id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoNov"].'" cuota="'.$valores["nov"].'" n="11" nombre="'.$valores["nombre"].'" onclick="cobrar(this)" class="ui blue button">C'.$valores["nov"].'</button></td>';
+                       }else{
+                          echo '<td id="'.$valores["idAlumno"].'" fecha="'.$valores["pagoNov"].'" cuota="'.$valores["nov"].'"  n="11" nombre="'.$valores["nombre"].'" onclick="cobrar(this)">'.$valores["nov"].'</td>
+                          </tr>';
+                       }
+                       echo '
+                       <td><button id="'.$valores["idAlumno"].'" nombre="'.utf8_encode($valores["nombre"]).'" onclick ="verReporte(this)" class="ui compact icon green button"><i class="print icon"></i></button></td>
+                       </tr>';
+                   }
+               ?>
+               </tbody>
         </table>
 </div>               
 <div class="ui tiny modal" id="cobroCuota">
@@ -251,6 +251,7 @@ Cancelar
        var nombre =$(ele).attr("nombre");
        $("#name").text(nombre);
        
+       $("#fecha").val($(ele).attr("fecha"));
        
        var cu =  $(ele).attr("cuota");
        var nCuo =  $(ele).attr("n");
